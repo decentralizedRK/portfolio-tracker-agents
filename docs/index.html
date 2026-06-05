@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            surface: { DEFAULT: '#0f172a', card: '#1e293b', border: '#334155' },
+            brand:   { DEFAULT: '#6366f1', light: '#818cf8', dark: '#4f46e5' },
+            up:      { DEFAULT: '#10b981', light: '#34d399' },
+            down:    { DEFAULT: '#ef4444', light: '#f87171' },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0f172a; color: #e2e8f0; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #1e293b; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; }
+    .glass { background: rgba(30,41,59,0.8); backdrop-filter: blur(12px); border: 1px solid rgba(51,65,85,0.5); border-radius: 12px; }
+    .tag-up   { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+    .tag-down { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+    .tag-neutral { background: rgba(100,116,139,0.2); color: #94a3b8; border: 1px solid rgba(100,116,139,0.3); }
+    .action-green  { background: rgba(16,185,129,0.1); color: #10b981; border-left: 3px solid #10b981; }
+    .action-blue   { background: rgba(99,102,241,0.1); color: #818cf8; border-left: 3px solid #6366f1; }
+    .action-yellow { background: rgba(234,179,8,0.1);  color: #facc15; border-left: 3px solid #eab308; }
+    .action-red    { background: rgba(239,68,68,0.1);  color: #ef4444; border-left: 3px solid #ef4444; }
+    .action-gray   { background: rgba(100,116,139,0.1);color: #94a3b8; border-left: 3px solid #475569; }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: #0f172a; color: #94a3b8; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 10px 14px; text-align: left; position: sticky; top: 0; cursor: pointer; user-select: none; }
+    th:hover { color: #e2e8f0; }
+    td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #1e293b; }
+    tr:hover td { background: rgba(99,102,241,0.05); }
+    .stat-card { padding: 20px 24px; }
+    .stat-label { font-size: 0.75rem; font-weight: 500; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+    .stat-value { font-size: 1.75rem; font-weight: 700; line-height: 1.2; }
+    .stat-sub   { font-size: 0.8rem; color: #64748b; margin-top: 2px; }
+    .ticker-chip { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 600; background: #0f172a; padding: 2px 8px; border-radius: 5px; letter-spacing: 0.03em; }
+    .nav-tab { padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.15s; color: #64748b; }
+    .nav-tab.active { background: #6366f1; color: white; }
+    .nav-tab:not(.active):hover { background: #1e293b; color: #e2e8f0; }
+    .pct-bar-bg { height: 4px; background: #334155; border-radius: 2px; margin-top: 4px; }
+    .pct-bar    { height: 4px; border-radius: 2px; }
+    .news-item  { padding: 10px 0; border-bottom: 1px solid #1e293b; }
+    .news-item:last-child { border-bottom: none; }
+    .pulse { animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+    .skeleton { background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%); background-size: 200%; animation: shimmer 1.5s infinite; border-radius: 6px; }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    .sort-asc::after  { content: ' ↑'; }
+    .sort-desc::after { content: ' ↓'; }
+    .badge { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 99px; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+<!-- ── TOP BAR ── -->
+<header class="glass sticky top-0 z-50 px-6 py-3 flex items-center justify-between mb-0" style="margin:0;border-radius:0;border-left:0;border-right:0;border-top:0;">
+  <div class="flex items-center gap-3">
+    <div class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white font-bold text-sm">P</div>
+    <div>
+      <div class="font-semibold text-sm text-white">My Portfolio</div>
+      <div class="text-xs text-slate-500" id="last-updated">Loading…</div>
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    <div class="hidden sm:flex items-center gap-1 text-xs text-slate-500">
+      <span class="w-2 h-2 rounded-full bg-up-DEFAULT pulse inline-block"></span>
+      <span id="market-status">—</span>
+    </div>
+    <button onclick="refreshAll()" class="text-xs px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-300 transition">↻ Refresh</button>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+  <!-- ── STAT CARDS ── -->
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="stat-cards">
+    <div class="card stat-card">
+      <div class="stat-label">Total Invested</div>
+      <div class="stat-value text-white" id="s-invested">—</div>
+      <div class="stat-sub" id="s-stocks">— holdings</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-label">Current Value</div>
+      <div class="stat-value" id="s-current">—</div>
+      <div class="stat-sub" id="s-current-sub"></div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-label">Total P&amp;L</div>
+      <div class="stat-value" id="s-pnl">—</div>
+      <div class="stat-sub" id="s-pnl-sub"></div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-label">Overall Return</div>
+      <div class="stat-value" id="s-pct">—</div>
+      <div class="stat-sub">From cost basis</div>
+    </div>
+  </div>
+
+  <!-- ── RUNNERS + DRAGGERS ── -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="card p-4">
+      <h3 class="text-sm font-semibold text-up-DEFAULT mb-3">🚀 Top Runners (Today)</h3>
+      <div id="runners-list" class="space-y-2"></div>
+    </div>
+    <div class="card p-4">
+      <h3 class="text-sm font-semibold text-down-DEFAULT mb-3">🔻 Top Draggers (Today)</h3>
+      <div id="draggers-list" class="space-y-2"></div>
+    </div>
+  </div>
+
+  <!-- ── P&L BAR CHART ── -->
+  <div class="card p-4">
+    <h3 class="text-sm font-semibold text-white mb-4">Portfolio Returns by Stock (%)</h3>
+    <div style="height:220px; overflow-x:auto;">
+      <canvas id="pnl-chart"></canvas>
+    </div>
+  </div>
+
+  <!-- ── TAB NAVIGATION ── -->
+  <div class="flex gap-2 overflow-x-auto pb-1">
+    <button class="nav-tab active" onclick="switchTab('holdings')" id="tab-holdings">Holdings</button>
+    <button class="nav-tab" onclick="switchTab('news')" id="tab-news">News</button>
+    <button class="nav-tab" onclick="switchTab('recommendations')" id="tab-recommendations">Recommendations</button>
+    <button class="nav-tab" onclick="switchTab('corporate')" id="tab-corporate">Corporate Actions</button>
+  </div>
+
+  <!-- ── HOLDINGS TABLE ── -->
+  <div id="panel-holdings" class="card overflow-hidden">
+    <div class="p-4 border-b border-slate-700 flex items-center justify-between">
+      <h3 class="text-sm font-semibold text-white">All Holdings</h3>
+      <input type="text" placeholder="Search ticker…" oninput="filterTable(this.value)"
+             class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-600 text-slate-300 w-32 focus:outline-none focus:border-brand" />
+    </div>
+    <div style="max-height:520px;overflow-y:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortTable('display')">Ticker</th>
+            <th onclick="sortTable('qty')" class="text-right">Qty</th>
+            <th onclick="sortTable('avg_buy_price')" class="text-right">Cost</th>
+            <th onclick="sortTable('current_price')" class="text-right">CMP</th>
+            <th onclick="sortTable('invested')" class="text-right">Invested</th>
+            <th onclick="sortTable('current_value')" class="text-right">Value</th>
+            <th onclick="sortTable('pnl')" class="text-right">P&amp;L</th>
+            <th onclick="sortTable('pnl_pct')" class="text-right">Return</th>
+          </tr>
+        </thead>
+        <tbody id="holdings-body"></tbody>
+      </table>
+    </div>
+    <div id="holdings-footer" class="p-3 border-t border-slate-700 text-xs text-slate-500 text-right"></div>
+  </div>
+
+  <!-- ── NEWS PANEL ── -->
+  <div id="panel-news" class="hidden space-y-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="card p-4">
+        <h3 class="text-sm font-semibold text-white mb-3">📦 Your Holdings News</h3>
+        <div id="news-holdings" class="space-y-1"></div>
+      </div>
+      <div class="card p-4">
+        <h3 class="text-sm font-semibold text-white mb-3">📊 Market Headlines</h3>
+        <div id="news-market"></div>
+      </div>
+    </div>
+    <div class="card p-4">
+      <h3 class="text-sm font-semibold text-white mb-3">⚡ 5-10x Watchlist News</h3>
+      <div id="news-momentum" class="grid grid-cols-1 md:grid-cols-2 gap-x-6"></div>
+    </div>
+    <div class="text-xs text-slate-600 text-center" id="news-date"></div>
+  </div>
+
+  <!-- ── RECOMMENDATIONS PANEL ── -->
+  <div id="panel-recommendations" class="hidden space-y-4">
+    <div class="card p-4">
+      <div class="flex items-start gap-3 p-3 rounded-lg mb-4" style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2)">
+        <span class="text-xl">📌</span>
+        <p class="text-xs text-slate-400 leading-relaxed" id="rec-note"></p>
+      </div>
+      <div id="rec-list" class="space-y-2"></div>
+    </div>
+    <div class="text-xs text-slate-600 text-center" id="rec-date"></div>
+  </div>
+
+  <!-- ── CORPORATE ACTIONS PANEL ── -->
+  <div id="panel-corporate" class="hidden">
+    <div class="card overflow-hidden">
+      <div class="p-4 border-b border-slate-700">
+        <h3 class="text-sm font-semibold text-white">Recent & Upcoming Events</h3>
+        <p class="text-xs text-slate-500 mt-0.5">Dividends · Splits · Earnings · Ex-dividend dates</p>
+      </div>
+      <div id="ca-list" class="p-4 space-y-2"></div>
+      <div class="p-3 border-t border-slate-700 text-xs text-slate-600">
+        📂 = your portfolio &nbsp;|&nbsp; Sources: yfinance · Data may be delayed
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="text-center text-xs text-slate-700 py-6">
+  Auto-updated by GitHub Actions · Data via yfinance · Not financial advice
+</footer>
+
+<script>
+// ── DATA PATHS ──────────────────────────────────────────────────────────────
+const BASE = './data';
+const PATHS = {
+  snapshot:      `${BASE}/portfolio_snapshot.json`,
+  news:          `${BASE}/news_digest.json`,
+  recommendations:`${BASE}/recommendations.json`,
+  corporate:     `${BASE}/corporate_actions.json`,
+};
+
+// ── STATE ───────────────────────────────────────────────────────────────────
+let _holdings = [];
+let _sortKey  = 'invested';
+let _sortAsc  = false;
+let _filter   = '';
+let _pnlChart = null;
+
+// ── UTILS ───────────────────────────────────────────────────────────────────
+const fmt = {
+  inr:  v => v != null ? '₹' + Number(v).toLocaleString('en-IN', {maximumFractionDigits:0}) : '—',
+  inr2: v => v != null ? '₹' + Number(v).toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2}) : '—',
+  pct:  v => v != null ? (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%' : '—',
+  ts:   s => { if(!s) return '—'; const d = new Date(s); return d.toLocaleString('en-IN',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'})+' IST'; },
+};
+
+function pctColor(v) {
+  if (v > 0)  return 'color:#34d399';
+  if (v < 0)  return 'color:#f87171';
+  return 'color:#94a3b8';
+}
+
+async function loadJSON(path) {
+  const r = await fetch(path + '?t=' + Date.now());
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+
+// ── MARKET STATUS ───────────────────────────────────────────────────────────
+function checkMarketStatus() {
+  const now = new Date();
+  const ist = new Date(now.toLocaleString('en-US', {timeZone: 'Asia/Kolkata'}));
+  const day = ist.getDay(); // 0=Sun,6=Sat
+  const h   = ist.getHours(), m = ist.getMinutes();
+  const mins = h * 60 + m;
+  const open = 9*60+15, close = 15*60+30;
+  const el = document.getElementById('market-status');
+  if (day === 0 || day === 6) {
+    el.textContent = 'NSE Closed (Weekend)'; el.style.color = '#94a3b8';
+  } else if (mins >= open && mins <= close) {
+    el.textContent = 'NSE Open'; el.style.color = '#34d399';
+  } else {
+    el.textContent = 'NSE Closed'; el.style.color = '#94a3b8';
+  }
+}
+
+// ── SNAPSHOT ────────────────────────────────────────────────────────────────
+async function loadSnapshot() {
+  const d = await loadJSON(PATHS.snapshot);
+
+  // header timestamp
+  document.getElementById('last-updated').textContent =
+    d.timestamp ? 'Updated ' + fmt.ts(d.timestamp) : 'Not yet fetched — run portfolio_update_agent.py';
+
+  // stat cards
+  const pct = d.total_pnl_pct ?? 0;
+  const pnl = d.total_pnl    ?? 0;
+
+  set('s-invested', fmt.inr(d.total_invested), '');
+  set('s-stocks',   (d.holdings?.length ?? 0) + ' holdings', '');
+
+  setWithColor('s-current',     fmt.inr(d.total_current), pct,
+               's-current-sub', fmt.pct(pct));
+
+  setWithColor('s-pnl',         (pnl >= 0 ? '+' : '') + fmt.inr(Math.abs(pnl)), pnl,
+               's-pnl-sub',     fmt.pct(pct));
+
+  setWithColor('s-pct', fmt.pct(pct), pct);
+
+  // runners
+  renderLeaderboard('runners-list',  d.runners  ?? [], true);
+  renderLeaderboard('draggers-list', d.draggers ?? [], false);
+
+  // table
+  _holdings = d.holdings ?? [];
+  renderTable();
+
+  // chart
+  renderChart(d.holdings ?? []);
+}
+
+function set(id, val, sub) {
+  document.getElementById(id).textContent = val;
+  if (sub !== undefined) {
+    const el = document.getElementById(id.replace(/-current|-pnl|s-invested/, '') + '-sub');
+    if (el) el.textContent = sub;
+  }
+}
+
+function setWithColor(valId, val, colorVal, subId, subVal) {
+  const el = document.getElementById(valId);
+  el.textContent  = val;
+  el.style.cssText = colorVal > 0 ? 'color:#34d399' : colorVal < 0 ? 'color:#f87171' : 'color:#e2e8f0';
+  if (subId && subVal !== undefined) {
+    const sub = document.getElementById(subId);
+    if (sub) { sub.textContent = subVal; sub.style.cssText = el.style.cssText; }
+  }
+}
+
+function renderLeaderboard(containerId, items, isRunners) {
+  const el = document.getElementById(containerId);
+  if (!items.length) {
+    el.innerHTML = '<p class="text-xs text-slate-600">No data yet</p>';
+    return;
+  }
+  el.innerHTML = items.map(h => {
+    const pct  = h.pnl_pct ?? 0;
+    const sign = pct > 0 ? '+' : '';
+    const cls  = pct > 0 ? 'tag-up' : 'tag-down';
+    const barW = Math.min(Math.abs(pct) * 3, 100);
+    const barC = pct > 0 ? '#34d399' : '#f87171';
+    return `
+      <div class="flex items-center justify-between gap-3">
+        <span class="ticker-chip text-white flex-shrink-0">${h.display}</span>
+        <div class="flex-1 min-w-0">
+          <div class="pct-bar-bg"><div class="pct-bar" style="width:${barW}%;background:${barC}"></div></div>
+        </div>
+        <span class="badge ${cls}">${sign}${pct.toFixed(1)}%</span>
+        <span class="text-xs text-slate-400 flex-shrink-0 w-20 text-right">₹${Number(h.current_price).toLocaleString('en-IN',{maximumFractionDigits:1})}</span>
+      </div>`;
+  }).join('');
+}
+
+// ── P&L CHART ───────────────────────────────────────────────────────────────
+function renderChart(holdings) {
+  const ctx = document.getElementById('pnl-chart').getContext('2d');
+  const sorted = [...holdings].sort((a,b) => (b.pnl_pct??0) - (a.pnl_pct??0));
+  const labels = sorted.map(h => h.display);
+  const data   = sorted.map(h => +(h.pnl_pct??0).toFixed(2));
+  const colors = data.map(v => v >= 0 ? 'rgba(16,185,129,0.75)' : 'rgba(239,68,68,0.75)');
+
+  if (_pnlChart) _pnlChart.destroy();
+  _pnlChart = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderRadius: 4, borderSkipped: false }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: {
+        callbacks: { label: ctx => ` ${ctx.raw}%` },
+        backgroundColor: '#1e293b', titleColor: '#94a3b8', bodyColor: '#e2e8f0', borderColor: '#334155', borderWidth: 1,
+      }},
+      scales: {
+        x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e293b' } },
+        y: { ticks: { color: '#64748b', font: { size: 10 }, callback: v => v + '%' }, grid: { color: '#334155' } },
+      }
+    }
+  });
+}
+
+// ── HOLDINGS TABLE ───────────────────────────────────────────────────────────
+function renderTable() {
+  const filtered = _holdings.filter(h =>
+    !_filter || h.display.toLowerCase().includes(_filter.toLowerCase()) ||
+    h.ticker.toLowerCase().includes(_filter.toLowerCase())
+  );
+  const sorted = [...filtered].sort((a,b) => {
+    const av = a[_sortKey] ?? 0, bv = b[_sortKey] ?? 0;
+    if (typeof av === 'string') return _sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+    return _sortAsc ? av - bv : bv - av;
+  });
+
+  const tbody = document.getElementById('holdings-body');
+  tbody.innerHTML = sorted.map(h => {
+    const pct = h.pnl_pct ?? 0;
+    const pnl = h.pnl ?? 0;
+    const cs  = pct > 0 ? 'color:#34d399' : pct < 0 ? 'color:#f87171' : 'color:#94a3b8';
+    const tag = pct > 0 ? 'tag-up' : pct < 0 ? 'tag-down' : 'tag-neutral';
+    return `<tr>
+      <td><span class="ticker-chip" style="color:#a5b4fc">${h.display}</span></td>
+      <td class="text-right text-slate-300">${h.qty?.toLocaleString('en-IN') ?? '—'}</td>
+      <td class="text-right text-slate-400">${fmt.inr2(h.avg_buy_price)}</td>
+      <td class="text-right font-medium" style="${cs}">${fmt.inr2(h.current_price)}</td>
+      <td class="text-right text-slate-400">${fmt.inr(h.invested)}</td>
+      <td class="text-right font-medium text-white">${fmt.inr(h.current_value)}</td>
+      <td class="text-right" style="${cs}">${pnl >= 0 ? '+' : ''}${fmt.inr(pnl)}</td>
+      <td class="text-right"><span class="badge ${tag}">${fmt.pct(pct)}</span></td>
+    </tr>`;
+  }).join('');
+
+  // footer totals
+  const ti  = sorted.reduce((s,h) => s + (h.invested ?? 0), 0);
+  const tc  = sorted.reduce((s,h) => s + (h.current_value ?? 0), 0);
+  const tp  = tc - ti;
+  const tpc = ti ? (tp/ti*100) : 0;
+  document.getElementById('holdings-footer').innerHTML =
+    `${sorted.length} stocks &nbsp;|&nbsp; Invested: ${fmt.inr(ti)} &nbsp;|&nbsp; Value: ${fmt.inr(tc)} &nbsp;|&nbsp; P&L: <span style="${tpc>=0?'color:#34d399':'color:#f87171'}">${tpc>=0?'+':''}${fmt.inr(tp)} (${fmt.pct(tpc)})</span>`;
+}
+
+function sortTable(key) {
+  if (_sortKey === key) _sortAsc = !_sortAsc;
+  else { _sortKey = key; _sortAsc = false; }
+  document.querySelectorAll('th').forEach(th => { th.classList.remove('sort-asc','sort-desc'); });
+  document.querySelectorAll('th').forEach(th => {
+    if (th.textContent.trim().toLowerCase().startsWith(key.replace('_',' '))) {
+      th.classList.add(_sortAsc ? 'sort-asc' : 'sort-desc');
+    }
+  });
+  renderTable();
+}
+
+function filterTable(val) {
+  _filter = val;
+  renderTable();
+}
+
+// ── NEWS ─────────────────────────────────────────────────────────────────────
+async function loadNews() {
+  const d = await loadJSON(PATHS.news);
+  document.getElementById('news-date').textContent = d.date ? 'Digest for ' + d.date : '';
+
+  // Holdings news
+  const hEl = document.getElementById('news-holdings');
+  const hn  = d.holding_news ?? {};
+  const hnKeys = Object.keys(hn);
+  if (!hnKeys.length) {
+    hEl.innerHTML = '<p class="text-xs text-slate-600">No news fetched yet</p>';
+  } else {
+    hEl.innerHTML = hnKeys.slice(0,10).map(ticker => {
+      const items = hn[ticker];
+      const display = ticker.replace('.NS','').replace('.BO','');
+      return items.slice(0,1).map(n => `
+        <div class="news-item">
+          <a href="${n.link||'#'}" target="_blank" rel="noopener" class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${n.title}</a>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="badge tag-neutral">${display}</span>
+            <span class="text-xs text-slate-600">${n.publisher || ''} · ${n.age_h ? n.age_h+'h ago' : ''}</span>
+          </div>
+        </div>`).join('');
+    }).join('');
+  }
+
+  // Market headlines
+  const mEl = document.getElementById('news-market');
+  const mh  = d.market_headlines ?? [];
+  if (!mh.length) {
+    mEl.innerHTML = '<p class="text-xs text-slate-600">No headlines fetched yet. Add feedparser to requirements.txt</p>';
+  } else {
+    mEl.innerHTML = mh.slice(0,8).map(h => `
+      <div class="news-item">
+        <a href="${h.link||'#'}" target="_blank" rel="noopener" class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${h.title}</a>
+        <span class="text-xs text-slate-600">${h.source}</span>
+      </div>`).join('');
+  }
+
+  // Momentum
+  const wEl = document.getElementById('news-momentum');
+  const mn  = d.momentum_news ?? {};
+  const mnKeys = Object.keys(mn);
+  if (!mnKeys.length) {
+    wEl.innerHTML = '<p class="text-xs text-slate-600">No watchlist news yet</p>';
+  } else {
+    wEl.innerHTML = mnKeys.slice(0,12).map(ticker => {
+      const items = mn[ticker];
+      const display = ticker.replace('.NS','').replace('.BO','');
+      return items.slice(0,1).map(n => `
+        <div class="news-item">
+          <div class="flex items-center gap-2 mb-0.5">
+            <span class="badge" style="background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.3)">${display}</span>
+          </div>
+          <a href="${n.link||'#'}" target="_blank" rel="noopener" class="text-xs text-slate-400 hover:text-white">${n.title}</a>
+        </div>`).join('');
+    }).join('');
+  }
+}
+
+// ── RECOMMENDATIONS ──────────────────────────────────────────────────────────
+async function loadRecommendations() {
+  const d = await loadJSON(PATHS.recommendations);
+  document.getElementById('rec-date').textContent = d.timestamp ? 'Generated ' + fmt.ts(d.timestamp) : '';
+  document.getElementById('rec-note').textContent = d.investment_note || '';
+
+  const recs = d.recommendations ?? [];
+  if (!recs.length) {
+    document.getElementById('rec-list').innerHTML = '<p class="text-xs text-slate-600">No recommendations yet — run recommendation_agent.py</p>';
+    return;
+  }
+
+  const actionClass = a => {
+    if (a.includes('STRONG')) return 'action-green';
+    if (a.includes('ACCUMULATE')) return 'action-blue';
+    if (a.includes('REVIEW')) return 'action-red';
+    if (a.includes('MONITOR')) return 'action-yellow';
+    return 'action-gray';
+  };
+
+  document.getElementById('rec-list').innerHTML = recs.map(r => `
+    <div class="${actionClass(r.action)} rounded-lg p-3 mb-2">
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="text-lg">${r.action_emoji || '⚪'}</span>
+          <div>
+            <span class="font-semibold text-sm">${r.display}</span>
+            <span class="text-xs ml-2 opacity-70">${r.sector || ''}</span>
+          </div>
+        </div>
+        <div class="text-right flex-shrink-0">
+          <div class="text-xs font-medium" style="${(r.pnl_pct??0)>=0?'color:#34d399':'color:#f87171'}">${fmt.pct(r.pnl_pct)}</div>
+          <div class="text-xs opacity-60">Score: ${r.momentum_score >= 0 ? '+' : ''}${r.momentum_score}</div>
+        </div>
+      </div>
+      <div class="mt-1.5 text-xs font-semibold">${r.action}</div>
+      <div class="mt-1 flex flex-wrap gap-1">
+        ${(r.signals||[]).slice(0,3).map(s => `<span class="text-xs opacity-70">• ${s}</span>`).join(' ')}
+      </div>
+      <div class="mt-1.5 flex gap-3 text-xs opacity-50">
+        ${r.rsi ? `RSI: ${r.rsi}` : ''} ${r.trend ? `· ${r.trend}` : ''} ${r.macd ? `· ${r.macd}` : ''}
+      </div>
+    </div>`).join('');
+}
+
+// ── CORPORATE ACTIONS ────────────────────────────────────────────────────────
+async function loadCorporate() {
+  const d = await loadJSON(PATHS.corporate);
+  const highlights = d.highlights ?? [];
+  const el = document.getElementById('ca-list');
+
+  if (!highlights.length) {
+    el.innerHTML = '<p class="text-xs text-slate-600">No corporate actions found yet — run corporate_action_agent.py</p>';
+    return;
+  }
+
+  const typeColor = t => {
+    if (t === 'Dividend') return '#34d399';
+    if (t === 'Stock Split') return '#818cf8';
+    if (t.includes('Earnings')) return '#facc15';
+    return '#94a3b8';
+  };
+
+  el.innerHTML = highlights.map(ev => `
+    <div class="flex items-center justify-between gap-4 p-3 rounded-lg" style="background:rgba(15,23,42,0.5);border:1px solid #334155">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+             style="background:rgba(30,41,59,1);font-size:0.8rem;color:${typeColor(ev.type)}">
+          ${ev.type === 'Dividend' ? '💰' : ev.type === 'Stock Split' ? '✂️' : '📅'}
+        </div>
+        <div>
+          <span class="font-semibold text-sm text-white">${ev.display}</span>
+          ${ev.in_portfolio ? '<span class="ml-1 text-xs text-brand-light">📂</span>' : ''}
+          <div class="text-xs text-slate-500 mt-0.5">${ev.type}${ev.detail ? ' · ' + ev.detail : ''}</div>
+        </div>
+      </div>
+      <div class="text-xs text-slate-500 flex-shrink-0">${ev.date}</div>
+    </div>`).join('');
+}
+
+// ── TAB SWITCHING ────────────────────────────────────────────────────────────
+const PANELS = ['holdings','news','recommendations','corporate'];
+
+function switchTab(name) {
+  PANELS.forEach(p => {
+    document.getElementById('panel-' + p).classList.toggle('hidden', p !== name);
+    document.getElementById('tab-' + p).classList.toggle('active', p === name);
+  });
+}
+
+// ── REFRESH ALL ──────────────────────────────────────────────────────────────
+async function refreshAll() {
+  checkMarketStatus();
+  const btn = document.querySelector('button[onclick="refreshAll()"]');
+  btn.textContent = '↻ Loading…';
+  try {
+    await Promise.allSettled([
+      loadSnapshot().catch(e => console.error('snapshot:', e)),
+      loadNews().catch(e => console.error('news:', e)),
+      loadRecommendations().catch(e => console.error('recs:', e)),
+      loadCorporate().catch(e => console.error('corporate:', e)),
+    ]);
+  } finally {
+    btn.textContent = '↻ Refresh';
+  }
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────────
+refreshAll();
+setInterval(checkMarketStatus, 60_000);
+</script>
+</body>
+</html>

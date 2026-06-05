@@ -1,0 +1,33 @@
+{
+  "holdings": [
+    { "ticker": "ADANIENT.NS",   "qty": 1,    "avg_buy_price": 1886.20, "currency": "INR" },
+    { "ticker": "BEL.NS",        "qty": 649,  "avg_buy_price": 415.59,  "currency": "INR" },
+    { "ticker": "CAMS.NS",       "qty": 1000, "avg_buy_price": 766.10,  "currency": "INR" },
+    { "ticker": "CGPOWER.NS",    "qty": 373,  "avg_buy_price": 808.00,  "currency": "INR" },
+    { "ticker": "COFORGE.NS",    "qty": 100,  "avg_buy_price": 1403.70, "currency": "INR" },
+    { "ticker": "CYIENT.NS",     "qty": 300,  "avg_buy_price": 860.00,  "currency": "INR" },
+    { "ticker": "DATAPATTNS.NS", "qty": 25,   "avg_buy_price": 3795.70, "currency": "INR" },
+    { "ticker": "DELHIVERY.NS",  "qty": 500,  "avg_buy_price": 441.10,  "currency": "INR" },
+    { "ticker": "EIDPARRY.NS",   "qty": 630,  "avg_buy_price": 769.77,  "currency": "INR" },
+    { "ticker": "GEOJITFSL.NS",  "qty": 1010, "avg_buy_price": 57.03,   "currency": "INR" },
+    { "ticker": "IDFCFIRSTB.NS", "qty": 2000, "avg_buy_price": 59.99,   "currency": "INR" },
+    { "ticker": "IEX.NS",        "qty": 3000, "avg_buy_price": 129.11,  "currency": "INR" },
+    { "ticker": "KAYNES.NS",     "qty": 200,  "avg_buy_price": 3092.03, "currency": "INR" },
+    { "ticker": "OLAELEC.NS",    "qty": 2500, "avg_buy_price": 40.42,   "currency": "INR" },
+    { "ticker": "PARAS.NS",      "qty": 400,  "avg_buy_price": 725.00,  "currency": "INR" },
+    { "ticker": "PVRINOX.NS",    "qty": 200,  "avg_buy_price": 962.54,  "currency": "INR" },
+    { "ticker": "RAYMONDLSL.NS", "qty": 350,  "avg_buy_price": 731.54,  "currency": "INR" },
+    { "ticker": "RELIANCE.NS",   "qty": 103,  "avg_buy_price": 1365.14, "currency": "INR" },
+    { "ticker": "SPMLINFRA.NS",  "qty": 1000, "avg_buy_price": 189.05,  "currency": "INR" },
+    { "ticker": "TMCV.NS",       "qty": 300,  "avg_buy_price": 376.95,  "currency": "INR" },
+    { "ticker": "TMPV.NS",       "qty": 500,  "avg_buy_price": 362.40,  "currency": "INR" },
+    { "ticker": "RECLTD.NS",     "qty": 900,  "avg_buy_price": 334.55,  "currency": "INR" },
+    { "ticker": "SHAKTIPUMP.NS", "qty": 300,  "avg_buy_price": 480.30,  "currency": "INR" },
+    { "ticker": "TATACAPITAL.NS","qty": 800,  "avg_buy_price": 305.21,  "currency": "INR" },
+    { "ticker": "BANDHANBNK.NS", "qty": 1000, "avg_buy_price": 196.74,  "currency": "INR" },
+    { "ticker": "TEJASNET.NS",   "qty": 400,  "avg_buy_price": 405.51,  "currency": "INR" },
+    { "ticker": "CONTROLPR.NS",  "qty": 643,  "avg_buy_price": 621.19,  "currency": "INR" },
+    { "ticker": "MOSCHIP.NS",    "qty": 1087, "avg_buy_price": 202.29,  "currency": "INR" },
+    { "ticker": "SWIGGY.NS",     "qty": 500,  "avg_buy_price": 252.00,  "currency": "INR" }
+  ]
+}

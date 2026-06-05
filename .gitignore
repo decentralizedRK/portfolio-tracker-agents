@@ -1,0 +1,23 @@
+# Secrets — never commit
+.env
+
+# Runtime state
+alert_state.json
+agent.log
+agent.log.*
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Data files are committed by GitHub Actions (not ignored)
+# data/         ← tracked
+# docs/data/    ← tracked

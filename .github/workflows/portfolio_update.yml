@@ -1,0 +1,58 @@
+name: Portfolio Update (Hourly)
+
+# Runs every hour at :45 from 03:45–09:45 UTC = 09:15–15:15 IST
+# The agent itself checks exchange_calendar.is_open("NSE") — skips on holidays.
+on:
+  schedule:
+    - cron: '45 3,4,5,6,7,8,9 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force run even if market closed'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run portfolio update agent
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python agents/portfolio_update_agent.py --force
+          else
+            python agents/portfolio_update_agent.py
+          fi
+
+      - name: Copy data to docs
+        run: |
+          mkdir -p docs/data
+          cp data/portfolio_snapshot.json docs/data/ 2>/dev/null || true
+
+      - name: Commit & push snapshot
+        run: |
+          git config user.name  "portfolio-bot[bot]"
+          git config user.email "portfolio-bot@users.noreply.github.com"
+          git add data/portfolio_snapshot.json docs/data/portfolio_snapshot.json
+          git diff --staged --quiet || git commit -m "chore: portfolio snapshot $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
