@@ -249,6 +249,12 @@ function pctColor(v) {
   return 'color:#94a3b8';
 }
 
+function tvUrl(ticker) {
+  if (ticker.endsWith('.NS')) return `https://www.tradingview.com/chart/?symbol=NSE:${ticker.replace('.NS','')}`;
+  if (ticker.endsWith('.BO')) return `https://www.tradingview.com/chart/?symbol=BSE:${ticker.replace('.BO','')}`;
+  return `https://www.tradingview.com/chart/?symbol=${ticker}`;
+}
+
 async function loadJSON(path) {
   const r = await fetch(path + '?t=' + Date.now());
   if (!r.ok) throw new Error(r.status);
@@ -340,7 +346,7 @@ function renderLeaderboard(containerId, items, isRunners) {
     const barC = pct > 0 ? '#34d399' : '#f87171';
     return `
       <div class="flex items-center justify-between gap-3">
-        <span class="ticker-chip text-white flex-shrink-0">${h.display}</span>
+        <a href="${tvUrl(h.ticker)}" target="_blank" rel="noopener" class="ticker-chip text-white flex-shrink-0 hover:text-brand-light transition-colors" style="text-decoration:none">${h.display} ↗</a>
         <div class="flex-1 min-w-0">
           <div class="pct-bar-bg"><div class="pct-bar" style="width:${barW}%;background:${barC}"></div></div>
         </div>
@@ -395,7 +401,7 @@ function renderTable() {
     const cs  = pct > 0 ? 'color:#34d399' : pct < 0 ? 'color:#f87171' : 'color:#94a3b8';
     const tag = pct > 0 ? 'tag-up' : pct < 0 ? 'tag-down' : 'tag-neutral';
     return `<tr>
-      <td><span class="ticker-chip" style="color:#a5b4fc">${h.display}</span></td>
+      <td><a href="${tvUrl(h.ticker)}" target="_blank" rel="noopener" class="ticker-chip hover:text-white transition-colors" style="color:#a5b4fc;text-decoration:none">${h.display} ↗</a></td>
       <td class="text-right text-slate-300">${h.qty?.toLocaleString('en-IN') ?? '—'}</td>
       <td class="text-right text-slate-400">${fmt.inr2(h.avg_buy_price)}</td>
       <td class="text-right font-medium" style="${cs}">${fmt.inr2(h.current_price)}</td>
@@ -451,7 +457,7 @@ async function loadNews() {
         <div class="news-item">
           <a href="${n.link||'#'}" target="_blank" rel="noopener" class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${n.title}</a>
           <div class="flex items-center gap-2 mt-1">
-            <span class="badge tag-neutral">${display}</span>
+            <a href="${tvUrl(ticker)}" target="_blank" rel="noopener" class="badge tag-neutral hover:opacity-80 transition-opacity" style="text-decoration:none">${display} ↗</a>
             <span class="text-xs text-slate-600">${n.publisher || ''} · ${n.age_h ? n.age_h+'h ago' : ''}</span>
           </div>
         </div>`).join('');
@@ -484,7 +490,7 @@ async function loadNews() {
       return items.slice(0,1).map(n => `
         <div class="news-item">
           <div class="flex items-center gap-2 mb-0.5">
-            <span class="badge" style="background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.3)">${display}</span>
+            <a href="${tvUrl(ticker)}" target="_blank" rel="noopener" class="badge hover:opacity-80 transition-opacity" style="background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.3);text-decoration:none">${display} ↗</a>
           </div>
           <a href="${n.link||'#'}" target="_blank" rel="noopener" class="text-xs text-slate-400 hover:text-white">${n.title}</a>
         </div>`).join('');
@@ -518,7 +524,7 @@ async function loadRecommendations() {
         <div class="flex items-center gap-2">
           <span class="text-lg">${r.action_emoji || '⚪'}</span>
           <div>
-            <span class="font-semibold text-sm">${r.display}</span>
+            <a href="${tvUrl(r.ticker)}" target="_blank" rel="noopener" class="font-semibold text-sm hover:opacity-80 transition-opacity" style="text-decoration:none">${r.display} ↗</a>
             <span class="text-xs ml-2 opacity-70">${r.sector || ''}</span>
           </div>
         </div>
@@ -563,7 +569,7 @@ async function loadCorporate() {
           ${ev.type === 'Dividend' ? '💰' : ev.type === 'Stock Split' ? '✂️' : '📅'}
         </div>
         <div>
-          <span class="font-semibold text-sm text-white">${ev.display}</span>
+          <a href="${tvUrl(ev.ticker)}" target="_blank" rel="noopener" class="font-semibold text-sm text-white hover:text-brand-light transition-colors" style="text-decoration:none">${ev.display} ↗</a>
           ${ev.in_portfolio ? '<span class="ml-1 text-xs text-brand-light">📂</span>' : ''}
           <div class="text-xs text-slate-500 mt-0.5">${ev.type}${ev.detail ? ' · ' + ev.detail : ''}</div>
         </div>
