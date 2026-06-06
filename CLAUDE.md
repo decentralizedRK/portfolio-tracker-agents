@@ -134,14 +134,14 @@ Telegram's Bot API is completely free, has no rate-limit fees, and works without
 
 ### One-Time Setup (user does this once)
 1. Open Telegram and search for **@BotFather**.
-2. Send `/newbot`, follow the prompts, and copy the **bot token** (looks like `110201543:AAHdqTcvCH1vGWJxfSeofSs4tq0tbvAHpzs`).
+2. Send `/newbot`, follow the prompts, and copy the **bot token** (format: `<BOT_ID>:<ALPHANUMERIC_SECRET>`).
 3. Start a chat with your new bot, then visit:
    `https://api.telegram.org/bot<TOKEN>/getUpdates`
    Send any message to the bot first, then refresh — copy your **chat\_id** from the JSON response.
 4. Store both in `.env`:
    ```
-   TELEGRAM_BOT_TOKEN=110201543:AAHdqTcvCH1vGWJxfSeofSs4tq0tbvAHpzs
-   TELEGRAM_CHAT_ID=123456789
+   TELEGRAM_BOT_TOKEN=<your_bot_token_here>
+   TELEGRAM_CHAT_ID=<your_chat_id_here>
    ```
 
 ### API Call
@@ -193,8 +193,8 @@ notifications:
 
 All secrets must be in environment variables, not hardcoded:
 ```bash
-export TELEGRAM_BOT_TOKEN="110201543:AAHdqTcvCH1vGWJxfSeofSs4tq0tbvAHpzs"
-export TELEGRAM_CHAT_ID="123456789"
+export TELEGRAM_BOT_TOKEN="<your_bot_token_here>"
+export TELEGRAM_CHAT_ID="<your_chat_id_here>"
 ```
 
 ---
