@@ -2,9 +2,15 @@ import logging
 from datetime import datetime, time, timedelta
 
 import pytz
-import pandas_market_calendars as mcal
 
 log = logging.getLogger(__name__)
+
+try:
+    import pandas_market_calendars as mcal
+    _HAS_MCal = True
+except Exception:
+    _HAS_MCal = False
+    log.warning("pandas_market_calendars unavailable — falling back to weekday check")
 
 _TZ = {
     "NSE":    pytz.timezone("Asia/Kolkata"),
@@ -32,6 +38,8 @@ IST = pytz.timezone("Asia/Kolkata")
 
 
 def _calendar(exchange: str):
+    if not _HAS_MCal:
+        return None
     return mcal.get_calendar(_CAL_ID[exchange])
 
 
@@ -42,12 +50,17 @@ def is_open(exchange: str) -> bool:
     now = datetime.now(tz)
     today_str = now.strftime("%Y-%m-%d")
 
-    try:
-        schedule = _calendar(exchange).schedule(start_date=today_str, end_date=today_str)
-        if schedule.empty:
-            return False
-    except Exception as e:
-        log.warning("Holiday calendar check failed for %s (%s) — falling back to weekday check", exchange, e)
+    cal = _calendar(exchange)
+    if cal is not None:
+        try:
+            schedule = cal.schedule(start_date=today_str, end_date=today_str)
+            if schedule.empty:
+                return False
+        except Exception as e:
+            log.warning("Holiday calendar check failed for %s (%s) — falling back to weekday check", exchange, e)
+            if now.weekday() >= 5:
+                return False
+    else:
         if now.weekday() >= 5:
             return False
 
@@ -65,13 +78,18 @@ def next_open_ist(exchange: str) -> str:
     if now.time() >= open_t:
         candidate += timedelta(days=1)
 
+    cal = _calendar(exchange)
     for _ in range(10):
         day_str = candidate.strftime("%Y-%m-%d")
-        try:
-            schedule = _calendar(exchange).schedule(start_date=day_str, end_date=day_str)
-            if not schedule.empty:
-                break
-        except Exception:
+        if cal is not None:
+            try:
+                schedule = cal.schedule(start_date=day_str, end_date=day_str)
+                if not schedule.empty:
+                    break
+            except Exception:
+                if candidate.weekday() < 5:
+                    break
+        else:
             if candidate.weekday() < 5:
                 break
         candidate += timedelta(days=1)
