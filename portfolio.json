@@ -23,7 +23,7 @@
     { "ticker": "TMPV.NS",       "qty": 500,  "avg_buy_price": 362.40,  "currency": "INR" },
     { "ticker": "RECLTD.NS",     "qty": 900,  "avg_buy_price": 334.55,  "currency": "INR" },
     { "ticker": "SHAKTIPUMP.NS", "qty": 300,  "avg_buy_price": 480.30,  "currency": "INR" },
-    { "ticker": "TATACAPITAL.NS","qty": 800,  "avg_buy_price": 305.21,  "currency": "INR" },
+    { "ticker": "TATACAP.NS","qty": 800,  "avg_buy_price": 305.21,  "currency": "INR" },
     { "ticker": "BANDHANBNK.NS", "qty": 1000, "avg_buy_price": 196.74,  "currency": "INR" },
     { "ticker": "TEJASNET.NS",   "qty": 400,  "avg_buy_price": 405.51,  "currency": "INR" },
     { "ticker": "CONTROLPR.NS",  "qty": 643,  "avg_buy_price": 621.19,  "currency": "INR" },
