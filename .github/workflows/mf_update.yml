@@ -1,0 +1,51 @@
+name: MF NAV Update (Daily)
+
+# AMFI publishes end-of-day NAVs at ~8 PM IST = 2:30 PM UTC
+# Run at 3:00 PM UTC (8:30 PM IST) Mon–Fri
+on:
+  schedule:
+    - cron: '0 15 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run MF NAV update agent
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python agents/mf_update_agent.py
+
+      - name: Copy data to docs
+        run: |
+          mkdir -p docs/data
+          cp data/mf_snapshot.json docs/data/ 2>/dev/null || true
+
+      - name: Commit & push snapshot
+        run: |
+          git config user.name  "portfolio-bot[bot]"
+          git config user.email "portfolio-bot@users.noreply.github.com"
+          git add data/mf_snapshot.json docs/data/mf_snapshot.json
+          git diff --staged --quiet || git commit -m "chore: MF NAV snapshot $(date -u '+%Y-%m-%d')"
+          git push
