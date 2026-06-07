@@ -1,0 +1,12 @@
+{
+  "funds": [
+    {
+      "name": "Example Fund — Replace with your fund name",
+      "scheme_code": "000000",
+      "units": 0,
+      "avg_nav": 0,
+      "sip_amount": 0,
+      "sip_date": 5
+    }
+  ]
+}

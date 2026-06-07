@@ -32,20 +32,21 @@
     ::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
     .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; }
     .glass { background: rgba(30,41,59,0.8); backdrop-filter: blur(12px); border: 1px solid rgba(51,65,85,0.5); border-radius: 12px; }
-    .tag-up   { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
-    .tag-down { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+    .tag-up      { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+    .tag-down    { background: rgba(239,68,68,0.15);  color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
     .tag-neutral { background: rgba(100,116,139,0.2); color: #94a3b8; border: 1px solid rgba(100,116,139,0.3); }
-    .action-green  { background: rgba(16,185,129,0.1); color: #10b981; border-left: 3px solid #10b981; }
-    .action-blue   { background: rgba(99,102,241,0.1); color: #818cf8; border-left: 3px solid #6366f1; }
-    .action-yellow { background: rgba(234,179,8,0.1);  color: #facc15; border-left: 3px solid #eab308; }
-    .action-red    { background: rgba(239,68,68,0.1);  color: #ef4444; border-left: 3px solid #ef4444; }
-    .action-gray   { background: rgba(100,116,139,0.1);color: #94a3b8; border-left: 3px solid #475569; }
+    .tag-soon    { background: rgba(234,179,8,0.15);  color: #facc15; border: 1px solid rgba(234,179,8,0.3); }
+    .action-green  { background: rgba(16,185,129,0.1);  color: #10b981; border-left: 3px solid #10b981; }
+    .action-blue   { background: rgba(99,102,241,0.1);  color: #818cf8; border-left: 3px solid #6366f1; }
+    .action-yellow { background: rgba(234,179,8,0.1);   color: #facc15; border-left: 3px solid #eab308; }
+    .action-red    { background: rgba(239,68,68,0.1);   color: #ef4444; border-left: 3px solid #ef4444; }
+    .action-gray   { background: rgba(100,116,139,0.1); color: #94a3b8; border-left: 3px solid #475569; }
     table { width: 100%; border-collapse: collapse; }
     th { background: #0f172a; color: #94a3b8; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 10px 14px; text-align: left; position: sticky; top: 0; cursor: pointer; user-select: none; }
     th:hover { color: #e2e8f0; }
     td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #1e293b; }
     tr:hover td { background: rgba(99,102,241,0.05); }
-    .stat-card { padding: 20px 24px; }
+    .stat-card  { padding: 20px 24px; }
     .stat-label { font-size: 0.75rem; font-weight: 500; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
     .stat-value { font-size: 1.75rem; font-weight: 700; line-height: 1.2; }
     .stat-sub   { font-size: 0.8rem; color: #64748b; margin-top: 2px; }
@@ -53,23 +54,34 @@
     .nav-tab { padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.15s; color: #64748b; }
     .nav-tab.active { background: #6366f1; color: white; }
     .nav-tab:not(.active):hover { background: #1e293b; color: #e2e8f0; }
+    .sub-tab { padding: 5px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.15s; color: #64748b; border: 1px solid #334155; }
+    .sub-tab.active { background: #334155; color: #e2e8f0; border-color: #6366f1; }
+    .sub-tab:not(.active):hover { background: #0f172a; color: #94a3b8; }
     .pct-bar-bg { height: 4px; background: #334155; border-radius: 2px; margin-top: 4px; }
     .pct-bar    { height: 4px; border-radius: 2px; }
     .news-item  { padding: 10px 0; border-bottom: 1px solid #1e293b; }
     .news-item:last-child { border-bottom: none; }
     .pulse { animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
-    .skeleton { background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%); background-size: 200%; animation: shimmer 1.5s infinite; border-radius: 6px; }
-    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
     .sort-asc::after  { content: ' ↑'; }
     .sort-desc::after { content: ' ↓'; }
     .badge { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 99px; }
+    .ca-section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 0 4px; margin-top: 8px; }
+    .sip-input { background: #0f172a; border: 1px solid #334155; border-radius: 6px; color: #e2e8f0; font-size: 0.8rem; padding: 3px 8px; width: 90px; outline: none; }
+    .sip-input:focus { border-color: #6366f1; }
+    .adhoc-input { background: #0f172a; border: 1px solid #334155; border-radius: 6px; color: #e2e8f0; font-size: 0.8rem; padding: 5px 10px; outline: none; width: 100%; }
+    .adhoc-input:focus { border-color: #6366f1; }
+    .btn-sm { font-size: 0.75rem; padding: 4px 12px; border-radius: 6px; cursor: pointer; transition: all 0.15s; font-weight: 500; }
+    .btn-primary { background: #6366f1; color: white; border: none; }
+    .btn-primary:hover { background: #4f46e5; }
+    .btn-danger  { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+    .btn-danger:hover { background: rgba(239,68,68,0.25); }
   </style>
 </head>
 <body class="min-h-screen">
 
 <!-- ── TOP BAR ── -->
-<header class="glass sticky top-0 z-50 px-6 py-3 flex items-center justify-between mb-0" style="margin:0;border-radius:0;border-left:0;border-right:0;border-top:0;">
+<header class="glass sticky top-0 z-50 px-6 py-3 flex items-center justify-between" style="border-radius:0;border-left:0;border-right:0;border-top:0;">
   <div class="flex items-center gap-3">
     <div class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white font-bold text-sm">P</div>
     <div>
@@ -79,7 +91,7 @@
   </div>
   <div class="flex items-center gap-4">
     <div class="hidden sm:flex items-center gap-1 text-xs text-slate-500">
-      <span class="w-2 h-2 rounded-full bg-up-DEFAULT pulse inline-block"></span>
+      <span class="w-2 h-2 rounded-full bg-green-500 pulse inline-block"></span>
       <span id="market-status">—</span>
     </div>
     <button onclick="refreshAll()" class="text-xs px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-300 transition">↻ Refresh</button>
@@ -89,7 +101,7 @@
 <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
 
   <!-- ── STAT CARDS ── -->
-  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="stat-cards">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
     <div class="card stat-card">
       <div class="stat-label">Total Invested</div>
       <div class="stat-value text-white" id="s-invested">—</div>
@@ -115,11 +127,11 @@
   <!-- ── RUNNERS + DRAGGERS ── -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div class="card p-4">
-      <h3 class="text-sm font-semibold text-up-DEFAULT mb-3">🚀 Top Runners (Today)</h3>
+      <h3 class="text-sm font-semibold text-green-400 mb-3">🚀 Top Runners (Today)</h3>
       <div id="runners-list" class="space-y-2"></div>
     </div>
     <div class="card p-4">
-      <h3 class="text-sm font-semibold text-down-DEFAULT mb-3">🔻 Top Draggers (Today)</h3>
+      <h3 class="text-sm font-semibold text-red-400 mb-3">🔻 Top Draggers (Today)</h3>
       <div id="draggers-list" class="space-y-2"></div>
     </div>
   </div>
@@ -127,47 +139,134 @@
   <!-- ── P&L BAR CHART ── -->
   <div class="card p-4">
     <h3 class="text-sm font-semibold text-white mb-4">Portfolio Returns by Stock (%)</h3>
-    <div style="height:220px; overflow-x:auto;">
+    <div style="height:220px;overflow-x:auto;">
       <canvas id="pnl-chart"></canvas>
     </div>
   </div>
 
-  <!-- ── TAB NAVIGATION ── -->
+  <!-- ── MAIN TAB NAVIGATION ── -->
   <div class="flex gap-2 overflow-x-auto pb-1">
     <button class="nav-tab active" onclick="switchTab('holdings')" id="tab-holdings">Holdings</button>
-    <button class="nav-tab" onclick="switchTab('news')" id="tab-news">News</button>
+    <button class="nav-tab" onclick="switchTab('news')"            id="tab-news">News</button>
     <button class="nav-tab" onclick="switchTab('recommendations')" id="tab-recommendations">Recommendations</button>
-    <button class="nav-tab" onclick="switchTab('corporate')" id="tab-corporate">Corporate Actions</button>
+    <button class="nav-tab" onclick="switchTab('corporate')"       id="tab-corporate">Corporate Actions</button>
   </div>
 
-  <!-- ── HOLDINGS TABLE ── -->
-  <div id="panel-holdings" class="card overflow-hidden">
-    <div class="p-4 border-b border-slate-700 flex items-center justify-between">
-      <h3 class="text-sm font-semibold text-white">All Holdings</h3>
-      <input type="text" placeholder="Search ticker…" oninput="filterTable(this.value)"
-             class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-600 text-slate-300 w-32 focus:outline-none focus:border-brand" />
-    </div>
-    <div style="max-height:520px;overflow-y:auto;">
-      <table>
-        <thead>
-          <tr>
-            <th onclick="sortTable('display')">Ticker</th>
-            <th onclick="sortTable('qty')" class="text-right">Qty</th>
-            <th onclick="sortTable('avg_buy_price')" class="text-right">Cost</th>
-            <th onclick="sortTable('current_price')" class="text-right">CMP</th>
-            <th onclick="sortTable('invested')" class="text-right">Invested</th>
-            <th onclick="sortTable('current_value')" class="text-right">Value</th>
-            <th onclick="sortTable('pnl')" class="text-right">P&amp;L</th>
-            <th onclick="sortTable('pnl_pct')" class="text-right">Return</th>
-          </tr>
-        </thead>
-        <tbody id="holdings-body"></tbody>
-      </table>
-    </div>
-    <div id="holdings-footer" class="p-3 border-t border-slate-700 text-xs text-slate-500 text-right"></div>
-  </div>
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- ── HOLDINGS PANEL ── -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="panel-holdings" class="space-y-4">
 
+    <!-- Sub-tab bar -->
+    <div class="flex items-center gap-3">
+      <button class="sub-tab active" onclick="switchHoldingsTab('stocks')" id="htab-stocks">📈 Stocks</button>
+      <button class="sub-tab"        onclick="switchHoldingsTab('mf')"     id="htab-mf">🏦 Mutual Funds</button>
+    </div>
+
+    <!-- ── Stocks sub-panel ── -->
+    <div id="hpanel-stocks" class="card overflow-hidden">
+      <div class="p-4 border-b border-slate-700 flex items-center justify-between">
+        <h3 class="text-sm font-semibold text-white">All Stock Holdings</h3>
+        <input type="text" placeholder="Search ticker…" oninput="filterTable(this.value)"
+               class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-600 text-slate-300 w-32 focus:outline-none focus:border-indigo-500" />
+      </div>
+      <div style="max-height:520px;overflow-y:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th onclick="sortTable('display')">Ticker</th>
+              <th onclick="sortTable('qty')"           class="text-right">Qty</th>
+              <th onclick="sortTable('avg_buy_price')" class="text-right">Cost</th>
+              <th onclick="sortTable('current_price')" class="text-right">CMP</th>
+              <th onclick="sortTable('invested')"      class="text-right">Invested</th>
+              <th onclick="sortTable('current_value')" class="text-right">Value</th>
+              <th onclick="sortTable('pnl')"           class="text-right">P&amp;L</th>
+              <th onclick="sortTable('pnl_pct')"       class="text-right">Return</th>
+            </tr>
+          </thead>
+          <tbody id="holdings-body"></tbody>
+        </table>
+      </div>
+      <div id="holdings-footer" class="p-3 border-t border-slate-700 text-xs text-slate-500 text-right"></div>
+    </div>
+
+    <!-- ── Mutual Funds sub-panel ── -->
+    <div id="hpanel-mf" class="hidden space-y-4">
+
+      <!-- Fund Holdings Table -->
+      <div class="card overflow-hidden">
+        <div class="p-4 border-b border-slate-700 flex items-center justify-between">
+          <h3 class="text-sm font-semibold text-white">MF Holdings</h3>
+          <span class="text-xs text-slate-500" id="mf-updated">—</span>
+        </div>
+        <div style="max-height:400px;overflow-y:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Fund</th>
+                <th class="text-right">Units</th>
+                <th class="text-right">Avg NAV</th>
+                <th class="text-right">Current NAV</th>
+                <th class="text-right">Invested</th>
+                <th class="text-right">Value</th>
+                <th class="text-right">P&amp;L</th>
+                <th class="text-right">Return</th>
+              </tr>
+            </thead>
+            <tbody id="mf-body"></tbody>
+          </table>
+        </div>
+        <div id="mf-footer" class="p-3 border-t border-slate-700 text-xs text-slate-500 text-right"></div>
+      </div>
+
+      <!-- SIP Settings -->
+      <div class="card p-4">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold text-white">📅 SIP Settings</h3>
+          <span class="text-xs text-slate-500">Auto-saved to browser</span>
+        </div>
+        <div id="sip-list" class="space-y-2"></div>
+        <div class="mt-4 pt-3 border-t border-slate-700 flex items-center justify-between">
+          <span class="text-xs text-slate-500">Total Monthly SIP</span>
+          <span class="text-sm font-semibold text-white" id="sip-total">—</span>
+        </div>
+      </div>
+
+      <!-- Adhoc Investment Log -->
+      <div class="card p-4">
+        <h3 class="text-sm font-semibold text-white mb-4">➕ Adhoc Investment</h3>
+
+        <!-- Add form -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+          <div>
+            <label class="text-xs text-slate-500 block mb-1">Fund Name</label>
+            <input id="adhoc-fund" type="text" placeholder="e.g. Mirae Large Cap" class="adhoc-input" />
+          </div>
+          <div>
+            <label class="text-xs text-slate-500 block mb-1">Amount (₹)</label>
+            <input id="adhoc-amount" type="number" placeholder="e.g. 10000" class="adhoc-input" />
+          </div>
+          <div>
+            <label class="text-xs text-slate-500 block mb-1">Date</label>
+            <input id="adhoc-date" type="date" class="adhoc-input" />
+          </div>
+          <div>
+            <label class="text-xs text-slate-500 block mb-1">Note (optional)</label>
+            <input id="adhoc-note" type="text" placeholder="e.g. Tax saving" class="adhoc-input" />
+          </div>
+        </div>
+        <button onclick="addAdhoc()" class="btn-sm btn-primary mb-4">+ Add Investment</button>
+
+        <!-- Adhoc history table -->
+        <div id="adhoc-list" class="space-y-2 mt-2"></div>
+      </div>
+
+    </div><!-- end hpanel-mf -->
+  </div><!-- end panel-holdings -->
+
+  <!-- ══════════════════════════════════════════════════════════ -->
   <!-- ── NEWS PANEL ── -->
+  <!-- ══════════════════════════════════════════════════════════ -->
   <div id="panel-news" class="hidden space-y-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div class="card p-4">
@@ -186,7 +285,9 @@
     <div class="text-xs text-slate-600 text-center" id="news-date"></div>
   </div>
 
+  <!-- ══════════════════════════════════════════════════════════ -->
   <!-- ── RECOMMENDATIONS PANEL ── -->
+  <!-- ══════════════════════════════════════════════════════════ -->
   <div id="panel-recommendations" class="hidden space-y-4">
     <div class="card p-4">
       <div class="flex items-start gap-3 p-3 rounded-lg mb-4" style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2)">
@@ -198,16 +299,22 @@
     <div class="text-xs text-slate-600 text-center" id="rec-date"></div>
   </div>
 
+  <!-- ══════════════════════════════════════════════════════════ -->
   <!-- ── CORPORATE ACTIONS PANEL ── -->
+  <!-- ══════════════════════════════════════════════════════════ -->
   <div id="panel-corporate" class="hidden">
     <div class="card overflow-hidden">
       <div class="p-4 border-b border-slate-700">
-        <h3 class="text-sm font-semibold text-white">Recent & Upcoming Events</h3>
-        <p class="text-xs text-slate-500 mt-0.5">Dividends · Splits · Earnings · Ex-dividend dates</p>
+        <h3 class="text-sm font-semibold text-white">Dividends · Splits · Earnings</h3>
+        <p class="text-xs text-slate-500 mt-0.5">📂 = your portfolio &nbsp;|&nbsp; Sources: yfinance · Data may be delayed</p>
       </div>
-      <div id="ca-list" class="p-4 space-y-2"></div>
-      <div class="p-3 border-t border-slate-700 text-xs text-slate-600">
-        📂 = your portfolio &nbsp;|&nbsp; Sources: yfinance · Data may be delayed
+      <div class="p-4 space-y-1" id="ca-upcoming-section">
+        <div class="ca-section-label text-yellow-400">⏳ Upcoming</div>
+        <div id="ca-upcoming" class="space-y-2"></div>
+      </div>
+      <div class="p-4 pt-2 space-y-1 border-t border-slate-700" id="ca-past-section">
+        <div class="ca-section-label text-slate-500">📋 Past Events</div>
+        <div id="ca-past" class="space-y-2"></div>
       </div>
     </div>
   </div>
@@ -220,12 +327,13 @@
 
 <script>
 // ── DATA PATHS ──────────────────────────────────────────────────────────────
-const BASE = './data';
+const BASE  = './data';
 const PATHS = {
-  snapshot:      `${BASE}/portfolio_snapshot.json`,
-  news:          `${BASE}/news_digest.json`,
-  recommendations:`${BASE}/recommendations.json`,
-  corporate:     `${BASE}/corporate_actions.json`,
+  snapshot:        `${BASE}/portfolio_snapshot.json`,
+  news:            `${BASE}/news_digest.json`,
+  recommendations: `${BASE}/recommendations.json`,
+  corporate:       `${BASE}/corporate_actions.json`,
+  mf:              `${BASE}/mf_snapshot.json`,
 };
 
 // ── STATE ───────────────────────────────────────────────────────────────────
@@ -241,15 +349,11 @@ const fmt = {
   inr2: v => v != null ? '₹' + Number(v).toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2}) : '—',
   pct:  v => v != null ? (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%' : '—',
   ts:   s => { if(!s) return '—'; const d = new Date(s); return d.toLocaleString('en-IN',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'})+' IST'; },
+  date: s => { if(!s) return '—'; const d = new Date(s + 'T00:00:00'); return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}); },
 };
 
-function pctColor(v) {
-  if (v > 0)  return 'color:#34d399';
-  if (v < 0)  return 'color:#f87171';
-  return 'color:#94a3b8';
-}
-
 function tvUrl(ticker) {
+  if (!ticker) return '#';
   if (ticker.endsWith('.NS')) return `https://www.tradingview.com/chart/?symbol=NSE:${ticker.replace('.NS','')}`;
   if (ticker.endsWith('.BO')) return `https://www.tradingview.com/chart/?symbol=BSE:${ticker.replace('.BO','')}`;
   return `https://www.tradingview.com/chart/?symbol=${ticker}`;
@@ -261,18 +365,19 @@ async function loadJSON(path) {
   return r.json();
 }
 
+function todayStr() {
+  return new Date().toISOString().split('T')[0];
+}
+
 // ── MARKET STATUS ───────────────────────────────────────────────────────────
 function checkMarketStatus() {
-  const now = new Date();
-  const ist = new Date(now.toLocaleString('en-US', {timeZone: 'Asia/Kolkata'}));
-  const day = ist.getDay(); // 0=Sun,6=Sat
-  const h   = ist.getHours(), m = ist.getMinutes();
-  const mins = h * 60 + m;
-  const open = 9*60+15, close = 15*60+30;
-  const el = document.getElementById('market-status');
+  const ist  = new Date(new Date().toLocaleString('en-US', {timeZone:'Asia/Kolkata'}));
+  const day  = ist.getDay();
+  const mins = ist.getHours() * 60 + ist.getMinutes();
+  const el   = document.getElementById('market-status');
   if (day === 0 || day === 6) {
     el.textContent = 'NSE Closed (Weekend)'; el.style.color = '#94a3b8';
-  } else if (mins >= open && mins <= close) {
+  } else if (mins >= 555 && mins <= 930) {
     el.textContent = 'NSE Open'; el.style.color = '#34d399';
   } else {
     el.textContent = 'NSE Closed'; el.style.color = '#94a3b8';
@@ -283,43 +388,25 @@ function checkMarketStatus() {
 async function loadSnapshot() {
   const d = await loadJSON(PATHS.snapshot);
 
-  // header timestamp
   document.getElementById('last-updated').textContent =
-    d.timestamp ? 'Updated ' + fmt.ts(d.timestamp) : 'Not yet fetched — run portfolio_update_agent.py';
+    d.timestamp ? 'Updated ' + fmt.ts(d.timestamp) : 'Not yet fetched';
 
-  // stat cards
   const pct = d.total_pnl_pct ?? 0;
   const pnl = d.total_pnl    ?? 0;
 
-  set('s-invested', fmt.inr(d.total_invested), '');
-  set('s-stocks',   (d.holdings?.length ?? 0) + ' holdings', '');
+  document.getElementById('s-invested').textContent = fmt.inr(d.total_invested);
+  document.getElementById('s-stocks').textContent   = (d.holdings?.length ?? 0) + ' stocks';
 
-  setWithColor('s-current',     fmt.inr(d.total_current), pct,
-               's-current-sub', fmt.pct(pct));
+  setWithColor('s-current',     fmt.inr(d.total_current),                       pct, 's-current-sub', fmt.pct(pct));
+  setWithColor('s-pnl',         (pnl >= 0 ? '+' : '') + fmt.inr(Math.abs(pnl)), pnl, 's-pnl-sub',     fmt.pct(pct));
+  setWithColor('s-pct',         fmt.pct(pct), pct);
 
-  setWithColor('s-pnl',         (pnl >= 0 ? '+' : '') + fmt.inr(Math.abs(pnl)), pnl,
-               's-pnl-sub',     fmt.pct(pct));
-
-  setWithColor('s-pct', fmt.pct(pct), pct);
-
-  // runners
   renderLeaderboard('runners-list',  d.runners  ?? [], true);
   renderLeaderboard('draggers-list', d.draggers ?? [], false);
 
-  // table
   _holdings = d.holdings ?? [];
   renderTable();
-
-  // chart
   renderChart(d.holdings ?? []);
-}
-
-function set(id, val, sub) {
-  document.getElementById(id).textContent = val;
-  if (sub !== undefined) {
-    const el = document.getElementById(id.replace(/-current|-pnl|s-invested/, '') + '-sub');
-    if (el) el.textContent = sub;
-  }
 }
 
 function setWithColor(valId, val, colorVal, subId, subVal) {
@@ -332,12 +419,10 @@ function setWithColor(valId, val, colorVal, subId, subVal) {
   }
 }
 
+// ── LEADERBOARD ─────────────────────────────────────────────────────────────
 function renderLeaderboard(containerId, items, isRunners) {
   const el = document.getElementById(containerId);
-  if (!items.length) {
-    el.innerHTML = '<p class="text-xs text-slate-600">No data yet</p>';
-    return;
-  }
+  if (!items.length) { el.innerHTML = '<p class="text-xs text-slate-600">No data yet</p>'; return; }
   el.innerHTML = items.map(h => {
     const pct  = h.pnl_pct ?? 0;
     const sign = pct > 0 ? '+' : '';
@@ -346,7 +431,8 @@ function renderLeaderboard(containerId, items, isRunners) {
     const barC = pct > 0 ? '#34d399' : '#f87171';
     return `
       <div class="flex items-center justify-between gap-3">
-        <a href="${tvUrl(h.ticker)}" target="_blank" rel="noopener" class="ticker-chip text-white flex-shrink-0 hover:text-brand-light transition-colors" style="text-decoration:none">${h.display} ↗</a>
+        <a href="${tvUrl(h.ticker)}" target="_blank" rel="noopener"
+           class="ticker-chip text-white flex-shrink-0 hover:text-indigo-300 transition-colors" style="text-decoration:none">${h.display} ↗</a>
         <div class="flex-1 min-w-0">
           <div class="pct-bar-bg"><div class="pct-bar" style="width:${barW}%;background:${barC}"></div></div>
         </div>
@@ -358,31 +444,29 @@ function renderLeaderboard(containerId, items, isRunners) {
 
 // ── P&L CHART ───────────────────────────────────────────────────────────────
 function renderChart(holdings) {
-  const ctx = document.getElementById('pnl-chart').getContext('2d');
+  const ctx    = document.getElementById('pnl-chart').getContext('2d');
   const sorted = [...holdings].sort((a,b) => (b.pnl_pct??0) - (a.pnl_pct??0));
-  const labels = sorted.map(h => h.display);
   const data   = sorted.map(h => +(h.pnl_pct??0).toFixed(2));
   const colors = data.map(v => v >= 0 ? 'rgba(16,185,129,0.75)' : 'rgba(239,68,68,0.75)');
-
   if (_pnlChart) _pnlChart.destroy();
   _pnlChart = new Chart(ctx, {
     type: 'bar',
-    data: { labels, datasets: [{ data, backgroundColor: colors, borderRadius: 4, borderSkipped: false }] },
+    data: { labels: sorted.map(h => h.display), datasets: [{ data, backgroundColor: colors, borderRadius: 4, borderSkipped: false }] },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false }, tooltip: {
         callbacks: { label: ctx => ` ${ctx.raw}%` },
-        backgroundColor: '#1e293b', titleColor: '#94a3b8', bodyColor: '#e2e8f0', borderColor: '#334155', borderWidth: 1,
+        backgroundColor:'#1e293b', titleColor:'#94a3b8', bodyColor:'#e2e8f0', borderColor:'#334155', borderWidth:1,
       }},
       scales: {
-        x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e293b' } },
-        y: { ticks: { color: '#64748b', font: { size: 10 }, callback: v => v + '%' }, grid: { color: '#334155' } },
+        x: { ticks: { color:'#64748b', font:{size:10} }, grid: { color:'#1e293b' } },
+        y: { ticks: { color:'#64748b', font:{size:10}, callback: v => v + '%' }, grid: { color:'#334155' } },
       }
     }
   });
 }
 
-// ── HOLDINGS TABLE ───────────────────────────────────────────────────────────
+// ── STOCKS TABLE ─────────────────────────────────────────────────────────────
 function renderTable() {
   const filtered = _holdings.filter(h =>
     !_filter || h.display.toLowerCase().includes(_filter.toLowerCase()) ||
@@ -394,14 +478,14 @@ function renderTable() {
     return _sortAsc ? av - bv : bv - av;
   });
 
-  const tbody = document.getElementById('holdings-body');
-  tbody.innerHTML = sorted.map(h => {
+  document.getElementById('holdings-body').innerHTML = sorted.map(h => {
     const pct = h.pnl_pct ?? 0;
-    const pnl = h.pnl ?? 0;
+    const pnl = h.pnl    ?? 0;
     const cs  = pct > 0 ? 'color:#34d399' : pct < 0 ? 'color:#f87171' : 'color:#94a3b8';
     const tag = pct > 0 ? 'tag-up' : pct < 0 ? 'tag-down' : 'tag-neutral';
     return `<tr>
-      <td><a href="${tvUrl(h.ticker)}" target="_blank" rel="noopener" class="ticker-chip hover:text-white transition-colors" style="color:#a5b4fc;text-decoration:none">${h.display} ↗</a></td>
+      <td><a href="${tvUrl(h.ticker)}" target="_blank" rel="noopener"
+             class="ticker-chip hover:text-white transition-colors" style="color:#a5b4fc;text-decoration:none">${h.display} ↗</a></td>
       <td class="text-right text-slate-300">${h.qty?.toLocaleString('en-IN') ?? '—'}</td>
       <td class="text-right text-slate-400">${fmt.inr2(h.avg_buy_price)}</td>
       <td class="text-right font-medium" style="${cs}">${fmt.inr2(h.current_price)}</td>
@@ -412,11 +496,10 @@ function renderTable() {
     </tr>`;
   }).join('');
 
-  // footer totals
-  const ti  = sorted.reduce((s,h) => s + (h.invested ?? 0), 0);
-  const tc  = sorted.reduce((s,h) => s + (h.current_value ?? 0), 0);
+  const ti  = sorted.reduce((s,h) => s + (h.invested??0), 0);
+  const tc  = sorted.reduce((s,h) => s + (h.current_value??0), 0);
   const tp  = tc - ti;
-  const tpc = ti ? (tp/ti*100) : 0;
+  const tpc = ti ? tp/ti*100 : 0;
   document.getElementById('holdings-footer').innerHTML =
     `${sorted.length} stocks &nbsp;|&nbsp; Invested: ${fmt.inr(ti)} &nbsp;|&nbsp; Value: ${fmt.inr(tc)} &nbsp;|&nbsp; P&L: <span style="${tpc>=0?'color:#34d399':'color:#f87171'}">${tpc>=0?'+':''}${fmt.inr(tp)} (${fmt.pct(tpc)})</span>`;
 }
@@ -424,78 +507,241 @@ function renderTable() {
 function sortTable(key) {
   if (_sortKey === key) _sortAsc = !_sortAsc;
   else { _sortKey = key; _sortAsc = false; }
-  document.querySelectorAll('th').forEach(th => { th.classList.remove('sort-asc','sort-desc'); });
+  document.querySelectorAll('th').forEach(th => th.classList.remove('sort-asc','sort-desc'));
   document.querySelectorAll('th').forEach(th => {
-    if (th.textContent.trim().toLowerCase().startsWith(key.replace('_',' '))) {
+    if (th.textContent.trim().toLowerCase().startsWith(key.replace('_',' ')))
       th.classList.add(_sortAsc ? 'sort-asc' : 'sort-desc');
-    }
   });
   renderTable();
 }
 
-function filterTable(val) {
-  _filter = val;
-  renderTable();
+function filterTable(val) { _filter = val; renderTable(); }
+
+// ── MUTUAL FUNDS ─────────────────────────────────────────────────────────────
+async function loadMF() {
+  let funds = [];
+  try {
+    const d = await loadJSON(PATHS.mf);
+    funds = d.funds ?? [];
+    const ts = d.timestamp ? 'NAV as of ' + fmt.ts(d.timestamp) : '';
+    document.getElementById('mf-updated').textContent = ts;
+  } catch (_) {
+    document.getElementById('mf-updated').textContent = 'No MF snapshot yet — add funds to mf_portfolio.json';
+  }
+
+  renderMFTable(funds);
+  renderSipSettings(funds);
+  renderAdhocList();
+}
+
+function renderMFTable(funds) {
+  const tbody = document.getElementById('mf-body');
+  if (!funds.length) {
+    tbody.innerHTML = `<tr><td colspan="8" class="text-center text-slate-600 py-8 text-xs">
+      No MF data yet. Add funds to <code>mf_portfolio.json</code> and run the MF update agent.
+    </td></tr>`;
+    document.getElementById('mf-footer').textContent = '';
+    return;
+  }
+
+  tbody.innerHTML = funds.map(f => {
+    const pct = f.pnl_pct ?? 0;
+    const pnl = f.pnl     ?? 0;
+    const cs  = pct > 0 ? 'color:#34d399' : pct < 0 ? 'color:#f87171' : 'color:#94a3b8';
+    const tag = pct > 0 ? 'tag-up' : pct < 0 ? 'tag-down' : 'tag-neutral';
+    const shortName = f.name?.length > 40 ? f.name.slice(0,38) + '…' : (f.name ?? '—');
+    return `<tr>
+      <td class="text-slate-200 text-xs" title="${f.name ?? ''}">${shortName}</td>
+      <td class="text-right text-slate-300">${f.units?.toLocaleString('en-IN',{maximumFractionDigits:3}) ?? '—'}</td>
+      <td class="text-right text-slate-400">${fmt.inr2(f.avg_nav)}</td>
+      <td class="text-right font-medium" style="${cs}">${fmt.inr2(f.current_nav)}</td>
+      <td class="text-right text-slate-400">${fmt.inr(f.invested)}</td>
+      <td class="text-right font-medium text-white">${fmt.inr(f.current_value)}</td>
+      <td class="text-right" style="${cs}">${pnl >= 0 ? '+' : ''}${fmt.inr(pnl)}</td>
+      <td class="text-right"><span class="badge ${tag}">${fmt.pct(pct)}</span></td>
+    </tr>`;
+  }).join('');
+
+  const ti  = funds.reduce((s,f) => s + (f.invested??0), 0);
+  const tc  = funds.reduce((s,f) => s + (f.current_value??0), 0);
+  const tp  = tc - ti;
+  const tpc = ti ? tp/ti*100 : 0;
+  document.getElementById('mf-footer').innerHTML =
+    `${funds.length} funds &nbsp;|&nbsp; Invested: ${fmt.inr(ti)} &nbsp;|&nbsp; Value: ${fmt.inr(tc)} &nbsp;|&nbsp; P&L: <span style="${tpc>=0?'color:#34d399':'color:#f87171'}">${tpc>=0?'+':''}${fmt.inr(tp)} (${fmt.pct(tpc)})</span>`;
+}
+
+function getSipSetting(schemeCode, defaults) {
+  const saved = JSON.parse(localStorage.getItem('sip_' + schemeCode) || 'null');
+  return saved ?? defaults;
+}
+
+function saveSipSetting(schemeCode, amount, date) {
+  localStorage.setItem('sip_' + schemeCode, JSON.stringify({ amount: Number(amount), date: Number(date) }));
+  updateSipTotal();
+}
+
+function renderSipSettings(funds) {
+  const el = document.getElementById('sip-list');
+  if (!funds.length) {
+    el.innerHTML = '<p class="text-xs text-slate-600">No funds loaded yet.</p>';
+    document.getElementById('sip-total').textContent = '—';
+    return;
+  }
+  el.innerHTML = funds.map(f => {
+    const sip    = getSipSetting(f.scheme_code, { amount: f.sip_amount ?? 0, date: f.sip_date ?? 1 });
+    const short  = f.name?.length > 35 ? f.name.slice(0,33) + '…' : (f.name ?? f.scheme_code);
+    return `<div class="flex items-center gap-3 py-1.5">
+      <span class="text-xs text-slate-300 flex-1 min-w-0 truncate" title="${f.name ?? ''}">${short}</span>
+      <div class="flex items-center gap-1 flex-shrink-0">
+        <span class="text-xs text-slate-500">₹</span>
+        <input type="number" class="sip-input" value="${sip.amount}" placeholder="Amount"
+               onchange="saveSipSetting('${f.scheme_code}', this.value, this.closest('div').querySelector('.sip-date').value)"
+               title="SIP Amount" />
+        <span class="text-xs text-slate-500 ml-1">on</span>
+        <input type="number" class="sip-input sip-date" value="${sip.date}" min="1" max="31" placeholder="Day"
+               style="width:56px"
+               onchange="saveSipSetting('${f.scheme_code}', this.closest('div').querySelector('input[type=number]:not(.sip-date)').value, this.value)"
+               title="SIP Date (day of month)" />
+        <span class="text-xs text-slate-500">of month</span>
+      </div>
+    </div>`;
+  }).join('');
+  updateSipTotal(funds);
+}
+
+function updateSipTotal(funds) {
+  if (!funds) {
+    document.getElementById('sip-total').textContent = '—';
+    return;
+  }
+  const total = funds.reduce((s, f) => {
+    const sip = getSipSetting(f.scheme_code, { amount: f.sip_amount ?? 0, date: f.sip_date ?? 1 });
+    return s + (sip.amount || 0);
+  }, 0);
+  document.getElementById('sip-total').textContent = fmt.inr(total) + ' / month';
+}
+
+function addAdhoc() {
+  const fund   = document.getElementById('adhoc-fund').value.trim();
+  const amount = parseFloat(document.getElementById('adhoc-amount').value);
+  const date   = document.getElementById('adhoc-date').value;
+  const note   = document.getElementById('adhoc-note').value.trim();
+
+  if (!fund || !amount || !date) { alert('Fund name, amount, and date are required.'); return; }
+
+  const list = JSON.parse(localStorage.getItem('adhoc_investments') || '[]');
+  list.unshift({ fund, amount, date, note, id: Date.now() });
+  localStorage.setItem('adhoc_investments', JSON.stringify(list));
+
+  document.getElementById('adhoc-fund').value   = '';
+  document.getElementById('adhoc-amount').value = '';
+  document.getElementById('adhoc-date').value   = '';
+  document.getElementById('adhoc-note').value   = '';
+  renderAdhocList();
+}
+
+function deleteAdhoc(id) {
+  const list = JSON.parse(localStorage.getItem('adhoc_investments') || '[]').filter(x => x.id !== id);
+  localStorage.setItem('adhoc_investments', JSON.stringify(list));
+  renderAdhocList();
+}
+
+function renderAdhocList() {
+  const list = JSON.parse(localStorage.getItem('adhoc_investments') || '[]');
+  const el   = document.getElementById('adhoc-list');
+  if (!list.length) {
+    el.innerHTML = '<p class="text-xs text-slate-600">No adhoc investments logged yet.</p>';
+    return;
+  }
+  const total = list.reduce((s,x) => s + x.amount, 0);
+  el.innerHTML = `
+    <div class="text-xs text-slate-500 mb-2">${list.length} entries · Total: <strong class="text-white">${fmt.inr(total)}</strong></div>
+    <div style="max-height:220px;overflow-y:auto;" class="space-y-1">
+      ${list.map(x => `
+        <div class="flex items-center justify-between gap-3 p-2 rounded-lg" style="background:#0f172a;border:1px solid #334155">
+          <div class="flex-1 min-w-0">
+            <span class="text-xs font-medium text-slate-200">${x.fund}</span>
+            ${x.note ? `<span class="text-xs text-slate-500 ml-2">· ${x.note}</span>` : ''}
+          </div>
+          <span class="text-xs font-semibold text-white flex-shrink-0">${fmt.inr(x.amount)}</span>
+          <span class="text-xs text-slate-500 flex-shrink-0">${fmt.date(x.date)}</span>
+          <button onclick="deleteAdhoc(${x.id})" class="btn-sm btn-danger flex-shrink-0">✕</button>
+        </div>`).join('')}
+    </div>`;
+}
+
+// ── HOLDINGS SUB-TABS ────────────────────────────────────────────────────────
+function switchHoldingsTab(name) {
+  ['stocks','mf'].forEach(t => {
+    document.getElementById('hpanel-' + t).classList.toggle('hidden', t !== name);
+    document.getElementById('htab-' + t).classList.toggle('active', t === name);
+  });
+  if (name === 'mf') loadMF();
 }
 
 // ── NEWS ─────────────────────────────────────────────────────────────────────
+function newsItem(ticker, n) {
+  const display = ticker.replace('.NS','').replace('.BO','');
+  const link    = n.link && n.link !== '#' ? n.link : null;
+  return `
+    <div class="news-item">
+      ${link
+        ? `<a href="${link}" target="_blank" rel="noopener"
+              class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${n.title}</a>`
+        : `<p class="text-xs font-medium text-slate-400 leading-relaxed">${n.title}</p>`}
+      <div class="flex items-center gap-2 mt-1.5">
+        <a href="${tvUrl(ticker)}" target="_blank" rel="noopener"
+           class="badge tag-neutral hover:opacity-80 transition-opacity" style="text-decoration:none">${display} ↗</a>
+        <span class="text-xs text-slate-600">${n.publisher || ''} ${n.age_h ? '· ' + n.age_h + 'h ago' : ''}</span>
+        ${link ? `<a href="${link}" target="_blank" rel="noopener" class="text-xs text-indigo-400 hover:text-indigo-300 ml-auto flex-shrink-0">Read →</a>` : ''}
+      </div>
+    </div>`;
+}
+
 async function loadNews() {
   const d = await loadJSON(PATHS.news);
   document.getElementById('news-date').textContent = d.date ? 'Digest for ' + d.date : '';
 
-  // Holdings news
-  const hEl = document.getElementById('news-holdings');
-  const hn  = d.holding_news ?? {};
+  const hn     = d.holding_news ?? {};
   const hnKeys = Object.keys(hn);
-  if (!hnKeys.length) {
-    hEl.innerHTML = '<p class="text-xs text-slate-600">No news fetched yet</p>';
-  } else {
-    hEl.innerHTML = hnKeys.slice(0,10).map(ticker => {
-      const items = hn[ticker];
-      const display = ticker.replace('.NS','').replace('.BO','');
-      return items.slice(0,1).map(n => `
-        <div class="news-item">
-          <a href="${n.link||'#'}" target="_blank" rel="noopener" class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${n.title}</a>
-          <div class="flex items-center gap-2 mt-1">
-            <a href="${tvUrl(ticker)}" target="_blank" rel="noopener" class="badge tag-neutral hover:opacity-80 transition-opacity" style="text-decoration:none">${display} ↗</a>
-            <span class="text-xs text-slate-600">${n.publisher || ''} · ${n.age_h ? n.age_h+'h ago' : ''}</span>
-          </div>
-        </div>`).join('');
-    }).join('');
-  }
+  const hEl    = document.getElementById('news-holdings');
+  hEl.innerHTML = hnKeys.length
+    ? hnKeys.slice(0,10).flatMap(t => (hn[t] ?? []).slice(0,1).map(n => newsItem(t, n))).join('')
+    : '<p class="text-xs text-slate-600">No news fetched yet</p>';
 
-  // Market headlines
-  const mEl = document.getElementById('news-market');
   const mh  = d.market_headlines ?? [];
-  if (!mh.length) {
-    mEl.innerHTML = '<p class="text-xs text-slate-600">No headlines fetched yet. Add feedparser to requirements.txt</p>';
-  } else {
-    mEl.innerHTML = mh.slice(0,8).map(h => `
-      <div class="news-item">
-        <a href="${h.link||'#'}" target="_blank" rel="noopener" class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${h.title}</a>
-        <span class="text-xs text-slate-600">${h.source}</span>
-      </div>`).join('');
-  }
-
-  // Momentum
-  const wEl = document.getElementById('news-momentum');
-  const mn  = d.momentum_news ?? {};
-  const mnKeys = Object.keys(mn);
-  if (!mnKeys.length) {
-    wEl.innerHTML = '<p class="text-xs text-slate-600">No watchlist news yet</p>';
-  } else {
-    wEl.innerHTML = mnKeys.slice(0,12).map(ticker => {
-      const items = mn[ticker];
-      const display = ticker.replace('.NS','').replace('.BO','');
-      return items.slice(0,1).map(n => `
+  const mEl = document.getElementById('news-market');
+  mEl.innerHTML = mh.length
+    ? mh.slice(0,8).map(h => `
         <div class="news-item">
-          <div class="flex items-center gap-2 mb-0.5">
-            <a href="${tvUrl(ticker)}" target="_blank" rel="noopener" class="badge hover:opacity-80 transition-opacity" style="background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.3);text-decoration:none">${display} ↗</a>
+          ${h.link ? `<a href="${h.link}" target="_blank" rel="noopener"
+                         class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${h.title}</a>`
+                   : `<p class="text-xs text-slate-400 leading-relaxed">${h.title}</p>`}
+          <div class="flex items-center gap-2 mt-1">
+            <span class="text-xs text-slate-600">${h.source ?? ''}</span>
+            ${h.link ? `<a href="${h.link}" target="_blank" rel="noopener" class="text-xs text-indigo-400 hover:text-indigo-300 ml-auto">Read →</a>` : ''}
           </div>
-          <a href="${n.link||'#'}" target="_blank" rel="noopener" class="text-xs text-slate-400 hover:text-white">${n.title}</a>
-        </div>`).join('');
-    }).join('');
-  }
+        </div>`).join('')
+    : '<p class="text-xs text-slate-600">No headlines yet. Add feedparser to requirements.txt</p>';
+
+  const mn     = d.momentum_news ?? {};
+  const mnKeys = Object.keys(mn);
+  const wEl    = document.getElementById('news-momentum');
+  wEl.innerHTML = mnKeys.length
+    ? mnKeys.slice(0,12).flatMap(t => (mn[t] ?? []).slice(0,1).map(n => {
+        const display = t.replace('.NS','').replace('.BO','');
+        return `<div class="news-item">
+          <div class="flex items-center gap-2 mb-1">
+            <a href="${tvUrl(t)}" target="_blank" rel="noopener"
+               class="badge hover:opacity-80 transition-opacity" style="background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.3);text-decoration:none">${display} ↗</a>
+          </div>
+          ${n.link
+            ? `<a href="${n.link}" target="_blank" rel="noopener" class="text-xs text-slate-400 hover:text-white leading-relaxed block">${n.title}</a>
+               <a href="${n.link}" target="_blank" rel="noopener" class="text-xs text-indigo-400 hover:text-indigo-300 mt-1 block">Read →</a>`
+            : `<p class="text-xs text-slate-500">${n.title}</p>`}
+        </div>`;
+      })).join('')
+    : '<p class="text-xs text-slate-600">No watchlist news yet</p>';
 }
 
 // ── RECOMMENDATIONS ──────────────────────────────────────────────────────────
@@ -506,15 +752,15 @@ async function loadRecommendations() {
 
   const recs = d.recommendations ?? [];
   if (!recs.length) {
-    document.getElementById('rec-list').innerHTML = '<p class="text-xs text-slate-600">No recommendations yet — run recommendation_agent.py</p>';
+    document.getElementById('rec-list').innerHTML = '<p class="text-xs text-slate-600">No recommendations yet</p>';
     return;
   }
 
   const actionClass = a => {
-    if (a.includes('STRONG')) return 'action-green';
+    if (a.includes('STRONG'))     return 'action-green';
     if (a.includes('ACCUMULATE')) return 'action-blue';
-    if (a.includes('REVIEW')) return 'action-red';
-    if (a.includes('MONITOR')) return 'action-yellow';
+    if (a.includes('REVIEW'))     return 'action-red';
+    if (a.includes('MONITOR'))    return 'action-yellow';
     return 'action-gray';
   };
 
@@ -524,7 +770,8 @@ async function loadRecommendations() {
         <div class="flex items-center gap-2">
           <span class="text-lg">${r.action_emoji || '⚪'}</span>
           <div>
-            <a href="${tvUrl(r.ticker)}" target="_blank" rel="noopener" class="font-semibold text-sm hover:opacity-80 transition-opacity" style="text-decoration:none">${r.display} ↗</a>
+            <a href="${tvUrl(r.ticker)}" target="_blank" rel="noopener"
+               class="font-semibold text-sm hover:opacity-80 transition-opacity" style="text-decoration:none">${r.display} ↗</a>
             <span class="text-xs ml-2 opacity-70">${r.sector || ''}</span>
           </div>
         </div>
@@ -544,38 +791,58 @@ async function loadRecommendations() {
 }
 
 // ── CORPORATE ACTIONS ────────────────────────────────────────────────────────
-async function loadCorporate() {
-  const d = await loadJSON(PATHS.corporate);
-  const highlights = d.highlights ?? [];
-  const el = document.getElementById('ca-list');
-
-  if (!highlights.length) {
-    el.innerHTML = '<p class="text-xs text-slate-600">No corporate actions found yet — run corporate_action_agent.py</p>';
-    return;
-  }
-
+function caCard(ev) {
   const typeColor = t => {
-    if (t === 'Dividend') return '#34d399';
-    if (t === 'Stock Split') return '#818cf8';
+    if (t === 'Dividend')       return '#34d399';
+    if (t === 'Stock Split')    return '#818cf8';
     if (t.includes('Earnings')) return '#facc15';
     return '#94a3b8';
   };
+  const icon   = ev.type === 'Dividend' ? '💰' : ev.type === 'Stock Split' ? '✂️' : '📅';
+  const today  = todayStr();
+  const daysTo = Math.round((new Date(ev.date) - new Date(today)) / 86400000);
+  let dateBadge = '';
+  if (daysTo >= 0 && daysTo <= 7)  dateBadge = `<span class="badge tag-soon ml-1">${daysTo === 0 ? 'Today' : 'In ' + daysTo + 'd'}</span>`;
+  else if (daysTo > 7)              dateBadge = `<span class="badge tag-neutral ml-1">In ${daysTo}d</span>`;
 
-  el.innerHTML = highlights.map(ev => `
+  return `
     <div class="flex items-center justify-between gap-4 p-3 rounded-lg" style="background:rgba(15,23,42,0.5);border:1px solid #334155">
       <div class="flex items-center gap-3">
         <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
-             style="background:rgba(30,41,59,1);font-size:0.8rem;color:${typeColor(ev.type)}">
-          ${ev.type === 'Dividend' ? '💰' : ev.type === 'Stock Split' ? '✂️' : '📅'}
-        </div>
+             style="background:rgba(30,41,59,1);font-size:0.8rem;color:${typeColor(ev.type)}">${icon}</div>
         <div>
-          <a href="${tvUrl(ev.ticker)}" target="_blank" rel="noopener" class="font-semibold text-sm text-white hover:text-brand-light transition-colors" style="text-decoration:none">${ev.display} ↗</a>
-          ${ev.in_portfolio ? '<span class="ml-1 text-xs text-brand-light">📂</span>' : ''}
+          <div class="flex items-center gap-1">
+            <a href="${tvUrl(ev.ticker)}" target="_blank" rel="noopener"
+               class="font-semibold text-sm text-white hover:text-indigo-300 transition-colors" style="text-decoration:none">${ev.display} ↗</a>
+            ${ev.in_portfolio ? '<span class="text-xs text-indigo-400">📂</span>' : ''}
+          </div>
           <div class="text-xs text-slate-500 mt-0.5">${ev.type}${ev.detail ? ' · ' + ev.detail : ''}</div>
         </div>
       </div>
-      <div class="text-xs text-slate-500 flex-shrink-0">${ev.date}</div>
-    </div>`).join('');
+      <div class="text-right flex-shrink-0">
+        <div class="text-xs text-slate-400">${fmt.date(ev.date)}</div>
+        ${dateBadge}
+      </div>
+    </div>`;
+}
+
+async function loadCorporate() {
+  const d          = await loadJSON(PATHS.corporate);
+  const highlights = d.highlights ?? [];
+  const today      = todayStr();
+
+  const upcoming = highlights.filter(ev => ev.date >= today).sort((a,b) => a.date.localeCompare(b.date));
+  const past     = highlights.filter(ev => ev.date <  today).sort((a,b) => b.date.localeCompare(a.date));
+
+  const upEl = document.getElementById('ca-upcoming');
+  upEl.innerHTML = upcoming.length
+    ? upcoming.map(caCard).join('')
+    : '<p class="text-xs text-slate-600 py-2">No upcoming events</p>';
+
+  const pastEl = document.getElementById('ca-past');
+  pastEl.innerHTML = past.length
+    ? past.map(caCard).join('')
+    : '<p class="text-xs text-slate-600 py-2">No past events</p>';
 }
 
 // ── TAB SWITCHING ────────────────────────────────────────────────────────────
@@ -584,7 +851,7 @@ const PANELS = ['holdings','news','recommendations','corporate'];
 function switchTab(name) {
   PANELS.forEach(p => {
     document.getElementById('panel-' + p).classList.toggle('hidden', p !== name);
-    document.getElementById('tab-' + p).classList.toggle('active', p === name);
+    document.getElementById('tab-'   + p).classList.toggle('active', p === name);
   });
 }
 
@@ -606,6 +873,7 @@ async function refreshAll() {
 }
 
 // ── INIT ─────────────────────────────────────────────────────────────────────
+document.getElementById('adhoc-date').valueAsDate = new Date();
 refreshAll();
 setInterval(checkMarketStatus, 60_000);
 </script>
