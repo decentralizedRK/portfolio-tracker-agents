@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-07T13:45:52.463168+05:30",
-  "total_invested": 975168.82,
-  "total_current": 1042754.99,
-  "total_pnl": 67586.17,
-  "total_pnl_pct": 6.93,
+  "timestamp": "2026-06-07T13:50:37.984807+05:30",
+  "total_invested": 1532791.29,
+  "total_current": 1555792.85,
+  "total_pnl": 23001.56,
+  "total_pnl_pct": 1.5,
   "funds": [
     {
       "scheme_code": "151853",
@@ -28,6 +28,19 @@
       "current_value": 319259.61,
       "pnl": -10206.64,
       "pnl_pct": -3.1,
+      "sip_amount": 0,
+      "sip_date": 1
+    },
+    {
+      "scheme_code": "INF846K017R3",
+      "name": "Axis Nifty IT Index Fund - Direct Plan - Growth",
+      "units": 50372.4,
+      "avg_nav": 11.07,
+      "current_nav": 10.1849,
+      "invested": 557622.47,
+      "current_value": 513037.86,
+      "pnl": -44584.61,
+      "pnl_pct": -8.0,
       "sip_amount": 0,
       "sip_date": 1
     },

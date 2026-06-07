@@ -36,8 +36,11 @@ DATA_DIR      = os.path.join(ROOT, "data")
 SNAPSHOT_PATH = os.path.join(DATA_DIR, "mf_snapshot.json")
 
 MFAPI_BASE = "https://api.mfapi.in/mf"
-TIMEOUT    = 10
+AMFI_URL   = "https://portal.amfiindia.com/spages/NAVAll.txt"
+TIMEOUT    = 15
 RETRY      = 1
+
+_amfi_cache: dict = {}   # isin → nav, loaded once per run
 
 
 def load_mf_portfolio() -> list:
@@ -45,8 +48,46 @@ def load_mf_portfolio() -> list:
         return json.load(f).get("funds", [])
 
 
+def _load_amfi() -> dict:
+    """Download AMFI NAVAll.txt and build an ISIN→NAV map. Cached per run."""
+    if _amfi_cache:
+        return _amfi_cache
+    log.info("Fetching AMFI NAVAll.txt for ISIN-based lookup…")
+    try:
+        r = requests.get(AMFI_URL, timeout=30)
+        r.raise_for_status()
+        for line in r.text.splitlines():
+            parts = line.split(";")
+            if len(parts) < 6:
+                continue
+            # columns: SchemeCode ; ISIN-Growth ; ISIN-DivReinvest ; Name ; NAV ; Date
+            isin_growth = parts[1].strip()
+            isin_reinv  = parts[2].strip()
+            nav_str     = parts[4].strip()
+            try:
+                nav = float(nav_str)
+            except ValueError:
+                continue
+            if isin_growth:
+                _amfi_cache[isin_growth] = nav
+            if isin_reinv:
+                _amfi_cache[isin_reinv] = nav
+    except Exception as e:
+        log.error("Failed to fetch AMFI NAVAll.txt: %s", e)
+    return _amfi_cache
+
+
 def fetch_nav(scheme_code: str):
-    """Fetch latest NAV from mfapi.in. Returns float or None."""
+    """Fetch latest NAV. Uses mfapi.in for numeric codes, AMFI file for ISINs."""
+    # ISIN-based lookup (starts with INF or ISIN format)
+    if not scheme_code.isdigit():
+        nav = _load_amfi().get(scheme_code)
+        if nav:
+            return nav
+        log.error("ISIN %s not found in AMFI NAVAll.txt", scheme_code)
+        return None
+
+    # Numeric scheme code → mfapi.in
     url = f"{MFAPI_BASE}/{scheme_code}"
     for attempt in range(RETRY + 1):
         try:
@@ -54,8 +95,7 @@ def fetch_nav(scheme_code: str):
             r.raise_for_status()
             data = r.json()
             if data.get("status") == "SUCCESS" and data.get("data"):
-                nav_str = data["data"][0]["nav"]
-                return float(nav_str)
+                return float(data["data"][0]["nav"])
             log.warning("Unexpected mfapi response for %s: %s", scheme_code, data.get("status"))
             return None
         except Exception as e:
