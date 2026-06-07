@@ -150,6 +150,7 @@
     <button class="nav-tab" onclick="switchTab('news')"            id="tab-news">News</button>
     <button class="nav-tab" onclick="switchTab('recommendations')" id="tab-recommendations">Recommendations</button>
     <button class="nav-tab" onclick="switchTab('corporate')"       id="tab-corporate">Corporate Actions</button>
+    <button class="nav-tab" onclick="switchTab('add')"             id="tab-add">➕ Add</button>
   </div>
 
   <!-- ══════════════════════════════════════════════════════════ -->
@@ -318,6 +319,211 @@
       </div>
     </div>
   </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- ── ADD TO PORTFOLIO PANEL ── -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="panel-add" class="hidden space-y-4">
+
+    <!-- Sub-tabs -->
+    <div class="flex items-center gap-3">
+      <button class="sub-tab active" onclick="switchAddTab('stock')" id="addtab-stock">📈 Add Stock</button>
+      <button class="sub-tab"        onclick="switchAddTab('mf')"    id="addtab-mf">🏦 Add Mutual Fund</button>
+    </div>
+
+    <!-- ── STOCK SUB-PANEL ── -->
+    <div id="addpanel-stock">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+        <!-- Manual form -->
+        <div class="card p-4 space-y-4">
+          <h3 class="text-sm font-semibold text-white">Manual Entry</h3>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="col-span-2 sm:col-span-1">
+              <label class="text-xs text-slate-500 block mb-1">Ticker Symbol <span class="text-red-400">*</span></label>
+              <input id="add-stock-ticker" type="text" placeholder="e.g. RELIANCE.NS" class="adhoc-input" oninput="detectCurrency()" />
+              <div class="text-xs text-slate-600 mt-1" id="add-stock-currency-hint">Suffix: .NS = NSE &nbsp;·&nbsp; .BO = BSE &nbsp;·&nbsp; none = US</div>
+            </div>
+            <div>
+              <label class="text-xs text-slate-500 block mb-1">Quantity <span class="text-red-400">*</span></label>
+              <input id="add-stock-qty" type="number" placeholder="e.g. 15" class="adhoc-input" oninput="generateStockJSON()" />
+            </div>
+            <div>
+              <label class="text-xs text-slate-500 block mb-1">Avg Buy Price <span class="text-red-400">*</span></label>
+              <div class="flex">
+                <span id="add-stock-currency-sym" class="inline-flex items-center px-2 text-xs text-slate-400 rounded-l-md flex-shrink-0" style="background:#0f172a;border:1px solid #334155;border-right:0">₹</span>
+                <input id="add-stock-price" type="number" step="0.01" placeholder="e.g. 2800.00" class="adhoc-input" style="border-radius:0 6px 6px 0" oninput="generateStockJSON()" />
+              </div>
+            </div>
+            <div>
+              <label class="text-xs text-slate-500 block mb-1">Currency (auto)</label>
+              <input id="add-stock-currency" type="text" value="INR" readonly class="adhoc-input" style="opacity:0.5;cursor:default" />
+            </div>
+          </div>
+          <button onclick="generateStockJSON()" class="btn-sm btn-primary" style="width:100%">Generate JSON →</button>
+
+          <!-- Output -->
+          <div id="add-stock-output" class="hidden space-y-2">
+            <div class="flex items-center justify-between">
+              <label class="text-xs text-slate-500">Add to <code class="text-indigo-400">portfolio.json</code> → <code class="text-indigo-400">holdings</code> array:</label>
+              <button onclick="copyJSON('add-stock-json-text', this)" class="btn-sm btn-primary text-xs">Copy</button>
+            </div>
+            <pre id="add-stock-json-text" class="text-xs text-green-400 p-3 rounded-lg overflow-x-auto" style="background:#0a1120;border:1px solid #334155;margin:0"></pre>
+            <div class="p-3 rounded-lg text-xs text-slate-400 leading-relaxed" style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2)">
+              <strong class="text-indigo-400">How to apply:</strong> Paste the snippet into <code>portfolio.json</code> inside the <code>holdings</code> array, then commit &amp; push to GitHub. The portfolio update workflow will run on next schedule (hourly on weekdays), or trigger it manually from GitHub Actions.
+            </div>
+          </div>
+        </div>
+
+        <!-- Screenshot instructions for stocks -->
+        <div class="card p-4 space-y-4">
+          <h3 class="text-sm font-semibold text-white">📸 Add via Broker Screenshot</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">Don't know the exact ticker or price? Take a screenshot from your broker and let an AI extract it for you.</p>
+
+          <div class="space-y-4">
+            <!-- Step 1 -->
+            <div class="flex gap-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-700 flex items-center justify-center text-xs font-bold text-white flex-shrink-0 mt-0.5">1</div>
+              <div class="min-w-0">
+                <div class="text-xs font-semibold text-slate-200 mb-1">Take a screenshot of the holding</div>
+                <div class="text-xs text-slate-500 leading-relaxed">Open your broker app — <strong class="text-slate-400">Zerodha/Kite, Groww, Upstox, Angel One, ICICI Direct</strong> — and navigate to a <em>holding detail view</em> so the <strong>stock name/symbol</strong>, <strong>quantity</strong>, and <strong>average buy price</strong> are all visible.</div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex gap-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-700 flex items-center justify-center text-xs font-bold text-white flex-shrink-0 mt-0.5">2</div>
+              <div class="min-w-0">
+                <div class="text-xs font-semibold text-slate-200 mb-1">Upload to Claude.ai or ChatGPT</div>
+                <div class="text-xs text-slate-500 mb-2">Attach the screenshot and use this ready-made prompt:</div>
+                <div class="p-2 rounded text-xs font-mono text-slate-300 leading-relaxed" style="background:#0a1120;border:1px solid #334155;white-space:pre-wrap;word-break:break-word">Extract from this Indian broker screenshot: ticker symbol (add .NS for NSE, .BO for BSE), quantity, average buy price. JSON only: {"ticker":"...","qty":...,"avg_buy_price":...,"currency":"INR"}</div>
+                <button onclick="copyPrompt('stock', this)" class="btn-sm btn-primary mt-2 text-xs">Copy Prompt</button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex gap-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-700 flex items-center justify-center text-xs font-bold text-white flex-shrink-0 mt-0.5">3</div>
+              <div class="min-w-0">
+                <div class="text-xs font-semibold text-slate-200 mb-1">Paste the AI's JSON reply</div>
+                <textarea id="add-stock-paste" rows="3"
+                  placeholder='{"ticker":"RELIANCE.NS","qty":15,"avg_buy_price":2800,"currency":"INR"}'
+                  class="adhoc-input font-mono text-xs mt-1" style="resize:vertical"></textarea>
+                <button onclick="parseStockPaste()" class="btn-sm btn-primary mt-2">Auto-fill Form ↑</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- end addpanel-stock -->
+
+    <!-- ── MF SUB-PANEL ── -->
+    <div id="addpanel-mf" class="hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+        <!-- Manual form -->
+        <div class="card p-4 space-y-4">
+          <h3 class="text-sm font-semibold text-white">Manual Entry</h3>
+          <div class="space-y-3">
+            <div>
+              <label class="text-xs text-slate-500 block mb-1">Fund Name <span class="text-red-400">*</span></label>
+              <input id="add-mf-name" type="text" placeholder="e.g. Quant Healthcare Fund - Direct Plan - Growth" class="adhoc-input" oninput="generateMFJSON()" />
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="text-xs text-slate-500 block mb-1">Scheme Code / ISIN <span class="text-red-400">*</span></label>
+                <input id="add-mf-code" type="text" placeholder="e.g. 151853 or INF..." class="adhoc-input" oninput="generateMFJSON()" />
+                <div class="text-xs text-slate-600 mt-1">Numeric → mfapi.in &nbsp;·&nbsp; INF... → AMFI ISIN</div>
+              </div>
+              <div>
+                <label class="text-xs text-slate-500 block mb-1">Units Held <span class="text-red-400">*</span></label>
+                <input id="add-mf-units" type="number" step="0.001" placeholder="e.g. 37733.09" class="adhoc-input" oninput="generateMFJSON()" />
+              </div>
+              <div>
+                <label class="text-xs text-slate-500 block mb-1">Avg NAV (₹) <span class="text-red-400">*</span></label>
+                <input id="add-mf-nav" type="number" step="0.0001" placeholder="e.g. 15.2300" class="adhoc-input" oninput="generateMFJSON()" />
+              </div>
+              <div>
+                <label class="text-xs text-slate-500 block mb-1">SIP Amount (₹)</label>
+                <input id="add-mf-sip" type="number" placeholder="0 if no SIP" class="adhoc-input" oninput="generateMFJSON()" />
+              </div>
+              <div>
+                <label class="text-xs text-slate-500 block mb-1">SIP Date (day of month)</label>
+                <input id="add-mf-sipdate" type="number" min="1" max="31" value="1" class="adhoc-input" oninput="generateMFJSON()" />
+              </div>
+            </div>
+          </div>
+          <button onclick="generateMFJSON()" class="btn-sm btn-primary" style="width:100%">Generate JSON →</button>
+
+          <!-- Output -->
+          <div id="add-mf-output" class="hidden space-y-2">
+            <div class="flex items-center justify-between">
+              <label class="text-xs text-slate-500">Add to <code class="text-indigo-400">mf_portfolio.json</code> → <code class="text-indigo-400">funds</code> array:</label>
+              <button onclick="copyJSON('add-mf-json-text', this)" class="btn-sm btn-primary text-xs">Copy</button>
+            </div>
+            <pre id="add-mf-json-text" class="text-xs text-green-400 p-3 rounded-lg overflow-x-auto" style="background:#0a1120;border:1px solid #334155;margin:0"></pre>
+            <div class="p-3 rounded-lg text-xs text-slate-400 leading-relaxed" style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2)">
+              <strong class="text-indigo-400">How to apply:</strong> Paste the snippet into <code>mf_portfolio.json</code> inside the <code>funds</code> array, then commit &amp; push to GitHub. The MF NAV workflow runs daily at 8:30 PM IST — or trigger it manually from GitHub Actions.
+            </div>
+          </div>
+        </div>
+
+        <!-- Screenshot instructions for MF -->
+        <div class="card p-4 space-y-4">
+          <h3 class="text-sm font-semibold text-white">📸 Add via App Screenshot</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">Use your MF platform's holding screen and an AI to extract the data.</p>
+
+          <div class="space-y-4">
+            <!-- Step 1 -->
+            <div class="flex gap-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-700 flex items-center justify-center text-xs font-bold text-white flex-shrink-0 mt-0.5">1</div>
+              <div class="min-w-0">
+                <div class="text-xs font-semibold text-slate-200 mb-1">Screenshot the fund holding detail</div>
+                <div class="text-xs text-slate-500 leading-relaxed">Open <strong class="text-slate-400">Groww, Zerodha Coin, Kuvera, MFCentral, or PayTM Money</strong> and go to the individual fund screen. Make sure the <strong>fund name</strong>, <strong>units</strong>, and <strong>average NAV / invested amount</strong> are all visible.</div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex gap-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-700 flex items-center justify-center text-xs font-bold text-white flex-shrink-0 mt-0.5">2</div>
+              <div class="min-w-0">
+                <div class="text-xs font-semibold text-slate-200 mb-1">Upload to Claude.ai or ChatGPT</div>
+                <div class="text-xs text-slate-500 mb-2">Use this prompt (copy it first):</div>
+                <div class="p-2 rounded text-xs font-mono text-slate-300 leading-relaxed" style="background:#0a1120;border:1px solid #334155;white-space:pre-wrap;word-break:break-word">Extract from this MF holding screenshot: full fund name, mfapi.in numeric scheme code (look it up on mfapi.in if needed), units held, average NAV. JSON only: {"name":"...","scheme_code":"...","units":...,"avg_nav":...,"sip_amount":0,"sip_date":1}</div>
+                <button onclick="copyPrompt('mf', this)" class="btn-sm btn-primary mt-2 text-xs">Copy Prompt</button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex gap-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-700 flex items-center justify-center text-xs font-bold text-white flex-shrink-0 mt-0.5">3</div>
+              <div class="min-w-0">
+                <div class="text-xs font-semibold text-slate-200 mb-1">Paste the AI's JSON reply</div>
+                <textarea id="add-mf-paste" rows="3"
+                  placeholder='{"name":"Quant Healthcare Fund - Direct Plan - Growth","scheme_code":"151853","units":37733.09,"avg_nav":15.23,"sip_amount":0,"sip_date":1}'
+                  class="adhoc-input font-mono text-xs mt-1" style="resize:vertical"></textarea>
+                <button onclick="parseMFPaste()" class="btn-sm btn-primary mt-2">Auto-fill Form ↑</button>
+              </div>
+            </div>
+
+            <!-- Tip -->
+            <div class="flex gap-3">
+              <div class="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-slate-500 flex-shrink-0 mt-0.5">💡</div>
+              <div class="text-xs text-slate-500 leading-relaxed">
+                <strong class="text-slate-400">Find scheme code manually:</strong>
+                Visit <a href="https://www.mfapi.in/" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">mfapi.in</a> and search by fund name. For funds not listed there, get the ISIN from
+                <a href="https://www.amfiindia.com/nav-history-download" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">AMFI</a>
+                (starts with INF…) and paste that as the scheme code.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- end addpanel-mf -->
+
+  </div><!-- end panel-add -->
 
 </main>
 
@@ -869,8 +1075,99 @@ async function loadCorporate() {
     : '<p class="text-xs text-slate-600 py-2">No past events</p>';
 }
 
+// ── ADD TO PORTFOLIO ──────────────────────────────────────────────────────────
+function switchAddTab(name) {
+  ['stock','mf'].forEach(t => {
+    document.getElementById('addpanel-' + t).classList.toggle('hidden', t !== name);
+    document.getElementById('addtab-' + t).classList.toggle('active', t === name);
+  });
+}
+
+function detectCurrency() {
+  const ticker = document.getElementById('add-stock-ticker').value.trim().toUpperCase();
+  const cur    = (ticker.endsWith('.NS') || ticker.endsWith('.BO')) ? 'INR' : (ticker ? 'USD' : 'INR');
+  document.getElementById('add-stock-currency').value = cur;
+  document.getElementById('add-stock-currency-sym').textContent = cur === 'USD' ? '$' : '₹';
+  const hint = ticker.endsWith('.NS') ? '✓ NSE — National Stock Exchange'
+             : ticker.endsWith('.BO') ? '✓ BSE — Bombay Stock Exchange'
+             : ticker                 ? '✓ US Market (NYSE / NASDAQ)'
+             :                         'Suffix: .NS = NSE · .BO = BSE · none = US';
+  document.getElementById('add-stock-currency-hint').textContent = hint;
+  generateStockJSON();
+}
+
+function generateStockJSON() {
+  const ticker = (document.getElementById('add-stock-ticker').value.trim() || '').toUpperCase();
+  const qty    = parseFloat(document.getElementById('add-stock-qty').value);
+  const price  = parseFloat(document.getElementById('add-stock-price').value);
+  const cur    = document.getElementById('add-stock-currency').value || 'INR';
+  const out    = document.getElementById('add-stock-output');
+  if (!ticker || !qty || !price) { out.classList.add('hidden'); return; }
+  const obj = { ticker, qty, avg_buy_price: price, currency: cur };
+  document.getElementById('add-stock-json-text').textContent = JSON.stringify(obj, null, 2) + ',';
+  out.classList.remove('hidden');
+}
+
+function generateMFJSON() {
+  const name  = document.getElementById('add-mf-name').value.trim();
+  const code  = document.getElementById('add-mf-code').value.trim();
+  const units = parseFloat(document.getElementById('add-mf-units').value);
+  const nav   = parseFloat(document.getElementById('add-mf-nav').value);
+  const sip   = parseFloat(document.getElementById('add-mf-sip').value) || 0;
+  const sipd  = parseInt(document.getElementById('add-mf-sipdate').value) || 1;
+  const out   = document.getElementById('add-mf-output');
+  if (!name || !code || !units || !nav) { out.classList.add('hidden'); return; }
+  const obj = { name, scheme_code: code, units, avg_nav: nav, sip_amount: sip, sip_date: sipd };
+  document.getElementById('add-mf-json-text').textContent = JSON.stringify(obj, null, 2) + ',';
+  out.classList.remove('hidden');
+}
+
+function copyJSON(elementId, btn) {
+  navigator.clipboard.writeText(document.getElementById(elementId).textContent).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = orig, 1500);
+  });
+}
+
+const _PROMPTS = {
+  stock: `Extract from this Indian broker screenshot: ticker symbol (add .NS for NSE stocks, .BO for BSE), quantity, average buy price. JSON only: {"ticker":"...","qty":...,"avg_buy_price":...,"currency":"INR"}`,
+  mf:    `Extract from this MF holding screenshot: full fund name, mfapi.in numeric scheme code (look it up on mfapi.in if needed), units held, average NAV. JSON only: {"name":"...","scheme_code":"...","units":...,"avg_nav":...,"sip_amount":0,"sip_date":1}`,
+};
+
+function copyPrompt(type, btn) {
+  navigator.clipboard.writeText(_PROMPTS[type]).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = orig, 1500);
+  });
+}
+
+function parseStockPaste() {
+  try {
+    const obj = JSON.parse(document.getElementById('add-stock-paste').value.trim());
+    if (obj.ticker) document.getElementById('add-stock-ticker').value = obj.ticker.toUpperCase();
+    if (obj.qty   ) document.getElementById('add-stock-qty').value   = obj.qty;
+    if (obj.avg_buy_price) document.getElementById('add-stock-price').value = obj.avg_buy_price;
+    detectCurrency();
+  } catch(_) { alert('Invalid JSON — please paste the raw JSON block returned by the AI.'); }
+}
+
+function parseMFPaste() {
+  try {
+    const obj = JSON.parse(document.getElementById('add-mf-paste').value.trim());
+    if (obj.name        ) document.getElementById('add-mf-name').value    = obj.name;
+    if (obj.scheme_code ) document.getElementById('add-mf-code').value    = String(obj.scheme_code);
+    if (obj.units       ) document.getElementById('add-mf-units').value   = obj.units;
+    if (obj.avg_nav     ) document.getElementById('add-mf-nav').value     = obj.avg_nav;
+    if (obj.sip_amount  ) document.getElementById('add-mf-sip').value     = obj.sip_amount;
+    if (obj.sip_date    ) document.getElementById('add-mf-sipdate').value = obj.sip_date;
+    generateMFJSON();
+  } catch(_) { alert('Invalid JSON — please paste the raw JSON block returned by the AI.'); }
+}
+
 // ── TAB SWITCHING ────────────────────────────────────────────────────────────
-const PANELS = ['holdings','news','recommendations','corporate'];
+const PANELS = ['holdings','news','recommendations','corporate','add'];
 
 function switchTab(name) {
   PANELS.forEach(p => {
