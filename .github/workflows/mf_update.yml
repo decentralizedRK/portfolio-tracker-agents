@@ -42,10 +42,10 @@ jobs:
           mkdir -p docs/data
           cp data/mf_snapshot.json docs/data/ 2>/dev/null || true
 
-      - name: Commit & push snapshot
+      - name: Commit & push snapshot (+ mf_portfolio.json if SIP was recorded)
         run: |
           git config user.name  "portfolio-bot[bot]"
           git config user.email "portfolio-bot@users.noreply.github.com"
-          git add data/mf_snapshot.json docs/data/mf_snapshot.json
+          git add data/mf_snapshot.json docs/data/mf_snapshot.json mf_portfolio.json
           git diff --staged --quiet || git commit -m "chore: MF NAV snapshot $(date -u '+%Y-%m-%d')"
           git push

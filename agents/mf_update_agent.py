@@ -5,9 +5,8 @@ Runs daily at 8:30 PM IST (after AMFI publishes end-of-day NAVs at ~8 PM).
 
 - Reads fund list from mf_portfolio.json
 - Fetches latest NAV from mfapi.in (free, no key required)
+- On SIP dates: records new units at that day's NAV, updates avg_nav in mf_portfolio.json
 - Writes data/mf_snapshot.json for the dashboard
-
-AMFI publishes NAVs for all schemes by ~8 PM IST on every business day.
 """
 
 import json
@@ -15,7 +14,7 @@ import logging
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from logging.handlers import RotatingFileHandler
 
 import requests
@@ -43,10 +42,23 @@ RETRY      = 1
 _amfi_cache: dict = {}   # isin → nav, loaded once per run
 
 
+# ── Portfolio I/O ────────────────────────────────────────────────────────────
+
 def load_mf_portfolio() -> list:
     with open(MF_PATH) as f:
         return json.load(f).get("funds", [])
 
+
+def save_mf_portfolio(funds: list) -> None:
+    """Write updated fund list back to mf_portfolio.json atomically."""
+    tmp = MF_PATH + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump({"funds": funds}, f, indent=2)
+    os.replace(tmp, MF_PATH)
+    log.info("Saved updated mf_portfolio.json")
+
+
+# ── NAV Fetching ─────────────────────────────────────────────────────────────
 
 def _load_amfi() -> dict:
     """Download AMFI NAVAll.txt and build an ISIN→NAV map. Cached per run."""
@@ -79,7 +91,6 @@ def _load_amfi() -> dict:
 
 def fetch_nav(scheme_code: str):
     """Fetch latest NAV. Uses mfapi.in for numeric codes, AMFI file for ISINs."""
-    # ISIN-based lookup (starts with INF or ISIN format)
     if not scheme_code.isdigit():
         nav = _load_amfi().get(scheme_code)
         if nav:
@@ -87,7 +98,6 @@ def fetch_nav(scheme_code: str):
         log.error("ISIN %s not found in AMFI NAVAll.txt", scheme_code)
         return None
 
-    # Numeric scheme code → mfapi.in
     url = f"{MFAPI_BASE}/{scheme_code}"
     for attempt in range(RETRY + 1):
         try:
@@ -107,13 +117,97 @@ def fetch_nav(scheme_code: str):
     return None
 
 
-def build_snapshot(funds: list) -> list:
+def fetch_all_navs(funds: list) -> dict:
+    """Fetch NAV for every fund. Returns {scheme_code: nav}."""
+    navs = {}
+    for f in funds:
+        code = str(f.get("scheme_code", ""))
+        nav  = fetch_nav(code)
+        if nav is not None:
+            navs[code] = nav
+    return navs
+
+
+# ── SIP Recording ────────────────────────────────────────────────────────────
+
+def should_record_sip(fund: dict, today_ist: datetime) -> bool:
+    """
+    Return True if this fund's monthly SIP should be recorded today.
+
+    The agent runs Mon-Fri only. A 3-day lookback catches SIP dates that
+    fell on Saturday or Sunday (e.g. SIP date=1st, 1st is Saturday →
+    record on Monday the 3rd).
+    """
+    sip_amount = fund.get("sip_amount", 0)
+    sip_date   = fund.get("sip_date")
+    if not sip_amount or not sip_date:
+        return False
+
+    # Already recorded this calendar month?
+    last = fund.get("last_sip_recorded", "")
+    if last:
+        try:
+            last_dt = datetime.strptime(last, "%Y-%m-%d")
+            if last_dt.year == today_ist.year and last_dt.month == today_ist.month:
+                log.debug(
+                    "SIP already recorded this month for %s (last: %s)",
+                    fund.get("name", ""), last,
+                )
+                return False
+        except ValueError:
+            pass
+
+    # Check today and the 2 preceding days (weekend fallback)
+    for delta in range(3):
+        candidate = today_ist - timedelta(days=delta)
+        if candidate.day == sip_date:
+            return True
+
+    return False
+
+
+def record_sip(fund: dict, nav: float, today_ist: datetime) -> dict:
+    """
+    Add this month's SIP allocation to the fund in-place.
+    Returns a summary dict for logging / Telegram.
+    """
+    sip_amount  = float(fund["sip_amount"])
+    old_units   = float(fund["units"])
+    old_avg_nav = float(fund["avg_nav"])
+
+    new_units      = sip_amount / nav
+    total_units    = old_units + new_units
+    total_invested = old_units * old_avg_nav + sip_amount
+    new_avg_nav    = total_invested / total_units
+
+    fund["units"]             = round(total_units, 3)
+    fund["avg_nav"]           = round(new_avg_nav, 4)
+    fund["last_sip_recorded"] = today_ist.strftime("%Y-%m-%d")
+
+    log.info(
+        "SIP recorded: %s  +%.3f units @ ₹%.4f  (₹%.0f)  new avg_nav ₹%.4f",
+        fund.get("name", ""), new_units, nav, sip_amount, new_avg_nav,
+    )
+
+    return {
+        "name":        fund["name"],
+        "sip_amount":  sip_amount,
+        "new_units":   round(new_units, 3),
+        "nav":         nav,
+        "new_avg_nav": round(new_avg_nav, 4),
+    }
+
+
+# ── Snapshot ─────────────────────────────────────────────────────────────────
+
+def build_snapshot_from_navs(funds: list, navs: dict) -> list:
+    """Compute P&L snapshot using pre-fetched NAVs."""
     results = []
     for f in funds:
-        scheme_code = str(f.get("scheme_code", ""))
-        nav         = fetch_nav(scheme_code)
+        code = str(f.get("scheme_code", ""))
+        nav  = navs.get(code)
         if nav is None:
-            log.warning("No NAV for scheme %s (%s) — skipped", scheme_code, f.get("name"))
+            log.warning("No NAV for scheme %s (%s) — skipped", code, f.get("name"))
             continue
 
         units    = float(f.get("units", 0))
@@ -124,25 +218,28 @@ def build_snapshot(funds: list) -> list:
         pct      = round((nav - avg_nav) / avg_nav * 100, 2) if avg_nav else 0.0
 
         results.append({
-            "scheme_code":  scheme_code,
-            "name":         f.get("name", ""),
-            "units":        round(units, 3),
-            "avg_nav":      round(avg_nav, 4),
-            "current_nav":  round(nav, 4),
-            "invested":     invested,
+            "scheme_code":   code,
+            "name":          f.get("name", ""),
+            "units":         round(units, 3),
+            "avg_nav":       round(avg_nav, 4),
+            "current_nav":   round(nav, 4),
+            "invested":      invested,
             "current_value": current,
-            "pnl":          pnl,
-            "pnl_pct":      pct,
-            "sip_amount":   f.get("sip_amount", 0),
-            "sip_date":     f.get("sip_date", 1),
+            "pnl":           pnl,
+            "pnl_pct":       pct,
+            "sip_amount":    f.get("sip_amount", 0),
+            "sip_date":      f.get("sip_date", 1),
+            "last_sip_recorded": f.get("last_sip_recorded", ""),
         })
         sign = "+" if pct >= 0 else ""
-        log.info("%-12s  NAV ₹%8.4f  %s%+.2f%%", scheme_code, nav, sign, pct)
+        log.info("%-12s  NAV ₹%8.4f  %s%+.2f%%", code, nav, sign, pct)
 
     return results
 
 
-def format_message(snapshot: list, ts: str) -> str:
+# ── Telegram Message ─────────────────────────────────────────────────────────
+
+def format_message(snapshot: list, ts: str, sip_events: list) -> str:
     if not snapshot:
         return f"🏦 *MF UPDATE | {ts}*\n\nNo fund data available."
 
@@ -158,17 +255,30 @@ def format_message(snapshot: list, ts: str) -> str:
         "",
         f"Invested : `₹{total_invested:>13,.0f}`",
         f"Current  : `₹{total_current:>13,.0f}`",
-        f"P&L      : `{sign}₹{total_pnl:>12,.0f}` (*{'+' if total_pct >= 0 else ''}{total_pct:.2f}%*)",
+        f"P&L      : `{sign}₹{abs(total_pnl):>12,.0f}` (*{'+' if total_pct >= 0 else ''}{total_pct:.2f}%*)",
         f"Funds    : {len(snapshot)} tracked",
         "",
     ]
+
     for f in sorted(snapshot, key=lambda x: x["pnl_pct"], reverse=True):
         short = f["name"][:22] if len(f["name"]) > 22 else f["name"]
-        sign2 = "+" if f["pnl_pct"] >= 0 else ""
-        lines.append(f"`{short:<22}` {sign2}{f['pnl_pct']:.2f}%  NAV ₹{f['current_nav']:.2f}")
+        s2    = "+" if f["pnl_pct"] >= 0 else ""
+        lines.append(f"`{short:<22}` {s2}{f['pnl_pct']:.2f}%  NAV ₹{f['current_nav']:.2f}")
+
+    if sip_events:
+        total_sip = sum(e["sip_amount"] for e in sip_events)
+        lines += ["", f"📅 *SIP EXECUTED — ₹{total_sip:,.0f} invested today*"]
+        for e in sip_events:
+            short = e["name"][:28] if len(e["name"]) > 28 else e["name"]
+            lines.append(
+                f"`{short}` +{e['new_units']:,.3f} units @ ₹{e['nav']:.4f}  "
+                f"(₹{e['sip_amount']:,.0f})"
+            )
 
     return "\n".join(lines)
 
+
+# ── Main ─────────────────────────────────────────────────────────────────────
 
 def run() -> None:
     funds = load_mf_portfolio()
@@ -180,22 +290,45 @@ def run() -> None:
     ts      = now_ist.strftime("%d %b %Y %H:%M IST")
     log.info("Running MF update at %s for %d fund(s)", ts, len(funds))
 
-    snapshot = build_snapshot(funds)
+    # 1. Fetch all NAVs (single pass — AMFI cache shared)
+    navs = fetch_all_navs(funds)
 
+    # 2. Record SIPs if today is a SIP date
+    sip_events   = []
+    sip_recorded = False
+    for fund in funds:
+        code = str(fund.get("scheme_code", ""))
+        nav  = navs.get(code)
+        if nav and should_record_sip(fund, now_ist):
+            event = record_sip(fund, nav, now_ist)
+            sip_events.append(event)
+            sip_recorded = True
+
+    # 3. If SIPs were recorded, persist updated units/avg_nav back to mf_portfolio.json
+    if sip_recorded:
+        save_mf_portfolio(funds)
+        log.info("%d SIP(s) recorded and saved to mf_portfolio.json", len(sip_events))
+
+    # 4. Build snapshot using (possibly updated) fund data
+    snapshot = build_snapshot_from_navs(funds, navs)
+
+    # 5. Compute portfolio totals
     total_invested = sum(f["invested"] for f in snapshot)
     total_current  = sum(f["current_value"] for f in snapshot)
     total_pnl      = total_current - total_invested
     total_pct      = (total_pnl / total_invested * 100) if total_invested else 0
 
     data = {
-        "timestamp":     now_ist.isoformat(),
-        "total_invested": round(total_invested, 2),
-        "total_current":  round(total_current, 2),
-        "total_pnl":      round(total_pnl, 2),
-        "total_pnl_pct":  round(total_pct, 2),
-        "funds":          snapshot,
+        "timestamp":         now_ist.isoformat(),
+        "total_invested":    round(total_invested, 2),
+        "total_current":     round(total_current, 2),
+        "total_pnl":         round(total_pnl, 2),
+        "total_pnl_pct":     round(total_pct, 2),
+        "sip_recorded_today": len(sip_events),
+        "funds":             snapshot,
     }
 
+    # 6. Write snapshot atomically
     os.makedirs(DATA_DIR, exist_ok=True)
     tmp = SNAPSHOT_PATH + ".tmp"
     with open(tmp, "w") as f:
@@ -203,7 +336,8 @@ def run() -> None:
     os.replace(tmp, SNAPSHOT_PATH)
     log.info("Saved MF snapshot → %s", SNAPSHOT_PATH)
 
-    msg = format_message(snapshot, ts)
+    # 7. Send notifications
+    msg = format_message(snapshot, ts, sip_events)
     send_console(msg)
     send_telegram(msg)
 

@@ -834,20 +834,27 @@ function renderSipSettings(funds) {
     return;
   }
   el.innerHTML = funds.map(f => {
-    const sip    = getSipSetting(f.scheme_code, { amount: f.sip_amount ?? 0, date: f.sip_date ?? 1 });
-    const short  = f.name?.length > 35 ? f.name.slice(0,33) + '…' : (f.name ?? f.scheme_code);
-    return `<div class="flex items-center gap-3 py-1.5">
-      <span class="text-xs text-slate-300 flex-1 min-w-0 truncate" title="${f.name ?? ''}">${short}</span>
-      <div class="flex items-center gap-1 flex-shrink-0">
+    const sip      = getSipSetting(f.scheme_code, { amount: f.sip_amount ?? 0, date: f.sip_date ?? 1 });
+    const short    = f.name?.length > 32 ? f.name.slice(0,30) + '…' : (f.name ?? f.scheme_code);
+    const lastSip  = f.last_sip_recorded ?? '';
+    const lastBadge = lastSip
+      ? `<span class="text-xs text-green-500 flex-shrink-0" title="Last SIP recorded">✓ ${fmt.date(lastSip)}</span>`
+      : `<span class="text-xs text-slate-600 flex-shrink-0">not recorded yet</span>`;
+    return `<div class="py-2 border-b border-slate-800 last:border-0">
+      <div class="flex items-center gap-2 mb-1.5">
+        <span class="text-xs text-slate-300 flex-1 min-w-0 truncate" title="${f.name ?? ''}">${short}</span>
+        ${sip.amount > 0 ? lastBadge : ''}
+      </div>
+      <div class="flex items-center gap-1">
         <span class="text-xs text-slate-500">₹</span>
-        <input type="number" class="sip-input" value="${sip.amount}" placeholder="Amount"
+        <input type="number" class="sip-input" value="${sip.amount}" placeholder="0"
                onchange="saveSipSetting('${f.scheme_code}', this.value, this.closest('div').querySelector('.sip-date').value)"
-               title="SIP Amount" />
-        <span class="text-xs text-slate-500 ml-1">on</span>
-        <input type="number" class="sip-input sip-date" value="${sip.date}" min="1" max="31" placeholder="Day"
-               style="width:56px"
+               title="Monthly SIP amount" />
+        <span class="text-xs text-slate-500 ml-1">on day</span>
+        <input type="number" class="sip-input sip-date" value="${sip.date}" min="1" max="31" placeholder="1"
+               style="width:52px"
                onchange="saveSipSetting('${f.scheme_code}', this.closest('div').querySelector('input[type=number]:not(.sip-date)').value, this.value)"
-               title="SIP Date (day of month)" />
+               title="Day of month" />
         <span class="text-xs text-slate-500">of month</span>
       </div>
     </div>`;
