@@ -337,11 +337,13 @@ const PATHS = {
 };
 
 // ── STATE ───────────────────────────────────────────────────────────────────
-let _holdings = [];
-let _sortKey  = 'invested';
-let _sortAsc  = false;
-let _filter   = '';
-let _pnlChart = null;
+let _holdings   = [];
+let _sortKey    = 'invested';
+let _sortAsc    = false;
+let _filter     = '';
+let _pnlChart   = null;
+let _stockTotals = { invested: 0, current: 0, count: 0 };
+let _mfTotals    = { invested: 0, current: 0, count: 0 };
 
 // ── UTILS ───────────────────────────────────────────────────────────────────
 const fmt = {
@@ -384,6 +386,23 @@ function checkMarketStatus() {
   }
 }
 
+// ── COMBINED STAT CARDS ──────────────────────────────────────────────────────
+function updateCombinedStats() {
+  const invested = _stockTotals.invested + _mfTotals.invested;
+  const current  = _stockTotals.current  + _mfTotals.current;
+  const pnl      = current - invested;
+  const pct      = invested > 0 ? (pnl / invested * 100) : 0;
+  const count    = _stockTotals.count + _mfTotals.count;
+
+  document.getElementById('s-invested').textContent = fmt.inr(invested);
+  document.getElementById('s-stocks').textContent =
+    `${_stockTotals.count} stocks · ${_mfTotals.count} funds`;
+
+  setWithColor('s-current', fmt.inr(current),                         pct, 's-current-sub', fmt.pct(pct));
+  setWithColor('s-pnl',     (pnl >= 0 ? '+' : '') + fmt.inr(Math.abs(pnl)), pnl, 's-pnl-sub', fmt.pct(pct));
+  setWithColor('s-pct',     fmt.pct(pct), pct);
+}
+
 // ── SNAPSHOT ────────────────────────────────────────────────────────────────
 async function loadSnapshot() {
   const d = await loadJSON(PATHS.snapshot);
@@ -391,15 +410,12 @@ async function loadSnapshot() {
   document.getElementById('last-updated').textContent =
     d.timestamp ? 'Updated ' + fmt.ts(d.timestamp) : 'Not yet fetched';
 
-  const pct = d.total_pnl_pct ?? 0;
-  const pnl = d.total_pnl    ?? 0;
-
-  document.getElementById('s-invested').textContent = fmt.inr(d.total_invested);
-  document.getElementById('s-stocks').textContent   = (d.holdings?.length ?? 0) + ' stocks';
-
-  setWithColor('s-current',     fmt.inr(d.total_current),                       pct, 's-current-sub', fmt.pct(pct));
-  setWithColor('s-pnl',         (pnl >= 0 ? '+' : '') + fmt.inr(Math.abs(pnl)), pnl, 's-pnl-sub',     fmt.pct(pct));
-  setWithColor('s-pct',         fmt.pct(pct), pct);
+  _stockTotals = {
+    invested: d.total_invested ?? 0,
+    current:  d.total_current  ?? 0,
+    count:    d.holdings?.length ?? 0,
+  };
+  updateCombinedStats();
 
   renderLeaderboard('runners-list',  d.runners  ?? [], true);
   renderLeaderboard('draggers-list', d.draggers ?? [], false);
@@ -525,10 +541,18 @@ async function loadMF() {
     funds = d.funds ?? [];
     const ts = d.timestamp ? 'NAV as of ' + fmt.ts(d.timestamp) : '';
     document.getElementById('mf-updated').textContent = ts;
+
+    _mfTotals = {
+      invested: d.total_invested ?? funds.reduce((s,f) => s + (f.invested ?? 0), 0),
+      current:  d.total_current  ?? funds.reduce((s,f) => s + (f.current_value ?? 0), 0),
+      count:    funds.length,
+    };
   } catch (_) {
     document.getElementById('mf-updated').textContent = 'No MF snapshot yet — add funds to mf_portfolio.json';
+    _mfTotals = { invested: 0, current: 0, count: 0 };
   }
 
+  updateCombinedStats();
   renderMFTable(funds);
   renderSipSettings(funds);
   renderAdhocList();
@@ -856,6 +880,21 @@ function switchTab(name) {
 }
 
 // ── REFRESH ALL ──────────────────────────────────────────────────────────────
+async function loadMFTotalsOnly() {
+  try {
+    const d = await loadJSON(PATHS.mf);
+    const funds = d.funds ?? [];
+    _mfTotals = {
+      invested: d.total_invested ?? funds.reduce((s,f) => s + (f.invested ?? 0), 0),
+      current:  d.total_current  ?? funds.reduce((s,f) => s + (f.current_value ?? 0), 0),
+      count:    funds.length,
+    };
+    updateCombinedStats();
+  } catch (_) {
+    // mf_snapshot not ready yet — totals stay at zero
+  }
+}
+
 async function refreshAll() {
   checkMarketStatus();
   const btn = document.querySelector('button[onclick="refreshAll()"]');
@@ -863,6 +902,7 @@ async function refreshAll() {
   try {
     await Promise.allSettled([
       loadSnapshot().catch(e => console.error('snapshot:', e)),
+      loadMFTotalsOnly().catch(e => console.error('mf totals:', e)),
       loadNews().catch(e => console.error('news:', e)),
       loadRecommendations().catch(e => console.error('recs:', e)),
       loadCorporate().catch(e => console.error('corporate:', e)),
