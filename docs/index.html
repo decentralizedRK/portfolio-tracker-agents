@@ -222,14 +222,27 @@
 
       <!-- SIP Settings -->
       <div class="card p-4">
-        <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center justify-between mb-1">
           <h3 class="text-sm font-semibold text-white">📅 SIP Settings</h3>
-          <span class="text-xs text-slate-500">Auto-saved to browser</span>
+          <button onclick="generateSIPPortfolioJSON()" class="btn-sm btn-primary text-xs">📋 Sync to mf_portfolio.json</button>
         </div>
+        <p class="text-xs text-slate-600 mb-4">Edit amounts below · changes auto-save to browser. Click "Sync" to get JSON you can commit to GitHub.</p>
         <div id="sip-list" class="space-y-2"></div>
         <div class="mt-4 pt-3 border-t border-slate-700 flex items-center justify-between">
           <span class="text-xs text-slate-500">Total Monthly SIP</span>
           <span class="text-sm font-semibold text-white" id="sip-total">—</span>
+        </div>
+
+        <!-- JSON output (hidden until Sync clicked) -->
+        <div id="sip-json-section" class="hidden mt-4 pt-4 border-t border-slate-700 space-y-2">
+          <div class="flex items-center justify-between">
+            <label class="text-xs text-slate-400">Replace contents of <code class="text-indigo-400">mf_portfolio.json</code> with:</label>
+            <button onclick="copySIPJson(this)" class="btn-sm btn-primary text-xs">Copy</button>
+          </div>
+          <pre id="sip-json-output" class="text-xs text-green-400 p-3 rounded-lg overflow-x-auto" style="background:#0a1120;border:1px solid #334155;max-height:280px;margin:0"></pre>
+          <div class="p-2 rounded text-xs text-slate-500 leading-relaxed" style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.15)">
+            Commit this file to GitHub → the MF NAV workflow will persist the new SIP values from next run.
+          </div>
         </div>
       </div>
 
@@ -550,6 +563,7 @@ let _filter     = '';
 let _pnlChart   = null;
 let _stockTotals = { invested: 0, current: 0, count: 0 };
 let _mfTotals    = { invested: 0, current: 0, count: 0 };
+let _mfFunds     = [];   // full fund list from snapshot, kept for SIP total + JSON generation
 
 // ── UTILS ───────────────────────────────────────────────────────────────────
 const fmt = {
@@ -753,9 +767,11 @@ async function loadMF() {
       current:  d.total_current  ?? funds.reduce((s,f) => s + (f.current_value ?? 0), 0),
       count:    funds.length,
     };
+    _mfFunds = funds;
   } catch (_) {
     document.getElementById('mf-updated').textContent = 'No MF snapshot yet — add funds to mf_portfolio.json';
     _mfTotals = { invested: 0, current: 0, count: 0 };
+    _mfFunds  = [];
   }
 
   updateCombinedStats();
@@ -807,7 +823,7 @@ function getSipSetting(schemeCode, defaults) {
 
 function saveSipSetting(schemeCode, amount, date) {
   localStorage.setItem('sip_' + schemeCode, JSON.stringify({ amount: Number(amount), date: Number(date) }));
-  updateSipTotal();
+  updateSipTotal(_mfFunds);
 }
 
 function renderSipSettings(funds) {
@@ -898,6 +914,34 @@ function renderAdhocList() {
           <button onclick="deleteAdhoc(${x.id})" class="btn-sm btn-danger flex-shrink-0">✕</button>
         </div>`).join('')}
     </div>`;
+}
+
+function generateSIPPortfolioJSON() {
+  if (!_mfFunds.length) { alert('Load the Mutual Funds tab first.'); return; }
+
+  const funds = _mfFunds.map(f => {
+    const sip = getSipSetting(f.scheme_code, { amount: f.sip_amount ?? 0, date: f.sip_date ?? 1 });
+    return {
+      name:        f.name,
+      scheme_code: f.scheme_code,
+      units:       f.units,
+      avg_nav:     f.avg_nav,
+      sip_amount:  sip.amount,
+      sip_date:    sip.date,
+    };
+  });
+
+  document.getElementById('sip-json-output').textContent = JSON.stringify({ funds }, null, 2);
+  document.getElementById('sip-json-section').classList.remove('hidden');
+  document.getElementById('sip-json-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function copySIPJson(btn) {
+  navigator.clipboard.writeText(document.getElementById('sip-json-output').textContent).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = orig, 1500);
+  });
 }
 
 // ── HOLDINGS SUB-TABS ────────────────────────────────────────────────────────
