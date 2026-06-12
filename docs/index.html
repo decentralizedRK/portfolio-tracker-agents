@@ -544,7 +544,7 @@
                 <textarea id="add-stock-paste" rows="3"
                   placeholder='{"ticker":"RELIANCE.NS","qty":15,"avg_buy_price":2800,"currency":"INR"}'
                   class="adhoc-input font-mono text-xs mt-1" style="resize:vertical"></textarea>
-                <button onclick="parseStockPaste()" class="btn-sm btn-primary mt-2">Auto-fill Form ↑</button>
+                <button onclick="parseStockPaste()" class="btn-sm btn-primary mt-2">Add to Portfolio</button>
               </div>
             </div>
           </div>
@@ -1639,11 +1639,28 @@ async function bulkImportAll() {
 
 function parseStockPaste() {
   try {
-    const obj = JSON.parse(document.getElementById('add-stock-paste').value.trim());
-    if (obj.ticker) document.getElementById('add-stock-ticker').value = obj.ticker.toUpperCase();
-    if (obj.qty   ) document.getElementById('add-stock-qty').value   = obj.qty;
-    if (obj.avg_buy_price) document.getElementById('add-stock-price').value = obj.avg_buy_price;
+    const raw = document.getElementById('add-stock-paste').value.trim();
+    const parsed = JSON.parse(raw);
+
+    // Array pasted → route to Bulk Import tab
+    if (Array.isArray(parsed)) {
+      document.getElementById('bulk-paste').value = raw;
+      switchAddTab('bulk');
+      previewBulkImport();
+      return;
+    }
+
+    // Single object → fill form fields
+    if (parsed.ticker) document.getElementById('add-stock-ticker').value = parsed.ticker.toUpperCase();
+    if (parsed.qty   ) document.getElementById('add-stock-qty').value   = parsed.qty;
+    if (parsed.avg_buy_price) document.getElementById('add-stock-price').value = parsed.avg_buy_price;
     detectCurrency();
+    generateStockJSON();
+
+    // If logged in, trigger save directly
+    if (_currentUser) {
+      addStockToFirestore();
+    }
   } catch(_) { alert('Invalid JSON — please paste the raw JSON block returned by the AI.'); }
 }
 
