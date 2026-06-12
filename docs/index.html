@@ -411,6 +411,7 @@
         <button class="perf-period-btn sub-tab"        data-days="180" onclick="switchPerfPeriod(180)">6M</button>
         <button class="perf-period-btn sub-tab"        data-days="365" onclick="switchPerfPeriod(365)">1Y</button>
         <span id="perf-loading" class="hidden text-xs text-slate-500 ml-2">Loading…</span>
+        <button onclick="triggerRecalculate()" class="btn-sm ml-auto flex-shrink-0" style="background:#1e293b;color:#94a3b8;border:1px solid #334155;padding:0.3rem 0.75rem;border-radius:6px;font-size:0.7rem;cursor:pointer" title="Recalculate today's snapshot with current prices">↻ Recalculate Today</button>
       </div>
 
       <!-- Change cards -->
@@ -904,6 +905,11 @@ async function loadUserPortfolio(uid) {
   const perfContent     = document.getElementById('perf-content');
   if (perfAuthNote) perfAuthNote.classList.add('hidden');
   if (perfContent)  perfContent.classList.remove('hidden');
+}
+
+function triggerRecalculate() {
+  if (!_currentUser) return;
+  recalculateTodaySnapshot(_currentUser.uid, _userHoldings, _userMFFunds, _priceMap, _navMap);
 }
 
 async function onUserSignedOut() {

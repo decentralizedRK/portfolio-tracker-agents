@@ -146,21 +146,31 @@ function renderChangeCards(snapshots) {
   renderCard('perf-monthly', change(findBefore(daysAgoDate(30))));
 }
 
+function _buildSnapshotData(holdings, mfFunds, priceMap, navMap) {
+  const portfolioView = computePortfolioView(holdings, priceMap);
+  const mfView        = computeMFView(mfFunds, navMap);
+  const totalInvested = portfolioView.reduce((s, h) => s + (h.invested      ?? 0), 0)
+                      + mfView.reduce(       (s, f) => s + (f.invested      ?? 0), 0);
+  const totalCurrent  = portfolioView.reduce((s, h) => s + (h.current_value ?? 0), 0)
+                      + mfView.reduce(       (s, f) => s + (f.current_value ?? 0), 0);
+  return { portfolioView, mfView, totalInvested, totalCurrent };
+}
+
 async function maybeCreateDailySnapshot(uid, holdings, mfFunds, priceMap, navMap) {
   if (!uid || !db) return;
   const today = todayStr();
   try {
+    const { totalInvested, totalCurrent, portfolioView, mfView } =
+      _buildSnapshotData(holdings, mfFunds, priceMap, navMap);
+
+    // Skip if prices haven't loaded yet
+    if (totalCurrent === 0) return;
+
     const existing = await db.collection('users').doc(uid)
       .collection('snapshots').doc(today).get();
-    if (existing.exists) return;
 
-    const portfolioView = computePortfolioView(holdings, priceMap);
-    const mfView        = computeMFView(mfFunds, navMap);
-
-    const totalInvested = portfolioView.reduce((s, h) => s + (h.invested      ?? 0), 0)
-                        + mfView.reduce(       (s, f) => s + (f.invested      ?? 0), 0);
-    const totalCurrent  = portfolioView.reduce((s, h) => s + (h.current_value ?? 0), 0)
-                        + mfView.reduce(       (s, f) => s + (f.current_value ?? 0), 0);
+    // Skip only if a valid (non-zero) snapshot already exists
+    if (existing.exists && (existing.data().total_current ?? 0) > 0) return;
 
     await saveSnapshot(uid, today, {
       timestamp:      firebase.firestore.FieldValue.serverTimestamp(),
@@ -174,4 +184,28 @@ async function maybeCreateDailySnapshot(uid, holdings, mfFunds, priceMap, navMap
   } catch (e) {
     console.warn('Daily snapshot creation failed (non-fatal):', e);
   }
+}
+
+async function recalculateTodaySnapshot(uid, holdings, mfFunds, priceMap, navMap) {
+  if (!uid || !db) return;
+  const today = todayStr();
+  const { totalInvested, totalCurrent, portfolioView, mfView } =
+    _buildSnapshotData(holdings, mfFunds, priceMap, navMap);
+
+  if (totalCurrent === 0) {
+    alert('Prices not loaded yet — please wait a moment and try again.');
+    return;
+  }
+
+  await saveSnapshot(uid, today, {
+    timestamp:      firebase.firestore.FieldValue.serverTimestamp(),
+    total_invested: totalInvested,
+    total_current:  totalCurrent,
+    total_pnl:      totalCurrent - totalInvested,
+    total_pnl_pct:  totalInvested > 0 ? ((totalCurrent - totalInvested) / totalInvested * 100) : 0,
+    stock_count:    portfolioView.length,
+    mf_count:       mfView.length,
+  });
+
+  await loadPerformanceTab();
 }
