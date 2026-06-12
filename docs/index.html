@@ -1691,7 +1691,7 @@ function switchTab(name) {
     document.getElementById('panel-' + p).classList.toggle('hidden', p !== name);
     document.getElementById('tab-'   + p).classList.toggle('active', p === name);
   });
-  if (name === 'performance' && _currentUser) loadPerformanceTab();
+  if (name === 'performance' && _currentUser) triggerRecalculate();
 }
 
 // ── REFRESH ALL ──────────────────────────────────────────────────────────────
