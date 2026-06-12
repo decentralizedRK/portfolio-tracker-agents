@@ -1,0 +1,36 @@
+name: Run All Agents
+
+# Trigger manually from GitHub Actions tab — runs all 5 agents at once.
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  trigger-all:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger all agent workflows
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const workflows = [
+              { id: 'portfolio_update.yml',      label: 'Portfolio Update',      inputs: { force: 'true' } },
+              { id: 'news_agent.yml',            label: 'Morning News Digest',   inputs: {} },
+              { id: 'corporate_action_agent.yml',label: 'Corporate Actions',     inputs: {} },
+              { id: 'recommendation_agent.yml',  label: 'Weekly Recommendations',inputs: {} },
+              { id: 'mf_update.yml',             label: 'MF NAV Update',        inputs: {} },
+            ];
+
+            for (const wf of workflows) {
+              await github.rest.actions.createWorkflowDispatch({
+                owner: context.repo.owner,
+                repo:  context.repo.repo,
+                workflow_id: wf.id,
+                ref:   'main',
+                inputs: wf.inputs,
+              });
+              console.log(`✓ Triggered: ${wf.label}`);
+            }
