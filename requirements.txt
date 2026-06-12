@@ -1,5 +1,4 @@
 yfinance>=0.2.40
-tvdatafeed>=2.0.0
 nsepython>=2.9
 pandas>=2.0.0
 ta>=0.11.0
