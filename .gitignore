@@ -21,3 +21,4 @@ build/
 # Data files are committed by GitHub Actions (not ignored)
 # data/         ← tracked
 # docs/data/    ← tracked
+# docs/js/      ← tracked (firebase-config.js uses placeholder values safe to commit)
