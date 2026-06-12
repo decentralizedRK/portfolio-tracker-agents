@@ -1,9 +1,14 @@
 {
-  "date": "06 Jun 2026",
-  "timestamp": "2026-06-06T15:55:59.856555+05:30",
+  "date": "12 Jun 2026",
+  "timestamp": "2026-06-12T13:53:27.271364+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-06-12",
+          "amount": 1.3
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -161,7 +166,12 @@
       "error": null
     },
     "TMCV.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-06-12",
+          "amount": 4.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -193,7 +203,7 @@
       "calendar": {},
       "error": null
     },
-    "TATACAPITAL.NS": {
+    "TATACAP.NS": {
       "dividends": [],
       "splits": [],
       "calendar": {},
@@ -294,7 +304,12 @@
       "error": null
     },
     "INFY.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-06-10",
+          "amount": 25.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -315,7 +330,12 @@
       "error": null
     },
     "TATASTEEL.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-06-12",
+          "amount": 4.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -373,6 +393,38 @@
     }
   },
   "highlights": [
+    {
+      "ticker": "ADANIENT.NS",
+      "display": "ADANIENT",
+      "type": "Dividend",
+      "date": "2026-06-12",
+      "detail": "\u20b91.30/share",
+      "in_portfolio": true
+    },
+    {
+      "ticker": "TMCV.NS",
+      "display": "TMCV",
+      "type": "Dividend",
+      "date": "2026-06-12",
+      "detail": "\u20b94.00/share",
+      "in_portfolio": true
+    },
+    {
+      "ticker": "TATASTEEL.NS",
+      "display": "TATASTEEL",
+      "type": "Dividend",
+      "date": "2026-06-12",
+      "detail": "\u20b94.00/share",
+      "in_portfolio": false
+    },
+    {
+      "ticker": "INFY.NS",
+      "display": "INFY",
+      "type": "Dividend",
+      "date": "2026-06-10",
+      "detail": "\u20b925.00/share",
+      "in_portfolio": false
+    },
     {
       "ticker": "RELIANCE.NS",
       "display": "RELIANCE",
@@ -460,38 +512,6 @@
       "date": "2026-02-04",
       "detail": "\u20b91.50/share",
       "in_portfolio": true
-    },
-    {
-      "ticker": "CAMS.NS",
-      "display": "CAMS",
-      "type": "Dividend",
-      "date": "2026-01-30",
-      "detail": "\u20b93.50/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "CGPOWER.NS",
-      "display": "CGPOWER",
-      "type": "Dividend",
-      "date": "2026-01-30",
-      "detail": "\u20b91.30/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "COFORGE.NS",
-      "display": "COFORGE",
-      "type": "Dividend",
-      "date": "2026-01-30",
-      "detail": "\u20b94.00/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "WIPRO.NS",
-      "display": "WIPRO",
-      "type": "Dividend",
-      "date": "2026-01-27",
-      "detail": "\u20b96.00/share",
-      "in_portfolio": false
     }
   ]
 }
