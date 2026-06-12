@@ -48,4 +48,5 @@ jobs:
           git config user.email "portfolio-bot@users.noreply.github.com"
           git add data/recommendations.json docs/data/recommendations.json
           git diff --staged --quiet || git commit -m "chore: weekly recommendations $(date -u '+%Y-%m-%d')"
+          git pull --rebase origin main
           git push

@@ -47,4 +47,5 @@ jobs:
           git config user.email "portfolio-bot@users.noreply.github.com"
           git add data/corporate_actions.json docs/data/corporate_actions.json
           git diff --staged --quiet || git commit -m "chore: corporate actions $(date -u '+%Y-%m-%d')"
+          git pull --rebase origin main
           git push
