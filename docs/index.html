@@ -459,6 +459,7 @@
     <div class="flex items-center gap-3">
       <button class="sub-tab active" onclick="switchAddTab('stock')" id="addtab-stock">📈 Add Stock</button>
       <button class="sub-tab"        onclick="switchAddTab('mf')"    id="addtab-mf">🏦 Add Mutual Fund</button>
+      <button class="sub-tab"        onclick="switchAddTab('bulk')"  id="addtab-bulk">📦 Bulk Import</button>
     </div>
 
     <!-- ── STOCK SUB-PANEL ── -->
@@ -660,6 +661,41 @@
 
       </div>
     </div><!-- end addpanel-mf -->
+
+    <!-- ── BULK IMPORT SUB-PANEL ── -->
+    <div id="addpanel-bulk" class="hidden space-y-4">
+      <div class="card p-4 space-y-4">
+        <div>
+          <h3 class="text-sm font-semibold text-white mb-1">Paste JSON to Import All Holdings</h3>
+          <p class="text-xs text-slate-400">Paste an array of stocks <code class="text-indigo-400">[...]</code> or a combined object <code class="text-indigo-400">{"holdings":[...],"funds":[...]}</code>. All items are saved to Firestore in one batch.</p>
+        </div>
+        <textarea id="bulk-paste" rows="10" class="adhoc-input font-mono text-xs w-full" style="resize:vertical;white-space:pre" placeholder='[
+  {"ticker":"RELIANCE.NS","qty":103,"avg_buy_price":1365.14,"currency":"INR"},
+  {"ticker":"BEL.NS","qty":649,"avg_buy_price":415.59,"currency":"INR"},
+  ...
+]'></textarea>
+        <div class="flex gap-2">
+          <button onclick="previewBulkImport()" class="btn-sm btn-primary flex-1">Preview Import</button>
+          <button onclick="document.getElementById('bulk-paste').value='';document.getElementById('bulk-preview').classList.add('hidden')" class="btn-sm flex-shrink-0" style="background:#1e293b;color:#94a3b8;border:1px solid #334155;padding:0.35rem 1rem;border-radius:6px;font-size:0.75rem;cursor:pointer">Clear</button>
+        </div>
+      </div>
+
+      <!-- Preview section -->
+      <div id="bulk-preview" class="hidden card p-4 space-y-3">
+        <div id="bulk-summary" class="text-xs font-semibold p-2 rounded" style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2);color:#a5b4fc"></div>
+
+        <div id="bulk-stock-list" class="hidden space-y-1">
+          <div class="text-xs text-slate-500 font-semibold mb-1">Stocks</div>
+        </div>
+
+        <div id="bulk-mf-list" class="hidden space-y-1">
+          <div class="text-xs text-slate-500 font-semibold mb-1">Mutual Funds</div>
+        </div>
+
+        <button id="bulk-import-btn" onclick="bulkImportAll()" class="btn-sm btn-primary w-full mt-1">Import All to Portfolio</button>
+        <div id="bulk-success" class="hidden text-xs text-green-400 p-2 rounded text-center" style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2)">✓ All holdings imported successfully!</div>
+      </div>
+    </div><!-- end addpanel-bulk -->
 
   </div><!-- end panel-add -->
 
@@ -1390,7 +1426,7 @@ async function loadCorporate() {
 
 // ── ADD TO PORTFOLIO ──────────────────────────────────────────────────────────
 function switchAddTab(name) {
-  ['stock','mf'].forEach(t => {
+  ['stock','mf','bulk'].forEach(t => {
     document.getElementById('addpanel-' + t).classList.toggle('hidden', t !== name);
     document.getElementById('addtab-' + t).classList.toggle('active', t === name);
   });
@@ -1518,6 +1554,86 @@ function updateAddTabForAuth(user) {
   if (saveMFBtn)    saveMFBtn.classList.toggle('hidden', !user);
   if (saveMFJsonBtn) {
     saveMFJsonBtn.textContent = user ? 'Generate JSON (backup)' : 'Generate JSON →';
+  }
+}
+
+// ── BULK IMPORT ──────────────────────────────────────────────────────────────
+let _bulkData = { holdings: [], funds: [] };
+
+function previewBulkImport() {
+  const raw = document.getElementById('bulk-paste').value.trim();
+  let parsed;
+  try { parsed = JSON.parse(raw); } catch(_) { alert('Invalid JSON — check for missing commas or brackets.'); return; }
+
+  if (Array.isArray(parsed)) {
+    _bulkData = { holdings: parsed, funds: [] };
+  } else {
+    _bulkData = {
+      holdings: Array.isArray(parsed.holdings) ? parsed.holdings : [],
+      funds:    Array.isArray(parsed.funds)    ? parsed.funds    : [],
+    };
+  }
+
+  if (!_bulkData.holdings.length && !_bulkData.funds.length) {
+    alert('No holdings or funds found in the pasted JSON.');
+    return;
+  }
+
+  const parts = [];
+  if (_bulkData.holdings.length) parts.push(_bulkData.holdings.length + ' stocks');
+  if (_bulkData.funds.length)    parts.push(_bulkData.funds.length + ' mutual funds');
+  document.getElementById('bulk-summary').textContent = 'Ready to import: ' + parts.join(' + ');
+
+  const stockList = document.getElementById('bulk-stock-list');
+  if (_bulkData.holdings.length) {
+    stockList.innerHTML = '<div class="text-xs text-slate-500 font-semibold mb-1">Stocks</div>' +
+      _bulkData.holdings.map(h =>
+        '<div class="flex justify-between text-xs py-1 px-2 rounded" style="background:#0f172a">' +
+          '<span class="text-slate-200 font-mono">' + h.ticker + '</span>' +
+          '<span class="text-slate-400">' + h.qty + ' &times; ' + (h.currency === 'USD' ? '$' : '₹') + h.avg_buy_price + '</span>' +
+        '</div>'
+      ).join('');
+    stockList.classList.remove('hidden');
+  } else {
+    stockList.classList.add('hidden');
+  }
+
+  const mfList = document.getElementById('bulk-mf-list');
+  if (_bulkData.funds.length) {
+    mfList.innerHTML = '<div class="text-xs text-slate-500 font-semibold mb-1">Mutual Funds</div>' +
+      _bulkData.funds.map(f =>
+        '<div class="flex justify-between text-xs py-1 px-2 rounded" style="background:#0f172a">' +
+          '<span class="text-slate-300 truncate" style="max-width:65%">' + f.name + '</span>' +
+          '<span class="text-slate-400 flex-shrink-0">' + f.units + ' units @ ₹' + f.avg_nav + '</span>' +
+        '</div>'
+      ).join('');
+    mfList.classList.remove('hidden');
+  } else {
+    mfList.classList.add('hidden');
+  }
+
+  document.getElementById('bulk-success').classList.add('hidden');
+  const btn = document.getElementById('bulk-import-btn');
+  btn.disabled = false;
+  btn.textContent = 'Import All to Portfolio';
+  document.getElementById('bulk-preview').classList.remove('hidden');
+}
+
+async function bulkImportAll() {
+  if (!_currentUser) { showAuthModal('signin'); return; }
+  const btn = document.getElementById('bulk-import-btn');
+  btn.disabled = true;
+  btn.textContent = 'Importing…';
+  try {
+    if (_bulkData.holdings.length) await bulkImportHoldings(_currentUser.uid, _bulkData.holdings);
+    if (_bulkData.funds.length)    await bulkImportMutualFunds(_currentUser.uid, _bulkData.funds);
+    document.getElementById('bulk-success').classList.remove('hidden');
+    btn.textContent = '✓ Done';
+    await loadUserPortfolio(_currentUser.uid);
+  } catch(e) {
+    alert('Import failed: ' + e.message);
+    btn.disabled = false;
+    btn.textContent = 'Import All to Portfolio';
   }
 }
 
