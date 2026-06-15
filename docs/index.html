@@ -788,6 +788,7 @@ function updateCombinedStats() {
 // ── PRICE MAP HELPERS ────────────────────────────────────────────────────────
 let _priceMap = {};   // ticker -> current_price, populated from public snapshot
 let _navMap   = {};   // scheme_code -> current_nav, populated from MF snapshot
+let _authResolved = !isFirebaseReady(); // true immediately if Firebase not configured
 
 function computePortfolioView(holdings, priceMap) {
   return holdings.map(h => {
@@ -823,8 +824,7 @@ async function loadSnapshot() {
   (d.holdings ?? []).forEach(h => { _priceMap[h.ticker] = h.current_price; });
 
   if (_currentUser) {
-    // Logged-in: holdings already loaded from Firestore — just update stat cards
-    // using Firestore holdings + public prices
+    // Logged-in: re-render holdings table with Firestore data + fresh prices
     const firestoreView = computePortfolioView(_userHoldings, _priceMap);
     _stockTotals = {
       invested: firestoreView.reduce((s, h) => s + h.invested, 0),
@@ -834,12 +834,11 @@ async function loadSnapshot() {
     _holdings = firestoreView;
     renderTable();
     renderChart(firestoreView);
-    // Re-render leaderboard from fresh prices
     const sorted = [...firestoreView].sort((a, b) => (b.pnl_pct ?? 0) - (a.pnl_pct ?? 0));
     renderLeaderboard('runners-list',  sorted.slice(0, 5),  true);
     renderLeaderboard('draggers-list', sorted.slice(-5).reverse(), false);
-  } else {
-    // Public mode: use snapshot data directly
+  } else if (_authResolved) {
+    // Auth resolved as logged-out — show public snapshot
     _stockTotals = {
       invested: d.total_invested ?? 0,
       current:  d.total_current  ?? 0,
@@ -850,6 +849,11 @@ async function loadSnapshot() {
     renderChart(d.holdings ?? []);
     renderLeaderboard('runners-list',  d.runners  ?? [], true);
     renderLeaderboard('draggers-list', d.draggers ?? [], false);
+  } else {
+    // Auth still pending — show loading state, skip public render
+    const tbody = document.querySelector('#holdings-table tbody');
+    if (tbody) tbody.innerHTML = '<tr><td colspan="8" class="text-center text-slate-500 py-8 text-sm">Loading your portfolio…</td></tr>';
+    return;
   }
   updateCombinedStats();
 }
@@ -1735,6 +1739,7 @@ setInterval(checkMarketStatus, 60_000);
 // Firebase auth state listener — runs once on load
 if (isFirebaseReady()) {
   auth.onAuthStateChanged(async user => {
+    _authResolved = true;
     updateAuthUI(user);
     updateAddTabForAuth(user);
     if (user) {
