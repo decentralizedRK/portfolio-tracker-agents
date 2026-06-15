@@ -1,3 +1,14 @@
+// ── SECURITY HELPERS ────────────────────────────────────────────────────────
+function escHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+function safeHref(url) {
+  try { const u = new URL(url); return (u.protocol === 'https:' || u.protocol === 'http:') ? url : '#'; }
+  catch (_) { return '#'; }
+}
+
 // ── DATA PATHS ──────────────────────────────────────────────────────────────
 const BASE  = './data';
 const PATHS = {
@@ -562,17 +573,18 @@ function switchHoldingsTab(name) {
 // ── NEWS ─────────────────────────────────────────────────────────────────────
 function newsItem(ticker, n) {
   const display = ticker.replace('.NS','').replace('.BO','');
-  const link    = n.link && n.link !== '#' ? n.link : null;
+  const link    = n.link && n.link !== '#' ? safeHref(n.link) : null;
+  const title   = escHtml(n.title);
   return `
     <div class="news-item">
       ${link
         ? `<a href="${link}" target="_blank" rel="noopener"
-              class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${n.title}</a>`
-        : `<p class="text-xs font-medium text-slate-400 leading-relaxed">${n.title}</p>`}
+              class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${title}</a>`
+        : `<p class="text-xs font-medium text-slate-400 leading-relaxed">${title}</p>`}
       <div class="flex items-center gap-2 mt-1.5">
         <a href="${tvUrl(ticker)}" target="_blank" rel="noopener"
            class="badge tag-neutral hover:opacity-80 transition-opacity" style="text-decoration:none">${display} ↗</a>
-        <span class="text-xs text-slate-600">${n.publisher || ''} ${n.age_h ? '· ' + n.age_h + 'h ago' : ''}</span>
+        <span class="text-xs text-slate-600">${escHtml(n.publisher || '')} ${n.age_h ? '· ' + n.age_h + 'h ago' : ''}</span>
         ${link ? `<a href="${link}" target="_blank" rel="noopener" class="text-xs text-indigo-400 hover:text-indigo-300 ml-auto flex-shrink-0">Read →</a>` : ''}
       </div>
     </div>`;
@@ -592,16 +604,20 @@ async function loadNews() {
   const mh  = d.market_headlines ?? [];
   const mEl = document.getElementById('news-market');
   mEl.innerHTML = mh.length
-    ? mh.slice(0,8).map(h => `
+    ? mh.slice(0,8).map(h => {
+        const mhLink  = h.link ? safeHref(h.link) : null;
+        const mhTitle = escHtml(h.title);
+        return `
         <div class="news-item">
-          ${h.link ? `<a href="${h.link}" target="_blank" rel="noopener"
-                         class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${h.title}</a>`
-                   : `<p class="text-xs text-slate-400 leading-relaxed">${h.title}</p>`}
+          ${mhLink ? `<a href="${mhLink}" target="_blank" rel="noopener"
+                         class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${mhTitle}</a>`
+                   : `<p class="text-xs text-slate-400 leading-relaxed">${mhTitle}</p>`}
           <div class="flex items-center gap-2 mt-1">
-            <span class="text-xs text-slate-600">${h.source ?? ''}</span>
-            ${h.link ? `<a href="${h.link}" target="_blank" rel="noopener" class="text-xs text-indigo-400 hover:text-indigo-300 ml-auto">Read →</a>` : ''}
+            <span class="text-xs text-slate-600">${escHtml(h.source ?? '')}</span>
+            ${mhLink ? `<a href="${mhLink}" target="_blank" rel="noopener" class="text-xs text-indigo-400 hover:text-indigo-300 ml-auto">Read →</a>` : ''}
           </div>
-        </div>`).join('')
+        </div>`;
+      }).join('')
     : '<p class="text-xs text-slate-600">No headlines yet. Add feedparser to requirements.txt</p>';
 
   const mn     = d.momentum_news ?? {};
@@ -609,16 +625,18 @@ async function loadNews() {
   const wEl    = document.getElementById('news-momentum');
   wEl.innerHTML = mnKeys.length
     ? mnKeys.slice(0,12).flatMap(t => (mn[t] ?? []).slice(0,1).map(n => {
-        const display = t.replace('.NS','').replace('.BO','');
+        const display  = t.replace('.NS','').replace('.BO','');
+        const mnLink   = n.link ? safeHref(n.link) : null;
+        const mnTitle  = escHtml(n.title);
         return `<div class="news-item">
           <div class="flex items-center gap-2 mb-1">
             <a href="${tvUrl(t)}" target="_blank" rel="noopener"
                class="badge hover:opacity-80 transition-opacity" style="background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.3);text-decoration:none">${display} ↗</a>
           </div>
-          ${n.link
-            ? `<a href="${n.link}" target="_blank" rel="noopener" class="text-xs text-slate-400 hover:text-white leading-relaxed block">${n.title}</a>
-               <a href="${n.link}" target="_blank" rel="noopener" class="text-xs text-indigo-400 hover:text-indigo-300 mt-1 block">Read →</a>`
-            : `<p class="text-xs text-slate-500">${n.title}</p>`}
+          ${mnLink
+            ? `<a href="${mnLink}" target="_blank" rel="noopener" class="text-xs text-slate-400 hover:text-white leading-relaxed block">${mnTitle}</a>
+               <a href="${mnLink}" target="_blank" rel="noopener" class="text-xs text-indigo-400 hover:text-indigo-300 mt-1 block">Read →</a>`
+            : `<p class="text-xs text-slate-500">${mnTitle}</p>`}
         </div>`;
       })).join('')
     : '<p class="text-xs text-slate-600">No watchlist news yet</p>';
@@ -890,8 +908,8 @@ function previewBulkImport() {
     stockList.innerHTML = '<div class="text-xs text-slate-500 font-semibold mb-1">Stocks</div>' +
       _bulkData.holdings.map(h =>
         '<div class="flex justify-between text-xs py-1 px-2 rounded" style="background:#0f172a">' +
-          '<span class="text-slate-200 font-mono">' + h.ticker + '</span>' +
-          '<span class="text-slate-400">' + h.qty + ' &times; ' + (h.currency === 'USD' ? '$' : '₹') + h.avg_buy_price + '</span>' +
+          '<span class="text-slate-200 font-mono">' + escHtml(h.ticker) + '</span>' +
+          '<span class="text-slate-400">' + escHtml(h.qty) + ' &times; ' + (h.currency === 'USD' ? '$' : '₹') + escHtml(h.avg_buy_price) + '</span>' +
         '</div>'
       ).join('');
     stockList.classList.remove('hidden');
@@ -904,8 +922,8 @@ function previewBulkImport() {
     mfList.innerHTML = '<div class="text-xs text-slate-500 font-semibold mb-1">Mutual Funds</div>' +
       _bulkData.funds.map(f =>
         '<div class="flex justify-between text-xs py-1 px-2 rounded" style="background:#0f172a">' +
-          '<span class="text-slate-300 truncate" style="max-width:65%">' + f.name + '</span>' +
-          '<span class="text-slate-400 flex-shrink-0">' + f.units + ' units @ ₹' + f.avg_nav + '</span>' +
+          '<span class="text-slate-300 truncate" style="max-width:65%">' + escHtml(f.name) + '</span>' +
+          '<span class="text-slate-400 flex-shrink-0">' + escHtml(f.units) + ' units @ ₹' + escHtml(f.avg_nav) + '</span>' +
         '</div>'
       ).join('');
     mfList.classList.remove('hidden');
