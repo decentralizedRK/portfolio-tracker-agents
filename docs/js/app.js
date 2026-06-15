@@ -24,10 +24,18 @@ let _holdings   = [];
 let _sortKey    = 'invested';
 let _sortAsc    = false;
 let _filter     = '';
-let _pnlChart   = null;
+let _pnlChart        = null;
+let _allocationChart = null;
 let _stockTotals = { invested: 0, current: 0, count: 0 };
 let _mfTotals    = { invested: 0, current: 0, count: 0 };
 let _mfFunds     = [];   // full fund list from snapshot, kept for SIP total + JSON generation
+// MF table state
+let _mfSortKey = 'invested';
+let _mfSortAsc = false;
+let _mfFilter  = '';
+// Edit modal state
+let _editTicker     = null;
+let _editSchemeCode = null;
 
 // ── UTILS ───────────────────────────────────────────────────────────────────
 const fmt = {
@@ -76,15 +84,24 @@ function updateCombinedStats() {
   const current  = _stockTotals.current  + _mfTotals.current;
   const pnl      = current - invested;
   const pct      = invested > 0 ? (pnl / invested * 100) : 0;
-  const count    = _stockTotals.count + _mfTotals.count;
 
-  document.getElementById('s-invested').textContent = fmt.inr(invested);
   document.getElementById('s-stocks').textContent =
     `${_stockTotals.count} stocks · ${_mfTotals.count} funds`;
 
-  setWithColor('s-current', fmt.inr(current),                         pct, 's-current-sub', fmt.pct(pct));
-  setWithColor('s-pnl',     (pnl >= 0 ? '+' : '') + fmt.inr(Math.abs(pnl)), pnl, 's-pnl-sub', fmt.pct(pct));
-  setWithColor('s-pct',     fmt.pct(pct), pct);
+  const pnlColor = pct > 0 ? '#34d399' : pct < 0 ? '#f87171' : '#e2e8f0';
+  ['s-current', 's-pnl', 's-pct'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.color = pnlColor;
+  });
+  ['s-current-sub', 's-pnl-sub'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.textContent = fmt.pct(pct); el.style.color = pnlColor; }
+  });
+
+  countUp('s-invested', invested, v => fmt.inr(Math.max(0, v)));
+  countUp('s-current',  current,  v => fmt.inr(Math.max(0, v)));
+  countUp('s-pnl', pnl, v => (v >= 0 ? '+' : '') + fmt.inr(Math.abs(v)));
+  countUp('s-pct', pct, v => fmt.pct(v));
 }
 
 // ── PRICE MAP HELPERS ────────────────────────────────────────────────────────
@@ -136,6 +153,7 @@ async function loadSnapshot() {
     _holdings = firestoreView;
     renderTable();
     renderChart(firestoreView);
+    renderAllocationChart(firestoreView);
     const sorted = [...firestoreView].sort((a, b) => (b.pnl_pct ?? 0) - (a.pnl_pct ?? 0));
     renderLeaderboard('runners-list',  sorted.slice(0, 5),  true);
     renderLeaderboard('draggers-list', sorted.slice(-5).reverse(), false);
@@ -149,12 +167,13 @@ async function loadSnapshot() {
     _holdings = d.holdings ?? [];
     renderTable();
     renderChart(d.holdings ?? []);
+    renderAllocationChart(d.holdings ?? []);
     renderLeaderboard('runners-list',  d.runners  ?? [], true);
     renderLeaderboard('draggers-list', d.draggers ?? [], false);
   } else {
     // Auth still pending — show loading state, skip public render
-    const tbody = document.querySelector('#holdings-table tbody');
-    if (tbody) tbody.innerHTML = '<tr><td colspan="8" class="text-center text-slate-500 py-8 text-sm">Loading your portfolio…</td></tr>';
+    const tbody = document.getElementById('holdings-body');
+    if (tbody) tbody.innerHTML = '<tr><td colspan="10" class="text-center text-slate-500 py-8 text-sm">Loading your portfolio…</td></tr>';
     return;
   }
   updateCombinedStats();
@@ -198,6 +217,7 @@ async function loadUserPortfolio(uid) {
   renderTable();
   renderMFTable(mfView);
   renderChart(view);
+  renderAllocationChart(view);
 
   const sorted = [...view].sort((a, b) => (b.pnl_pct ?? 0) - (a.pnl_pct ?? 0));
   renderLeaderboard('runners-list',  sorted.slice(0, 5),         true);
@@ -241,6 +261,175 @@ function setWithColor(valId, val, colorVal, subId, subVal) {
     if (sub) { sub.textContent = subVal; sub.style.cssText = el.style.cssText; }
   }
 }
+
+// ── TOAST NOTIFICATIONS ──────────────────────────────────────────────────────
+function showToast(message, type = 'info', duration = 3500) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+  const div = document.createElement('div');
+  div.className = `toast toast-${type}`;
+  div.textContent = message;
+  container.appendChild(div);
+  setTimeout(() => {
+    div.style.transition = 'opacity 0.3s';
+    div.style.opacity = '0';
+    setTimeout(() => div.remove(), 300);
+  }, duration);
+}
+
+function showConfirm(message, onConfirm) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+  const div = document.createElement('div');
+  div.className = 'toast toast-warn';
+  div.style.maxWidth = '320px';
+  div.innerHTML = `<div style="margin-bottom:8px">${escHtml(message)}</div>
+    <div style="display:flex;gap:8px">
+      <button onclick="this.closest('.toast').remove()" style="flex:1;padding:4px 10px;border-radius:6px;font-size:0.75rem;background:#334155;color:#94a3b8;border:none;cursor:pointer">Cancel</button>
+      <button id="_confirm-yes" style="flex:1;padding:4px 10px;border-radius:6px;font-size:0.75rem;background:#ef4444;color:white;border:none;cursor:pointer">Confirm</button>
+    </div>`;
+  container.appendChild(div);
+  div.querySelector('#_confirm-yes').onclick = () => { div.remove(); onConfirm(); };
+}
+
+// ── COUNT-UP ANIMATION ────────────────────────────────────────────────────────
+function countUp(elementId, target, formatter, duration = 700) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  const start = performance.now();
+  const tick = (now) => {
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+    el.textContent = formatter(target * eased);
+    if (t < 1) requestAnimationFrame(tick);
+    else el.textContent = formatter(target);
+  };
+  requestAnimationFrame(tick);
+}
+
+// ── EDIT HOLDING MODAL ────────────────────────────────────────────────────────
+function showEditModal(ticker) {
+  const h = _holdings.find(x => x.ticker === ticker);
+  if (!h) return;
+  _editTicker = ticker;
+  document.getElementById('edit-holding-name').textContent = h.display || ticker;
+  document.getElementById('edit-holding-qty').value   = h.qty ?? '';
+  document.getElementById('edit-holding-price').value = h.avg_buy_price ?? '';
+  document.getElementById('edit-holding-currency-sym').textContent = h.currency === 'USD' ? '$' : '₹';
+  document.getElementById('edit-holding-cmp').textContent = h.currency === 'USD'
+    ? '$' + Number(h.current_price).toFixed(2)
+    : '₹' + Number(h.current_price).toLocaleString('en-IN');
+  const pnl = h.pnl ?? 0;
+  const pnlEl = document.getElementById('edit-holding-pnl');
+  pnlEl.textContent = (pnl >= 0 ? '+' : '') + fmt.inr(pnl) + ' (' + fmt.pct(h.pnl_pct) + ')';
+  pnlEl.style.color = pnl > 0 ? '#34d399' : pnl < 0 ? '#f87171' : '#94a3b8';
+  document.getElementById('edit-holding-error').classList.add('hidden');
+  document.getElementById('edit-holding-modal').classList.remove('hidden');
+}
+
+function hideEditModal() {
+  document.getElementById('edit-holding-modal').classList.add('hidden');
+  _editTicker = null;
+}
+
+async function saveEditedHolding() {
+  if (!_currentUser || !_editTicker) return;
+  const qty   = parseFloat(document.getElementById('edit-holding-qty').value);
+  const price = parseFloat(document.getElementById('edit-holding-price').value);
+  const errEl = document.getElementById('edit-holding-error');
+  if (!qty || qty <= 0 || !price || price <= 0) {
+    errEl.textContent = 'Please enter valid quantity and price.';
+    errEl.classList.remove('hidden');
+    return;
+  }
+  errEl.classList.add('hidden');
+  try {
+    const h = _holdings.find(x => x.ticker === _editTicker);
+    await saveHolding(_currentUser.uid, {
+      ticker:        _editTicker,
+      qty,
+      avg_buy_price: price,
+      currency:      h?.currency,
+    });
+    hideEditModal();
+    showToast(`${_editTicker} updated successfully`, 'success');
+    await loadUserPortfolio(_currentUser.uid);
+  } catch (e) {
+    errEl.textContent = 'Save failed: ' + e.message;
+    errEl.classList.remove('hidden');
+  }
+}
+
+// ── EDIT MF MODAL ─────────────────────────────────────────────────────────────
+function showEditMFModal(schemeCode) {
+  const f = _mfFunds.find(x => String(x.scheme_code) === String(schemeCode));
+  if (!f) return;
+  _editSchemeCode = String(schemeCode);
+  document.getElementById('edit-mf-name-label').textContent = f.name ?? schemeCode;
+  document.getElementById('edit-mf-units').value = f.units ?? '';
+  document.getElementById('edit-mf-nav').value   = f.avg_nav ?? '';
+  document.getElementById('edit-mf-error').classList.add('hidden');
+  document.getElementById('edit-mf-modal').classList.remove('hidden');
+}
+
+function hideEditMFModal() {
+  document.getElementById('edit-mf-modal').classList.add('hidden');
+  _editSchemeCode = null;
+}
+
+async function saveEditedMF() {
+  if (!_currentUser || !_editSchemeCode) return;
+  const units = parseFloat(document.getElementById('edit-mf-units').value);
+  const nav   = parseFloat(document.getElementById('edit-mf-nav').value);
+  const errEl = document.getElementById('edit-mf-error');
+  if (!units || units <= 0 || !nav || nav <= 0) {
+    errEl.textContent = 'Please enter valid units and NAV.';
+    errEl.classList.remove('hidden');
+    return;
+  }
+  errEl.classList.add('hidden');
+  try {
+    const f = _mfFunds.find(x => String(x.scheme_code) === _editSchemeCode);
+    await saveMutualFund(_currentUser.uid, {
+      name:        f?.name ?? '',
+      scheme_code: _editSchemeCode,
+      units,
+      avg_nav:     nav,
+      sip_amount:  f?.sip_amount ?? 0,
+      sip_date:    f?.sip_date   ?? 1,
+    });
+    hideEditMFModal();
+    showToast('Fund updated successfully', 'success');
+    await loadUserPortfolio(_currentUser.uid);
+  } catch (e) {
+    errEl.textContent = 'Save failed: ' + e.message;
+    errEl.classList.remove('hidden');
+  }
+}
+
+async function removeMutualFund(schemeCode) {
+  if (!_currentUser || !db) return;
+  const f = _mfFunds.find(x => String(x.scheme_code) === String(schemeCode));
+  const name = f?.name?.slice(0, 30) ?? schemeCode;
+  showConfirm(`Remove "${name}" from your portfolio?`, async () => {
+    try {
+      await deleteMutualFund(_currentUser.uid, schemeCode);
+      showToast('Fund removed', 'success');
+      await loadUserPortfolio(_currentUser.uid);
+    } catch (e) {
+      showToast('Remove failed: ' + e.message, 'error');
+    }
+  });
+}
+
+// ── MF TABLE SORT + FILTER ────────────────────────────────────────────────────
+function sortMFTable(key) {
+  if (_mfSortKey === key) _mfSortAsc = !_mfSortAsc;
+  else { _mfSortKey = key; _mfSortAsc = false; }
+  renderMFTable(_mfFunds);
+}
+
+function filterMFTable(val) { _mfFilter = val; renderMFTable(_mfFunds); }
 
 // ── LEADERBOARD ─────────────────────────────────────────────────────────────
 function renderLeaderboard(containerId, items, isRunners) {
@@ -289,13 +478,82 @@ function renderChart(holdings) {
   });
 }
 
+// ── ALLOCATION DONUT CHART ───────────────────────────────────────────────────
+function renderAllocationChart(holdings) {
+  const canvas = document.getElementById('allocation-chart');
+  const legendEl = document.getElementById('allocation-legend');
+  if (!canvas || !holdings.length) return;
+
+  const COLORS = [
+    '#6366f1','#8b5cf6','#a855f7','#ec4899','#f43f5e',
+    '#f97316','#f59e0b','#10b981','#14b8a6','#06b6d4',
+    '#3b82f6','#22d3ee','#84cc16','#22c55e','#60a5fa',
+  ];
+
+  const total = holdings.reduce((s, h) => s + (h.current_value ?? 0), 0);
+  if (!total) return;
+
+  // Sort by current_value descending, group <3% into Others
+  const sorted = [...holdings].sort((a, b) => (b.current_value ?? 0) - (a.current_value ?? 0));
+  const main = [], otherVal = sorted.reduce((s, h) => {
+    const pct = (h.current_value ?? 0) / total * 100;
+    if (pct >= 2) { main.push(h); return s; }
+    return s + (h.current_value ?? 0);
+  }, 0);
+
+  const labels = main.map(h => h.display);
+  const data   = main.map(h => h.current_value ?? 0);
+  const colors = main.map((_, i) => COLORS[i % COLORS.length]);
+
+  if (otherVal > 0) {
+    labels.push('Others');
+    data.push(otherVal);
+    colors.push('#475569');
+  }
+
+  if (_allocationChart) _allocationChart.destroy();
+  _allocationChart = new Chart(canvas.getContext('2d'), {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderWidth: 0, hoverOffset: 6 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      cutout: '65%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor:'#1e293b', titleColor:'#94a3b8', bodyColor:'#e2e8f0', borderColor:'#334155', borderWidth:1,
+          callbacks: {
+            label: ctx => ` ${(ctx.raw / total * 100).toFixed(1)}%  ${fmt.inr(ctx.raw)}`,
+          },
+        },
+      },
+    },
+  });
+
+  if (legendEl) {
+    legendEl.innerHTML = labels.map((lbl, i) =>
+      `<div class="flex items-center gap-2 text-xs">
+        <span style="width:8px;height:8px;border-radius:2px;background:${colors[i]};flex-shrink:0;display:inline-block"></span>
+        <span class="text-slate-400 truncate" style="max-width:120px" title="${escHtml(lbl)}">${escHtml(lbl)}</span>
+        <span class="text-slate-500 ml-auto flex-shrink-0">${(data[i] / total * 100).toFixed(1)}%</span>
+      </div>`
+    ).join('');
+  }
+}
+
 // ── STOCKS TABLE ─────────────────────────────────────────────────────────────
 function renderTable() {
   const filtered = _holdings.filter(h =>
     !_filter || h.display.toLowerCase().includes(_filter.toLowerCase()) ||
     h.ticker.toLowerCase().includes(_filter.toLowerCase())
   );
+  const totalCurrent = filtered.reduce((s, h) => s + (h.current_value ?? 0), 0);
   const sorted = [...filtered].sort((a,b) => {
+    if (_sortKey === 'weight') {
+      const aw = totalCurrent ? (a.current_value ?? 0) / totalCurrent : 0;
+      const bw = totalCurrent ? (b.current_value ?? 0) / totalCurrent : 0;
+      return _sortAsc ? aw - bw : bw - aw;
+    }
     const av = a[_sortKey] ?? 0, bv = b[_sortKey] ?? 0;
     if (typeof av === 'string') return _sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
     return _sortAsc ? av - bv : bv - av;
@@ -303,25 +561,73 @@ function renderTable() {
 
   const canEdit = !!_currentUser;
   document.getElementById('holdings-body').innerHTML = sorted.map(h => {
-    const pct = h.pnl_pct ?? 0;
-    const pnl = h.pnl    ?? 0;
-    const cs  = pct > 0 ? 'color:#34d399' : pct < 0 ? 'color:#f87171' : 'color:#94a3b8';
-    const tag = pct > 0 ? 'tag-up' : pct < 0 ? 'tag-down' : 'tag-neutral';
+    const pct    = h.pnl_pct ?? 0;
+    const pnl    = h.pnl    ?? 0;
+    const cs     = pct > 0 ? 'color:#34d399' : pct < 0 ? 'color:#f87171' : 'color:#94a3b8';
+    const tag    = pct > 0 ? 'tag-up' : pct < 0 ? 'tag-down' : 'tag-neutral';
+    const weight = totalCurrent > 0 ? (h.current_value ?? 0) / totalCurrent * 100 : 0;
+    const dc     = h.day_change_pct;
+    const dcs    = dc != null ? (dc > 0 ? 'color:#34d399' : dc < 0 ? 'color:#f87171' : 'color:#94a3b8') : 'color:#475569';
+    const dcStr  = dc != null ? (dc >= 0 ? '+' : '') + dc.toFixed(2) + '%' : '—';
+    const editBtn = canEdit
+      ? `<button onclick="showEditModal('${escHtml(h.ticker)}')" title="Edit" class="btn-sm btn-edit ml-1" style="padding:2px 6px;font-size:0.7rem">✎</button>`
+      : '';
     const delBtn = canEdit
-      ? `<button onclick="removeHolding('${h.ticker}')" title="Remove" class="btn-sm btn-danger ml-1" style="padding:2px 6px;font-size:0.7rem">✕</button>`
+      ? `<button onclick="removeHolding('${escHtml(h.ticker)}')" title="Remove" class="btn-sm btn-danger ml-1" style="padding:2px 6px;font-size:0.7rem">✕</button>`
       : '';
     return `<tr>
       <td><a href="${tvUrl(h.ticker)}" target="_blank" rel="noopener"
-             class="ticker-chip hover:text-white transition-colors" style="color:#a5b4fc;text-decoration:none">${h.display} ↗</a>${delBtn}</td>
+             class="ticker-chip hover:text-white transition-colors" style="color:#a5b4fc;text-decoration:none">${h.display} ↗</a>${editBtn}${delBtn}</td>
       <td class="text-right text-slate-300">${h.qty?.toLocaleString('en-IN') ?? '—'}</td>
       <td class="text-right text-slate-400">${fmt.inr2(h.avg_buy_price)}</td>
       <td class="text-right font-medium" style="${cs}">${fmt.inr2(h.current_price)}</td>
-      <td class="text-right text-slate-400">${fmt.inr(h.invested)}</td>
+      <td class="text-right col-hide-mobile" style="${dcs}">${dcStr}</td>
+      <td class="text-right text-slate-400 col-hide-mobile">${fmt.inr(h.invested)}</td>
       <td class="text-right font-medium text-white">${fmt.inr(h.current_value)}</td>
       <td class="text-right" style="${cs}">${pnl >= 0 ? '+' : ''}${fmt.inr(pnl)}</td>
       <td class="text-right"><span class="badge ${tag}">${fmt.pct(pct)}</span></td>
+      <td class="text-right text-slate-500 col-hide-mobile" style="font-size:0.75rem">${weight.toFixed(1)}%</td>
     </tr>`;
   }).join('');
+
+  // Mobile cards
+  const cardsEl = document.getElementById('holdings-cards');
+  if (cardsEl) {
+    cardsEl.innerHTML = sorted.map(h => {
+      const pct  = h.pnl_pct ?? 0;
+      const pnl  = h.pnl    ?? 0;
+      const cs   = pct > 0 ? '#34d399' : pct < 0 ? '#f87171' : '#94a3b8';
+      const tag  = pct > 0 ? 'tag-up' : pct < 0 ? 'tag-down' : 'tag-neutral';
+      const editBtn = canEdit
+        ? `<button onclick="showEditModal('${escHtml(h.ticker)}')" class="btn-sm btn-edit" style="padding:3px 8px;font-size:0.7rem">✎</button>`
+        : '';
+      const delBtn = canEdit
+        ? `<button onclick="removeHolding('${escHtml(h.ticker)}')" class="btn-sm btn-danger" style="padding:3px 8px;font-size:0.7rem">✕</button>`
+        : '';
+      return `<div class="m-card">
+        <div class="flex items-center justify-between mb-2">
+          <a href="${tvUrl(h.ticker)}" target="_blank" rel="noopener" class="ticker-chip" style="color:#a5b4fc;text-decoration:none">${h.display} ↗</a>
+          <div class="flex gap-1">${editBtn}${delBtn}</div>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <div class="text-xs text-slate-500">CMP / Cost</div>
+            <div class="text-sm font-medium" style="color:${cs}">${fmt.inr2(h.current_price)}</div>
+            <div class="text-xs text-slate-500">${fmt.inr2(h.avg_buy_price)}</div>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-slate-500">Value / Invested</div>
+            <div class="text-sm font-medium text-white">${fmt.inr(h.current_value)}</div>
+            <div class="text-xs text-slate-500">${fmt.inr(h.invested)}</div>
+          </div>
+          <div class="text-right">
+            <div><span class="badge ${tag}">${fmt.pct(pct)}</span></div>
+            <div class="text-xs mt-1" style="color:${cs}">${pnl >= 0 ? '+' : ''}${fmt.inr(pnl)}</div>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+  }
 
   const ti  = sorted.reduce((s,h) => s + (h.invested??0), 0);
   const tc  = sorted.reduce((s,h) => s + (h.current_value??0), 0);
@@ -392,38 +698,70 @@ async function loadMF() {
 
 function renderMFTable(funds) {
   const tbody = document.getElementById('mf-body');
-  if (!funds.length) {
-    tbody.innerHTML = `<tr><td colspan="8" class="text-center text-slate-600 py-8 text-xs">
-      No MF data yet. Add funds to <code>mf_portfolio.json</code> and run the MF update agent.
+
+  // Apply filter
+  const filtered = funds.filter(f =>
+    !_mfFilter ||
+    (f.name ?? '').toLowerCase().includes(_mfFilter.toLowerCase()) ||
+    String(f.scheme_code).includes(_mfFilter)
+  );
+
+  if (!filtered.length) {
+    tbody.innerHTML = `<tr><td colspan="9" class="text-center text-slate-600 py-8 text-xs">
+      ${funds.length ? 'No funds match your search.' : 'No MF data yet. Add funds to <code>mf_portfolio.json</code> and run the MF update agent.'}
     </td></tr>`;
     document.getElementById('mf-footer').textContent = '';
     return;
   }
 
-  tbody.innerHTML = funds.map(f => {
-    const pct = f.pnl_pct ?? 0;
-    const pnl = f.pnl     ?? 0;
-    const cs  = pct > 0 ? 'color:#34d399' : pct < 0 ? 'color:#f87171' : 'color:#94a3b8';
-    const tag = pct > 0 ? 'tag-up' : pct < 0 ? 'tag-down' : 'tag-neutral';
-    const shortName = f.name?.length > 40 ? f.name.slice(0,38) + '…' : (f.name ?? '—');
+  const totalCurrent = filtered.reduce((s, f) => s + (f.current_value ?? 0), 0);
+
+  // Apply sort
+  const sorted = [...filtered].sort((a, b) => {
+    if (_mfSortKey === 'weight') {
+      const aw = totalCurrent ? (a.current_value ?? 0) / totalCurrent : 0;
+      const bw = totalCurrent ? (b.current_value ?? 0) / totalCurrent : 0;
+      return _mfSortAsc ? aw - bw : bw - aw;
+    }
+    const av = _mfSortKey === 'name' ? (a.name ?? '') : (a[_mfSortKey] ?? 0);
+    const bv = _mfSortKey === 'name' ? (b.name ?? '') : (b[_mfSortKey] ?? 0);
+    if (typeof av === 'string') return _mfSortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+    return _mfSortAsc ? av - bv : bv - av;
+  });
+
+  const canEdit = !!_currentUser;
+  tbody.innerHTML = sorted.map(f => {
+    const pct      = f.pnl_pct ?? 0;
+    const pnl      = f.pnl     ?? 0;
+    const cs       = pct > 0 ? 'color:#34d399' : pct < 0 ? 'color:#f87171' : 'color:#94a3b8';
+    const tag      = pct > 0 ? 'tag-up' : pct < 0 ? 'tag-down' : 'tag-neutral';
+    const shortName = f.name?.length > 36 ? f.name.slice(0, 34) + '…' : (f.name ?? '—');
+    const weight   = totalCurrent > 0 ? (f.current_value ?? 0) / totalCurrent * 100 : 0;
+    const editBtn  = canEdit
+      ? `<button onclick="showEditMFModal('${escHtml(String(f.scheme_code))}')" title="Edit" class="btn-sm btn-edit ml-1" style="padding:2px 5px;font-size:0.65rem">✎</button>`
+      : '';
+    const delBtn   = canEdit
+      ? `<button onclick="removeMutualFund('${escHtml(String(f.scheme_code))}')" title="Remove" class="btn-sm btn-danger ml-1" style="padding:2px 5px;font-size:0.65rem">✕</button>`
+      : '';
     return `<tr>
-      <td class="text-slate-200 text-xs" title="${f.name ?? ''}">${shortName}</td>
+      <td class="text-slate-200 text-xs" title="${escHtml(f.name ?? '')}">${escHtml(shortName)}${editBtn}${delBtn}</td>
       <td class="text-right text-slate-300">${f.units?.toLocaleString('en-IN',{maximumFractionDigits:3}) ?? '—'}</td>
       <td class="text-right text-slate-400">${fmt.inr2(f.avg_nav)}</td>
       <td class="text-right font-medium" style="${cs}">${fmt.inr2(f.current_nav)}</td>
-      <td class="text-right text-slate-400">${fmt.inr(f.invested)}</td>
+      <td class="text-right text-slate-400 col-hide-mobile">${fmt.inr(f.invested)}</td>
       <td class="text-right font-medium text-white">${fmt.inr(f.current_value)}</td>
       <td class="text-right" style="${cs}">${pnl >= 0 ? '+' : ''}${fmt.inr(pnl)}</td>
       <td class="text-right"><span class="badge ${tag}">${fmt.pct(pct)}</span></td>
+      <td class="text-right text-slate-500 col-hide-mobile" style="font-size:0.75rem">${weight.toFixed(1)}%</td>
     </tr>`;
   }).join('');
 
-  const ti  = funds.reduce((s,f) => s + (f.invested??0), 0);
-  const tc  = funds.reduce((s,f) => s + (f.current_value??0), 0);
+  const ti  = sorted.reduce((s,f) => s + (f.invested??0), 0);
+  const tc  = sorted.reduce((s,f) => s + (f.current_value??0), 0);
   const tp  = tc - ti;
   const tpc = ti ? tp/ti*100 : 0;
   document.getElementById('mf-footer').innerHTML =
-    `${funds.length} funds &nbsp;|&nbsp; Invested: ${fmt.inr(ti)} &nbsp;|&nbsp; Value: ${fmt.inr(tc)} &nbsp;|&nbsp; P&L: <span style="${tpc>=0?'color:#34d399':'color:#f87171'}">${tpc>=0?'+':''}${fmt.inr(tp)} (${fmt.pct(tpc)})</span>`;
+    `${sorted.length} funds &nbsp;|&nbsp; Invested: ${fmt.inr(ti)} &nbsp;|&nbsp; Value: ${fmt.inr(tc)} &nbsp;|&nbsp; P&L: <span style="${tpc>=0?'color:#34d399':'color:#f87171'}">${tpc>=0?'+':''}${fmt.inr(tp)} (${fmt.pct(tpc)})</span>`;
 }
 
 function getSipSetting(schemeCode, defaults) {
@@ -490,7 +828,7 @@ function addAdhoc() {
   const date   = document.getElementById('adhoc-date').value;
   const note   = document.getElementById('adhoc-note').value.trim();
 
-  if (!fund || !amount || !date) { alert('Fund name, amount, and date are required.'); return; }
+  if (!fund || !amount || !date) { showToast('Fund name, amount, and date are required.', 'error'); return; }
 
   const list = JSON.parse(localStorage.getItem('adhoc_investments') || '[]');
   list.unshift({ fund, amount, date, note, id: Date.now() });
@@ -534,7 +872,7 @@ function renderAdhocList() {
 }
 
 function generateSIPPortfolioJSON() {
-  if (!_mfFunds.length) { alert('Load the Mutual Funds tab first.'); return; }
+  if (!_mfFunds.length) { showToast('Load the Mutual Funds tab first.', 'warn'); return; }
 
   const funds = _mfFunds.map(f => {
     const sip = getSipSetting(f.scheme_code, { amount: f.sip_amount ?? 0, date: f.sip_date ?? 1 });
@@ -819,15 +1157,15 @@ async function addStockToFirestore() {
   const qty    = parseFloat(document.getElementById('add-stock-qty').value);
   const price  = parseFloat(document.getElementById('add-stock-price').value);
   const cur    = document.getElementById('add-stock-currency').value || 'INR';
-  if (!ticker || !qty || !price) { alert('Please fill in all required fields.'); return; }
+  if (!ticker || !qty || !price) { showToast('Please fill in all required fields.', 'error'); return; }
   try {
     await saveHolding(_currentUser.uid, { ticker, qty, avg_buy_price: price, currency: cur });
+    showToast(ticker + ' saved to portfolio', 'success');
     const succ = document.getElementById('add-stock-save-success');
     if (succ) { succ.classList.remove('hidden'); setTimeout(() => succ.classList.add('hidden'), 3000); }
-    // Reload user portfolio to reflect the new holding
     await loadUserPortfolio(_currentUser.uid);
   } catch (e) {
-    alert('Save failed: ' + e.message);
+    showToast('Save failed: ' + e.message, 'error');
   }
 }
 
@@ -839,26 +1177,29 @@ async function addMFToFirestore() {
   const nav   = parseFloat(document.getElementById('add-mf-nav').value);
   const sip   = parseFloat(document.getElementById('add-mf-sip').value) || 0;
   const sipd  = parseInt(document.getElementById('add-mf-sipdate').value) || 1;
-  if (!name || !code || !units || !nav) { alert('Please fill in all required fields.'); return; }
+  if (!name || !code || !units || !nav) { showToast('Please fill in all required fields.', 'error'); return; }
   try {
     await saveMutualFund(_currentUser.uid, { name, scheme_code: code, units, avg_nav: nav, sip_amount: sip, sip_date: sipd });
+    showToast('Fund saved to portfolio', 'success');
     const succ = document.getElementById('add-mf-save-success');
     if (succ) { succ.classList.remove('hidden'); setTimeout(() => succ.classList.add('hidden'), 3000); }
     await loadUserPortfolio(_currentUser.uid);
   } catch (e) {
-    alert('Save failed: ' + e.message);
+    showToast('Save failed: ' + e.message, 'error');
   }
 }
 
 async function removeHolding(ticker) {
   if (!_currentUser || !db) return;
-  if (!confirm(`Remove ${ticker} from your portfolio?`)) return;
-  try {
-    await deleteHolding(_currentUser.uid, ticker);
-    await loadUserPortfolio(_currentUser.uid);
-  } catch (e) {
-    alert('Remove failed: ' + e.message);
-  }
+  showConfirm(`Remove ${ticker} from your portfolio?`, async () => {
+    try {
+      await deleteHolding(_currentUser.uid, ticker);
+      showToast(ticker + ' removed', 'success');
+      await loadUserPortfolio(_currentUser.uid);
+    } catch (e) {
+      showToast('Remove failed: ' + e.message, 'error');
+    }
+  });
 }
 
 function updateAddTabForAuth(user) {
@@ -882,7 +1223,7 @@ let _bulkData = { holdings: [], funds: [] };
 function previewBulkImport() {
   const raw = document.getElementById('bulk-paste').value.trim();
   let parsed;
-  try { parsed = JSON.parse(raw); } catch(_) { alert('Invalid JSON — check for missing commas or brackets.'); return; }
+  try { parsed = JSON.parse(raw); } catch(_) { showToast('Invalid JSON — check for missing commas or brackets.', 'error'); return; }
 
   if (Array.isArray(parsed)) {
     _bulkData = { holdings: parsed, funds: [] };
@@ -894,7 +1235,7 @@ function previewBulkImport() {
   }
 
   if (!_bulkData.holdings.length && !_bulkData.funds.length) {
-    alert('No holdings or funds found in the pasted JSON.');
+    showToast('No holdings or funds found in the pasted JSON.', 'error');
     return;
   }
 
@@ -949,8 +1290,9 @@ async function bulkImportAll() {
     document.getElementById('bulk-success').classList.remove('hidden');
     btn.textContent = '✓ Done';
     await loadUserPortfolio(_currentUser.uid);
+    showToast('All holdings imported successfully!', 'success');
   } catch(e) {
-    alert('Import failed: ' + e.message);
+    showToast('Import failed: ' + e.message, 'error');
     btn.disabled = false;
     btn.textContent = 'Import All to Portfolio';
   }
@@ -980,7 +1322,7 @@ function parseStockPaste() {
     if (_currentUser) {
       addStockToFirestore();
     }
-  } catch(_) { alert('Invalid JSON — please paste the raw JSON block returned by the AI.'); }
+  } catch(_) { showToast('Invalid JSON — please paste the raw JSON block returned by the AI.', 'error'); }
 }
 
 function parseMFPaste() {
@@ -993,7 +1335,7 @@ function parseMFPaste() {
     if (obj.sip_amount  ) document.getElementById('add-mf-sip').value     = obj.sip_amount;
     if (obj.sip_date    ) document.getElementById('add-mf-sipdate').value = obj.sip_date;
     generateMFJSON();
-  } catch(_) { alert('Invalid JSON — please paste the raw JSON block returned by the AI.'); }
+  } catch(_) { showToast('Invalid JSON — please paste the raw JSON block returned by the AI.', 'error'); }
 }
 
 // ── TAB SWITCHING ────────────────────────────────────────────────────────────
@@ -1068,12 +1410,7 @@ if (isFirebaseReady()) {
   if (btn) {
     btn.title   = 'Firebase not configured — edit docs/js/firebase-config.js';
     btn.style.opacity = '0.5';
-    btn.onclick = () => alert(
-      'Login is not yet configured.\n\n' +
-      'Edit docs/js/firebase-config.js with your Firebase project credentials\n' +
-      'and set FIREBASE_CONFIGURED = true.\n\n' +
-      'See the README for setup instructions.'
-    );
+    btn.onclick = () => showToast('Login not configured — edit docs/js/firebase.js to enable.', 'warn');
   }
   // Hide performance auth note — show disabled state
   const perfAuthNote = document.getElementById('perf-auth-note');

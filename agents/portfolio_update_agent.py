@@ -20,7 +20,7 @@ from _common import DATA_DIR, display, save_json, notify, setup_logging
 
 from src.exchange_calendar import is_open, IST
 from src.portfolio import load as load_portfolio
-from src.price_fetcher import get_price
+from src.price_fetcher import get_price, get_prev_close
 
 log = logging.getLogger(__name__)
 
@@ -35,21 +35,25 @@ def build_snapshot(holdings: list) -> list:
         if price is None:
             log.warning("No price for %s — skipped", ticker)
             continue
+        prev_close     = get_prev_close(ticker)
+        day_change_pct = round((price - prev_close) / prev_close * 100, 2) if prev_close else None
         invested = h["qty"] * h["avg_buy_price"]
         current  = h["qty"] * price
         pnl      = current - invested
         pct      = (price - h["avg_buy_price"]) / h["avg_buy_price"] * 100
         results.append({
-            "ticker":        ticker,
-            "display":       display(ticker),
-            "qty":           h["qty"],
-            "avg_buy_price": round(h["avg_buy_price"], 2),
-            "current_price": round(price, 2),
-            "invested":      round(invested, 2),
-            "current_value": round(current, 2),
-            "pnl":           round(pnl, 2),
-            "pnl_pct":       round(pct, 2),
-            "currency":      h.get("currency", "INR"),
+            "ticker":          ticker,
+            "display":         display(ticker),
+            "qty":             h["qty"],
+            "avg_buy_price":   round(h["avg_buy_price"], 2),
+            "current_price":   round(price, 2),
+            "prev_close":      round(prev_close, 2) if prev_close else None,
+            "day_change_pct":  day_change_pct,
+            "invested":        round(invested, 2),
+            "current_value":   round(current, 2),
+            "pnl":             round(pnl, 2),
+            "pnl_pct":         round(pct, 2),
+            "currency":        h.get("currency", "INR"),
         })
     return results
 

@@ -56,6 +56,18 @@ def get_price(ticker: str) -> Optional[float]:
     return None
 
 
+def get_prev_close(ticker: str) -> Optional[float]:
+    """Fetch previous trading day's closing price."""
+    try:
+        info = yf.Ticker(ticker).fast_info
+        pc = info.get("previous_close") or info.get("previousClose")
+        if pc and float(pc) > 0:
+            return float(pc)
+    except Exception as e:
+        log.warning("prev_close fetch failed for %s: %s", ticker, e)
+    return None
+
+
 def get_history(ticker: str, period: str = "1y") -> Optional[object]:
     """Fetch daily OHLCV history for indicator calculations."""
     try:

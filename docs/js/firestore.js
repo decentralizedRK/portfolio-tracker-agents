@@ -76,6 +76,25 @@ async function getMutualFunds(uid) {
   return snap.docs.map(d => d.data());
 }
 
+async function bulkImportMutualFunds(uid, fundsArray) {
+  const batch = db.batch();
+  for (const f of fundsArray) {
+    const code = String(f.scheme_code);
+    const ref  = _userRef(uid).collection('mutual_funds').doc(code);
+    batch.set(ref, {
+      name:        f.name,
+      scheme_code: code,
+      units:       Number(f.units),
+      avg_nav:     Number(f.avg_nav),
+      sip_amount:  Number(f.sip_amount || 0),
+      sip_date:    Number(f.sip_date   || 1),
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+      addedAt:   firebase.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true });
+  }
+  await batch.commit();
+}
+
 // ── Snapshots ─────────────────────────────────────────────────────────────────
 
 async function saveSnapshot(uid, dateStr, snapshot) {

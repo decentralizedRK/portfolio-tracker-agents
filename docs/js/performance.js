@@ -193,7 +193,8 @@ async function recalculateTodaySnapshot(uid, holdings, mfFunds, priceMap, navMap
     _buildSnapshotData(holdings, mfFunds, priceMap, navMap);
 
   if (totalCurrent === 0) {
-    alert('Prices not loaded yet — please wait a moment and try again.');
+    if (typeof showToast === 'function') showToast('Prices not loaded yet — please wait a moment and try again.', 'warn');
+    else alert('Prices not loaded yet — please wait a moment.');
     return;
   }
 
