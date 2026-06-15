@@ -11,31 +11,20 @@ Sends Telegram with:
 Also writes data/portfolio_snapshot.json for the dashboard.
 """
 
-import json
 import logging
 import os
 import sys
 from datetime import datetime
-from logging.handlers import RotatingFileHandler
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
-from dotenv import load_dotenv
-load_dotenv()
+from _common import DATA_DIR, display, save_json, notify, setup_logging
 
 from src.exchange_calendar import is_open, IST
 from src.portfolio import load as load_portfolio
 from src.price_fetcher import get_price
-from src.notifier import send_telegram, send_console
 
 log = logging.getLogger(__name__)
 
-DATA_DIR      = os.path.join(os.path.dirname(__file__), "..", "data")
 SNAPSHOT_PATH = os.path.join(DATA_DIR, "portfolio_snapshot.json")
-
-
-def _display(ticker: str) -> str:
-    return ticker.replace(".NS", "").replace(".BO", "")
 
 
 def build_snapshot(holdings: list) -> list:
@@ -52,7 +41,7 @@ def build_snapshot(holdings: list) -> list:
         pct      = (price - h["avg_buy_price"]) / h["avg_buy_price"] * 100
         results.append({
             "ticker":        ticker,
-            "display":       _display(ticker),
+            "display":       display(ticker),
             "qty":           h["qty"],
             "avg_buy_price": round(h["avg_buy_price"], 2),
             "current_price": round(price, 2),
@@ -71,7 +60,7 @@ def format_message(snapshot: list, ts: str) -> str:
     total_pnl      = total_current - total_invested
     total_pct      = (total_pnl / total_invested * 100) if total_invested else 0
 
-    emoji = "📈" if total_pct >= 0 else "📉"
+    emoji    = "📈" if total_pct >= 0 else "📉"
     pnl_sign = "+" if total_pnl >= 0 else ""
 
     by_pct   = sorted(snapshot, key=lambda x: x["pnl_pct"], reverse=True)
@@ -132,24 +121,12 @@ def run(force: bool = False) -> None:
         "draggers":       [h for h in by_pct if h["pnl_pct"] < 0][-5:][::-1],
     }
 
-    os.makedirs(DATA_DIR, exist_ok=True)
-    tmp = SNAPSHOT_PATH + ".tmp"
-    with open(tmp, "w") as f:
-        json.dump(data, f, indent=2)
-    os.replace(tmp, SNAPSHOT_PATH)
+    save_json(SNAPSHOT_PATH, data)
     log.info("Saved snapshot → %s", SNAPSHOT_PATH)
 
-    msg = format_message(snapshot, ts)
-    send_console(msg)
-    send_telegram(msg)
+    notify(format_message(snapshot, ts))
 
 
 if __name__ == "__main__":
-    _log_file = RotatingFileHandler("agent.log", maxBytes=10 * 1024 * 1024, backupCount=3)
-    _log_file.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s %(levelname)s: %(message)s",
-        handlers=[logging.StreamHandler(), _log_file],
-    )
+    setup_logging()
     run(force="--force" in sys.argv)

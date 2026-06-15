@@ -10,27 +10,20 @@ Fetches and consolidates:
 Writes data/news_digest.json and sends a Telegram summary.
 """
 
-import json
 import logging
 import os
 import sys
 from datetime import datetime
-from logging.handlers import RotatingFileHandler
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
-from dotenv import load_dotenv
-load_dotenv()
+from _common import DATA_DIR, display, save_json, notify, setup_logging
 
 import yfinance as yf
 
 from src.exchange_calendar import IST
 from src.portfolio import load as load_portfolio
-from src.notifier import send_telegram, send_console
 
 log = logging.getLogger(__name__)
 
-DATA_DIR  = os.path.join(os.path.dirname(__file__), "..", "data")
 NEWS_PATH = os.path.join(DATA_DIR, "news_digest.json")
 
 RSS_FEEDS = {
@@ -59,10 +52,6 @@ MOMENTUM_WATCHLIST = [
 
 def _hours_ago(ts: int) -> float:
     return (datetime.now().timestamp() - ts) / 3600
-
-
-def _display(ticker: str) -> str:
-    return ticker.replace(".NS", "").replace(".BO", "")
 
 
 def fetch_ticker_news(ticker: str, max_items: int = 3, max_age_hours: int = 48) -> list:
@@ -123,13 +112,42 @@ def _sentiment_tag(title: str) -> str:
     return "⚪"
 
 
+def _format_telegram(digest: dict, date_str: str) -> str:
+    parts = [f"📰 *MORNING MARKET DIGEST | {date_str}*"]
+
+    if digest["holding_news"]:
+        parts.append("\n📦 *Your Portfolio*")
+        for ticker, items in list(digest["holding_news"].items())[:8]:
+            for item in items[:1]:
+                tag   = _sentiment_tag(item["title"])
+                title = item["title"][:90]
+                parts.append(f"{tag} *{display(ticker)}*: {title}")
+
+    if digest["market_headlines"]:
+        parts.append("\n📊 *Market Headlines*")
+        for h in digest["market_headlines"][:5]:
+            tag   = _sentiment_tag(h["title"])
+            title = h["title"][:85]
+            parts.append(f"{tag} {title} _({h['source']})_")
+
+    if digest["momentum_news"]:
+        parts.append("\n⚡ *5-10x Watchlist*")
+        for ticker, items in list(digest["momentum_news"].items())[:6]:
+            for item in items[:1]:
+                tag   = _sentiment_tag(item["title"])
+                title = item["title"][:80]
+                parts.append(f"{tag} *{display(ticker)}*: {title}")
+
+    parts.append("\n_Run `python main.py --status` for live P&L_")
+    return "\n".join(parts)[:4096]
+
+
 def run() -> None:
     holdings = load_portfolio()
     now_ist  = datetime.now(IST)
     date_str = now_ist.strftime("%d %b %Y")
     log.info("Running news agent for %s", date_str)
 
-    # Per-holding news
     holding_news: dict = {}
     for h in holdings:
         ticker = h["ticker"]
@@ -137,14 +155,12 @@ def run() -> None:
         if items:
             holding_news[ticker] = items
 
-    # Momentum watchlist news
     momentum_news: dict = {}
     for ticker in MOMENTUM_WATCHLIST:
         items = fetch_ticker_news(ticker, max_items=2)
         if items:
             momentum_news[ticker] = items
 
-    # Market headlines via RSS
     market_headlines = fetch_rss()
 
     digest = {
@@ -155,57 +171,12 @@ def run() -> None:
         "market_headlines": market_headlines,
     }
 
-    os.makedirs(DATA_DIR, exist_ok=True)
-    tmp = NEWS_PATH + ".tmp"
-    with open(tmp, "w") as f:
-        json.dump(digest, f, indent=2, default=str)
-    os.replace(tmp, NEWS_PATH)
+    save_json(NEWS_PATH, digest, default=str)
     log.info("Saved news digest → %s", NEWS_PATH)
 
-    msg = _format_telegram(digest, date_str)
-    send_console(msg)
-    send_telegram(msg)
-
-
-def _format_telegram(digest: dict, date_str: str) -> str:
-    parts = [f"📰 *MORNING MARKET DIGEST | {date_str}*"]
-
-    # Holding-specific news (max 8 stocks, 1 item each)
-    if digest["holding_news"]:
-        parts.append("\n📦 *Your Portfolio*")
-        for ticker, items in list(digest["holding_news"].items())[:8]:
-            for item in items[:1]:
-                tag   = _sentiment_tag(item["title"])
-                title = item["title"][:90]
-                parts.append(f"{tag} *{_display(ticker)}*: {title}")
-
-    # Market headlines
-    if digest["market_headlines"]:
-        parts.append("\n📊 *Market Headlines*")
-        for h in digest["market_headlines"][:5]:
-            tag   = _sentiment_tag(h["title"])
-            title = h["title"][:85]
-            parts.append(f"{tag} {title} _({h['source']})_")
-
-    # Momentum watchlist
-    if digest["momentum_news"]:
-        parts.append("\n⚡ *5-10x Watchlist*")
-        for ticker, items in list(digest["momentum_news"].items())[:6]:
-            for item in items[:1]:
-                tag   = _sentiment_tag(item["title"])
-                title = item["title"][:80]
-                parts.append(f"{tag} *{_display(ticker)}*: {title}")
-
-    parts.append("\n_Run `python main.py --status` for live P&L_")
-    return "\n".join(parts)[:4096]
+    notify(_format_telegram(digest, date_str))
 
 
 if __name__ == "__main__":
-    _log_file = RotatingFileHandler("agent.log", maxBytes=10 * 1024 * 1024, backupCount=3)
-    _log_file.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s %(levelname)s: %(message)s",
-        handlers=[logging.StreamHandler(), _log_file],
-    )
+    setup_logging()
     run()

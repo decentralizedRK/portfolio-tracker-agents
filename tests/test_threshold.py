@@ -58,9 +58,9 @@ def test_reset_all_rearms_all():
     assert a1 and a2
 
 
-def test_band_floors_correctly():
-    _, band, _ = tm.check("AAPL", 87, 100)   # -13% → floor(-13/5)*5 = -15
-    assert band == -15
+def test_band_truncates_correctly():
+    _, band, _ = tm.check("AAPL", 87, 100)   # -13% → trunc(-13/5)*5 = -10
+    assert band == -10
 
 
 def test_pct_change_accuracy():

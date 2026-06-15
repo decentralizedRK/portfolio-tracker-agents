@@ -1,11 +1,10 @@
 import logging
-import os
 import time
 from datetime import datetime
 
 import pytz
-import yaml
 
+from .config import load as _load_config
 from .exchange_calendar import is_open, next_open_ist, exchange_for_ticker
 from .price_fetcher import get_price
 from .threshold_monitor import check as check_threshold
@@ -16,13 +15,6 @@ from . import portfolio as portfolio_module
 log = logging.getLogger(__name__)
 
 IST = pytz.timezone("Asia/Kolkata")
-
-_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "config.yaml")
-
-
-def _load_config() -> dict:
-    with open(_CONFIG_PATH) as f:
-        return yaml.safe_load(f)
 
 
 def _check_holding(holding: dict) -> None:

@@ -11,30 +11,22 @@ Produces a scored action label per stock and writes
 data/recommendations.json + sends a Telegram summary.
 """
 
-import json
 import logging
 import os
 import sys
 from datetime import datetime
-from logging.handlers import RotatingFileHandler
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
-from dotenv import load_dotenv
-load_dotenv()
+from _common import DATA_DIR, display, save_json, notify, setup_logging
 
 from src.exchange_calendar import IST
 from src.portfolio import load as load_portfolio
 from src.price_fetcher import get_price
 from src.technical_analyzer import analyze
-from src.notifier import send_telegram, send_console
 
 log = logging.getLogger(__name__)
 
-DATA_DIR  = os.path.join(os.path.dirname(__file__), "..", "data")
 RECS_PATH = os.path.join(DATA_DIR, "recommendations.json")
 
-# Sector tags for each ticker (manually curated for messaging)
 SECTOR_MAP = {
     "ADANIENT.NS":   "Conglomerate / Infra",
     "BEL.NS":        "Defence Electronics",
@@ -72,20 +64,15 @@ def _score(ta: dict, current_price: float, avg_buy: float) -> tuple[int, list]:
     score   = 0
     signals = []
 
-    # RSI
     rsi = ta.get("rsi")
     if rsi is not None:
         if rsi < 30:
-            score += 2
-            signals.append(f"RSI {rsi} — deeply oversold, high reward zone")
+            score += 2; signals.append(f"RSI {rsi} — deeply oversold, high reward zone")
         elif rsi < 45:
-            score += 1
-            signals.append(f"RSI {rsi} — recovering, watch for reversal")
+            score += 1; signals.append(f"RSI {rsi} — recovering, watch for reversal")
         elif rsi > 70:
-            score -= 1
-            signals.append(f"RSI {rsi} — overbought, wait for pullback")
+            score -= 1; signals.append(f"RSI {rsi} — overbought, wait for pullback")
 
-    # MACD
     macd = ta.get("macd_signal", "")
     if "Bullish crossover" in macd:
         score += 2; signals.append("MACD bullish crossover — strong buy signal")
@@ -96,7 +83,6 @@ def _score(ta: dict, current_price: float, avg_buy: float) -> tuple[int, list]:
     elif "Bearish" in macd:
         score -= 1; signals.append("MACD bearish — weak momentum")
 
-    # MA trend
     trend = ta.get("trend", "")
     if trend == "UPTREND":
         score += 2; signals.append("Price above 50MA & 200MA — UPTREND intact")
@@ -105,14 +91,12 @@ def _score(ta: dict, current_price: float, avg_buy: float) -> tuple[int, list]:
     elif trend == "SIDEWAYS":
         signals.append("SIDEWAYS — accumulation possible")
 
-    # Bollinger Bands
     bb = ta.get("bb_signal", "")
     if "Below lower" in bb:
         score += 1; signals.append("Near lower Bollinger Band — oversold extension")
     elif "Above upper" in bb:
         score -= 1; signals.append("Near upper Bollinger Band — overbought")
 
-    # Distance from cost basis (10-year lens)
     pct = (current_price - avg_buy) / avg_buy * 100
     if pct < -40:
         score += 2; signals.append(f"Down {pct:.0f}% from cost — deep value, review thesis")
@@ -127,21 +111,52 @@ def _score(ta: dict, current_price: float, avg_buy: float) -> tuple[int, list]:
 
 
 def _action(score: int) -> str:
-    if score >= 4:   return "STRONG ACCUMULATE"
-    if score >= 2:   return "ACCUMULATE ON DIPS"
-    if score >= 0:   return "HOLD"
-    if score >= -2:  return "HOLD / MONITOR CLOSELY"
+    if score >= 4:  return "STRONG ACCUMULATE"
+    if score >= 2:  return "ACCUMULATE ON DIPS"
+    if score >= 0:  return "HOLD"
+    if score >= -2: return "HOLD / MONITOR CLOSELY"
     return "REVIEW INVESTMENT THESIS"
 
 
 def _action_emoji(action: str) -> str:
     return {
-        "STRONG ACCUMULATE":       "🟢",
-        "ACCUMULATE ON DIPS":      "🔵",
-        "HOLD":                    "⚪",
-        "HOLD / MONITOR CLOSELY":  "🟡",
-        "REVIEW INVESTMENT THESIS":"🔴",
+        "STRONG ACCUMULATE":        "🟢",
+        "ACCUMULATE ON DIPS":       "🔵",
+        "HOLD":                     "⚪",
+        "HOLD / MONITOR CLOSELY":   "🟡",
+        "REVIEW INVESTMENT THESIS": "🔴",
     }.get(action, "⚪")
+
+
+def _format_telegram(data: dict, ts: str) -> str:
+    lines = [f"💡 *WEEKLY RECOMMENDATIONS | {ts}*", ""]
+
+    top_buys = data.get("top_buys", [])
+    if top_buys:
+        lines.append("✅ *Accumulate on Dips*")
+        for r in top_buys[:5]:
+            lines.append(f"{r['action_emoji']} *{r['display']}* ({r['sector']})")
+            lines.append(f"  Score: {r['momentum_score']:+d} | {r['trend'] or 'N/A'} | P&L: {r['pnl_pct']:+.1f}%")
+            for sig in r["signals"][:2]:
+                lines.append(f"  _{sig}_")
+        lines.append("")
+
+    review_list = data.get("review_list", [])
+    if review_list:
+        lines.append("⚠️ *Review Thesis*")
+        for r in review_list[:5]:
+            lines.append(
+                f"🔴 *{r['display']}* — {r['pnl_pct']:+.1f}% | {r['trend'] or 'N/A'} | {r['sector']}"
+            )
+        lines.append("")
+
+    lines += [
+        "─────────────────────────",
+        "_📌 10-yr lens: Dips = opportunity, not panic._",
+        "_Validate technicals with business fundamentals._",
+        "_This is not SEBI-registered financial advice._",
+    ]
+    return "\n".join(lines)[:4096]
 
 
 def run() -> None:
@@ -166,7 +181,7 @@ def run() -> None:
 
         recs.append({
             "ticker":         ticker,
-            "display":        ticker.replace(".NS", "").replace(".BO", ""),
+            "display":        display(ticker),
             "sector":         SECTOR_MAP.get(ticker, "—"),
             "qty":            h["qty"],
             "avg_buy_price":  h["avg_buy_price"],
@@ -185,8 +200,8 @@ def run() -> None:
 
     recs.sort(key=lambda x: x["momentum_score"], reverse=True)
 
-    total_invested  = sum(r["invested"]      for r in recs)
-    total_current   = sum(r["current_value"] for r in recs)
+    total_invested = sum(r["invested"]      for r in recs)
+    total_current  = sum(r["current_value"] for r in recs)
 
     data = {
         "timestamp":       now_ist.isoformat(),
@@ -202,58 +217,12 @@ def run() -> None:
         ),
     }
 
-    os.makedirs(DATA_DIR, exist_ok=True)
-    tmp = RECS_PATH + ".tmp"
-    with open(tmp, "w") as f:
-        json.dump(data, f, indent=2)
-    os.replace(tmp, RECS_PATH)
+    save_json(RECS_PATH, data)
     log.info("Saved recommendations → %s", RECS_PATH)
 
-    msg = _format_telegram(data, ts)
-    send_console(msg)
-    send_telegram(msg)
-
-
-def _format_telegram(data: dict, ts: str) -> str:
-    lines = [f"💡 *WEEKLY RECOMMENDATIONS | {ts}*", ""]
-
-    top_buys = data.get("top_buys", [])
-    if top_buys:
-        lines.append("✅ *Accumulate on Dips*")
-        for r in top_buys[:5]:
-            lines.append(
-                f"{r['action_emoji']} *{r['display']}* ({r['sector']})"
-            )
-            lines.append(f"  Score: {r['momentum_score']:+d} | {r['trend'] or 'N/A'} | P&L: {r['pnl_pct']:+.1f}%")
-            for sig in r["signals"][:2]:
-                lines.append(f"  _{sig}_")
-        lines.append("")
-
-    review_list = data.get("review_list", [])
-    if review_list:
-        lines.append("⚠️ *Review Thesis*")
-        for r in review_list[:5]:
-            lines.append(
-                f"🔴 *{r['display']}* — {r['pnl_pct']:+.1f}% | {r['trend'] or 'N/A'} | {r['sector']}"
-            )
-        lines.append("")
-
-    lines += [
-        "─────────────────────────",
-        "_📌 10-yr lens: Dips = opportunity, not panic._",
-        "_Validate technicals with business fundamentals._",
-        "_This is not SEBI-registered financial advice._",
-    ]
-
-    return "\n".join(lines)[:4096]
+    notify(_format_telegram(data, ts))
 
 
 if __name__ == "__main__":
-    _log_file = RotatingFileHandler("agent.log", maxBytes=10 * 1024 * 1024, backupCount=3)
-    _log_file.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s %(levelname)s: %(message)s",
-        handlers=[logging.StreamHandler(), _log_file],
-    )
+    setup_logging()
     run()

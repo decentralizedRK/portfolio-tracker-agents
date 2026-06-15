@@ -3,16 +3,10 @@ import os
 from typing import Dict, Any
 
 import requests
-import yaml
+
+from .config import load as _load_config
 
 log = logging.getLogger(__name__)
-
-_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "config.yaml")
-
-
-def _load_config() -> Dict:
-    with open(_CONFIG_PATH) as f:
-        return yaml.safe_load(f)
 
 
 def _bot_token() -> str:

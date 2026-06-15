@@ -42,7 +42,7 @@ def check(ticker: str, current_price: float, avg_buy_price: float) -> Tuple[bool
     Alerts only on downside, once per band per day.
     """
     pct_change = (current_price - avg_buy_price) / avg_buy_price * 100
-    band = math.floor(pct_change / THRESHOLD_STEP) * THRESHOLD_STEP
+    band = math.trunc(pct_change / THRESHOLD_STEP) * THRESHOLD_STEP
 
     if band >= 0:
         return False, band, pct_change
