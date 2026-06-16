@@ -1,6 +1,6 @@
 {
-  "date": "15 Jun 2026",
-  "timestamp": "2026-06-15T18:44:51.483471+05:30",
+  "date": "16 Jun 2026",
+  "timestamp": "2026-06-16T14:22:44.139756+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -283,12 +283,7 @@
     },
     "BAJFINANCE.NS": {
       "dividends": [],
-      "splits": [
-        {
-          "date": "2025-06-16",
-          "ratio": "2.0"
-        }
-      ],
+      "splits": [],
       "calendar": {},
       "error": null
     },
