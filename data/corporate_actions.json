@@ -1,6 +1,6 @@
 {
-  "date": "22 Jun 2026",
-  "timestamp": "2026-06-22T14:48:04.098854+05:30",
+  "date": "23 Jun 2026",
+  "timestamp": "2026-06-23T12:27:08.003237+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -286,7 +286,12 @@
       "error": null
     },
     "HINDUNILVR.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-06-23",
+          "amount": 22.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -404,6 +409,14 @@
   },
   "highlights": [
     {
+      "ticker": "HINDUNILVR.NS",
+      "display": "HINDUNILVR",
+      "type": "Dividend",
+      "date": "2026-06-23",
+      "detail": "\u20b922.00/share",
+      "in_portfolio": false
+    },
+    {
       "ticker": "TMPV.NS",
       "display": "TMPV",
       "type": "Dividend",
@@ -514,14 +527,6 @@
       "date": "2026-02-11",
       "detail": "\u20b91.00/share",
       "in_portfolio": false
-    },
-    {
-      "ticker": "RECLTD.NS",
-      "display": "RECLTD",
-      "type": "Dividend",
-      "date": "2026-02-06",
-      "detail": "\u20b94.60/share",
-      "in_portfolio": true
     }
   ]
 }
