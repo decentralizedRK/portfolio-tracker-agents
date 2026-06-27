@@ -109,3 +109,16 @@ async function getSnapshots(uid, startDate, endDate) {
     .get();
   return snap.docs.map(d => ({ date: d.id, ...d.data() }));
 }
+
+// ── Subscription ──────────────────────────────────────────────────────────────
+
+async function getSubscription(uid) {
+  const doc = await _userRef(uid).get();
+  return doc.exists ? (doc.data().subscription ?? null) : null;
+}
+
+async function updateSubscription(uid, data) {
+  await _userRef(uid).set({
+    subscription: { ...data, updatedAt: firebase.firestore.FieldValue.serverTimestamp() },
+  }, { merge: true });
+}

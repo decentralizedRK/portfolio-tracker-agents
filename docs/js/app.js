@@ -942,7 +942,7 @@ function newsItem(ticker, n) {
 
 async function loadNews() {
   const d = await loadJSON(PATHS.news);
-  document.getElementById('news-date').textContent = d.date ? 'Digest for ' + d.date : '';
+  document.getElementById('news-date').textContent = d.timestamp ? 'Generated ' + fmt.ts(d.timestamp) : (d.date ? 'Digest for ' + d.date : '');
 
   const hn     = d.holding_news ?? {};
   const hnKeys = Object.keys(hn);
@@ -1012,7 +1012,7 @@ async function loadFnoRecommendations() {
 
   // Update timestamp in Recommendations panel
   const dateEl = document.getElementById('fno-date');
-  if (dateEl) dateEl.textContent = d.generated_at ? 'Updated ' + d.generated_at : '';
+  if (dateEl) dateEl.textContent = d.timestamp ? 'Generated ' + fmt.ts(d.timestamp) : (d.generated_at ? 'Generated ' + d.generated_at : '');
 }
 
 function _getFnoFiltered() {
@@ -1402,6 +1402,8 @@ async function loadCorporate() {
   const d          = await loadJSON(PATHS.corporate);
   const highlights = d.highlights ?? [];
   const today      = todayStr();
+  const caDateEl   = document.getElementById('ca-date');
+  if (caDateEl) caDateEl.textContent = d.timestamp ? 'Generated ' + fmt.ts(d.timestamp) : '';
 
   const upcoming = highlights.filter(ev => ev.date >= today).sort((a,b) => a.date.localeCompare(b.date));
   const past     = highlights.filter(ev => ev.date <  today).sort((a,b) => b.date.localeCompare(a.date));
@@ -1732,6 +1734,13 @@ if (isFirebaseReady()) {
     updateAuthUI(user);
     updateAddTabForAuth(user);
     if (user) {
+      // Check subscription before showing dashboard
+      const isActive = typeof checkAndApplySubscription === 'function'
+        ? await checkAndApplySubscription(user.uid)
+        : true;
+
+      if (!isActive) return; // paywall shown by checkAndApplySubscription
+
       // Show performance content, hide auth prompt
       const perfAuthNote = document.getElementById('perf-auth-note');
       const perfContent  = document.getElementById('perf-content');
@@ -1739,6 +1748,11 @@ if (isFirebaseReady()) {
       if (perfContent)  perfContent.classList.remove('hidden');
       await loadUserPortfolio(user.uid);
     } else {
+      // Not signed in — show landing page
+      const landingPage = document.getElementById('landing-page');
+      const appMain     = document.getElementById('app-main');
+      if (landingPage) landingPage.classList.remove('hidden');
+      if (appMain)     appMain.classList.add('hidden');
       await onUserSignedOut();
     }
   });

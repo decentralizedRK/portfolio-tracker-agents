@@ -10,9 +10,11 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="./js/firebase.js"></script>
   <script src="./js/auth.js"></script>
   <script src="./js/firestore.js"></script>
+  <script src="./js/subscription.js"></script>
   <script src="./js/performance.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -103,6 +105,13 @@
     }
     .holdings-mobile { display: none; }
     .m-card { background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; }
+    /* ── Landing page & paywall ── */
+    .plan-card { background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 28px 24px; transition: border-color 0.2s; }
+    .plan-card:hover { border-color: #6366f1; }
+    .plan-card.featured { border-color: #6366f1; box-shadow: 0 0 0 1px #6366f1, 0 8px 32px rgba(99,102,241,0.15); }
+    .feature-card { background: rgba(30,41,59,0.6); border: 1px solid #334155; border-radius: 12px; padding: 20px; }
+    .gradient-text { background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .sub-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 99px; background: linear-gradient(135deg,#6366f1,#a78bfa); color: white; letter-spacing: 0.05em; }
   </style>
 </head>
 <body class="min-h-screen">
@@ -130,6 +139,7 @@
     <div id="header-user-info" class="hidden flex items-center gap-2">
       <img id="header-user-avatar" src="" alt="" class="hidden w-7 h-7 rounded-full object-cover" />
       <span id="header-user-name" class="text-xs text-slate-300 max-w-[100px] truncate"></span>
+      <span id="sub-badge" class="sub-badge hidden">PRO</span>
       <button onclick="doSignOut()" class="text-xs px-2 py-1 rounded text-slate-500 hover:text-slate-300 transition">Sign out</button>
     </div>
   </div>
@@ -226,7 +236,120 @@
   </div>
 </div>
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
+<!-- ── LANDING PAGE (shown when not subscribed) ── -->
+<div id="landing-page" class="min-h-screen">
+
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center space-y-6">
+    <div class="inline-block mb-2 px-4 py-1 rounded-full text-xs font-semibold tracking-widest" style="background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.3)">PORTFOLIO TRACKER PRO</div>
+    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+      Your Personal<br><span class="gradient-text">Portfolio Command Center</span>
+    </h1>
+    <p class="text-slate-400 text-lg max-w-2xl mx-auto">Real-time NSE/BSE + US market prices, AI-powered technical recommendations, F&O watchlists, mutual fund tracking and more — all in one private dashboard.</p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+      <button onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})" class="px-8 py-3 rounded-xl font-semibold text-white transition" style="background:#6366f1">Get Pro Access →</button>
+      <button onclick="showAuthModal('signin')" class="px-8 py-3 rounded-xl font-semibold transition" style="background:#1e293b;color:#94a3b8;border:1px solid #334155">Already subscribed? Sign in</button>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="max-w-5xl mx-auto px-6 pb-16">
+    <h2 class="text-center text-xl font-bold text-white mb-8">Everything you need to track your wealth</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="feature-card space-y-2">
+        <div class="text-2xl">📊</div>
+        <div class="font-semibold text-white">Live Holdings</div>
+        <div class="text-sm text-slate-400">Real-time NSE, BSE and US stock prices refreshed every 30 seconds. P&L calculated live with day change and weekly change.</div>
+      </div>
+      <div class="feature-card space-y-2">
+        <div class="text-2xl">🤖</div>
+        <div class="font-semibold text-white">AI Recommendations</div>
+        <div class="text-sm text-slate-400">Daily technical analysis (RSI, MACD, Bollinger Bands) across your portfolio and 230+ F&O stocks — buy, hold or sell signals.</div>
+      </div>
+      <div class="feature-card space-y-2">
+        <div class="text-2xl">📈</div>
+        <div class="font-semibold text-white">F&O Watchlists</div>
+        <div class="text-sm text-slate-400">All NSE F&O stocks classified by market cap (large/mid/small cap) with momentum scores and TradingView links.</div>
+      </div>
+      <div class="feature-card space-y-2">
+        <div class="text-2xl">🏦</div>
+        <div class="font-semibold text-white">Mutual Funds</div>
+        <div class="text-sm text-slate-400">Track your SIP investments with live NAV from AMFI. SIP projections and gain/loss updated daily.</div>
+      </div>
+      <div class="feature-card space-y-2">
+        <div class="text-2xl">📰</div>
+        <div class="font-semibold text-white">Market Intelligence</div>
+        <div class="text-sm text-slate-400">Daily AI news digest and corporate actions (dividends, splits, bonuses) relevant to your holdings.</div>
+      </div>
+      <div class="feature-card space-y-2">
+        <div class="text-2xl">🔔</div>
+        <div class="font-semibold text-white">Telegram Alerts</div>
+        <div class="text-sm text-slate-400">Automated price drop alerts with technical analysis snapshots delivered to your Telegram every time a 5% band is crossed.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="max-w-4xl mx-auto px-6 pb-20">
+    <h2 class="text-center text-xl font-bold text-white mb-2">Simple, transparent pricing</h2>
+    <p class="text-center text-slate-400 text-sm mb-10">One subscription, all features. No hidden fees.</p>
+    <div class="grid sm:grid-cols-3 gap-6">
+
+      <!-- Monthly -->
+      <div class="plan-card flex flex-col">
+        <div class="text-sm font-semibold text-slate-400 mb-1">Monthly</div>
+        <div class="text-3xl font-extrabold text-white mb-1">₹199</div>
+        <div class="text-xs text-slate-500 mb-6">per month</div>
+        <ul class="space-y-2 text-sm text-slate-400 flex-1 mb-6">
+          <li>✓ All features</li>
+          <li>✓ Live prices every 30s</li>
+          <li>✓ Daily AI recommendations</li>
+          <li>✓ F&O watchlists (230+ stocks)</li>
+          <li>✓ Cancel anytime</li>
+        </ul>
+        <button id="subscribe-btn-monthly" onclick="subscribe('monthly')" class="btn-sm btn-primary w-full py-2.5">Subscribe</button>
+      </div>
+
+      <!-- Yearly (featured) -->
+      <div class="plan-card featured flex flex-col relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-xs font-bold text-white" style="background:#6366f1">Save 37%</div>
+        <div class="text-sm font-semibold text-indigo-400 mb-1">Yearly</div>
+        <div class="text-3xl font-extrabold text-white mb-1">₹1,499</div>
+        <div class="text-xs text-slate-500 mb-6">per year · ₹125/mo</div>
+        <ul class="space-y-2 text-sm text-slate-400 flex-1 mb-6">
+          <li>✓ All features</li>
+          <li>✓ Live prices every 30s</li>
+          <li>✓ Daily AI recommendations</li>
+          <li>✓ F&O watchlists (230+ stocks)</li>
+          <li>✓ Priority support</li>
+        </ul>
+        <button id="subscribe-btn-yearly" onclick="subscribe('yearly')" class="btn-sm btn-primary w-full py-2.5">Subscribe</button>
+      </div>
+
+      <!-- Lifetime -->
+      <div class="plan-card flex flex-col">
+        <div class="text-sm font-semibold text-slate-400 mb-1">Lifetime</div>
+        <div class="text-3xl font-extrabold text-white mb-1">₹4,999</div>
+        <div class="text-xs text-slate-500 mb-6">one-time payment</div>
+        <ul class="space-y-2 text-sm text-slate-400 flex-1 mb-6">
+          <li>✓ All features, forever</li>
+          <li>✓ Live prices every 30s</li>
+          <li>✓ Daily AI recommendations</li>
+          <li>✓ F&O watchlists (230+ stocks)</li>
+          <li>✓ All future features</li>
+        </ul>
+        <button id="subscribe-btn-lifetime" onclick="subscribe('lifetime')" class="btn-sm btn-primary w-full py-2.5">Buy Lifetime</button>
+      </div>
+
+    </div>
+
+    <!-- Sign-in note -->
+    <p class="text-center text-xs text-slate-600 mt-8">You'll be asked to sign in before payment. Already a subscriber? <a href="#" onclick="showAuthModal('signin');return false;" class="text-indigo-400 hover:text-indigo-300">Sign in here</a>.</p>
+  </section>
+
+</div><!-- end #landing-page -->
+
+<main id="app-main" class="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6 hidden">
 
   <!-- ── STAT CARDS ── -->
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -522,17 +645,26 @@
     <!-- ── Portfolio sub-panel ── -->
     <div id="recpanel-portfolio" class="space-y-4">
       <div class="card p-4">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-semibold text-white">Portfolio Recommendations</h3>
+          <span class="text-xs text-slate-500" id="rec-date"></span>
+        </div>
         <div class="flex items-start gap-3 p-3 rounded-lg mb-4" style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2)">
           <span class="text-xl">📌</span>
           <p class="text-xs text-slate-400 leading-relaxed" id="rec-note"></p>
         </div>
         <div id="rec-list" class="space-y-2"></div>
       </div>
-      <div class="text-xs text-slate-600 text-center" id="rec-date"></div>
     </div>
 
     <!-- ── F&O sub-panel ── -->
     <div id="recpanel-fno" class="hidden space-y-4">
+
+      <!-- Header -->
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-semibold text-white">F&amp;O Technical Scan</h3>
+        <span id="fno-date" class="text-xs text-slate-500"></span>
+      </div>
 
       <!-- Filter bar -->
       <div class="flex items-center gap-2 flex-wrap">
@@ -541,7 +673,6 @@
         <button class="fno-filter-btn sub-tab"        data-filter="buy"     onclick="applyFnoFilter('buy')">Buy Signals</button>
         <button class="fno-filter-btn sub-tab"        data-filter="neutral" onclick="applyFnoFilter('neutral')">Neutral</button>
         <button class="fno-filter-btn sub-tab"        data-filter="watch"   onclick="applyFnoFilter('watch')">Watch / Bearish</button>
-        <span id="fno-date" class="text-xs text-slate-600 ml-auto"></span>
       </div>
 
       <!-- Summary strip -->
@@ -561,9 +692,12 @@
   <!-- ══════════════════════════════════════════════════════════ -->
   <div id="panel-corporate" class="hidden">
     <div class="card overflow-hidden">
-      <div class="p-4 border-b border-slate-700">
-        <h3 class="text-sm font-semibold text-white">Dividends · Splits · Earnings</h3>
-        <p class="text-xs text-slate-500 mt-0.5">📂 = your portfolio &nbsp;|&nbsp; Sources: yfinance · Data may be delayed</p>
+      <div class="p-4 border-b border-slate-700 flex items-start justify-between gap-3">
+        <div>
+          <h3 class="text-sm font-semibold text-white">Dividends · Splits · Earnings</h3>
+          <p class="text-xs text-slate-500 mt-0.5">📂 = your portfolio &nbsp;|&nbsp; Sources: yfinance · Data may be delayed</p>
+        </div>
+        <span class="text-xs text-slate-500 flex-shrink-0 mt-0.5" id="ca-date"></span>
       </div>
       <div class="p-4 space-y-1" id="ca-upcoming-section">
         <div class="ca-section-label text-yellow-400">⏳ Upcoming</div>
