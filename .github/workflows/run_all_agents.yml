@@ -17,11 +17,12 @@ jobs:
         with:
           script: |
             const workflows = [
-              { id: 'portfolio_update.yml',      label: 'Portfolio Update',      inputs: { force: 'true' } },
-              { id: 'news_agent.yml',            label: 'Morning News Digest',   inputs: {} },
-              { id: 'corporate_action_agent.yml',label: 'Corporate Actions',     inputs: {} },
-              { id: 'recommendation_agent.yml',  label: 'Weekly Recommendations',inputs: {} },
-              { id: 'mf_update.yml',             label: 'MF NAV Update',        inputs: {} },
+              { id: 'portfolio_update.yml',       label: 'Portfolio Update',      inputs: { force: 'true' } },
+              { id: 'news_agent.yml',             label: 'Morning News Digest',   inputs: {} },
+              { id: 'corporate_action_agent.yml', label: 'Corporate Actions',     inputs: {} },
+              { id: 'recommendation_agent.yml',   label: 'Weekly Recommendations',inputs: {} },
+              { id: 'mf_update.yml',              label: 'MF NAV Update',         inputs: {} },
+              { id: 'fno_recommendation_agent.yml', label: 'F&O Technical Scan',  inputs: {} },
             ];
 
             for (const wf of workflows) {

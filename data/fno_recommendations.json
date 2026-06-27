@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-27T22:47:03.788514+05:30",
+  "timestamp": "2026-06-27T22:49:05.464863+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -2734,7 +2734,7 @@
           "macd": "Bullish (above signal)",
           "sma50": 5021.56,
           "sma200": 5393.02,
-          "support": 4076.41
+          "support": 4076.4
         },
         {
           "ticker": "NMDC.NS",
@@ -6328,5 +6328,5 @@
       ]
     }
   },
-  "generated_at": "27 Jun 2026 22:47 IST"
+  "generated_at": "27 Jun 2026 22:49 IST"
 }
