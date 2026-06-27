@@ -1,0 +1,5216 @@
+{
+  "tier": "largecap",
+  "count": 137,
+  "description": "NSE F&O \u2014 rank 1-100 by market cap (Nifty 100 universe, > \u20b940,000 Cr)",
+  "tradingview_list": [
+    "NSE:RELIANCE",
+    "NSE:HDFCBANK",
+    "NSE:BHARTIARTL",
+    "NSE:ICICIBANK",
+    "NSE:SBIN",
+    "NSE:TCS",
+    "NSE:BAJFINANCE",
+    "NSE:LT",
+    "NSE:LICI",
+    "NSE:HINDUNILVR",
+    "NSE:SUNPHARMA",
+    "NSE:ADANIPOWER",
+    "NSE:MARUTI",
+    "NSE:AXISBANK",
+    "NSE:INFY",
+    "NSE:ADANIPORTS",
+    "NSE:KOTAKBANK",
+    "NSE:ADANIENT",
+    "NSE:M&M",
+    "NSE:TITAN",
+    "NSE:ITC",
+    "NSE:NTPC",
+    "NSE:ULTRACEMCO",
+    "NSE:JSWSTEEL",
+    "NSE:BEL",
+    "NSE:HCLTECH",
+    "NSE:ONGC",
+    "NSE:HAL",
+    "NSE:BAJAJFINSV",
+    "NSE:BAJAJ-AUTO",
+    "NSE:NESTLEIND",
+    "NSE:COALINDIA",
+    "NSE:POWERGRID",
+    "NSE:ASIANPAINT",
+    "NSE:ADANIGREEN",
+    "NSE:SHRIRAMFIN",
+    "NSE:TATASTEEL",
+    "NSE:HINDALCO",
+    "NSE:GRASIM",
+    "NSE:INDIGO",
+    "NSE:EICHERMOT",
+    "NSE:WIPRO",
+    "NSE:DIVISLAB",
+    "NSE:SBILIFE",
+    "NSE:VBL",
+    "NSE:TRENT",
+    "NSE:TVSMOTOR",
+    "NSE:PIDILITIND",
+    "NSE:CUMMINSIND",
+    "NSE:DLF",
+    "NSE:CHOLAFIN",
+    "NSE:TORNTPHARM",
+    "NSE:IDEA",
+    "NSE:ABB",
+    "NSE:BANKBARODA",
+    "NSE:POLYCAB",
+    "NSE:PFC",
+    "NSE:BPCL",
+    "NSE:SIEMENS",
+    "NSE:TECHM",
+    "NSE:HDFCLIFE",
+    "NSE:BRITANNIA",
+    "NSE:TATAPOWER",
+    "NSE:PNB",
+    "NSE:APOLLOHOSP",
+    "NSE:MUTHOOTFIN",
+    "NSE:BOSCHLTD",
+    "NSE:CANBK",
+    "NSE:CIPLA",
+    "NSE:GMRAIRPORT",
+    "NSE:GAIL",
+    "NSE:DRREDDY",
+    "NSE:TATACONSUM",
+    "NSE:JINDALSTEL",
+    "NSE:LUPIN",
+    "NSE:ABCAPITAL",
+    "NSE:MARICO",
+    "NSE:VEDL",
+    "NSE:GODREJCP",
+    "NSE:AMBUJACEM",
+    "NSE:INDUSTOWER",
+    "NSE:INDHOTEL",
+    "NSE:HEROMOTOCO",
+    "NSE:RECLTD",
+    "NSE:OFSS",
+    "NSE:ICICIGI",
+    "NSE:AUROPHARMA",
+    "NSE:HINDPETRO",
+    "NSE:SRF",
+    "NSE:FEDERALBNK",
+    "NSE:ATGL",
+    "NSE:AUBANK",
+    "NSE:PERSISTENT",
+    "NSE:NMDC",
+    "NSE:HAVELLS",
+    "NSE:MCX",
+    "NSE:INDUSINDBK",
+    "NSE:TORNTPOWER",
+    "NSE:ICICIPRULI",
+    "NSE:SAIL",
+    "NSE:IDFCFIRSTB",
+    "NSE:BIOCON",
+    "NSE:COFORGE",
+    "NSE:OIL",
+    "NSE:ALKEM",
+    "NSE:OBEROIRLTY",
+    "NSE:NAUKRI",
+    "NSE:BERGEPAINT",
+    "NSE:NATIONALUM",
+    "NSE:GLENMARK",
+    "NSE:LINDEINDIA",
+    "NSE:SBICARD",
+    "NSE:TIINDIA",
+    "NSE:RBLBANK",
+    "NSE:JSL",
+    "NSE:TATACOMM",
+    "NSE:GODREJPROP",
+    "NSE:MFSL",
+    "NSE:MRF",
+    "NSE:COLPAL",
+    "NSE:RADICO",
+    "NSE:SUNDARMFIN",
+    "NSE:KEI",
+    "NSE:APLAPOLLO",
+    "NSE:UPL",
+    "NSE:M&MFIN",
+    "NSE:PAGEIND",
+    "NSE:MPHASIS",
+    "NSE:BALKRISIND",
+    "NSE:VOLTAS",
+    "NSE:JKCEMENT",
+    "NSE:FLUOROCHEM",
+    "NSE:PETRONET",
+    "NSE:IRCTC",
+    "NSE:IPCALAB",
+    "NSE:PIIND",
+    "NSE:ASTRAL"
+  ],
+  "stocks": [
+    {
+      "symbol": "RELIANCE",
+      "nse_ticker": "RELIANCE.NS",
+      "tradingview": "NSE:RELIANCE",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 1781550.02,
+      "mcap_rank": 1,
+      "last_price": 1316.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185528+00:00"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "nse_ticker": "HDFCBANK.NS",
+      "tradingview": "NSE:HDFCBANK",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 1225937.11,
+      "mcap_rank": 2,
+      "last_price": 796.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185648+00:00"
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "nse_ticker": "BHARTIARTL.NS",
+      "tradingview": "NSE:BHARTIARTL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 1154089.36,
+      "mcap_rank": 3,
+      "last_price": 1849.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185677+00:00"
+    },
+    {
+      "symbol": "ICICIBANK",
+      "nse_ticker": "ICICIBANK.NS",
+      "tradingview": "NSE:ICICIBANK",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 994845.25,
+      "mcap_rank": 4,
+      "last_price": 1387.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185697+00:00"
+    },
+    {
+      "symbol": "SBIN",
+      "nse_ticker": "SBIN.NS",
+      "tradingview": "NSE:SBIN",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 964784.15,
+      "mcap_rank": 5,
+      "last_price": 1045.2,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185718+00:00"
+    },
+    {
+      "symbol": "TCS",
+      "nse_ticker": "TCS.NS",
+      "tradingview": "NSE:TCS",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 758314.96,
+      "mcap_rank": 6,
+      "last_price": 2095.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185739+00:00"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "nse_ticker": "BAJFINANCE.NS",
+      "tradingview": "NSE:BAJFINANCE",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 610222.38,
+      "mcap_rank": 7,
+      "last_price": 981.4,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185758+00:00"
+    },
+    {
+      "symbol": "LT",
+      "nse_ticker": "LT.NS",
+      "tradingview": "NSE:LT",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 578069.52,
+      "mcap_rank": 8,
+      "last_price": 4202.1,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185778+00:00"
+    },
+    {
+      "symbol": "LICI",
+      "nse_ticker": "LICI.NS",
+      "tradingview": "NSE:LICI",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 535411.06,
+      "mcap_rank": 9,
+      "last_price": 423.25,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185798+00:00"
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "nse_ticker": "HINDUNILVR.NS",
+      "tradingview": "NSE:HINDUNILVR",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 511506.02,
+      "mcap_rank": 10,
+      "last_price": 2177.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185817+00:00"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "nse_ticker": "SUNPHARMA.NS",
+      "tradingview": "NSE:SUNPHARMA",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 446636.2,
+      "mcap_rank": 11,
+      "last_price": 1861.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185836+00:00"
+    },
+    {
+      "symbol": "ADANIPOWER",
+      "nse_ticker": "ADANIPOWER.NS",
+      "tradingview": "NSE:ADANIPOWER",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 441812.36,
+      "mcap_rank": 12,
+      "last_price": 229.1,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185857+00:00"
+    },
+    {
+      "symbol": "MARUTI",
+      "nse_ticker": "MARUTI.NS",
+      "tradingview": "NSE:MARUTI",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 432397.86,
+      "mcap_rank": 13,
+      "last_price": 13753.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185874+00:00"
+    },
+    {
+      "symbol": "AXISBANK",
+      "nse_ticker": "AXISBANK.NS",
+      "tradingview": "NSE:AXISBANK",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 428398.59,
+      "mcap_rank": 14,
+      "last_price": 1377.2,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185892+00:00"
+    },
+    {
+      "symbol": "INFY",
+      "nse_ticker": "INFY.NS",
+      "tradingview": "NSE:INFY",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 422262.69,
+      "mcap_rank": 15,
+      "last_price": 1042.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185912+00:00"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "nse_ticker": "ADANIPORTS.NS",
+      "tradingview": "NSE:ADANIPORTS",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 413560.66,
+      "mcap_rank": 16,
+      "last_price": 1795.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185930+00:00"
+    },
+    {
+      "symbol": "KOTAKBANK",
+      "nse_ticker": "KOTAKBANK.NS",
+      "tradingview": "NSE:KOTAKBANK",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 407556.4,
+      "mcap_rank": 17,
+      "last_price": 409.75,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185948+00:00"
+    },
+    {
+      "symbol": "ADANIENT",
+      "nse_ticker": "ADANIENT.NS",
+      "tradingview": "NSE:ADANIENT",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 396071.05,
+      "mcap_rank": 18,
+      "last_price": 3040.3,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185967+00:00"
+    },
+    {
+      "symbol": "M&M",
+      "nse_ticker": "M&M.NS",
+      "tradingview": "NSE:M&M",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 382478.8,
+      "mcap_rank": 19,
+      "last_price": 3185.3,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.185986+00:00"
+    },
+    {
+      "symbol": "TITAN",
+      "nse_ticker": "TITAN.NS",
+      "tradingview": "NSE:TITAN",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 380542.42,
+      "mcap_rank": 20,
+      "last_price": 4290.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186006+00:00"
+    },
+    {
+      "symbol": "ITC",
+      "nse_ticker": "ITC.NS",
+      "tradingview": "NSE:ITC",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 363354.58,
+      "mcap_rank": 21,
+      "last_price": 290.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186024+00:00"
+    },
+    {
+      "symbol": "NTPC",
+      "nse_ticker": "NTPC.NS",
+      "tradingview": "NSE:NTPC",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 341807.48,
+      "mcap_rank": 22,
+      "last_price": 352.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186042+00:00"
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "nse_ticker": "ULTRACEMCO.NS",
+      "tradingview": "NSE:ULTRACEMCO",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 336971.32,
+      "mcap_rank": 23,
+      "last_price": 11455.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186061+00:00"
+    },
+    {
+      "symbol": "JSWSTEEL",
+      "nse_ticker": "JSWSTEEL.NS",
+      "tradingview": "NSE:JSWSTEEL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 300539.03,
+      "mcap_rank": 24,
+      "last_price": 1231.3,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186081+00:00"
+    },
+    {
+      "symbol": "BEL",
+      "nse_ticker": "BEL.NS",
+      "tradingview": "NSE:BEL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 298604.47,
+      "mcap_rank": 25,
+      "last_price": 408.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186099+00:00"
+    },
+    {
+      "symbol": "HCLTECH",
+      "nse_ticker": "HCLTECH.NS",
+      "tradingview": "NSE:HCLTECH",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 297769.63,
+      "mcap_rank": 26,
+      "last_price": 1100.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186118+00:00"
+    },
+    {
+      "symbol": "ONGC",
+      "nse_ticker": "ONGC.NS",
+      "tradingview": "NSE:ONGC",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 293309.21,
+      "mcap_rank": 27,
+      "last_price": 233.15,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186137+00:00"
+    },
+    {
+      "symbol": "HAL",
+      "nse_ticker": "HAL.NS",
+      "tradingview": "NSE:HAL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 291853.41,
+      "mcap_rank": 28,
+      "last_price": 4364.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186154+00:00"
+    },
+    {
+      "symbol": "BAJAJFINSV",
+      "nse_ticker": "BAJAJFINSV.NS",
+      "tradingview": "NSE:BAJAJFINSV",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 282440.43,
+      "mcap_rank": 29,
+      "last_price": 1766.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186173+00:00"
+    },
+    {
+      "symbol": "BAJAJ-AUTO",
+      "nse_ticker": "BAJAJ-AUTO.NS",
+      "tradingview": "NSE:BAJAJ-AUTO",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 275082.66,
+      "mcap_rank": 30,
+      "last_price": 9850.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186192+00:00"
+    },
+    {
+      "symbol": "NESTLEIND",
+      "nse_ticker": "NESTLEIND.NS",
+      "tradingview": "NSE:NESTLEIND",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 271853.75,
+      "mcap_rank": 31,
+      "last_price": 1409.8,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186208+00:00"
+    },
+    {
+      "symbol": "COALINDIA",
+      "nse_ticker": "COALINDIA.NS",
+      "tradingview": "NSE:COALINDIA",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 268479.26,
+      "mcap_rank": 32,
+      "last_price": 435.65,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186226+00:00"
+    },
+    {
+      "symbol": "POWERGRID",
+      "nse_ticker": "POWERGRID.NS",
+      "tradingview": "NSE:POWERGRID",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 264602.18,
+      "mcap_rank": 33,
+      "last_price": 284.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186243+00:00"
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "nse_ticker": "ASIANPAINT.NS",
+      "tradingview": "NSE:ASIANPAINT",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 253082.09,
+      "mcap_rank": 34,
+      "last_price": 2640.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186260+00:00"
+    },
+    {
+      "symbol": "ADANIGREEN",
+      "nse_ticker": "ADANIGREEN.NS",
+      "tradingview": "NSE:ADANIGREEN",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 251342.61,
+      "mcap_rank": 35,
+      "last_price": 1525.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186275+00:00"
+    },
+    {
+      "symbol": "SHRIRAMFIN",
+      "nse_ticker": "SHRIRAMFIN.NS",
+      "tradingview": "NSE:SHRIRAMFIN",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 242538.49,
+      "mcap_rank": 36,
+      "last_price": 1030.8,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186319+00:00"
+    },
+    {
+      "symbol": "TATASTEEL",
+      "nse_ticker": "TATASTEEL.NS",
+      "tradingview": "NSE:TATASTEEL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 235219.05,
+      "mcap_rank": 37,
+      "last_price": 188.6,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186337+00:00"
+    },
+    {
+      "symbol": "HINDALCO",
+      "nse_ticker": "HINDALCO.NS",
+      "tradingview": "NSE:HINDALCO",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 212881.79,
+      "mcap_rank": 38,
+      "last_price": 952.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186356+00:00"
+    },
+    {
+      "symbol": "GRASIM",
+      "nse_ticker": "GRASIM.NS",
+      "tradingview": "NSE:GRASIM",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 212261.31,
+      "mcap_rank": 39,
+      "last_price": 3129.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186372+00:00"
+    },
+    {
+      "symbol": "INDIGO",
+      "nse_ticker": "INDIGO.NS",
+      "tradingview": "NSE:INDIGO",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 211192.33,
+      "mcap_rank": 40,
+      "last_price": 5462.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186391+00:00"
+    },
+    {
+      "symbol": "EICHERMOT",
+      "nse_ticker": "EICHERMOT.NS",
+      "tradingview": "NSE:EICHERMOT",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 208618.12,
+      "mcap_rank": 41,
+      "last_price": 7600.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186410+00:00"
+    },
+    {
+      "symbol": "WIPRO",
+      "nse_ticker": "WIPRO.NS",
+      "tradingview": "NSE:WIPRO",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 183698.2,
+      "mcap_rank": 42,
+      "last_price": 175.09,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186431+00:00"
+    },
+    {
+      "symbol": "DIVISLAB",
+      "nse_ticker": "DIVISLAB.NS",
+      "tradingview": "NSE:DIVISLAB",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 177863.95,
+      "mcap_rank": 43,
+      "last_price": 6700.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186448+00:00"
+    },
+    {
+      "symbol": "SBILIFE",
+      "nse_ticker": "SBILIFE.NS",
+      "tradingview": "NSE:SBILIFE",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 174764.5,
+      "mcap_rank": 44,
+      "last_price": 1742.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186464+00:00"
+    },
+    {
+      "symbol": "VBL",
+      "nse_ticker": "VBL.NS",
+      "tradingview": "NSE:VBL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 171516.24,
+      "mcap_rank": 45,
+      "last_price": 507.1,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186482+00:00"
+    },
+    {
+      "symbol": "TRENT",
+      "nse_ticker": "TRENT.NS",
+      "tradingview": "NSE:TRENT",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 171402.19,
+      "mcap_rank": 46,
+      "last_price": 3214.4,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186498+00:00"
+    },
+    {
+      "symbol": "TVSMOTOR",
+      "nse_ticker": "TVSMOTOR.NS",
+      "tradingview": "NSE:TVSMOTOR",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 170035.95,
+      "mcap_rank": 47,
+      "last_price": 3578.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186515+00:00"
+    },
+    {
+      "symbol": "PIDILITIND",
+      "nse_ticker": "PIDILITIND.NS",
+      "tradingview": "NSE:PIDILITIND",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 162416.59,
+      "mcap_rank": 48,
+      "last_price": 1595.8,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186532+00:00"
+    },
+    {
+      "symbol": "CUMMINSIND",
+      "nse_ticker": "CUMMINSIND.NS",
+      "tradingview": "NSE:CUMMINSIND",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 156618.0,
+      "mcap_rank": 49,
+      "last_price": 5650.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186550+00:00"
+    },
+    {
+      "symbol": "DLF",
+      "nse_ticker": "DLF.NS",
+      "tradingview": "NSE:DLF",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 153964.39,
+      "mcap_rank": 50,
+      "last_price": 622.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186567+00:00"
+    },
+    {
+      "symbol": "CHOLAFIN",
+      "nse_ticker": "CHOLAFIN.NS",
+      "tradingview": "NSE:CHOLAFIN",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 153465.59,
+      "mcap_rank": 51,
+      "last_price": 1800.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186585+00:00"
+    },
+    {
+      "symbol": "TORNTPHARM",
+      "nse_ticker": "TORNTPHARM.NS",
+      "tradingview": "NSE:TORNTPHARM",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 152970.57,
+      "mcap_rank": 52,
+      "last_price": 4519.8,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186604+00:00"
+    },
+    {
+      "symbol": "IDEA",
+      "nse_ticker": "IDEA.NS",
+      "tradingview": "NSE:IDEA",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 152221.96,
+      "mcap_rank": 53,
+      "last_price": 14.05,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186618+00:00"
+    },
+    {
+      "symbol": "ABB",
+      "nse_ticker": "ABB.NS",
+      "tradingview": "NSE:ABB",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 147848.47,
+      "mcap_rank": 54,
+      "last_price": 6977.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186634+00:00"
+    },
+    {
+      "symbol": "BANKBARODA",
+      "nse_ticker": "BANKBARODA.NS",
+      "tradingview": "NSE:BANKBARODA",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 144539.57,
+      "mcap_rank": 55,
+      "last_price": 279.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186654+00:00"
+    },
+    {
+      "symbol": "POLYCAB",
+      "nse_ticker": "POLYCAB.NS",
+      "tradingview": "NSE:POLYCAB",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 143877.66,
+      "mcap_rank": 56,
+      "last_price": 9555.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186671+00:00"
+    },
+    {
+      "symbol": "PFC",
+      "nse_ticker": "PFC.NS",
+      "tradingview": "NSE:PFC",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 143026.41,
+      "mcap_rank": 57,
+      "last_price": 433.4,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186690+00:00"
+    },
+    {
+      "symbol": "BPCL",
+      "nse_ticker": "BPCL.NS",
+      "tradingview": "NSE:BPCL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 132407.41,
+      "mcap_rank": 58,
+      "last_price": 309.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186706+00:00"
+    },
+    {
+      "symbol": "SIEMENS",
+      "nse_ticker": "SIEMENS.NS",
+      "tradingview": "NSE:SIEMENS",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 129378.58,
+      "mcap_rank": 59,
+      "last_price": 3633.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186723+00:00"
+    },
+    {
+      "symbol": "TECHM",
+      "nse_ticker": "TECHM.NS",
+      "tradingview": "NSE:TECHM",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 127531.84,
+      "mcap_rank": 60,
+      "last_price": 1439.7,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186739+00:00"
+    },
+    {
+      "symbol": "HDFCLIFE",
+      "nse_ticker": "HDFCLIFE.NS",
+      "tradingview": "NSE:HDFCLIFE",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 127014.77,
+      "mcap_rank": 61,
+      "last_price": 584.8,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186753+00:00"
+    },
+    {
+      "symbol": "BRITANNIA",
+      "nse_ticker": "BRITANNIA.NS",
+      "tradingview": "NSE:BRITANNIA",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 126094.55,
+      "mcap_rank": 62,
+      "last_price": 5235.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186771+00:00"
+    },
+    {
+      "symbol": "TATAPOWER",
+      "nse_ticker": "TATAPOWER.NS",
+      "tradingview": "NSE:TATAPOWER",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 124154.92,
+      "mcap_rank": 63,
+      "last_price": 388.55,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186788+00:00"
+    },
+    {
+      "symbol": "PNB",
+      "nse_ticker": "PNB.NS",
+      "tradingview": "NSE:PNB",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 124020.35,
+      "mcap_rank": 64,
+      "last_price": 107.91,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186805+00:00"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "nse_ticker": "APOLLOHOSP.NS",
+      "tradingview": "NSE:APOLLOHOSP",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 123439.13,
+      "mcap_rank": 65,
+      "last_price": 8585.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186823+00:00"
+    },
+    {
+      "symbol": "MUTHOOTFIN",
+      "nse_ticker": "MUTHOOTFIN.NS",
+      "tradingview": "NSE:MUTHOOTFIN",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 121392.02,
+      "mcap_rank": 66,
+      "last_price": 3023.7,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186842+00:00"
+    },
+    {
+      "symbol": "BOSCHLTD",
+      "nse_ticker": "BOSCHLTD.NS",
+      "tradingview": "NSE:BOSCHLTD",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 119754.17,
+      "mcap_rank": 67,
+      "last_price": 40600.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186857+00:00"
+    },
+    {
+      "symbol": "CANBK",
+      "nse_ticker": "CANBK.NS",
+      "tradingview": "NSE:CANBK",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 117256.31,
+      "mcap_rank": 68,
+      "last_price": 129.27,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186874+00:00"
+    },
+    {
+      "symbol": "CIPLA",
+      "nse_ticker": "CIPLA.NS",
+      "tradingview": "NSE:CIPLA",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 116265.1,
+      "mcap_rank": 69,
+      "last_price": 1439.2,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186891+00:00"
+    },
+    {
+      "symbol": "GMRAIRPORT",
+      "nse_ticker": "GMRAIRPORT.NS",
+      "tradingview": "NSE:GMRAIRPORT",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 114596.57,
+      "mcap_rank": 70,
+      "last_price": 108.53,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.186993+00:00"
+    },
+    {
+      "symbol": "GAIL",
+      "nse_ticker": "GAIL.NS",
+      "tradingview": "NSE:GAIL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 113689.7,
+      "mcap_rank": 71,
+      "last_price": 172.91,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187018+00:00"
+    },
+    {
+      "symbol": "DRREDDY",
+      "nse_ticker": "DRREDDY.NS",
+      "tradingview": "NSE:DRREDDY",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 112374.24,
+      "mcap_rank": 72,
+      "last_price": 1349.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187038+00:00"
+    },
+    {
+      "symbol": "TATACONSUM",
+      "nse_ticker": "TATACONSUM.NS",
+      "tradingview": "NSE:TATACONSUM",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 111978.36,
+      "mcap_rank": 73,
+      "last_price": 1131.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187057+00:00"
+    },
+    {
+      "symbol": "JINDALSTEL",
+      "nse_ticker": "JINDALSTEL.NS",
+      "tradingview": "NSE:JINDALSTEL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 107955.49,
+      "mcap_rank": 74,
+      "last_price": 1061.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187075+00:00"
+    },
+    {
+      "symbol": "LUPIN",
+      "nse_ticker": "LUPIN.NS",
+      "tradingview": "NSE:LUPIN",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 107381.06,
+      "mcap_rank": 75,
+      "last_price": 2348.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187093+00:00"
+    },
+    {
+      "symbol": "ABCAPITAL",
+      "nse_ticker": "ABCAPITAL.NS",
+      "tradingview": "NSE:ABCAPITAL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 107153.54,
+      "mcap_rank": 76,
+      "last_price": 391.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187111+00:00"
+    },
+    {
+      "symbol": "MARICO",
+      "nse_ticker": "MARICO.NS",
+      "tradingview": "NSE:MARICO",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 107104.9,
+      "mcap_rank": 77,
+      "last_price": 826.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187129+00:00"
+    },
+    {
+      "symbol": "VEDL",
+      "nse_ticker": "VEDL.NS",
+      "tradingview": "NSE:VEDL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 106757.28,
+      "mcap_rank": 78,
+      "last_price": 273.4,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187147+00:00"
+    },
+    {
+      "symbol": "GODREJCP",
+      "nse_ticker": "GODREJCP.NS",
+      "tradingview": "NSE:GODREJCP",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 106028.6,
+      "mcap_rank": 79,
+      "last_price": 1036.2,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187164+00:00"
+    },
+    {
+      "symbol": "AMBUJACEM",
+      "nse_ticker": "AMBUJACEM.NS",
+      "tradingview": "NSE:AMBUJACEM",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 105356.25,
+      "mcap_rank": 80,
+      "last_price": 424.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187182+00:00"
+    },
+    {
+      "symbol": "INDUSTOWER",
+      "nse_ticker": "INDUSTOWER.NS",
+      "tradingview": "NSE:INDUSTOWER",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 103892.09,
+      "mcap_rank": 81,
+      "last_price": 393.95,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187200+00:00"
+    },
+    {
+      "symbol": "INDHOTEL",
+      "nse_ticker": "INDHOTEL.NS",
+      "tradingview": "NSE:INDHOTEL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 102771.81,
+      "mcap_rank": 82,
+      "last_price": 722.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187219+00:00"
+    },
+    {
+      "symbol": "HEROMOTOCO",
+      "nse_ticker": "HEROMOTOCO.NS",
+      "tradingview": "NSE:HEROMOTOCO",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 98219.62,
+      "mcap_rank": 83,
+      "last_price": 4908.7,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187235+00:00"
+    },
+    {
+      "symbol": "RECLTD",
+      "nse_ticker": "RECLTD.NS",
+      "tradingview": "NSE:RECLTD",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 95954.68,
+      "mcap_rank": 84,
+      "last_price": 364.4,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187250+00:00"
+    },
+    {
+      "symbol": "OFSS",
+      "nse_ticker": "OFSS.NS",
+      "tradingview": "NSE:OFSS",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 95387.53,
+      "mcap_rank": 85,
+      "last_price": 10955.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187266+00:00"
+    },
+    {
+      "symbol": "ICICIGI",
+      "nse_ticker": "ICICIGI.NS",
+      "tradingview": "NSE:ICICIGI",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 90862.54,
+      "mcap_rank": 86,
+      "last_price": 1819.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187282+00:00"
+    },
+    {
+      "symbol": "AUROPHARMA",
+      "nse_ticker": "AUROPHARMA.NS",
+      "tradingview": "NSE:AUROPHARMA",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 89448.25,
+      "mcap_rank": 87,
+      "last_price": 1554.6,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187297+00:00"
+    },
+    {
+      "symbol": "HINDPETRO",
+      "nse_ticker": "HINDPETRO.NS",
+      "tradingview": "NSE:HINDPETRO",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 87027.94,
+      "mcap_rank": 88,
+      "last_price": 409.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187313+00:00"
+    },
+    {
+      "symbol": "SRF",
+      "nse_ticker": "SRF.NS",
+      "tradingview": "NSE:SRF",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 80978.13,
+      "mcap_rank": 89,
+      "last_price": 2732.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187330+00:00"
+    },
+    {
+      "symbol": "FEDERALBNK",
+      "nse_ticker": "FEDERALBNK.NS",
+      "tradingview": "NSE:FEDERALBNK",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 79769.93,
+      "mcap_rank": 90,
+      "last_price": 323.4,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187347+00:00"
+    },
+    {
+      "symbol": "ATGL",
+      "nse_ticker": "ATGL.NS",
+      "tradingview": "NSE:ATGL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 79296.31,
+      "mcap_rank": 91,
+      "last_price": 721.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187362+00:00"
+    },
+    {
+      "symbol": "AUBANK",
+      "nse_ticker": "AUBANK.NS",
+      "tradingview": "NSE:AUBANK",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 77739.51,
+      "mcap_rank": 92,
+      "last_price": 1038.8,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187378+00:00"
+    },
+    {
+      "symbol": "PERSISTENT",
+      "nse_ticker": "PERSISTENT.NS",
+      "tradingview": "NSE:PERSISTENT",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 75717.38,
+      "mcap_rank": 93,
+      "last_price": 4846.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187393+00:00"
+    },
+    {
+      "symbol": "NMDC",
+      "nse_ticker": "NMDC.NS",
+      "tradingview": "NSE:NMDC",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 74501.86,
+      "mcap_rank": 94,
+      "last_price": 84.74,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187413+00:00"
+    },
+    {
+      "symbol": "HAVELLS",
+      "nse_ticker": "HAVELLS.NS",
+      "tradingview": "NSE:HAVELLS",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 73941.04,
+      "mcap_rank": 95,
+      "last_price": 1178.8,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187430+00:00"
+    },
+    {
+      "symbol": "MCX",
+      "nse_ticker": "MCX.NS",
+      "tradingview": "NSE:MCX",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 72129.29,
+      "mcap_rank": 96,
+      "last_price": 2834.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187447+00:00"
+    },
+    {
+      "symbol": "INDUSINDBK",
+      "nse_ticker": "INDUSINDBK.NS",
+      "tradingview": "NSE:INDUSINDBK",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 71477.64,
+      "mcap_rank": 97,
+      "last_price": 917.4,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187464+00:00"
+    },
+    {
+      "symbol": "TORNTPOWER",
+      "nse_ticker": "TORNTPOWER.NS",
+      "tradingview": "NSE:TORNTPOWER",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 71236.84,
+      "mcap_rank": 98,
+      "last_price": 1413.7,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187480+00:00"
+    },
+    {
+      "symbol": "ICICIPRULI",
+      "nse_ticker": "ICICIPRULI.NS",
+      "tradingview": "NSE:ICICIPRULI",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 71197.34,
+      "mcap_rank": 99,
+      "last_price": 491.1,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187494+00:00"
+    },
+    {
+      "symbol": "SAIL",
+      "nse_ticker": "SAIL.NS",
+      "tradingview": "NSE:SAIL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 70338.72,
+      "mcap_rank": 100,
+      "last_price": 170.29,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187513+00:00"
+    },
+    {
+      "symbol": "IDFCFIRSTB",
+      "nse_ticker": "IDFCFIRSTB.NS",
+      "tradingview": "NSE:IDFCFIRSTB",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 68392.39,
+      "mcap_rank": 101,
+      "last_price": 79.39,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187530+00:00"
+    },
+    {
+      "symbol": "BIOCON",
+      "nse_ticker": "BIOCON.NS",
+      "tradingview": "NSE:BIOCON",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 67371.51,
+      "mcap_rank": 102,
+      "last_price": 416.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187567+00:00"
+    },
+    {
+      "symbol": "COFORGE",
+      "nse_ticker": "COFORGE.NS",
+      "tradingview": "NSE:COFORGE",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 66067.18,
+      "mcap_rank": 103,
+      "last_price": 1492.4,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187581+00:00"
+    },
+    {
+      "symbol": "OIL",
+      "nse_ticker": "OIL.NS",
+      "tradingview": "NSE:OIL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 66032.14,
+      "mcap_rank": 104,
+      "last_price": 405.95,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187596+00:00"
+    },
+    {
+      "symbol": "ALKEM",
+      "nse_ticker": "ALKEM.NS",
+      "tradingview": "NSE:ALKEM",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 64864.01,
+      "mcap_rank": 105,
+      "last_price": 5425.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187613+00:00"
+    },
+    {
+      "symbol": "OBEROIRLTY",
+      "nse_ticker": "OBEROIRLTY.NS",
+      "tradingview": "NSE:OBEROIRLTY",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 63993.99,
+      "mcap_rank": 106,
+      "last_price": 1760.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187628+00:00"
+    },
+    {
+      "symbol": "NAUKRI",
+      "nse_ticker": "NAUKRI.NS",
+      "tradingview": "NSE:NAUKRI",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 63478.27,
+      "mcap_rank": 107,
+      "last_price": 980.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187645+00:00"
+    },
+    {
+      "symbol": "BERGEPAINT",
+      "nse_ticker": "BERGEPAINT.NS",
+      "tradingview": "NSE:BERGEPAINT",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 62771.76,
+      "mcap_rank": 108,
+      "last_price": 538.35,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187660+00:00"
+    },
+    {
+      "symbol": "NATIONALUM",
+      "nse_ticker": "NATIONALUM.NS",
+      "tradingview": "NSE:NATIONALUM",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 61159.84,
+      "mcap_rank": 109,
+      "last_price": 333.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187674+00:00"
+    },
+    {
+      "symbol": "GLENMARK",
+      "nse_ticker": "GLENMARK.NS",
+      "tradingview": "NSE:GLENMARK",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 60673.17,
+      "mcap_rank": 110,
+      "last_price": 2150.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187694+00:00"
+    },
+    {
+      "symbol": "LINDEINDIA",
+      "nse_ticker": "LINDEINDIA.NS",
+      "tradingview": "NSE:LINDEINDIA",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 59878.05,
+      "mcap_rank": 111,
+      "last_price": 7021.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187708+00:00"
+    },
+    {
+      "symbol": "SBICARD",
+      "nse_ticker": "SBICARD.NS",
+      "tradingview": "NSE:SBICARD",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 59437.84,
+      "mcap_rank": 112,
+      "last_price": 624.6,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187721+00:00"
+    },
+    {
+      "symbol": "TIINDIA",
+      "nse_ticker": "TIINDIA.NS",
+      "tradingview": "NSE:TIINDIA",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 59231.91,
+      "mcap_rank": 113,
+      "last_price": 3060.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187734+00:00"
+    },
+    {
+      "symbol": "RBLBANK",
+      "nse_ticker": "RBLBANK.NS",
+      "tradingview": "NSE:RBLBANK",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 57861.87,
+      "mcap_rank": 114,
+      "last_price": 373.65,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187750+00:00"
+    },
+    {
+      "symbol": "JSL",
+      "nse_ticker": "JSL.NS",
+      "tradingview": "NSE:JSL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 57190.36,
+      "mcap_rank": 115,
+      "last_price": 694.1,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187765+00:00"
+    },
+    {
+      "symbol": "TATACOMM",
+      "nse_ticker": "TATACOMM.NS",
+      "tradingview": "NSE:TATACOMM",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 56846.59,
+      "mcap_rank": 116,
+      "last_price": 1994.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187781+00:00"
+    },
+    {
+      "symbol": "GODREJPROP",
+      "nse_ticker": "GODREJPROP.NS",
+      "tradingview": "NSE:GODREJPROP",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 55729.82,
+      "mcap_rank": 117,
+      "last_price": 1850.1,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187796+00:00"
+    },
+    {
+      "symbol": "MFSL",
+      "nse_ticker": "MFSL.NS",
+      "tradingview": "NSE:MFSL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 55604.01,
+      "mcap_rank": 118,
+      "last_price": 1619.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187812+00:00"
+    },
+    {
+      "symbol": "MRF",
+      "nse_ticker": "MRF.NS",
+      "tradingview": "NSE:MRF",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 55086.09,
+      "mcap_rank": 119,
+      "last_price": 129885.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187827+00:00"
+    },
+    {
+      "symbol": "COLPAL",
+      "nse_ticker": "COLPAL.NS",
+      "tradingview": "NSE:COLPAL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 54127.86,
+      "mcap_rank": 120,
+      "last_price": 1990.1,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187978+00:00"
+    },
+    {
+      "symbol": "RADICO",
+      "nse_ticker": "RADICO.NS",
+      "tradingview": "NSE:RADICO",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 51262.22,
+      "mcap_rank": 121,
+      "last_price": 3827.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.187999+00:00"
+    },
+    {
+      "symbol": "SUNDARMFIN",
+      "nse_ticker": "SUNDARMFIN.NS",
+      "tradingview": "NSE:SUNDARMFIN",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 50968.02,
+      "mcap_rank": 122,
+      "last_price": 4624.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188015+00:00"
+    },
+    {
+      "symbol": "KEI",
+      "nse_ticker": "KEI.NS",
+      "tradingview": "NSE:KEI",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 50295.47,
+      "mcap_rank": 123,
+      "last_price": 5261.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188063+00:00"
+    },
+    {
+      "symbol": "APLAPOLLO",
+      "nse_ticker": "APLAPOLLO.NS",
+      "tradingview": "NSE:APLAPOLLO",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 49975.74,
+      "mcap_rank": 124,
+      "last_price": 1799.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188084+00:00"
+    },
+    {
+      "symbol": "UPL",
+      "nse_ticker": "UPL.NS",
+      "tradingview": "NSE:UPL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 49787.24,
+      "mcap_rank": 125,
+      "last_price": 589.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188101+00:00"
+    },
+    {
+      "symbol": "M&MFIN",
+      "nse_ticker": "M&MFIN.NS",
+      "tradingview": "NSE:M&MFIN",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 45861.94,
+      "mcap_rank": 126,
+      "last_price": 330.05,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188121+00:00"
+    },
+    {
+      "symbol": "PAGEIND",
+      "nse_ticker": "PAGEIND.NS",
+      "tradingview": "NSE:PAGEIND",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 45703.0,
+      "mcap_rank": 127,
+      "last_price": 40975.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188139+00:00"
+    },
+    {
+      "symbol": "MPHASIS",
+      "nse_ticker": "MPHASIS.NS",
+      "tradingview": "NSE:MPHASIS",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 43218.15,
+      "mcap_rank": 128,
+      "last_price": 2264.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188159+00:00"
+    },
+    {
+      "symbol": "BALKRISIND",
+      "nse_ticker": "BALKRISIND.NS",
+      "tradingview": "NSE:BALKRISIND",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 43216.06,
+      "mcap_rank": 129,
+      "last_price": 2235.5,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188177+00:00"
+    },
+    {
+      "symbol": "VOLTAS",
+      "nse_ticker": "VOLTAS.NS",
+      "tradingview": "NSE:VOLTAS",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 43120.9,
+      "mcap_rank": 130,
+      "last_price": 1303.2,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188200+00:00"
+    },
+    {
+      "symbol": "JKCEMENT",
+      "nse_ticker": "JKCEMENT.NS",
+      "tradingview": "NSE:JKCEMENT",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 42922.51,
+      "mcap_rank": 131,
+      "last_price": 5555.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188217+00:00"
+    },
+    {
+      "symbol": "FLUOROCHEM",
+      "nse_ticker": "FLUOROCHEM.NS",
+      "tradingview": "NSE:FLUOROCHEM",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 42621.8,
+      "mcap_rank": 132,
+      "last_price": 3880.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188236+00:00"
+    },
+    {
+      "symbol": "PETRONET",
+      "nse_ticker": "PETRONET.NS",
+      "tradingview": "NSE:PETRONET",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 42300.0,
+      "mcap_rank": 133,
+      "last_price": 282.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188251+00:00"
+    },
+    {
+      "symbol": "IRCTC",
+      "nse_ticker": "IRCTC.NS",
+      "tradingview": "NSE:IRCTC",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 41120.0,
+      "mcap_rank": 134,
+      "last_price": 514.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188268+00:00"
+    },
+    {
+      "symbol": "IPCALAB",
+      "nse_ticker": "IPCALAB.NS",
+      "tradingview": "NSE:IPCALAB",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 41097.55,
+      "mcap_rank": 135,
+      "last_price": 1619.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188284+00:00"
+    },
+    {
+      "symbol": "PIIND",
+      "nse_ticker": "PIIND.NS",
+      "tradingview": "NSE:PIIND",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 40654.95,
+      "mcap_rank": 136,
+      "last_price": 2679.9,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188300+00:00"
+    },
+    {
+      "symbol": "ASTRAL",
+      "nse_ticker": "ASTRAL.NS",
+      "tradingview": "NSE:ASTRAL",
+      "exchange": "NSE",
+      "currency": "INR",
+      "market_cap_crore": 40028.87,
+      "mcap_rank": 137,
+      "last_price": 1490.0,
+      "ta_config": {
+        "rsi_period": 14,
+        "macd": {
+          "fast": 12,
+          "slow": 26,
+          "signal": 9
+        },
+        "sma_periods": [
+          20,
+          50,
+          200
+        ],
+        "ema_periods": [
+          9,
+          21
+        ],
+        "bb": {
+          "period": 20,
+          "std": 2
+        },
+        "atr_period": 14,
+        "vwap": true,
+        "history_bars": 200,
+        "interval": "1d",
+        "intraday_interval": "15m"
+      },
+      "updated_at": "2026-06-27T16:28:36.188316+00:00"
+    }
+  ],
+  "generated_at": "2026-06-27T16:28:36.189714+00:00"
+}

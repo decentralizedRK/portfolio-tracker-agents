@@ -117,9 +117,12 @@
     </div>
   </div>
   <div class="flex items-center gap-4">
-    <div class="hidden sm:flex items-center gap-1 text-xs text-slate-500">
-      <span class="w-2 h-2 rounded-full bg-green-500 pulse inline-block"></span>
-      <span id="market-status">—</span>
+    <div class="hidden sm:flex items-center gap-3 text-xs text-slate-500">
+      <div class="flex items-center gap-1">
+        <span class="w-2 h-2 rounded-full bg-green-500 pulse inline-block"></span>
+        <span id="market-status">—</span>
+      </div>
+      <span id="live-status" class="text-xs text-slate-600"></span>
     </div>
     <button onclick="refreshAll()" class="text-xs px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-300 transition">↻ Refresh</button>
     <!-- Auth controls -->
@@ -299,9 +302,10 @@
   <div id="panel-holdings" class="space-y-4">
 
     <!-- Sub-tab bar -->
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3 flex-wrap">
       <button class="sub-tab active" onclick="switchHoldingsTab('stocks')" id="htab-stocks">📈 Stocks</button>
       <button class="sub-tab"        onclick="switchHoldingsTab('mf')"     id="htab-mf">🏦 Mutual Funds</button>
+      <button class="sub-tab"        onclick="switchHoldingsTab('fno')"    id="htab-fno">📊 F&amp;O Watchlist</button>
     </div>
 
     <!-- ── Stocks sub-panel ── -->
@@ -425,6 +429,62 @@
       </div>
 
     </div><!-- end hpanel-mf -->
+
+    <!-- ── F&O Watchlist sub-panel ── -->
+    <div id="hpanel-fno" class="hidden space-y-3">
+      <div class="card overflow-hidden">
+
+        <!-- Header + filters -->
+        <div class="p-4 border-b border-slate-700 flex flex-wrap items-center gap-3">
+          <div class="flex items-center gap-2 mr-auto">
+            <h3 class="text-sm font-semibold text-white">F&amp;O Watchlist</h3>
+            <span id="fno-tbl-count" class="text-xs text-slate-500"></span>
+          </div>
+          <!-- Tier filter -->
+          <div class="flex gap-1">
+            <button class="fno-tier-btn sub-tab active text-xs" data-tier="all"       onclick="setFnoTier('all')">All</button>
+            <button class="fno-tier-btn sub-tab text-xs"        data-tier="largecap"  onclick="setFnoTier('largecap')">Large</button>
+            <button class="fno-tier-btn sub-tab text-xs"        data-tier="midcap"    onclick="setFnoTier('midcap')">Mid</button>
+            <button class="fno-tier-btn sub-tab text-xs"        data-tier="smallcap"  onclick="setFnoTier('smallcap')">Small</button>
+          </div>
+          <!-- Signal filter -->
+          <select id="fno-sig-filter" onchange="setFnoAction(this.value)"
+                  class="text-xs px-2 py-1.5 rounded-lg bg-slate-800 border border-slate-600 text-slate-300 focus:outline-none focus:border-indigo-500">
+            <option value="all">All Signals</option>
+            <option value="buy">Buy Signals</option>
+            <option value="neutral">Neutral</option>
+            <option value="watch">Watch / Bearish</option>
+          </select>
+          <!-- Search -->
+          <input type="text" id="fno-search" placeholder="Symbol…" oninput="setFnoSearch(this.value)"
+                 class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-600 text-slate-300 w-24 focus:outline-none focus:border-indigo-500" />
+        </div>
+
+        <!-- Sortable table -->
+        <div style="max-height:600px;overflow-y:auto;overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th onclick="sortFno('tier')"             id="fno-th-tier">Tier</th>
+                <th onclick="sortFno('symbol')"           id="fno-th-symbol">Symbol</th>
+                <th onclick="sortFno('current_price')"    id="fno-th-current_price"   class="text-right">CMP</th>
+                <th onclick="sortFno('day_change_pct')"   id="fno-th-day_change_pct"  class="text-right">Day %</th>
+                <th onclick="sortFno('week_change_pct')"  id="fno-th-week_change_pct" class="text-right">Week %</th>
+                <th onclick="sortFno('rsi')"              id="fno-th-rsi"             class="text-right col-hide-mobile">RSI</th>
+                <th onclick="sortFno('trend')"            id="fno-th-trend"           class="col-hide-mobile">Trend</th>
+                <th onclick="sortFno('momentum_score')"   id="fno-th-momentum_score"  class="text-right">Score</th>
+                <th onclick="sortFno('action')"           id="fno-th-action">Signal</th>
+                <th onclick="sortFno('market_cap_crore')" id="fno-th-market_cap_crore" class="text-right col-hide-mobile">MCap</th>
+              </tr>
+            </thead>
+            <tbody id="fno-tbl-body"></tbody>
+          </table>
+        </div>
+
+        <div id="fno-tbl-footer" class="p-3 border-t border-slate-700 text-xs text-slate-500 text-right"></div>
+      </div>
+    </div><!-- end hpanel-fno -->
+
   </div><!-- end panel-holdings -->
 
   <!-- ══════════════════════════════════════════════════════════ -->
@@ -452,15 +512,49 @@
   <!-- ── RECOMMENDATIONS PANEL ── -->
   <!-- ══════════════════════════════════════════════════════════ -->
   <div id="panel-recommendations" class="hidden space-y-4">
-    <div class="card p-4">
-      <div class="flex items-start gap-3 p-3 rounded-lg mb-4" style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2)">
-        <span class="text-xl">📌</span>
-        <p class="text-xs text-slate-400 leading-relaxed" id="rec-note"></p>
-      </div>
-      <div id="rec-list" class="space-y-2"></div>
+
+    <!-- ── Recommendations sub-tabs ── -->
+    <div class="flex items-center gap-3">
+      <button class="sub-tab active" onclick="switchRecTab('portfolio')" id="rectab-portfolio">📈 Portfolio</button>
+      <button class="sub-tab"        onclick="switchRecTab('fno')"       id="rectab-fno">📊 F&amp;O Stocks</button>
     </div>
-    <div class="text-xs text-slate-600 text-center" id="rec-date"></div>
-  </div>
+
+    <!-- ── Portfolio sub-panel ── -->
+    <div id="recpanel-portfolio" class="space-y-4">
+      <div class="card p-4">
+        <div class="flex items-start gap-3 p-3 rounded-lg mb-4" style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2)">
+          <span class="text-xl">📌</span>
+          <p class="text-xs text-slate-400 leading-relaxed" id="rec-note"></p>
+        </div>
+        <div id="rec-list" class="space-y-2"></div>
+      </div>
+      <div class="text-xs text-slate-600 text-center" id="rec-date"></div>
+    </div>
+
+    <!-- ── F&O sub-panel ── -->
+    <div id="recpanel-fno" class="hidden space-y-4">
+
+      <!-- Filter bar -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="text-xs text-slate-500 font-medium mr-1">Filter:</span>
+        <button class="fno-filter-btn sub-tab active" data-filter="all"     onclick="applyFnoFilter('all')">All</button>
+        <button class="fno-filter-btn sub-tab"        data-filter="buy"     onclick="applyFnoFilter('buy')">Buy Signals</button>
+        <button class="fno-filter-btn sub-tab"        data-filter="neutral" onclick="applyFnoFilter('neutral')">Neutral</button>
+        <button class="fno-filter-btn sub-tab"        data-filter="watch"   onclick="applyFnoFilter('watch')">Watch / Bearish</button>
+        <span id="fno-date" class="text-xs text-slate-600 ml-auto"></span>
+      </div>
+
+      <!-- Summary strip -->
+      <div id="fno-summary" class="grid grid-cols-4 gap-2"></div>
+
+      <!-- Tier sections -->
+      <div id="fno-tier-largecap" class="space-y-2"></div>
+      <div id="fno-tier-midcap"   class="space-y-2"></div>
+      <div id="fno-tier-smallcap" class="space-y-2"></div>
+
+    </div><!-- end recpanel-fno -->
+
+  </div><!-- end panel-recommendations -->
 
   <!-- ══════════════════════════════════════════════════════════ -->
   <!-- ── CORPORATE ACTIONS PANEL ── -->

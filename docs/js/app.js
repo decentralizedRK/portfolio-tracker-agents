@@ -15,6 +15,7 @@ const PATHS = {
   snapshot:        `${BASE}/portfolio_snapshot.json`,
   news:            `${BASE}/news_digest.json`,
   recommendations: `${BASE}/recommendations.json`,
+  fno:             `${BASE}/fno_recommendations.json`,
   corporate:       `${BASE}/corporate_actions.json`,
   mf:              `${BASE}/mf_snapshot.json`,
 };
@@ -33,6 +34,13 @@ let _mfFunds     = [];   // full fund list from snapshot, kept for SIP total + J
 let _mfSortKey = 'invested';
 let _mfSortAsc = false;
 let _mfFilter  = '';
+// F&O watchlist state
+let _fnoAllStocks  = [];
+let _fnoSortKey    = 'momentum_score';
+let _fnoSortAsc    = false;
+let _fnoTier       = 'all';
+let _fnoAction     = 'all';
+let _fnoSearch     = '';
 // Edit modal state
 let _editTicker     = null;
 let _editSchemeCode = null;
@@ -42,6 +50,8 @@ const fmt = {
   inr:  v => v != null ? '₹' + Number(v).toLocaleString('en-IN', {maximumFractionDigits:0}) : '—',
   inr2: v => v != null ? '₹' + Number(v).toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2}) : '—',
   pct:  v => v != null ? (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%' : '—',
+  num:  v => v != null ? Number(v).toLocaleString('en-IN', {maximumFractionDigits:0}) : '—',
+  cr:   v => { if (v == null) return '—'; if (v >= 100000) return (v/100000).toFixed(1) + 'L'; if (v >= 1000) return (v/1000).toFixed(1) + 'K'; return Math.round(v) + ''; },
   ts:   s => { if(!s) return '—'; const d = new Date(s); return d.toLocaleString('en-IN',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'})+' IST'; },
   date: s => { if(!s) return '—'; const d = new Date(s + 'T00:00:00'); return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}); },
 };
@@ -901,11 +911,13 @@ function copySIPJson(btn) {
 
 // ── HOLDINGS SUB-TABS ────────────────────────────────────────────────────────
 function switchHoldingsTab(name) {
-  ['stocks','mf'].forEach(t => {
-    document.getElementById('hpanel-' + t).classList.toggle('hidden', t !== name);
-    document.getElementById('htab-' + t).classList.toggle('active', t === name);
+  _fnoTabVisible = (name === 'fno');
+  ['stocks','mf','fno'].forEach(t => {
+    document.getElementById('hpanel-' + t)?.classList.toggle('hidden', t !== name);
+    document.getElementById('htab-' + t)?.classList.toggle('active', t === name);
   });
   if (name === 'mf') loadMF();
+  if (name === 'fno' && _fnoAllStocks.length) refreshLivePrices();
 }
 
 // ── NEWS ─────────────────────────────────────────────────────────────────────
@@ -978,6 +990,330 @@ async function loadNews() {
         </div>`;
       })).join('')
     : '<p class="text-xs text-slate-600">No watchlist news yet</p>';
+}
+
+// ── F&O WATCHLIST ────────────────────────────────────────────────────────────
+
+async function loadFnoRecommendations() {
+  const d = await loadJSON(PATHS.fno);
+
+  // Flatten all tiers into one array, tagging each stock with its tier
+  const tiers = d.tiers ?? {};
+  _fnoAllStocks = [];
+  for (const tier of ['largecap','midcap','smallcap']) {
+    (tiers[tier]?.stocks ?? []).forEach(s => _fnoAllStocks.push({ ...s, tier }));
+  }
+
+  // Holdings table (sortable)
+  renderFnoTable();
+
+  // Recommendations → F&O card sections
+  renderFnoTierSections(tiers, 'all');
+
+  // Update timestamp in Recommendations panel
+  const dateEl = document.getElementById('fno-date');
+  if (dateEl) dateEl.textContent = d.generated_at ? 'Updated ' + d.generated_at : '';
+}
+
+function _getFnoFiltered() {
+  return _fnoAllStocks.filter(s => {
+    if (_fnoTier !== 'all' && s.tier !== _fnoTier) return false;
+    if (_fnoAction === 'buy'     && !s.action.includes('BUY'))     return false;
+    if (_fnoAction === 'neutral' && s.action !== 'NEUTRAL')        return false;
+    if (_fnoAction === 'watch'   && !s.action.includes('WATCH') && !s.action.includes('BEARISH')) return false;
+    if (_fnoSearch && !s.symbol.toLowerCase().includes(_fnoSearch.toLowerCase())) return false;
+    return true;
+  }).sort((a, b) => {
+    let av = a[_fnoSortKey] ?? '', bv = b[_fnoSortKey] ?? '';
+    if (typeof av === 'number' || typeof bv === 'number') {
+      av = Number(av) || 0; bv = Number(bv) || 0;
+      return _fnoSortAsc ? av - bv : bv - av;
+    }
+    return _fnoSortAsc
+      ? String(av).localeCompare(String(bv))
+      : String(bv).localeCompare(String(av));
+  });
+}
+
+function renderFnoTable() {
+  const tbody  = document.getElementById('fno-tbl-body');
+  const footer = document.getElementById('fno-tbl-footer');
+  const count  = document.getElementById('fno-tbl-count');
+  if (!tbody) return;
+
+  const stocks = _getFnoFiltered();
+
+  // Sort header arrows
+  document.querySelectorAll('th[id^="fno-th-"]').forEach(th => {
+    th.classList.remove('sort-asc','sort-desc');
+    const key = th.id.replace('fno-th-','');
+    if (key === _fnoSortKey) th.classList.add(_fnoSortAsc ? 'sort-asc' : 'sort-desc');
+  });
+
+  const tierBadge = t => {
+    const map = { largecap:['bg-indigo-950 text-indigo-300','L'], midcap:['bg-blue-950 text-blue-300','M'], smallcap:['bg-slate-700 text-slate-300','S'] };
+    const [cls, lbl] = map[t] ?? ['bg-slate-700 text-slate-300','?'];
+    return `<span class="badge ${cls}" style="font-size:0.65rem;padding:2px 6px">${lbl}</span>`;
+  };
+
+  const trendBadge = t => {
+    if (!t || t === 'N/A') return '<span class="text-slate-600 text-xs">—</span>';
+    const cls  = t === 'UPTREND' ? 'tag-up' : t === 'DOWNTREND' ? 'tag-down' : 'tag-neutral';
+    const icon = t === 'UPTREND' ? '↑' : t === 'DOWNTREND' ? '↓' : '→';
+    return `<span class="badge ${cls}" style="font-size:0.65rem">${icon} ${t.replace('TREND','')}</span>`;
+  };
+
+  const sigBadge = a => {
+    const cls = a.includes('STRONG') ? 'action-green' : a.includes('BUY') ? 'action-blue' :
+                a.includes('WATCH')  ? 'action-yellow': a.includes('BEARISH') ? 'action-red' : 'action-gray';
+    const short = a.replace('STRONG BUY SIGNAL','STRONG BUY').replace('BUY ON DIP','BUY DIP')
+                   .replace('WATCH / AVOID','WATCH').replace('BEARISH — AVOID','BEARISH');
+    return `<span class="text-xs font-semibold px-2 py-0.5 rounded ${cls}" style="white-space:nowrap">${escHtml(short)}</span>`;
+  };
+
+  const pctCell = v => {
+    if (v == null) return '<span class="text-slate-600 text-xs">—</span>';
+    const color = v > 0 ? '#34d399' : v < 0 ? '#f87171' : '#94a3b8';
+    const sign  = v > 0 ? '+' : '';
+    return `<span style="color:${color}" class="text-xs font-medium">${sign}${Number(v).toFixed(2)}%</span>`;
+  };
+
+  const scoreCell = s => {
+    const v   = s.momentum_score ?? 0;
+    const col = v >= 2 ? '#34d399' : v <= -2 ? '#f87171' : '#94a3b8';
+    return `<span class="text-sm font-semibold" style="color:${col}">${v >= 0 ? '+' : ''}${v}</span>`;
+  };
+
+  tbody.innerHTML = stocks.map(s => `
+    <tr>
+      <td>${tierBadge(s.tier)}</td>
+      <td style="min-width:110px">
+        <a href="${escHtml('https://www.tradingview.com/chart/?symbol=NSE:' + s.symbol)}" target="_blank" rel="noopener"
+           class="font-mono text-sm font-semibold text-indigo-300 hover:text-white transition-colors" style="text-decoration:none">${escHtml(s.symbol)} ↗</a>
+        <div class="text-xs text-slate-600">₹${fmt.cr(s.market_cap_crore)} Cr</div>
+      </td>
+      <td class="text-right font-mono text-sm text-white">₹${fmt.num(s.current_price)}</td>
+      <td class="text-right">${pctCell(s.day_change_pct)}</td>
+      <td class="text-right">${pctCell(s.week_change_pct)}</td>
+      <td class="text-right col-hide-mobile text-xs ${s.rsi ? (s.rsi < 30 ? 'text-green-400' : s.rsi > 70 ? 'text-red-400' : 'text-slate-300') : 'text-slate-600'}">${s.rsi ?? '—'}</td>
+      <td class="col-hide-mobile">${trendBadge(s.trend)}</td>
+      <td class="text-right">${scoreCell(s)}</td>
+      <td>${sigBadge(s.action)}</td>
+      <td class="text-right col-hide-mobile text-xs text-slate-500">₹${fmt.cr(s.market_cap_crore)} Cr</td>
+    </tr>`).join('');
+
+  if (count)  count.textContent  = `${stocks.length} stocks`;
+  if (footer) footer.textContent = `Showing ${stocks.length} of ${_fnoAllStocks.length} F&O stocks · sorted by ${_fnoSortKey.replace(/_/g,' ')} ${_fnoSortAsc ? '↑' : '↓'}`;
+}
+
+function sortFno(key) {
+  _fnoSortAsc = (_fnoSortKey === key) ? !_fnoSortAsc : (key === 'symbol' || key === 'tier');
+  _fnoSortKey = key;
+  renderFnoTable();
+}
+
+function setFnoTier(tier) {
+  _fnoTier = tier;
+  document.querySelectorAll('.fno-tier-btn').forEach(b => b.classList.toggle('active', b.dataset.tier === tier));
+  renderFnoTable();
+}
+
+function setFnoAction(val) { _fnoAction = val; renderFnoTable(); }
+function setFnoSearch(val) { _fnoSearch = val; renderFnoTable(); }
+
+// ── RECOMMENDATIONS SUB-TABS ─────────────────────────────────────────────────
+
+function switchRecTab(tab) {
+  ['portfolio','fno'].forEach(t => {
+    document.getElementById('recpanel-' + t)?.classList.toggle('hidden', t !== tab);
+    document.getElementById('rectab-' + t)?.classList.toggle('active', t === tab);
+  });
+}
+
+function applyFnoFilter(filter) {
+  document.querySelectorAll('.fno-filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === filter));
+  const tiers = window._fnoTierData ?? {};
+  renderFnoTierSections(tiers, filter);
+}
+
+function renderFnoTierSections(tiers, filter) {
+  window._fnoTierData = tiers;   // cache for re-filtering
+  filter = filter ?? 'all';
+
+  const TIER_LABELS = { largecap:'Large Cap', midcap:'Mid Cap', smallcap:'Small Cap' };
+  const TIER_ICONS  = { largecap:'🏢', midcap:'🏬', smallcap:'🏪' };
+
+  const actionClass = a => {
+    if (a.includes('STRONG')) return 'action-green';
+    if (a.includes('BUY'))    return 'action-blue';
+    if (a.includes('WATCH'))  return 'action-yellow';
+    if (a.includes('BEARISH'))return 'action-red';
+    return 'action-gray';
+  };
+
+  for (const tier of ['largecap','midcap','smallcap']) {
+    const el = document.getElementById('fno-tier-' + tier);
+    if (!el) continue;
+
+    let stocks = (tiers[tier]?.stocks ?? []);
+    if (filter === 'buy')     stocks = stocks.filter(s => s.action.includes('BUY'));
+    if (filter === 'neutral') stocks = stocks.filter(s => s.action === 'NEUTRAL');
+    if (filter === 'watch')   stocks = stocks.filter(s => s.action.includes('WATCH') || s.action.includes('BEARISH'));
+
+    if (!stocks.length) { el.innerHTML = ''; continue; }
+
+    const total = tiers[tier]?.count ?? stocks.length;
+    el.innerHTML = `
+      <div class="card overflow-hidden">
+        <div class="p-3 border-b border-slate-700 flex items-center justify-between">
+          <h3 class="text-sm font-semibold text-white">${TIER_ICONS[tier]} ${TIER_LABELS[tier]}</h3>
+          <span class="text-xs text-slate-500">${stocks.length} shown of ${total}</span>
+        </div>
+        <div class="p-3 space-y-2">
+          ${stocks.map(s => `
+            <div class="${actionClass(s.action)} rounded-lg p-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-2 min-w-0">
+                  <span class="text-base flex-shrink-0">${s.action_emoji || '⚪'}</span>
+                  <div class="min-w-0">
+                    <a href="${escHtml('https://www.tradingview.com/chart/?symbol=NSE:' + s.symbol)}" target="_blank" rel="noopener"
+                       class="font-mono text-sm font-semibold hover:opacity-80 transition-opacity" style="text-decoration:none">${escHtml(s.symbol)} ↗</a>
+                    <span class="text-xs opacity-60 ml-1">₹${fmt.cr(s.market_cap_crore)} Cr</span>
+                  </div>
+                </div>
+                <div class="text-right flex-shrink-0 space-y-0.5">
+                  <div class="text-xs font-mono text-white">₹${fmt.num(s.current_price)}</div>
+                  <div class="flex gap-2 justify-end">
+                    ${s.day_change_pct != null ? `<span class="text-xs" style="color:${s.day_change_pct >= 0?'#34d399':'#f87171'}">${s.day_change_pct >= 0?'+':''}${Number(s.day_change_pct).toFixed(2)}%</span>` : ''}
+                    ${s.week_change_pct != null ? `<span class="text-xs text-slate-500">W: ${s.week_change_pct >= 0?'+':''}${Number(s.week_change_pct).toFixed(2)}%</span>` : ''}
+                  </div>
+                </div>
+              </div>
+              <div class="mt-1 text-xs font-semibold opacity-80">${escHtml(s.action)}</div>
+              <div class="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-xs opacity-50">
+                ${s.rsi ? `RSI: ${s.rsi}` : ''} ${s.trend && s.trend !== 'N/A' ? `· ${s.trend}` : ''} ${s.macd && s.macd !== 'N/A' ? `· ${s.macd}` : ''}
+              </div>
+              <div class="mt-1.5 flex flex-wrap gap-1">
+                ${(s.signals ?? []).slice(0,2).map(sig => `<span class="text-xs opacity-60">• ${escHtml(sig)}</span>`).join('')}
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  // Summary strip
+  const summEl = document.getElementById('fno-summary');
+  if (summEl) {
+    const all = Object.values(tiers).flatMap(t => t.stocks ?? []);
+    const cnt = a => all.filter(s => s.action.includes(a)).length;
+    summEl.innerHTML = [
+      ['🟢 Strong Buy', cnt('STRONG'), 'action-green'],
+      ['🔵 Buy Dip',    cnt('BUY ON'), 'action-blue'],
+      ['⚪ Neutral',    all.filter(s => s.action === 'NEUTRAL').length, 'action-gray'],
+      ['🔴 Bearish',    cnt('BEARISH') + all.filter(s=>s.action.includes('WATCH')).length, 'action-red'],
+    ].map(([label, n, cls]) => `
+      <div class="${cls} rounded-lg p-2 text-center">
+        <div class="text-lg font-bold">${n}</div>
+        <div class="text-xs opacity-70">${label}</div>
+      </div>`).join('');
+  }
+}
+
+// ── LIVE PRICES ──────────────────────────────────────────────────────────────
+
+let _liveCache     = {};   // ticker → { price, dayPct }
+let _liveTimer     = null;
+let _fnoTabVisible = false;
+
+async function _fetchYahooQuotes(tickers) {
+  const BATCH = 45;
+  const out   = {};
+  for (let i = 0; i < tickers.length; i += BATCH) {
+    const chunk = tickers.slice(i, i + BATCH);
+    const ctrl  = new AbortController();
+    const tid   = setTimeout(() => ctrl.abort(), 9000);
+    try {
+      const url  = `https://query2.finance.yahoo.com/v7/finance/quote?symbols=${chunk.join(',')}&fields=regularMarketPrice,regularMarketChangePercent`;
+      const resp = await fetch(url, { signal: ctrl.signal });
+      clearTimeout(tid);
+      if (!resp.ok) continue;
+      const json = await resp.json();
+      for (const q of (json?.quoteResponse?.result ?? [])) {
+        if (q.regularMarketPrice) {
+          out[q.symbol] = { price: q.regularMarketPrice, dayPct: q.regularMarketChangePercent ?? 0 };
+        }
+      }
+    } catch (_) { clearTimeout(tid); }
+    if (i + BATCH < tickers.length) await new Promise(r => setTimeout(r, 250));
+  }
+  return out;
+}
+
+function _updateLiveIndicator(success) {
+  const el = document.getElementById('live-status');
+  if (!el) return;
+  if (success) {
+    const t = new Date().toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    el.innerHTML = `⬤ LIVE · ${t} IST`;
+    el.style.color = '#34d399';
+  } else {
+    el.innerHTML = `⬤ Snapshot`;
+    el.style.color = '#475569';
+  }
+}
+
+async function refreshLivePrices() {
+  const portTickers = _holdings.map(h => h.ticker);
+  const fnoTickers  = _fnoTabVisible ? _fnoAllStocks.map(s => s.ticker).filter(Boolean) : [];
+  const all         = [...new Set([...portTickers, ...fnoTickers])];
+  if (!all.length) return;
+
+  const quotes = await _fetchYahooQuotes(all);
+  if (!Object.keys(quotes).length) { _updateLiveIndicator(false); return; }
+
+  Object.assign(_liveCache, quotes);
+
+  // Update _priceMap so P&L recalculates correctly
+  for (const [ticker, { price }] of Object.entries(quotes)) {
+    _priceMap[ticker] = price;
+  }
+
+  // Rebuild portfolio holdings with live prices
+  if (_holdings.length) {
+    _holdings = _holdings.map(h => {
+      const q = quotes[h.ticker];
+      if (!q) return h;
+      const current = h.qty * q.price;
+      const pnl     = current - (h.qty * h.avg_buy_price);
+      const pnl_pct = h.avg_buy_price > 0 ? (q.price - h.avg_buy_price) / h.avg_buy_price * 100 : 0;
+      return { ...h, current_price: q.price, current_value: current, pnl, pnl_pct, day_change_pct: q.dayPct };
+    });
+    _stockTotals = {
+      invested: _holdings.reduce((s, h) => s + (h.invested ?? 0), 0),
+      current:  _holdings.reduce((s, h) => s + (h.current_value ?? 0), 0),
+      count:    _holdings.length,
+    };
+    updateCombinedStats();
+    renderTable();
+  }
+
+  // Update F&O stocks (only when tab visible to avoid re-rendering a hidden table)
+  if (_fnoTabVisible && _fnoAllStocks.length) {
+    _fnoAllStocks = _fnoAllStocks.map(s => {
+      const q = quotes[s.ticker];
+      if (!q) return s;
+      return { ...s, current_price: q.price, day_change_pct: q.dayPct };
+    });
+    renderFnoTable();
+  }
+
+  _updateLiveIndicator(true);
+}
+
+function startLiveRefresh() {
+  if (_liveTimer) clearInterval(_liveTimer);
+  setTimeout(refreshLivePrices, 3000);       // first refresh shortly after page load
+  _liveTimer = setInterval(refreshLivePrices, 30_000);  // then every 30 s
 }
 
 // ── RECOMMENDATIONS ──────────────────────────────────────────────────────────
@@ -1375,6 +1711,7 @@ async function refreshAll() {
       loadMFTotalsOnly().catch(e => console.error('mf totals:', e)),
       loadNews().catch(e => console.error('news:', e)),
       loadRecommendations().catch(e => console.error('recs:', e)),
+      loadFnoRecommendations().catch(e => console.error('fno:', e)),
       loadCorporate().catch(e => console.error('corporate:', e)),
     ]);
   } finally {
@@ -1386,6 +1723,7 @@ async function refreshAll() {
 document.getElementById('adhoc-date').valueAsDate = new Date();
 refreshAll();
 setInterval(checkMarketStatus, 60_000);
+startLiveRefresh();
 
 // Firebase auth state listener — runs once on load
 if (isFirebaseReady()) {
