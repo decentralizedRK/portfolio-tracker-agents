@@ -343,8 +343,9 @@
 
     </div>
 
-    <!-- Sign-in note -->
-    <p class="text-center text-xs text-slate-600 mt-8">You'll be asked to sign in before payment. Already a subscriber? <a href="#" onclick="showAuthModal('signin');return false;" class="text-indigo-400 hover:text-indigo-300">Sign in here</a>.</p>
+    <!-- Sign-in note — toggled by auth state -->
+    <p id="signin-note-guest" class="text-center text-xs text-slate-600 mt-8">You'll be asked to sign in before payment. Already a subscriber? <a href="#" onclick="showAuthModal('signin');return false;" class="text-indigo-400 hover:text-indigo-300">Sign in here</a>.</p>
+    <p id="signin-note-user" class="text-center text-xs text-slate-600 mt-8 hidden">Signed in as <span id="signin-note-email" class="text-slate-400"></span>. Choose a plan above to get started.</p>
   </section>
 
   <!-- SEBI Disclaimer -->

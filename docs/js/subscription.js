@@ -55,6 +55,19 @@ function _showPaywall() {
   document.getElementById('landing-page')?.classList.remove('hidden');
   document.getElementById('app-main')?.classList.add('hidden');
   document.getElementById('paywall-overlay')?.classList.add('hidden');
+
+  const user = typeof firebase !== 'undefined' ? firebase.auth().currentUser : null;
+  const guestNote = document.getElementById('signin-note-guest');
+  const userNote  = document.getElementById('signin-note-user');
+  const emailSpan = document.getElementById('signin-note-email');
+  if (user) {
+    guestNote?.classList.add('hidden');
+    if (emailSpan) emailSpan.textContent = user.email;
+    userNote?.classList.remove('hidden');
+  } else {
+    guestNote?.classList.remove('hidden');
+    userNote?.classList.add('hidden');
+  }
 }
 
 function _showLanding() {
