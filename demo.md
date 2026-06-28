@@ -291,7 +291,7 @@ Function URL (razorpayWebhook):   https://us-central1-portfolio-tracer.cloudfunc
 ```
 
 #### 8. Update FUNCTIONS_BASE in the frontend
-Open `docs/js/subscription.js` line 8 and set:
+Open `docs/js/c.js` line 8 and set:
 ```js
 const FUNCTIONS_BASE = 'https://us-central1-portfolio-tracer.cloudfunctions.net';
 ```

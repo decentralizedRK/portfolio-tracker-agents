@@ -18,11 +18,17 @@ const crypto     = require('crypto');
 admin.initializeApp();
 const db = admin.firestore();
 
-// ── Razorpay client (key_id is public-safe; key_secret stays server-side) ─────
-const razorpay = new Razorpay({
-  key_id:     functions.config().razorpay?.key_id     || process.env.RAZORPAY_KEY_ID,
-  key_secret: functions.config().razorpay?.key_secret || process.env.RAZORPAY_KEY_SECRET,
-});
+// ── Razorpay client — lazy init so module loads cleanly during deploy analysis ─
+let _razorpay = null;
+function getRazorpay() {
+  if (!_razorpay) {
+    _razorpay = new Razorpay({
+      key_id:     process.env.RAZORPAY_KEY_ID,
+      key_secret: process.env.RAZORPAY_KEY_SECRET,
+    });
+  }
+  return _razorpay;
+}
 
 // ── Pricing config ────────────────────────────────────────────────────────────
 const PLANS = {
@@ -59,7 +65,8 @@ exports.createOrder = functions.https.onRequest(async (req, res) => {
     const plan = PLANS[req.body?.plan];
     if (!plan) { res.status(400).json({ error: 'Invalid plan' }); return; }
 
-    const order = await razorpay.orders.create({
+    const rz    = getRazorpay();
+    const order = await rz.orders.create({
       amount:   plan.amount,
       currency: plan.currency,
       receipt:  `rcpt_${uid.slice(0, 10)}_${Date.now()}`,
@@ -70,7 +77,7 @@ exports.createOrder = functions.https.onRequest(async (req, res) => {
       order_id: order.id,
       amount:   plan.amount,
       currency: plan.currency,
-      key_id:   razorpay.key_id,
+      key_id:   rz.key_id,
     });
   } catch (e) {
     console.error('createOrder error:', e);
@@ -92,7 +99,7 @@ exports.verifyPayment = functions.https.onRequest(async (req, res) => {
 
     // Signature verification
     const expected = crypto
-      .createHmac('sha256', razorpay.key_secret)
+      .createHmac('sha256', getRazorpay().key_secret)
       .update(`${razorpay_order_id}|${razorpay_payment_id}`)
       .digest('hex');
 

@@ -5,7 +5,7 @@
 //                    e.g. https://us-central1-portfolio-tracer.cloudfunctions.net
 //   RAZORPAY_KEY_ID: Your Razorpay Key ID (starts with rzp_live_ or rzp_test_)
 //
-const FUNCTIONS_BASE  = '';   // TODO: paste Cloud Functions URL after deploy
+const FUNCTIONS_BASE  = 'https://us-central1-portfolio-tracer.cloudfunctions.net';
 const RAZORPAY_KEY_ID = 'rzp_test_T6l277hK4u5E9S';
 
 const PLANS = {
