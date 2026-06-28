@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Portfolio Tracker Pro</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #cbd5e1;
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+
+    /* ── Top bar ── */
+    header {
+      background: rgba(30,41,59,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1e293b;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header img { width: 32px; height: 32px; }
+    header .brand { font-weight: 700; font-size: 1rem; color: #e2e8f0; }
+    header .back {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: #6366f1;
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid rgba(99,102,241,0.4);
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    header .back:hover { background: rgba(99,102,241,0.12); }
+
+    /* ── Layout ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      border-left: 4px solid #6366f1;
+      padding-left: 20px;
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #e2e8f0;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .hero .meta {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+    .hero .meta span { color: #818cf8; font-weight: 500; }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 36px;
+    }
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 .num {
+      background: rgba(99,102,241,0.18);
+      color: #818cf8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    p { margin-bottom: 10px; color: #94a3b8; }
+    ul {
+      list-style: none;
+      margin: 8px 0 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    ul li {
+      padding-left: 20px;
+      position: relative;
+      color: #94a3b8;
+    }
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #6366f1;
+      font-weight: 700;
+    }
+    a { color: #818cf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Highlight cards ── */
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .card.warn {
+      background: rgba(234,179,8,0.06);
+      border-color: rgba(234,179,8,0.25);
+    }
+    .card.info {
+      background: rgba(99,102,241,0.07);
+      border-color: rgba(99,102,241,0.25);
+    }
+    .card-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 6px;
+    }
+    .card.warn .card-title { color: #facc15; }
+    .card.info .card-title { color: #818cf8; }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid #1e293b;
+      margin: 32px 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #475569;
+      padding: 32px 24px;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="./assets/logo.svg" alt="Logo" />
+  <span class="brand">Portfolio Tracker Pro</span>
+  <a href="./index.html" class="back">← Back to App</a>
+</header>
+
+<main>
+
+  <div class="hero">
+    <h1>Privacy Policy</h1>
+    <p class="meta">
+      Effective date: <span>28 June 2026</span> &nbsp;·&nbsp; Last updated: <span>28 June 2026</span>
+    </p>
+  </div>
+
+  <p>
+    Portfolio Tracker Pro ("we", "our", or "the app") is a personal stock portfolio tracking tool
+    for Indian (NSE/BSE) and US (NYSE/NASDAQ) markets. This policy explains what information we
+    collect, why we collect it, how it is stored, and your rights over it.
+    By using this app, you agree to the practices described here.
+  </p>
+
+  <div class="card info">
+    <div class="card-title">Summary</div>
+    We do not sell your data. We do not show ads. We collect only what is needed to provide
+    the service — your email address, portfolio holdings, and payment status.
+  </div>
+
+  <hr />
+
+  <!-- 1 -->
+  <section>
+    <h2><span class="num">1</span> Information We Collect</h2>
+
+    <p><strong style="color:#e2e8f0">Account information</strong></p>
+    <ul>
+      <li>Email address and display name (provided when you sign in via Google or email/password through Firebase Authentication).</li>
+      <li>Profile photo URL if you use Google Sign-In (fetched from your Google account).</li>
+    </ul>
+
+    <p><strong style="color:#e2e8f0">Portfolio data</strong></p>
+    <ul>
+      <li>Stock tickers, quantities, and average buy prices you enter into the app.</li>
+      <li>This data is stored in Google Firestore under your user ID and is never shared with other users.</li>
+    </ul>
+
+    <p><strong style="color:#e2e8f0">Payment information</strong></p>
+    <ul>
+      <li>Subscription plan chosen (Monthly, Yearly, or Lifetime).</li>
+      <li>Razorpay order ID and payment ID (reference numbers only — we never see or store your card or bank details).</li>
+      <li>Subscription status and expiry date stored in Firestore.</li>
+    </ul>
+
+    <p><strong style="color:#e2e8f0">Technical information</strong></p>
+    <ul>
+      <li>Browser type and operating system (collected automatically by Firebase Hosting and Firebase Analytics if enabled).</li>
+      <li>IP address (handled by Google's infrastructure; not stored by us directly).</li>
+      <li>Error logs from Firebase Cloud Functions (retained for up to 30 days by Google Cloud Logging).</li>
+    </ul>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2><span class="num">2</span> How We Use Your Information</h2>
+    <ul>
+      <li>To authenticate you and protect access to your personal portfolio data.</li>
+      <li>To display your holdings, calculate P&amp;L, and deliver stock alerts.</li>
+      <li>To process subscription payments via Razorpay and unlock Pro features.</li>
+      <li>To send you Telegram alerts (only if you configure a Telegram bot token).</li>
+      <li>To diagnose errors and improve the reliability of the service.</li>
+    </ul>
+    <p>We do not use your data for advertising, profiling, or any purpose beyond what is listed above.</p>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2><span class="num">3</span> Third-Party Services</h2>
+    <p>We rely on the following third-party services. Each has its own privacy policy:</p>
+
+    <div class="card">
+      <div class="card-title" style="color:#818cf8">Firebase (Google LLC)</div>
+      Authentication, Firestore database, and hosting.
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a>
+    </div>
+
+    <div class="card">
+      <div class="card-title" style="color:#818cf8">Razorpay Software Pvt. Ltd.</div>
+      Payment processing for subscriptions. Razorpay handles all card/UPI/banking data
+      on their PCI-DSS compliant infrastructure. We receive only a payment reference ID.
+      <a href="https://razorpay.com/privacy/" target="_blank" rel="noopener">razorpay.com/privacy</a>
+    </div>
+
+    <div class="card">
+      <div class="card-title" style="color:#818cf8">Yahoo Finance (yfinance)</div>
+      Live and historical stock price data. No personal data is sent to Yahoo Finance.
+      Prices are fetched server-side or directly in your browser.
+      <a href="https://legal.yahoo.com/us/en/yahoo/privacy/index.html" target="_blank" rel="noopener">Yahoo Privacy Policy</a>
+    </div>
+
+    <div class="card">
+      <div class="card-title" style="color:#818cf8">Telegram (optional)</div>
+      If you choose to configure Telegram alerts, your Telegram chat ID is stored locally
+      in the agent's config file on your own machine. It is never sent to our servers.
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2><span class="num">4</span> Data Storage and Security</h2>
+    <ul>
+      <li>All user data is stored in Google Firestore (region: <code style="background:#0f172a;padding:1px 6px;border-radius:4px;font-size:0.85em">us-central1</code>), protected by Firebase Security Rules that ensure each user can only access their own data.</li>
+      <li>Data in transit is encrypted using TLS 1.2+.</li>
+      <li>Payment credentials (Razorpay Key Secret) are stored in Firebase Cloud Functions environment variables and are never exposed to the browser.</li>
+      <li>We do not store passwords — authentication is handled entirely by Firebase Authentication.</li>
+    </ul>
+
+    <div class="card warn">
+      <div class="card-title">Important</div>
+      While we take reasonable precautions, no system is 100% secure. Please use a strong,
+      unique password for your Google account and enable 2-factor authentication.
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2><span class="num">5</span> Data Retention</h2>
+    <ul>
+      <li><strong style="color:#e2e8f0">Account and portfolio data</strong> — retained for as long as your account is active. Deleted within 30 days of account deletion.</li>
+      <li><strong style="color:#e2e8f0">Payment records</strong> — Razorpay order and payment IDs are retained for 7 years as required by Indian financial regulations.</li>
+      <li><strong style="color:#e2e8f0">Server logs</strong> — Cloud Function logs are retained for 30 days by Google Cloud Logging.</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2><span class="num">6</span> Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li><strong style="color:#e2e8f0">Access</strong> — request a copy of the personal data we hold about you.</li>
+      <li><strong style="color:#e2e8f0">Correction</strong> — update your email or display name through your Google account settings.</li>
+      <li><strong style="color:#e2e8f0">Deletion</strong> — request deletion of your account and all associated portfolio data. Contact us at the email below.</li>
+      <li><strong style="color:#e2e8f0">Data portability</strong> — export your portfolio holdings at any time from within the app.</li>
+    </ul>
+    <p>
+      To exercise any of these rights, email us at
+      <a href="mailto:rrk822026@gmail.com">rrk822026@gmail.com</a>.
+      We will respond within 30 days.
+    </p>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <h2><span class="num">7</span> Cookies and Local Storage</h2>
+    <ul>
+      <li>Firebase Authentication uses browser local storage and session cookies to keep you signed in.</li>
+      <li>We do not use third-party advertising cookies.</li>
+      <li>You can clear these at any time through your browser settings, which will sign you out of the app.</li>
+    </ul>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2><span class="num">8</span> Children's Privacy</h2>
+    <p>
+      This service is not directed at children under the age of 13. We do not knowingly collect
+      personal information from children. If you believe a child has provided us with personal
+      information, please contact us so we can delete it.
+    </p>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <h2><span class="num">9</span> Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. When we do, we will revise the
+      "Last updated" date at the top of this page. For significant changes, we will notify
+      active users via email. Continued use of the app after changes constitutes acceptance
+      of the updated policy.
+    </p>
+  </section>
+
+  <!-- 10 -->
+  <section>
+    <h2><span class="num">10</span> Contact</h2>
+    <p>For any privacy-related questions, data deletion requests, or concerns:</p>
+    <div class="card">
+      <strong style="color:#e2e8f0">Portfolio Tracker Pro</strong><br />
+      Email: <a href="mailto:rrk822026@gmail.com">rrk822026@gmail.com</a><br />
+      GitHub: <a href="https://github.com/decentralizedRK/portfolio-tracker-agents" target="_blank" rel="noopener">github.com/decentralizedRK/portfolio-tracker-agents</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Portfolio Tracker Pro &nbsp;·&nbsp;
+  <a href="./index.html">Back to App</a>
+</footer>
+
+</body>
+</html>
