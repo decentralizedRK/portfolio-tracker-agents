@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Portfolio Tracker Pro</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #cbd5e1;
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+
+    /* ── Top bar ── */
+    header {
+      background: rgba(30,41,59,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1e293b;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header img { width: 32px; height: 32px; }
+    header .brand { font-weight: 700; font-size: 1rem; color: #e2e8f0; }
+    header .back {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: #6366f1;
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid rgba(99,102,241,0.4);
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    header .back:hover { background: rgba(99,102,241,0.12); }
+
+    /* ── Layout ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      border-left: 4px solid #6366f1;
+      padding-left: 20px;
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #e2e8f0;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .hero .meta {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+    .hero .meta span { color: #818cf8; font-weight: 500; }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 36px;
+    }
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 .num {
+      background: rgba(99,102,241,0.18);
+      color: #818cf8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    p { margin-bottom: 10px; color: #94a3b8; }
+    ul {
+      list-style: none;
+      margin: 8px 0 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    ul li {
+      padding-left: 20px;
+      position: relative;
+      color: #94a3b8;
+    }
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #6366f1;
+      font-weight: 700;
+    }
+    a { color: #818cf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Highlight cards ── */
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .card.warn {
+      background: rgba(234,179,8,0.06);
+      border-color: rgba(234,179,8,0.25);
+    }
+    .card.info {
+      background: rgba(99,102,241,0.07);
+      border-color: rgba(99,102,241,0.25);
+    }
+    .card-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 6px;
+    }
+    .card.warn .card-title { color: #facc15; }
+    .card.info .card-title { color: #818cf8; }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid #1e293b;
+      margin: 32px 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #475569;
+      padding: 32px 24px;
+      border-top: 1px solid #1e293b;
+    }
+    footer a { color: #64748b; }
+    footer a:hover { color: #818cf8; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="./assets/logo.svg" alt="Logo" />
+  <span class="brand">Portfolio Tracker Pro</span>
+  <a href="./index.html" class="back">← Back to App</a>
+</header>
+
+<main>
+
+  <div class="hero">
+    <h1>Terms of Service</h1>
+    <p class="meta">
+      Effective date: <span>28 June 2026</span> &nbsp;·&nbsp; Last updated: <span>28 June 2026</span>
+    </p>
+  </div>
+
+  <p>
+    Please read these Terms of Service ("Terms") carefully before using Portfolio Tracker Pro
+    ("the Service", "we", "our", or "us"). By creating an account or accessing the Service,
+    you agree to be bound by these Terms. If you do not agree, do not use the Service.
+  </p>
+
+  <div class="card warn">
+    <div class="card-title">Not Investment Advice</div>
+    Portfolio Tracker Pro is a personal portfolio tracking tool only. Nothing on this platform
+    constitutes investment advice, a recommendation to buy or sell any security, or an offer to
+    provide financial advisory services. We are <strong>not registered with SEBI</strong> as an
+    Investment Adviser or Research Analyst. Always consult a qualified, SEBI-registered financial
+    adviser before making investment decisions.
+  </div>
+
+  <hr />
+
+  <!-- 1 -->
+  <section>
+    <h2><span class="num">1</span> Acceptance of Terms</h2>
+    <p>
+      By accessing or using the Service, you confirm that you are at least 18 years old, have read
+      and understood these Terms, and agree to be bound by them, along with our
+      <a href="./privacy.html">Privacy Policy</a>, which is incorporated herein by reference.
+    </p>
+    <p>
+      We reserve the right to modify these Terms at any time. Changes take effect when posted to
+      this page. Continued use of the Service after changes constitutes acceptance of the revised Terms.
+    </p>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2><span class="num">2</span> Description of Service</h2>
+    <p>Portfolio Tracker Pro provides:</p>
+    <ul>
+      <li>Real-time and delayed stock price tracking for NSE, BSE, NYSE, and NASDAQ listings via Yahoo Finance and other public data sources.</li>
+      <li>Portfolio P&amp;L calculations, allocation charts, and performance history.</li>
+      <li>Algorithmic technical indicators (RSI, MACD, Bollinger Bands, moving averages) generated from publicly available market data.</li>
+      <li>F&amp;O watchlists, mutual fund NAV tracking, and corporate action summaries.</li>
+      <li>Optional Telegram alert notifications for price band events.</li>
+      <li>Cloud portfolio storage via Google Firestore, accessible after sign-in.</li>
+    </ul>
+    <p>
+      Market data is sourced from third-party providers and may be delayed by up to 15 minutes.
+      We do not guarantee real-time accuracy of any price displayed.
+    </p>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2><span class="num">3</span> User Accounts</h2>
+    <ul>
+      <li>You must provide accurate information when creating an account. You are responsible for maintaining the confidentiality of your login credentials.</li>
+      <li>You are responsible for all activity that occurs under your account.</li>
+      <li>Notify us immediately at <a href="mailto:rrk822026@gmail.com">rrk822026@gmail.com</a> if you suspect unauthorised access to your account.</li>
+      <li>We reserve the right to suspend or terminate accounts that violate these Terms.</li>
+    </ul>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2><span class="num">4</span> Subscriptions and Payments</h2>
+
+    <p><strong style="color:#e2e8f0">Plans and pricing</strong></p>
+    <ul>
+      <li><strong style="color:#e2e8f0">Monthly</strong> — ₹199 per month, billed every 30 days.</li>
+      <li><strong style="color:#e2e8f0">Yearly</strong> — ₹1,499 per year (equivalent to ₹125/month), billed annually.</li>
+      <li><strong style="color:#e2e8f0">Lifetime</strong> — ₹4,999 one-time payment for permanent access.</li>
+    </ul>
+
+    <p><strong style="color:#e2e8f0">Payment processing</strong></p>
+    <p>
+      All payments are processed by Razorpay Software Pvt. Ltd. We do not store your card, UPI,
+      or bank account details. By completing a purchase you also agree to
+      <a href="https://razorpay.com/terms/" target="_blank" rel="noopener">Razorpay's Terms of Service</a>.
+    </p>
+
+    <p><strong style="color:#e2e8f0">Refund policy</strong></p>
+    <div class="card warn">
+      <div class="card-title">Refunds</div>
+      All subscription fees are non-refundable once a payment is processed, except where required
+      by applicable law. If you experience a technical issue that prevents access to the Service,
+      contact us within 7 days and we will investigate in good faith.
+    </div>
+
+    <p><strong style="color:#e2e8f0">Price changes</strong></p>
+    <p>
+      We reserve the right to change subscription pricing with at least 30 days' notice.
+      Price changes do not affect existing active subscriptions until their renewal date.
+      Lifetime subscribers are not subject to future price changes.
+    </p>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2><span class="num">5</span> Acceptable Use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use the Service for any unlawful purpose or in violation of any applicable laws.</li>
+      <li>Attempt to reverse-engineer, decompile, or extract source code from the Service.</li>
+      <li>Use automated scripts, bots, or scrapers to access the Service or its data.</li>
+      <li>Share your subscription credentials with other individuals (each subscription is for one user).</li>
+      <li>Use the Service to manipulate markets, spread misinformation, or engage in any fraudulent activity.</li>
+      <li>Interfere with or disrupt the infrastructure or servers powering the Service.</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2><span class="num">6</span> No Investment Advice — SEBI Compliance</h2>
+
+    <div class="card warn">
+      <div class="card-title">Regulatory Disclaimer</div>
+      Portfolio Tracker Pro is <strong>not registered</strong> with the Securities and Exchange
+      Board of India (SEBI) as an Investment Adviser under the SEBI (Investment Advisers)
+      Regulations, 2013, or as a Research Analyst under the SEBI (Research Analysts) Regulations, 2014.
+    </div>
+
+    <p>All technical signals, momentum scores, and buy/hold/sell labels displayed on this platform are:</p>
+    <ul>
+      <li>Algorithmic outputs computed from publicly available market data.</li>
+      <li>Provided for informational and tracking purposes only.</li>
+      <li>Not research reports, investment recommendations, or solicitations to trade.</li>
+    </ul>
+    <p>
+      Investments in securities markets are subject to market risks. Please read all related
+      documents carefully before investing. Past performance is not indicative of future results.
+      Consult a SEBI-registered financial adviser for personalised investment guidance.
+    </p>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <h2><span class="num">7</span> Data Accuracy and Availability</h2>
+    <ul>
+      <li>Stock prices, NAVs, and corporate action data are sourced from third-party providers (Yahoo Finance, AMFI, NSE) and may be delayed or occasionally inaccurate.</li>
+      <li>We do not guarantee uninterrupted availability of the Service. Scheduled maintenance or unexpected outages may occur.</li>
+      <li>Technical indicators are computed from historical data and inherently involve approximations.</li>
+    </ul>
+    <p>
+      You should independently verify any data before acting on it. We are not liable for
+      trading decisions made based on information displayed in the Service.
+    </p>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2><span class="num">8</span> Intellectual Property</h2>
+    <p>
+      All content, design, code, and branding of Portfolio Tracker Pro are the property of the
+      Service owner and are protected by applicable intellectual property laws. You are granted a
+      limited, non-exclusive, non-transferable licence to access and use the Service for your
+      personal, non-commercial portfolio tracking.
+    </p>
+    <p>
+      You retain ownership of the portfolio data you enter into the Service. By storing data with
+      us, you grant us a limited licence to store and process it solely for the purpose of providing
+      the Service to you.
+    </p>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <h2><span class="num">9</span> Disclaimer of Warranties</h2>
+    <p>
+      The Service is provided <strong style="color:#e2e8f0">"as is"</strong> and
+      <strong style="color:#e2e8f0">"as available"</strong> without warranties of any kind, whether
+      express or implied, including but not limited to implied warranties of merchantability,
+      fitness for a particular purpose, or non-infringement. We do not warrant that the Service
+      will be error-free, uninterrupted, or that market data displayed will be accurate or complete.
+    </p>
+  </section>
+
+  <!-- 10 -->
+  <section>
+    <h2><span class="num">10</span> Limitation of Liability</h2>
+    <p>
+      To the fullest extent permitted by applicable law, Portfolio Tracker Pro and its operators
+      shall not be liable for any indirect, incidental, special, consequential, or punitive damages
+      — including but not limited to trading losses, lost profits, or data loss — arising out of
+      or related to your use of (or inability to use) the Service, even if advised of the
+      possibility of such damages.
+    </p>
+    <p>
+      Our total liability to you for any claim arising from the Service shall not exceed the total
+      amount you paid us in the 12 months preceding the claim.
+    </p>
+  </section>
+
+  <!-- 11 -->
+  <section>
+    <h2><span class="num">11</span> Termination</h2>
+    <ul>
+      <li><strong style="color:#e2e8f0">By you</strong> — You may stop using the Service at any time. To delete your account and data, contact us at <a href="mailto:rrk822026@gmail.com">rrk822026@gmail.com</a>.</li>
+      <li><strong style="color:#e2e8f0">By us</strong> — We may suspend or terminate your account immediately if you violate these Terms, with or without notice.</li>
+      <li><strong style="color:#e2e8f0">Effect of termination</strong> — Upon termination, your right to access the Service ceases. Sections 6, 9, 10, and 12 survive termination.</li>
+    </ul>
+  </section>
+
+  <!-- 12 -->
+  <section>
+    <h2><span class="num">12</span> Governing Law</h2>
+    <p>
+      These Terms are governed by and construed in accordance with the laws of India.
+      Any disputes arising under or in connection with these Terms shall be subject to the
+      exclusive jurisdiction of the courts located in Mumbai, Maharashtra, India.
+    </p>
+  </section>
+
+  <!-- 13 -->
+  <section>
+    <h2><span class="num">13</span> Contact</h2>
+    <p>For any questions, concerns, or legal notices regarding these Terms:</p>
+    <div class="card">
+      <strong style="color:#e2e8f0">Portfolio Tracker Pro</strong><br />
+      Email: <a href="mailto:rrk822026@gmail.com">rrk822026@gmail.com</a><br />
+      GitHub: <a href="https://github.com/decentralizedRK/portfolio-tracker-agents" target="_blank" rel="noopener">github.com/decentralizedRK/portfolio-tracker-agents</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Portfolio Tracker Pro &nbsp;·&nbsp;
+  <a href="./privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+  <a href="./index.html">Back to App</a>
+</footer>
+
+</body>
+</html>

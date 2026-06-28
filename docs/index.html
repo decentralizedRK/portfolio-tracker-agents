@@ -179,6 +179,12 @@
       <span id="auth-toggle-text">Don't have an account?</span>
       <a href="#" id="auth-toggle-link" onclick="return toggleAuthMode()" class="text-indigo-400 hover:text-indigo-300 ml-1">Create account</a>
     </p>
+    <p class="text-center text-xs text-slate-600">
+      By signing in you agree to our
+      <a href="./terms.html" target="_blank" class="hover:text-slate-400 transition">Terms of Service</a>
+      and
+      <a href="./privacy.html" target="_blank" class="hover:text-slate-400 transition">Privacy Policy</a>.
+    </p>
   </div>
 </div>
 
@@ -1038,8 +1044,15 @@
 
 </main>
 
-<footer class="text-center text-xs text-slate-700 py-6">
-  Auto-updated by GitHub Actions · Data via yfinance · Not financial advice
+<footer class="text-center text-xs py-8 space-y-2" style="border-top:1px solid #1e293b">
+  <div class="font-semibold text-slate-400">Portfolio Tracker Pro</div>
+  <div class="text-slate-600">Auto-updated by GitHub Actions · Data via yfinance · Not financial advice</div>
+  <div class="text-slate-700 space-x-1">
+    <a href="./privacy.html" class="hover:text-slate-400 transition">Privacy Policy</a>
+    <span>·</span>
+    <a href="./terms.html" class="hover:text-slate-400 transition">Terms of Service</a>
+  </div>
+  <div class="text-slate-700">&copy; 2026 Portfolio Tracker Pro</div>
 </footer>
 
 <!-- Toast notifications -->
