@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.55)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.2)"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.75)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.3)"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.5)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded background -->
+  <rect width="40" height="40" rx="10" fill="url(#bg)"/>
+
+  <!-- Rising bars -->
+  <rect x="6"  y="26" width="7" height="8"  rx="2" fill="url(#bar1)"/>
+  <rect x="16" y="19" width="7" height="15" rx="2" fill="url(#bar2)"/>
+  <rect x="26" y="11" width="7" height="23" rx="2" fill="url(#bar3)"/>
+
+  <!-- Green upward trend line -->
+  <polyline
+    points="9.5,26  19.5,19  29.5,11"
+    stroke="#34d399"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+
+  <!-- Arrow head at the peak -->
+  <path
+    d="M26.5 8 L29.5 11 L32.5 8"
+    stroke="#34d399"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
