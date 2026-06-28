@@ -225,8 +225,8 @@ The portfolio tracker website has a Razorpay subscription paywall. Cloud Functio
 - **Functions source:** `functions/` directory in the repo root
 
 ### Razorpay Credentials (TEST mode)
-- **Key ID (public):** `rzp_test_T6l277hK4u5E9S` — already set in `docs/js/subscription.js`
-- **Key Secret (private):** `0spcJMhifSvAga5Eg6pKYsCM` — goes into Firebase config only, never in code
+- **Key ID (public):** already set in `docs/js/subscription.js`
+- **Key Secret (private):** retrieve from Razorpay Dashboard → Settings → API Keys
 
 ### Step-by-step Deployment
 
@@ -274,9 +274,9 @@ If it asks to add an alias, pick `default`.
 #### 6. Set Razorpay secrets in Firebase config
 ```bash
 firebase functions:config:set \
-  razorpay.key_id="rzp_test_T6l277hK4u5E9S" \
-  razorpay.key_secret="0spcJMhifSvAga5Eg6pKYsCM" \
-  razorpay.webhook_secret="<create a random string, e.g. openssl rand -hex 32>"
+  razorpay.key_id="<your Razorpay Key ID>" \
+  razorpay.key_secret="<your Razorpay Key Secret>" \
+  razorpay.webhook_secret="$(openssl rand -hex 32)"
 ```
 
 #### 7. Deploy Cloud Functions
