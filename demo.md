@@ -211,3 +211,116 @@ $ git diff
 - Every slide must include the **window-dots top bar with its own command string** and the **footer with "claude code · Presenter: Rutuja Dond" and the page counter**.
 - Coral `#FF6B5E` is the single dominant accent; green `#53D08A` is reserved for prompt/success lines; purple and gold are used sparingly (e.g., the window dots and model accents).
 - Preserve all names, commands, prices, and numbers exactly as written above
+
+---
+
+## Firebase Cloud Functions Deployment — Portfolio Tracker Pro
+
+### Context
+The portfolio tracker website has a Razorpay subscription paywall. Cloud Functions handle payment order creation and verification server-side. This section documents how to complete the deployment on any device.
+
+### Firebase Project
+- **Project ID:** `portfolio-tracer`
+- **Firestore:** already live (holds user holdings data)
+- **Functions source:** `functions/` directory in the repo root
+
+### Razorpay Credentials (TEST mode)
+- **Key ID (public):** `rzp_test_T6l277hK4u5E9S` — already set in `docs/js/subscription.js`
+- **Key Secret (private):** `0spcJMhifSvAga5Eg6pKYsCM` — goes into Firebase config only, never in code
+
+### Step-by-step Deployment
+
+#### 1. Prerequisites
+```bash
+# Install Node.js 18 via nvm (no sudo needed)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.zshrc   # or restart terminal
+nvm install 18
+nvm use 18
+
+# Install Firebase CLI
+npm install -g firebase-tools
+```
+
+#### 2. Clone / pull the repo
+```bash
+git clone https://github.com/<your-repo>/portfolio-tracker-agents.git
+cd portfolio-tracker-agents
+```
+Or if already cloned:
+```bash
+git pull origin main
+```
+
+#### 3. Install Functions dependencies
+```bash
+cd functions
+npm install
+cd ..
+```
+
+#### 4. Login to Firebase
+Use the Google account that owns the `portfolio-tracer` Firebase project.
+```bash
+firebase login
+```
+
+#### 5. Set Firebase project
+```bash
+firebase use portfolio-tracer
+```
+If it asks to add an alias, pick `default`.
+
+#### 6. Set Razorpay secrets in Firebase config
+```bash
+firebase functions:config:set \
+  razorpay.key_id="rzp_test_T6l277hK4u5E9S" \
+  razorpay.key_secret="0spcJMhifSvAga5Eg6pKYsCM" \
+  razorpay.webhook_secret="<create a random string, e.g. openssl rand -hex 32>"
+```
+
+#### 7. Deploy Cloud Functions
+```bash
+firebase deploy --only functions
+```
+On success the CLI prints three URLs like:
+```
+Function URL (createOrder):       https://us-central1-portfolio-tracer.cloudfunctions.net/createOrder
+Function URL (verifyPayment):     https://us-central1-portfolio-tracer.cloudfunctions.net/verifyPayment
+Function URL (razorpayWebhook):   https://us-central1-portfolio-tracer.cloudfunctions.net/razorpayWebhook
+```
+
+#### 8. Update FUNCTIONS_BASE in the frontend
+Open `docs/js/subscription.js` line 8 and set:
+```js
+const FUNCTIONS_BASE = 'https://us-central1-portfolio-tracer.cloudfunctions.net';
+```
+
+#### 9. Commit and push
+```bash
+git add docs/js/subscription.js
+git commit -m "chore: set Cloud Functions URL"
+git push origin main
+```
+
+#### 10. (Optional) Configure Razorpay Webhook
+In Razorpay Dashboard → Settings → Webhooks:
+- URL: `https://us-central1-portfolio-tracer.cloudfunctions.net/razorpayWebhook`
+- Events: `payment.captured`, `subscription.charged`, `subscription.cancelled`, `payment.failed`
+- Secret: the same string you set in `razorpay.webhook_secret` above
+
+### Verifying it works
+1. Open the site and sign in — landing/pricing page should appear
+2. Click Subscribe on any plan — Razorpay test checkout opens
+3. Use test card: `4111 1111 1111 1111`, any future expiry, any CVV
+4. After payment, dashboard should unlock and PRO badge appears in header
+
+### Switching from Test to Live
+When ready to go live, replace credentials:
+```bash
+firebase functions:config:set \
+  razorpay.key_id="rzp_live_XXXX" \
+  razorpay.key_secret="XXXX"
+firebase deploy --only functions
+```
+And update `RAZORPAY_KEY_ID` in `docs/js/subscription.js` to `rzp_live_XXXX`.

@@ -6,7 +6,7 @@
 //   RAZORPAY_KEY_ID: Your Razorpay Key ID (starts with rzp_live_ or rzp_test_)
 //
 const FUNCTIONS_BASE  = '';   // TODO: paste Cloud Functions URL after deploy
-const RAZORPAY_KEY_ID = '';   // TODO: paste Razorpay Key ID
+const RAZORPAY_KEY_ID = 'rzp_test_T6l277hK4u5E9S';
 
 const PLANS = {
   monthly:  { label: 'Monthly',  price: '₹199',  sub: '₹199 / month',     tag: '' },
