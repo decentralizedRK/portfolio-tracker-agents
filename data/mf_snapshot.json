@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-29T15:57:30.180480+05:30",
+  "timestamp": "2026-06-29T23:11:24.695849+05:30",
   "total_invested": 1532791.29,
-  "total_current": 1555861.56,
-  "total_pnl": 23070.27,
-  "total_pnl_pct": 1.51,
+  "total_current": 1550627.86,
+  "total_pnl": 17836.57,
+  "total_pnl_pct": 1.16,
   "sip_recorded_today": 0,
   "funds": [
     {
@@ -39,11 +39,11 @@
       "name": "Axis Nifty IT Index Fund - Direct Plan - Growth",
       "units": 50372.4,
       "avg_nav": 11.07,
-      "current_nav": 9.5965,
+      "current_nav": 9.4926,
       "invested": 557622.47,
-      "current_value": 483398.74,
-      "pnl": -74223.73,
-      "pnl_pct": -13.31,
+      "current_value": 478165.04,
+      "pnl": -79457.43,
+      "pnl_pct": -14.25,
       "sip_amount": 0,
       "sip_date": 1,
       "last_sip_recorded": ""
