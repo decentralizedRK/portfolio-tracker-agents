@@ -29,6 +29,7 @@ let _pnlChart        = null;
 let _allocationChart = null;
 let _stockTotals = { invested: 0, current: 0, count: 0 };
 let _mfTotals    = { invested: 0, current: 0, count: 0 };
+let _dayPctMap   = {};   // ticker -> day_change_pct from latest snapshot
 let _mfFunds     = [];   // full fund list from snapshot, kept for SIP total + JSON generation
 // MF table state
 let _mfSortKey = 'invested';
@@ -119,14 +120,15 @@ let _priceMap = {};   // ticker -> current_price, populated from public snapshot
 let _navMap   = {};   // scheme_code -> current_nav, populated from MF snapshot
 let _authResolved = !isFirebaseReady(); // true immediately if Firebase not configured
 
-function computePortfolioView(holdings, priceMap) {
+function computePortfolioView(holdings, priceMap, dayPctMap = {}) {
   return holdings.map(h => {
-    const price   = priceMap[h.ticker] ?? 0;
-    const invested = h.qty * h.avg_buy_price;
-    const current  = h.qty * price;
-    const pnl      = current - invested;
-    const pnl_pct  = h.avg_buy_price > 0 ? (price - h.avg_buy_price) / h.avg_buy_price * 100 : 0;
-    return { ...h, current_price: price, invested, current_value: current, pnl, pnl_pct };
+    const price          = priceMap[h.ticker] ?? 0;
+    const day_change_pct = h.day_change_pct ?? dayPctMap[h.ticker] ?? null;
+    const invested       = h.qty * h.avg_buy_price;
+    const current        = h.qty * price;
+    const pnl            = current - invested;
+    const pnl_pct        = h.avg_buy_price > 0 ? (price - h.avg_buy_price) / h.avg_buy_price * 100 : 0;
+    return { ...h, current_price: price, invested, current_value: current, pnl, pnl_pct, day_change_pct };
   });
 }
 
@@ -148,13 +150,17 @@ async function loadSnapshot() {
   document.getElementById('last-updated').textContent =
     d.timestamp ? 'Updated ' + fmt.ts(d.timestamp) : 'Not yet fetched';
 
-  // Build price map from snapshot for use by user portfolio view
-  _priceMap = {};
-  (d.holdings ?? []).forEach(h => { _priceMap[h.ticker] = h.current_price; });
+  // Build price map + day-change map from snapshot for use by user portfolio view
+  _priceMap  = {};
+  _dayPctMap = {};
+  (d.holdings ?? []).forEach(h => {
+    _priceMap[h.ticker]  = h.current_price;
+    if (h.day_change_pct != null) _dayPctMap[h.ticker] = h.day_change_pct;
+  });
 
   if (_currentUser) {
     // Logged-in: re-render holdings table with Firestore data + fresh prices
-    const firestoreView = computePortfolioView(_userHoldings, _priceMap);
+    const firestoreView = computePortfolioView(_userHoldings, _priceMap, _dayPctMap);
     _stockTotals = {
       invested: firestoreView.reduce((s, h) => s + h.invested, 0),
       current:  firestoreView.reduce((s, h) => s + h.current_value, 0),
@@ -206,7 +212,7 @@ async function loadUserPortfolio(uid) {
   }
 
   // Re-render holdings with Firestore data + current prices
-  const view = computePortfolioView(_userHoldings, _priceMap);
+  const view = computePortfolioView(_userHoldings, _priceMap, _dayPctMap);
   _holdings = view;
   _stockTotals = {
     invested: view.reduce((s, h) => s + h.invested, 0),
@@ -957,13 +963,14 @@ async function loadNews() {
     ? mh.slice(0,8).map(h => {
         const mhLink  = h.link ? safeHref(h.link) : null;
         const mhTitle = escHtml(h.title);
+        const ageStr  = h.age_h != null ? `· ${h.age_h < 1 ? '<1' : Math.round(h.age_h)}h ago` : '';
         return `
         <div class="news-item">
           ${mhLink ? `<a href="${mhLink}" target="_blank" rel="noopener"
                          class="text-xs font-medium text-slate-300 hover:text-white leading-relaxed block">${mhTitle}</a>`
                    : `<p class="text-xs text-slate-400 leading-relaxed">${mhTitle}</p>`}
           <div class="flex items-center gap-2 mt-1">
-            <span class="text-xs text-slate-600">${escHtml(h.source ?? '')}</span>
+            <span class="text-xs text-slate-600">${escHtml(h.source ?? '')} ${ageStr}</span>
             ${mhLink ? `<a href="${mhLink}" target="_blank" rel="noopener" class="text-xs text-indigo-400 hover:text-indigo-300 ml-auto">Read →</a>` : ''}
           </div>
         </div>`;
@@ -1006,6 +1013,9 @@ async function loadFnoRecommendations() {
 
   // Holdings table (sortable)
   renderFnoTable();
+
+  // If the F&O tab is already visible, refresh live prices immediately
+  if (_fnoTabVisible) refreshLivePrices();
 
   // Recommendations → F&O card sections
   renderFnoTierSections(tiers, 'all');
@@ -1088,7 +1098,7 @@ function renderFnoTable() {
     <tr>
       <td>${tierBadge(s.tier)}</td>
       <td style="min-width:110px">
-        <a href="${escHtml('https://www.tradingview.com/chart/?symbol=NSE:' + s.symbol)}" target="_blank" rel="noopener"
+        <a href="${escHtml('https://www.tradingview.com/chart/?symbol=' + (s.tradingview || 'NSE:' + s.symbol))}" target="_blank" rel="noopener"
            class="font-mono text-sm font-semibold text-indigo-300 hover:text-white transition-colors" style="text-decoration:none">${escHtml(s.symbol)} ↗</a>
         <div class="text-xs text-slate-600">₹${fmt.cr(s.market_cap_crore)} Cr</div>
       </td>
@@ -1176,7 +1186,7 @@ function renderFnoTierSections(tiers, filter) {
                 <div class="flex items-center gap-2 min-w-0">
                   <span class="text-base flex-shrink-0">${s.action_emoji || '⚪'}</span>
                   <div class="min-w-0">
-                    <a href="${escHtml('https://www.tradingview.com/chart/?symbol=NSE:' + s.symbol)}" target="_blank" rel="noopener"
+                    <a href="${escHtml('https://www.tradingview.com/chart/?symbol=' + (s.tradingview || 'NSE:' + s.symbol))}" target="_blank" rel="noopener"
                        class="font-mono text-sm font-semibold hover:opacity-80 transition-opacity" style="text-decoration:none">${escHtml(s.symbol)} ↗</a>
                     <span class="text-xs opacity-60 ml-1">₹${fmt.cr(s.market_cap_crore)} Cr</span>
                   </div>
