@@ -1,37 +1,86 @@
 name: Run All Agents
 
-# Trigger manually from GitHub Actions tab — runs all 5 agents at once.
+# Triggers on every push to main (except data-only commits made by this workflow
+# itself — paths-ignore breaks the loop) and manually from the Actions tab.
 on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'data/**'
+      - 'docs/data/**'
   workflow_dispatch:
 
 permissions:
-  actions: write
-  contents: read
+  contents: write
 
 jobs:
-  trigger-all:
+  run-all:
     runs-on: ubuntu-latest
-    steps:
-      - name: Trigger all agent workflows
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const workflows = [
-              { id: 'portfolio_update.yml',       label: 'Portfolio Update',      inputs: { force: 'true' } },
-              { id: 'news_agent.yml',             label: 'Morning News Digest',   inputs: {} },
-              { id: 'corporate_action_agent.yml', label: 'Corporate Actions',     inputs: {} },
-              { id: 'recommendation_agent.yml',   label: 'Weekly Recommendations',inputs: {} },
-              { id: 'mf_update.yml',              label: 'MF NAV Update',         inputs: {} },
-              { id: 'fno_recommendation_agent.yml', label: 'F&O Technical Scan',  inputs: {} },
-            ];
+    timeout-minutes: 20
 
-            for (const wf of workflows) {
-              await github.rest.actions.createWorkflowDispatch({
-                owner: context.repo.owner,
-                repo:  context.repo.repo,
-                workflow_id: wf.id,
-                ref:   'main',
-                inputs: wf.inputs,
-              });
-              console.log(`✓ Triggered: ${wf.label}`);
-            }
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Portfolio update agent
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python agents/portfolio_update_agent.py --force
+
+      - name: F&O recommendation agent
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python agents/fno_recommendation_agent.py
+
+      - name: News agent
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python agents/news_agent.py
+
+      - name: Recommendation agent
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python agents/recommendation_agent.py
+
+      - name: Corporate action agent
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python agents/corporate_action_agent.py
+
+      - name: MF update agent
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python agents/mf_update_agent.py
+
+      - name: Sync data/ → docs/data/
+        run: |
+          mkdir -p docs/data
+          cp data/*.json docs/data/
+
+      - name: Commit & push refreshed data
+        run: |
+          git config user.name  "portfolio-bot[bot]"
+          git config user.email "portfolio-bot@users.noreply.github.com"
+          git add data/ docs/data/
+          git diff --staged --quiet && echo "No data changes." && exit 0
+          git commit -m "chore: refresh all agent data $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main
+          git push
