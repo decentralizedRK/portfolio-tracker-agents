@@ -1,6 +1,6 @@
 {
-  "date": "29 Jun 2026",
-  "timestamp": "2026-06-29T15:57:13.075234+05:30",
+  "date": "30 Jun 2026",
+  "timestamp": "2026-06-30T12:31:15.641489+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -302,7 +302,12 @@
       "error": null
     },
     "BAJFINANCE.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-06-30",
+          "amount": 6.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -414,6 +419,14 @@
   },
   "highlights": [
     {
+      "ticker": "BAJFINANCE.NS",
+      "display": "BAJFINANCE",
+      "type": "Dividend",
+      "date": "2026-06-30",
+      "detail": "\u20b96.00/share",
+      "in_portfolio": false
+    },
+    {
       "ticker": "RAYMONDLSL.NS",
       "display": "RAYMONDLSL",
       "type": "Dividend",
@@ -524,14 +537,6 @@
       "date": "2026-03-13",
       "detail": "\u20b91.05/share",
       "in_portfolio": false
-    },
-    {
-      "ticker": "BEL.NS",
-      "display": "BEL",
-      "type": "Dividend",
-      "date": "2026-03-06",
-      "detail": "\u20b91.95/share",
-      "in_portfolio": true
     }
   ]
 }
