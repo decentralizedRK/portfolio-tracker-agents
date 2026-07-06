@@ -1,6 +1,6 @@
 {
-  "date": "03 Jul 2026",
-  "timestamp": "2026-07-03T12:08:26.734305+05:30",
+  "date": "06 Jul 2026",
+  "timestamp": "2026-07-06T12:50:14.633972+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -127,12 +127,7 @@
     },
     "PARAS.NS": {
       "dividends": [],
-      "splits": [
-        {
-          "date": "2025-07-04",
-          "ratio": "2.0"
-        }
-      ],
+      "splits": [],
       "calendar": {},
       "error": null
     },
