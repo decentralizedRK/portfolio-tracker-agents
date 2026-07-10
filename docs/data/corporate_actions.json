@@ -1,6 +1,6 @@
 {
-  "date": "09 Jul 2026",
-  "timestamp": "2026-07-09T12:21:45.799519+05:30",
+  "date": "10 Jul 2026",
+  "timestamp": "2026-07-10T12:22:13.863380+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -29,6 +29,10 @@
         {
           "date": "2026-01-30",
           "amount": 3.5
+        },
+        {
+          "date": "2026-07-10",
+          "amount": 4.0
         }
       ],
       "splits": [
@@ -87,7 +91,12 @@
       "error": null
     },
     "GEOJITFSL.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-07-10",
+          "amount": 1.5
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -231,6 +240,10 @@
         {
           "date": "2026-02-06",
           "amount": 4.0
+        },
+        {
+          "date": "2026-07-10",
+          "amount": 6.0
         }
       ],
       "splits": [],
@@ -414,6 +427,30 @@
   },
   "highlights": [
     {
+      "ticker": "CAMS.NS",
+      "display": "CAMS",
+      "type": "Dividend",
+      "date": "2026-07-10",
+      "detail": "\u20b94.00/share",
+      "in_portfolio": true
+    },
+    {
+      "ticker": "GEOJITFSL.NS",
+      "display": "GEOJITFSL",
+      "type": "Dividend",
+      "date": "2026-07-10",
+      "detail": "\u20b91.50/share",
+      "in_portfolio": true
+    },
+    {
+      "ticker": "CONTROLPR.NS",
+      "display": "CONTROLPR",
+      "type": "Dividend",
+      "date": "2026-07-10",
+      "detail": "\u20b96.00/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "BAJFINANCE.NS",
       "display": "BAJFINANCE",
       "type": "Dividend",
@@ -507,30 +544,6 @@
       "type": "Dividend",
       "date": "2026-05-25",
       "detail": "\u20b931.00/share",
-      "in_portfolio": false
-    },
-    {
-      "ticker": "IEX.NS",
-      "display": "IEX",
-      "type": "Dividend",
-      "date": "2026-05-15",
-      "detail": "\u20b92.00/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "RECLTD.NS",
-      "display": "RECLTD",
-      "type": "Dividend",
-      "date": "2026-03-20",
-      "detail": "\u20b93.20/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "IRFC.NS",
-      "display": "IRFC",
-      "type": "Dividend",
-      "date": "2026-03-13",
-      "detail": "\u20b91.05/share",
       "in_portfolio": false
     }
   ]
