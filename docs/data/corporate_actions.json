@@ -1,6 +1,6 @@
 {
-  "date": "23 Jul 2026",
-  "timestamp": "2026-07-23T11:37:28.190366+05:30",
+  "date": "24 Jul 2026",
+  "timestamp": "2026-07-24T11:25:19.656764+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -73,7 +73,12 @@
       "error": null
     },
     "DATAPATTNS.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-07-24",
+          "amount": 10.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -427,6 +432,14 @@
   },
   "highlights": [
     {
+      "ticker": "DATAPATTNS.NS",
+      "display": "DATAPATTNS",
+      "type": "Dividend",
+      "date": "2026-07-24",
+      "detail": "\u20b910.00/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "TCS.NS",
       "display": "TCS",
       "type": "Dividend",
@@ -537,14 +550,6 @@
       "date": "2026-06-10",
       "detail": "\u20b925.00/share",
       "in_portfolio": false
-    },
-    {
-      "ticker": "RELIANCE.NS",
-      "display": "RELIANCE",
-      "type": "Dividend",
-      "date": "2026-06-05",
-      "detail": "\u20b96.00/share",
-      "in_portfolio": true
     }
   ]
 }
