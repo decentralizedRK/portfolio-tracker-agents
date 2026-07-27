@@ -1,6 +1,6 @@
 {
-  "date": "24 Jul 2026",
-  "timestamp": "2026-07-24T11:25:19.656764+05:30",
+  "date": "27 Jul 2026",
+  "timestamp": "2026-07-27T12:07:26.887703+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -223,7 +223,12 @@
       "error": null
     },
     "TATACAP.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-07-27",
+          "amount": 0.57
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -328,8 +333,8 @@
     "WIPRO.NS": {
       "dividends": [
         {
-          "date": "2026-01-27",
-          "amount": 6.0
+          "date": "2026-07-27",
+          "amount": 2.0
         }
       ],
       "splits": [],
@@ -431,6 +436,22 @@
     }
   },
   "highlights": [
+    {
+      "ticker": "TATACAP.NS",
+      "display": "TATACAP",
+      "type": "Dividend",
+      "date": "2026-07-27",
+      "detail": "\u20b90.57/share",
+      "in_portfolio": true
+    },
+    {
+      "ticker": "WIPRO.NS",
+      "display": "WIPRO",
+      "type": "Dividend",
+      "date": "2026-07-27",
+      "detail": "\u20b92.00/share",
+      "in_portfolio": false
+    },
     {
       "ticker": "DATAPATTNS.NS",
       "display": "DATAPATTNS",
@@ -534,22 +555,6 @@
       "date": "2026-06-12",
       "detail": "\u20b94.00/share",
       "in_portfolio": true
-    },
-    {
-      "ticker": "TATASTEEL.NS",
-      "display": "TATASTEEL",
-      "type": "Dividend",
-      "date": "2026-06-12",
-      "detail": "\u20b94.00/share",
-      "in_portfolio": false
-    },
-    {
-      "ticker": "INFY.NS",
-      "display": "INFY",
-      "type": "Dividend",
-      "date": "2026-06-10",
-      "detail": "\u20b925.00/share",
-      "in_portfolio": false
     }
   ]
 }
