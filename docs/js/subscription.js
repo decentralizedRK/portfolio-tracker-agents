@@ -14,20 +14,34 @@ const PLANS = {
   lifetime: { label: 'Lifetime', price: '₹4,999', sub: 'One-time payment', tag: 'Best Value' },
 };
 
+// ── Owner accounts (always bypass paywall) ───────────────────────────────────
+const OWNER_EMAILS = ['photosrk127@gmail.com'];
+
 // ── State ─────────────────────────────────────────────────────────────────────
 let _subscription = null;   // raw Firestore subscription object
 
 // ── Subscription check ────────────────────────────────────────────────────────
 
+function _isOwner() {
+  const user = typeof firebase !== 'undefined' ? firebase.auth().currentUser : null;
+  return user && OWNER_EMAILS.includes(user.email);
+}
+
 function isSubscriptionActive(sub) {
+  if (_isOwner()) return true;
   if (!sub || sub.status !== 'active') return false;
   if (!sub.current_period_end) return false;
-  // Firestore Timestamp → Date
   const end = sub.current_period_end.toDate ? sub.current_period_end.toDate() : new Date(sub.current_period_end);
   return end > new Date();
 }
 
 async function checkAndApplySubscription(uid) {
+  if (_isOwner()) {
+    _subscription = { status: 'active', plan: 'lifetime' };
+    _showDashboard();
+    _updateSubBadge();
+    return true;
+  }
   try {
     _subscription = await getSubscription(uid);
   } catch (_) {
