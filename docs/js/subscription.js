@@ -6,7 +6,7 @@
 //   RAZORPAY_KEY_ID: Your Razorpay Key ID (starts with rzp_live_ or rzp_test_)
 //
 const FUNCTIONS_BASE  = 'https://us-central1-portfolio-tracer.cloudfunctions.net';
-const RAZORPAY_KEY_ID = 'rzp_test_T6l277hK4u5E9S';
+const RAZORPAY_KEY_ID = 'rzp_test_TIzT0yMHuNwAqo';
 
 const PLANS = {
   monthly:  { label: 'Monthly',  price: '₹199',  sub: '₹199 / month',     tag: '' },
