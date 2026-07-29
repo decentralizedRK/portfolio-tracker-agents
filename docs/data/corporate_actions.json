@@ -1,6 +1,6 @@
 {
-  "date": "28 Jul 2026",
-  "timestamp": "2026-07-28T22:18:12.384459+05:30",
+  "date": "29 Jul 2026",
+  "timestamp": "2026-07-29T11:34:46.352311+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -27,10 +27,6 @@
     "CAMS.NS": {
       "dividends": [
         {
-          "date": "2026-01-30",
-          "amount": 3.5
-        },
-        {
           "date": "2026-07-10",
           "amount": 4.0
         }
@@ -45,23 +41,13 @@
       "error": null
     },
     "CGPOWER.NS": {
-      "dividends": [
-        {
-          "date": "2026-01-30",
-          "amount": 1.3
-        }
-      ],
+      "dividends": [],
       "splits": [],
       "calendar": {},
       "error": null
     },
     "COFORGE.NS": {
-      "dividends": [
-        {
-          "date": "2026-01-30",
-          "amount": 4.0
-        }
-      ],
+      "dividends": [],
       "splits": [],
       "calendar": {},
       "error": null
@@ -217,7 +203,12 @@
       "error": null
     },
     "SHAKTIPUMP.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-07-29",
+          "amount": 1.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -437,6 +428,14 @@
   },
   "highlights": [
     {
+      "ticker": "SHAKTIPUMP.NS",
+      "display": "SHAKTIPUMP",
+      "type": "Dividend",
+      "date": "2026-07-29",
+      "detail": "\u20b91.00/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "TATACAP.NS",
       "display": "TATACAP",
       "type": "Dividend",
@@ -546,14 +545,6 @@
       "type": "Dividend",
       "date": "2026-06-12",
       "detail": "\u20b91.30/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "TMCV.NS",
-      "display": "TMCV",
-      "type": "Dividend",
-      "date": "2026-06-12",
-      "detail": "\u20b94.00/share",
       "in_portfolio": true
     }
   ]
