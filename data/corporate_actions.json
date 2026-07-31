@@ -1,6 +1,6 @@
 {
-  "date": "30 Jul 2026",
-  "timestamp": "2026-07-30T11:20:23.927379+05:30",
+  "date": "31 Jul 2026",
+  "timestamp": "2026-07-31T11:50:09.588069+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -47,7 +47,12 @@
       "error": null
     },
     "COFORGE.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-07-31",
+          "amount": 4.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -196,6 +201,10 @@
         {
           "date": "2026-03-20",
           "amount": 3.2
+        },
+        {
+          "date": "2026-07-31",
+          "amount": 4.25
         }
       ],
       "splits": [],
@@ -428,6 +437,22 @@
   },
   "highlights": [
     {
+      "ticker": "COFORGE.NS",
+      "display": "COFORGE",
+      "type": "Dividend",
+      "date": "2026-07-31",
+      "detail": "\u20b94.00/share",
+      "in_portfolio": true
+    },
+    {
+      "ticker": "RECLTD.NS",
+      "display": "RECLTD",
+      "type": "Dividend",
+      "date": "2026-07-31",
+      "detail": "\u20b94.25/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "SHAKTIPUMP.NS",
       "display": "SHAKTIPUMP",
       "type": "Dividend",
@@ -530,22 +555,6 @@
       "date": "2026-06-19",
       "detail": "\u20b913.00/share",
       "in_portfolio": false
-    },
-    {
-      "ticker": "POLYCAB.NS",
-      "display": "POLYCAB",
-      "type": "Dividend",
-      "date": "2026-06-19",
-      "detail": "\u20b947.00/share",
-      "in_portfolio": false
-    },
-    {
-      "ticker": "ADANIENT.NS",
-      "display": "ADANIENT",
-      "type": "Dividend",
-      "date": "2026-06-12",
-      "detail": "\u20b91.30/share",
-      "in_portfolio": true
     }
   ]
 }
