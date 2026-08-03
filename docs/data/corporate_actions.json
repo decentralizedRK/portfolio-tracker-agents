@@ -1,6 +1,6 @@
 {
-  "date": "31 Jul 2026",
-  "timestamp": "2026-07-31T11:50:09.588069+05:30",
+  "date": "03 Aug 2026",
+  "timestamp": "2026-08-03T12:01:01.597801+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -50,6 +50,10 @@
       "dividends": [
         {
           "date": "2026-07-31",
+          "amount": 4.0
+        },
+        {
+          "date": "2026-08-03",
           "amount": 4.0
         }
       ],
@@ -105,10 +109,6 @@
     },
     "IEX.NS": {
       "dividends": [
-        {
-          "date": "2026-02-04",
-          "amount": 1.5
-        },
         {
           "date": "2026-05-15",
           "amount": 2.0
@@ -303,7 +303,12 @@
       "error": null
     },
     "ICICIBANK.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-08-03",
+          "amount": 12.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -440,6 +445,22 @@
       "ticker": "COFORGE.NS",
       "display": "COFORGE",
       "type": "Dividend",
+      "date": "2026-08-03",
+      "detail": "\u20b94.00/share",
+      "in_portfolio": true
+    },
+    {
+      "ticker": "ICICIBANK.NS",
+      "display": "ICICIBANK",
+      "type": "Dividend",
+      "date": "2026-08-03",
+      "detail": "\u20b912.00/share",
+      "in_portfolio": false
+    },
+    {
+      "ticker": "COFORGE.NS",
+      "display": "COFORGE",
+      "type": "Dividend",
       "date": "2026-07-31",
       "detail": "\u20b94.00/share",
       "in_portfolio": true
@@ -538,22 +559,6 @@
       "type": "Dividend",
       "date": "2026-06-23",
       "detail": "\u20b922.00/share",
-      "in_portfolio": false
-    },
-    {
-      "ticker": "TMPV.NS",
-      "display": "TMPV",
-      "type": "Dividend",
-      "date": "2026-06-19",
-      "detail": "\u20b93.00/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "HDFCBANK.NS",
-      "display": "HDFCBANK",
-      "type": "Dividend",
-      "date": "2026-06-19",
-      "detail": "\u20b913.00/share",
       "in_portfolio": false
     }
   ]
