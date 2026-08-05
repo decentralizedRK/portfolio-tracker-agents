@@ -1,6 +1,6 @@
 {
-  "date": "04 Aug 2026",
-  "timestamp": "2026-08-04T11:24:53.562942+05:30",
+  "date": "05 Aug 2026",
+  "timestamp": "2026-08-05T11:22:20.939141+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -195,10 +195,6 @@
     "RECLTD.NS": {
       "dividends": [
         {
-          "date": "2026-02-06",
-          "amount": 4.6
-        },
-        {
           "date": "2026-03-20",
           "amount": 3.2
         },
@@ -247,10 +243,6 @@
     },
     "CONTROLPR.NS": {
       "dividends": [
-        {
-          "date": "2026-02-06",
-          "amount": 4.0
-        },
         {
           "date": "2026-07-10",
           "amount": 6.0
@@ -390,12 +382,7 @@
       "error": null
     },
     "NTPC.NS": {
-      "dividends": [
-        {
-          "date": "2026-02-06",
-          "amount": 2.75
-        }
-      ],
+      "dividends": [],
       "splits": [],
       "calendar": {},
       "error": null
