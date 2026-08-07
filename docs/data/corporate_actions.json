@@ -1,6 +1,6 @@
 {
-  "date": "06 Aug 2026",
-  "timestamp": "2026-08-06T11:26:17.390652+05:30",
+  "date": "07 Aug 2026",
+  "timestamp": "2026-08-07T10:29:45.647119+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -102,7 +102,12 @@
       "error": null
     },
     "IDFCFIRSTB.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-08-07",
+          "amount": 0.25
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -429,6 +434,14 @@
   },
   "highlights": [
     {
+      "ticker": "IDFCFIRSTB.NS",
+      "display": "IDFCFIRSTB",
+      "type": "Dividend",
+      "date": "2026-08-07",
+      "detail": "\u20b90.25/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "COFORGE.NS",
       "display": "COFORGE",
       "type": "Dividend",
@@ -539,14 +552,6 @@
       "date": "2026-06-29",
       "detail": "\u20b91.00/share",
       "in_portfolio": true
-    },
-    {
-      "ticker": "HINDUNILVR.NS",
-      "display": "HINDUNILVR",
-      "type": "Dividend",
-      "date": "2026-06-23",
-      "detail": "\u20b922.00/share",
-      "in_portfolio": false
     }
   ]
 }
