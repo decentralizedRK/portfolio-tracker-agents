@@ -1,6 +1,6 @@
 {
-  "date": "07 Aug 2026",
-  "timestamp": "2026-08-07T10:29:45.647119+05:30",
+  "date": "10 Aug 2026",
+  "timestamp": "2026-08-10T10:15:48.798802+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -404,12 +404,7 @@
       "error": null
     },
     "RVNL.NS": {
-      "dividends": [
-        {
-          "date": "2026-02-11",
-          "amount": 1.0
-        }
-      ],
+      "dividends": [],
       "splits": [],
       "calendar": {},
       "error": null
