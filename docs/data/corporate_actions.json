@@ -1,6 +1,6 @@
 {
-  "date": "11 Aug 2026",
-  "timestamp": "2026-08-11T09:56:24.699595+05:30",
+  "date": "12 Aug 2026",
+  "timestamp": "2026-08-12T10:24:33.616452+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -29,6 +29,10 @@
         {
           "date": "2026-07-10",
           "amount": 4.0
+        },
+        {
+          "date": "2026-08-12",
+          "amount": 2.5
         }
       ],
       "splits": [
@@ -429,6 +433,14 @@
   },
   "highlights": [
     {
+      "ticker": "CAMS.NS",
+      "display": "CAMS",
+      "type": "Dividend",
+      "date": "2026-08-12",
+      "detail": "\u20b92.50/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "IDFCFIRSTB.NS",
       "display": "IDFCFIRSTB",
       "type": "Dividend",
@@ -539,14 +551,6 @@
       "date": "2026-06-30",
       "detail": "\u20b96.00/share",
       "in_portfolio": false
-    },
-    {
-      "ticker": "RAYMONDLSL.NS",
-      "display": "RAYMONDLSL",
-      "type": "Dividend",
-      "date": "2026-06-29",
-      "detail": "\u20b91.00/share",
-      "in_portfolio": true
     }
   ]
 }
