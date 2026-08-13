@@ -1,6 +1,6 @@
 {
-  "date": "12 Aug 2026",
-  "timestamp": "2026-08-12T10:24:33.616452+05:30",
+  "date": "13 Aug 2026",
+  "timestamp": "2026-08-13T10:28:52.140914+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -18,6 +18,10 @@
         {
           "date": "2026-03-06",
           "amount": 1.95
+        },
+        {
+          "date": "2026-08-13",
+          "amount": 0.55
         }
       ],
       "splits": [],
@@ -433,6 +437,14 @@
   },
   "highlights": [
     {
+      "ticker": "BEL.NS",
+      "display": "BEL",
+      "type": "Dividend",
+      "date": "2026-08-13",
+      "detail": "\u20b90.55/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "CAMS.NS",
       "display": "CAMS",
       "type": "Dividend",
@@ -543,14 +555,6 @@
       "date": "2026-07-10",
       "detail": "\u20b96.00/share",
       "in_portfolio": true
-    },
-    {
-      "ticker": "BAJFINANCE.NS",
-      "display": "BAJFINANCE",
-      "type": "Dividend",
-      "date": "2026-06-30",
-      "detail": "\u20b96.00/share",
-      "in_portfolio": false
     }
   ]
 }
