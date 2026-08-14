@@ -1,6 +1,6 @@
 {
-  "date": "13 Aug 2026",
-  "timestamp": "2026-08-13T10:28:52.140914+05:30",
+  "date": "14 Aug 2026",
+  "timestamp": "2026-08-14T10:25:59.865842+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -214,6 +214,10 @@
         {
           "date": "2026-07-31",
           "amount": 4.25
+        },
+        {
+          "date": "2026-08-14",
+          "amount": 1.55
         }
       ],
       "splits": [],
@@ -437,6 +441,14 @@
   },
   "highlights": [
     {
+      "ticker": "RECLTD.NS",
+      "display": "RECLTD",
+      "type": "Dividend",
+      "date": "2026-08-14",
+      "detail": "\u20b91.55/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "BEL.NS",
       "display": "BEL",
       "type": "Dividend",
@@ -546,14 +558,6 @@
       "type": "Dividend",
       "date": "2026-07-10",
       "detail": "\u20b91.50/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "CONTROLPR.NS",
-      "display": "CONTROLPR",
-      "type": "Dividend",
-      "date": "2026-07-10",
-      "detail": "\u20b96.00/share",
       "in_portfolio": true
     }
   ]
