@@ -1,6 +1,6 @@
 {
-  "date": "17 Aug 2026",
-  "timestamp": "2026-08-17T09:26:03.164752+05:30",
+  "date": "18 Aug 2026",
+  "timestamp": "2026-08-18T09:20:29.040945+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -421,7 +421,12 @@
       "error": null
     },
     "RVNL.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-08-18",
+          "amount": 0.71
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -445,6 +450,14 @@
     }
   },
   "highlights": [
+    {
+      "ticker": "RVNL.NS",
+      "display": "RVNL",
+      "type": "Dividend",
+      "date": "2026-08-18",
+      "detail": "\u20b90.71/share",
+      "in_portfolio": false
+    },
     {
       "ticker": "BANDHANBNK.NS",
       "display": "BANDHANBNK",
@@ -556,14 +569,6 @@
       "date": "2026-07-15",
       "detail": "\u20b912.00/share",
       "in_portfolio": false
-    },
-    {
-      "ticker": "CAMS.NS",
-      "display": "CAMS",
-      "type": "Dividend",
-      "date": "2026-07-10",
-      "detail": "\u20b94.00/share",
-      "in_portfolio": true
     }
   ]
 }
