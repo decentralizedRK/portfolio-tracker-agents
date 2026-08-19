@@ -1,13 +1,13 @@
 {
-  "date": "18 Aug 2026",
-  "timestamp": "2026-08-18T08:53:40.341626+05:30",
+  "date": "19 Aug 2026",
+  "timestamp": "2026-08-19T08:55:27.330018+05:30",
   "holding_news": {
     "BEL.NS": [
       {
         "title": "Top 30 Stocks for New Investors in 2026 - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOdXc3YnppbkVRc1M2ZmotTUFZcFQtNzg5WGt5aW1NYW1MSURkaXVRRlZCbWZMUnJpX2FCLWlWOXBTV09CRngtVHRHcGR3LW5HNHg2SWV5d1pZenFlQmZkdmxhVTE3eWJIcllWaUNUVWVhaEtodllzMV9wczhTODRkRS1LaDdKaWo0aFJReklvX0RZaUE?oc=5",
-        "age_h": 20.5
+        "age_h": 44.6
       }
     ],
     "CGPOWER.NS": [
@@ -15,27 +15,29 @@
         "title": "POWERICA Share Price Today - Powerica Ltd. Stock Price Live NSE/BSE - Univest",
         "publisher": "Univest",
         "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1yTGhyN2JDSlVySzdhN0lkTGpfdkE4cHQwTFl1Z3hLcVZVRnZNLUhyb1N2RGpkU3o3YkVoVEZGRld5azBQYUEwQmlSR1p4ZWFCc0F6VUVMZEVIN3Nqbm1LXy1yRHp5QUhNX0w3WDQzRmVZXzg?oc=5",
-        "age_h": 48.4
+        "age_h": 72.5
+      }
+    ],
+    "DATAPATTNS.NS": [
+      {
+        "title": "Data Patterns Share Price Today: Stock Rises 3.11% - Univest",
+        "publisher": "Univest",
+        "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNOXlKSUM1NEhLajJNcTBZV3A4Z3BtMlI4ZUc2alQzTjl3enRGMURya0ZLWW1BN1RaR1FWaUZLM0hGOUk2a1JUMDVIU0tWR1ZLV01UelppQWFUY2I1QVZDVldsTkgtZTFsTFh0clJZWFdRT2t3X09VVzlzR2p6S25iclZvZ2FuR3c?oc=5",
+        "age_h": 19.4
       }
     ],
     "DELHIVERY.NS": [
       {
-        "title": "DELHIVERY Share Price Today - Delhivery on NSE/BSE - scanx.trade",
-        "publisher": "scanx.trade",
-        "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9EaldXR1hNYnV3V1g3WGxtSC1PMXRSVVNYMFktWlRPZHZkM0hQVGhSWEdYRDJLWjc3Nkh5VFgyLW5UeFczYkp1aHIxTXVfWWNmdFpB?oc=5",
-        "age_h": 107.7
-      },
-      {
         "title": "Top 10 52-Week Low Shares To Buy In India August 2026 - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9RSERnMHJOMFZWbERwRE04WjRzYjNoYUxBQVJONTZSNGJsX01zRlhkUlN2ZlE2aEdCcDBRTm8xM09tajQ5Z1lvWlZxWUNEdWVxSFI4NWtURkg0UWNQaXBjVHBhSUtjYUtzWlZOZDFtc2czLXUyTnpoQw?oc=5",
-        "age_h": 68.5
+        "age_h": 92.6
       },
       {
-        "title": "Allcargo Global Ltd Share Price Today,, AGL Share Price NSE, BSE - Business Today",
-        "publisher": "Business Today",
+        "title": "Allcargo Global Ltd Share Price Today,, AGL Share Price NSE, BSE - businesstoday.in",
+        "publisher": "businesstoday.in",
         "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9BQm9IVzBlNUZFT0M4clp0RHFJZ0htSkJCV0dtcTFMZDhocXF1SjljVWZuNDVrTFJ3Rkg1eVdxeUdnZE1mN0JXNlh2VlFkd1N1RTJTMkdHNTI4MExvQjZ4N1NuR09tUEZrNXRpdzk0RHZ0VnliWXd0d01peWdOVWs?oc=5",
-        "age_h": 12.7
+        "age_h": 36.7
       }
     ],
     "EIDPARRY.NS": [
@@ -43,23 +45,31 @@
         "title": "9 Best Ethanol Stocks In India For August 2026 - Top Picks For Investors - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBDME15RTBjdkxxQTE0VUdQQXRpMkU4cDFyQk9XcDFQVGFpZzJpY3diT0kxYVhpOHQySVFHUkZueUxHVGxlM2pMUV9hdlFFbGtuSXJTMGpKd3VpX1RodXlFZFBhZGhvb0tsc1NZR0oxOA?oc=5",
-        "age_h": 44.5
+        "age_h": 68.6
       }
     ],
     "IDFCFIRSTB.NS": [
       {
-        "title": "HDFC Bank Ltd Share Price Today,, HDFCBANK Share Price NSE, BSE - Business Today",
-        "publisher": "Business Today",
+        "title": "HDFC Bank Ltd Share Price Today,, HDFCBANK Share Price NSE, BSE - businesstoday.in",
+        "publisher": "businesstoday.in",
         "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQYl9PSEdSWjNuX0l2V1g2UGEydHExQ2lVREdwNzB4dUthSDV6Y0FCYVdXNHVPRG51dXFWbXQ4RjAwSnlFZGlhOTNYWUZpaVJfaHM4ZzFEOUlISGNDVHg2OWFzN1B0eDd1Wml1NWI4U2tUVGdaMjNYME1HNGZVVmZoRHFyYw?oc=5",
-        "age_h": 92.4
+        "age_h": 116.4
       }
     ],
     "OLAELEC.NS": [
       {
-        "title": "Ola Electric Mobilit Share Price Today, Ola Electric Mobilit Stock Price Live NSE/BSE Updates - The Economic Times",
-        "publisher": "The Economic Times",
-        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOOGpjQk9wZWd1QWswMXowOElqQW5KLXVjNjd4MFZqQ29DU29DSU4taEpuejc5R0NXV2xVcG05Y0VvdFNGaXRQOVZndF9vTkY5SEZwc2JCWUFBajNFQU9obk54OEZ4X0xuSE5jel92cEp4WGp2NWZZcjlkTzYxZFpBbDVUZF9ZMnJPRldNN2wtT1RIUTQyZEE?oc=5",
-        "age_h": 101.4
+        "title": "Ola Electric Share Price - Live NSE: OLAELEC Stock Price & Chart - upstox.com",
+        "publisher": "upstox.com",
+        "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBOU0JTV2UwRHZFbVJLVG1aZk9XSlNxVTViNXoxTGNqSUE3X0IwOXRzdHI1emFxNWQtTkNGOE5RSVRxd1V2RGhFTTBCaWtabVQ4YmRPVFZ2N0NKZ2Y0ZjVaNGk5bWtIbnREb0lvdTdlNEMzQQ?oc=5",
+        "age_h": 20.4
+      }
+    ],
+    "SPMLINFRA.NS": [
+      {
+        "title": "SPML Infra Share Price Target 2027 to 2030: Analyst Outlook - Univest",
+        "publisher": "Univest",
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9jT291Yk1IZDVqSTl1NDJyQjhGUFc2WHQ1WUZtcUhwVEpvWFZ1Y0ZpN0JMTGNsaHU5SmU0WlVMSzhIY3VnRkd5TXRNaGdMZks3WlRUeTFvVjhxRzZxeExkcGlxbGExN2tpSW0xRFpVcC1udWtMOFhkTA?oc=5",
+        "age_h": 17.9
       }
     ],
     "TMCV.NS": [
@@ -67,35 +77,39 @@
         "title": "Top 10 Stocks For Intraday Trading In India August 2026 - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNWEN1RjR5ZW5CVkszN1FLRkpMZW1PXzRUQU5SN1puUnoxX29uS0ExT1J6QjFMMlZCZ0M4ak02WWpuNUJUZEhFZWlxTjE4ZlhuLVgxakhGdkNKR3EzUndrRVRHZmpvSnM0MU5SelhsLXVNWkJsaXdTV2dqcTd2TERsY3VXWFZYSmRMMnU4TDM5WlN6Qnd2bU84ZQ?oc=5",
-        "age_h": 20.5
-      },
+        "age_h": 44.6
+      }
+    ],
+    "RECLTD.NS": [
       {
-        "title": "Tata Motors Share Price Today Live NSE/BSE - Stock Price, News and Chart Updates 18 August 2026 - ET Now",
-        "publisher": "ET Now",
-        "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMWc4czlFSkxfTVY3U1pPTk1iUzNWdVZ6QmNYczIwLW0xeXRsTGU4VjBUYUxRYVNmdHNsMko4d0NnSjdaSnFHaUxaVGxVa2ktUGlubzhxcEI5TGVPRmZRSUoxX2NKN0doeEcwbnVNWUN5SnlWM0h2MDBuSnhfeV9VbEZaUGY2SklhVmlCTFRlUQ?oc=5",
-        "age_h": 92.4
+        "title": "REC Limited successfully lists two bonds on NSE and BSE worth \u20b95,375 crores - upstox.com",
+        "publisher": "upstox.com",
+        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNaU96cHlvcmpwdmY4eWZtNGZZM0Q5V1dyQlpfdzRCWHFRT3cwNU5XMG1lYVlYaWs3endDUUpUdm8zc3Mxa3dUVVAwRW9sRUhaMnVKNDA0WUpjR0YxTFd4RGdUclhBZ3JMRzNDT01Jby11aG16ZGhhUnF1T3NFSHhfa0F6c09vZ0JmNEwtN3lYbTBFLVdBeGYxbWRaSkxuWVVCNUdjZUhSR2g0ZXRnX2VRbkdTYw?oc=5",
+        "age_h": 116.4
+      }
+    ],
+    "TATACAP.NS": [
+      {
+        "title": "Stocks To Buy or Sell Today, August 19, 2026: LIC, Tata Capital and Birlasoft Among Shares That May Remain - LatestLY",
+        "publisher": "LatestLY",
+        "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPTW90X2JsOTRTUGN0cFhWaHEyM1FsYmlEYkxuczI2allseU5SYXh0bi1hQWJmaDFya3UwN0Y4Y0RxekVGZEhBX3BMVkVIOVc3bUFxVURYb2gxQl93WkhaMldlVGRfcnJyZzFmWmJJUFlFT29HZmtTbG1PZGZzOHVmZG9wMml3Wk02NmFNN2hRcXV6UFBOaENzaW15ZVc3a0xub1c0WFozbmNwMllUY3JUTlNEWGJHY1JPa2dwM1ZzZjBhcGJ5bW5Bc0x4NmFKNllNSDZmV0l3QTFHUjRIN3RWeU9hankwR3hBSEdudFZCT1RReEJ1RHB1VjhUSURzbDJK0gGGAkFVX3lxTE9SM3JPX1ZnQ2RTTTJZYzY3SWpVODMyMXdZc01KbGdYVG9jUVhSakhWS3BjS05KcEVKSENHaXVrQUNNWlNWUlRPTmV2SzZYMDZiN2o3MWZQYjNfMnVlZlNDZmdnUjJWb2lmWXBNR0hxY0ZuVUR1aS1tbmlyUjZNczVPeWFKTmhMcjYtcHNiSF9LeWJlSW5rSmVMc1EwNVItWlZuc1ZVSHRnRjQyZVpIckUyd0JOSmhxRmhJMGNEX3BvS05kSi1Hb0lJMnlHSWVKTk1lT3RBSFItSHI3SnhtMUlrOGwxeHV2Z0VhRnRyX2I3LTI4OXFGcVMxX3J6MEVvUEJ1QlQ3V2c?oc=5",
+        "age_h": 0.9
       }
     ],
     "BANDHANBNK.NS": [
       {
-        "title": "Bandhan Bank Ltd Share Price Today,, BANDHANBNK Share Price NSE, BSE - Business Today",
-        "publisher": "Business Today",
+        "title": "Bandhan Bank Ltd Share Price Today,, BANDHANBNK Share Price NSE, BSE - businesstoday.in",
+        "publisher": "businesstoday.in",
         "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNTTZNeHZWVWJGXzRqTzBqbElEcHF4SnpheC1WMDNZR3M1ZER2ai1fdlhuSERRM0RWd1Fkc0FfRUJ2OGFNTnRTVlZaYzJSbGN5V1BfdWpRSTlsQXR3bEwwV2ozSmJGMmFoaUdhOFZzN3hsbVo5cktYcm5oRy1icm9EbVduUU00RWJCc0E?oc=5",
-        "age_h": 92.4
+        "age_h": 116.4
       }
     ],
     "CONTROLPR.NS": [
       {
-        "title": "Netweb Technologies India Ltd (NETWEB) Share Price - Business Today",
-        "publisher": "Business Today",
-        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVGQ4azE0YnZLVUpSd3NYeHVHb0xMX1d6Zk1mTndvOXlKVnhCWTVrSmNsLUxIbEswZ2k5RXdxUl82Vml1a0RXWmFuRXV2X0FIYnJVcUNJRnFreVBrSHRYZGxYMXk4eFMxZUdFZmNMelVXaWdFc2xhcEt2RXVLWVdkTVNHcC1Hb1doRHJDRzg1Z1pHZjh3elE?oc=5",
-        "age_h": 92.4
-      },
-      {
         "title": "SELECTRIC Share Price Today - Schneider Electric President S Stock Price Live NSE/BSE - Univest",
         "publisher": "Univest",
         "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMGMxRzhSNTl5R1AyS01FVThDSHZTR2V1TlVmR0oxbjljZnllRFFsaHBCZGRrb2JNdGotNzRsWnhYYzB1Y0g5NS1rdlV3OU10c2duSmRyc21OZEx4eUFOaDlUdTEtb25yS1BIX3VIVjlQa2t6eTVPZTZJUlhwY05jdnR6b213TndsaTBFcQ?oc=5",
-        "age_h": 44.4
+        "age_h": 68.4
       }
     ],
     "MOSCHIP.NS": [
@@ -103,31 +117,63 @@
         "title": "Top 6 Semiconductor Stocks In India To Invest In August 2026 - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1xOFhuZnFYcWNxdFVkbTdpbDdGSWtwcDVBSTZBbWpFYWdZVHBDVFRXOWtFb25GMnJwUjc3aFN3djc3TWNad190YzctNFpwR2FqMkFaU2F1c1hiZ1piR2h3cUNFNGZMM20xVGtOM3ZqVGVudElTRzM0?oc=5",
-        "age_h": 20.5
+        "age_h": 44.6
       },
       {
-        "title": "Netweb Technologies India Ltd (NETWEB) Share Price - Business Today",
-        "publisher": "Business Today",
-        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVGQ4azE0YnZLVUpSd3NYeHVHb0xMX1d6Zk1mTndvOXlKVnhCWTVrSmNsLUxIbEswZ2k5RXdxUl82Vml1a0RXWmFuRXV2X0FIYnJVcUNJRnFreVBrSHRYZGxYMXk4eFMxZUdFZmNMelVXaWdFc2xhcEt2RXVLWVdkTVNHcC1Hb1doRHJDRzg1Z1pHZjh3elE?oc=5",
-        "age_h": 92.4
+        "title": "CG Power, Kaynes, Moschip Tech: Chip stocks rally as PM bets big on India\u2019s semiconductor push - upstox.com",
+        "publisher": "upstox.com",
+        "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPNDJOd1V1c2xyanktMlJZNkpsb2NYQnNlb2lDV2xrYWhScnE2WHJhT0FTVzhYVmk0M0hpOWROazZ4X0ZwVUF5SjFsREdCMDVlQkl5dXFlUTVOUXFZYXdjd2ptZ2V0UGpFLU5ZYXFKblN0eDY3OXBGQjFCNmFiLWxtS0dKbjd3cW9FaXFSVk8xOFprUUlFdFRTTmNveTJ0cU9sb2ZHMkxtYVhPb0tVdURTT21KaWNmTzRGREtuVkRvREdvVmgwLXMxd0NZRmU1OTlHLXhtRXZjcUtUc2h4dUlEVmpsV2U5am14QlpvcHVlamdqb29v?oc=5",
+        "age_h": 48.3
+      },
+      {
+        "title": "Tata Elxsi Share Price - Live NSE: TATAELXSI Stock Price & Chart - upstox.com",
+        "publisher": "upstox.com",
+        "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBHajZHTVhxYlMwc2xwUkJsalBoeDktWG5Pc3huX2xvaHBGVkpwT041Ry1Uel9xdnFlclVSXzA4ZEhQc1M5bmxUZEIydlE2Q3ZsQ3ZLMXhyT3g4X0FnRjY5ZWxSSzNLX2hK?oc=5",
+        "age_h": 18.4
       }
     ],
     "SWIGGY.NS": [
       {
+        "title": "Swiggy Share Price - upstox.com",
+        "publisher": "upstox.com",
+        "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1kSTBYUzVoYkx0cXI1VWV4cmxTaFZNRGN2SUVlaWpaRjFxdXFCUzFoZ0NGY0w4SlY0a2VJS0FPNzZveGQzWHZFdXZOaG5BaS1kNDF5OXFLR2g3eXFFQUlWTHFLMA?oc=5",
+        "age_h": 19.6
+      },
+      {
+        "title": "Swiggy IPO receives bid worth over \u20b922,400 crore, issue booked 3.59 times; Check allotment and listing date - upstox.com",
+        "publisher": "upstox.com",
+        "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPVGdvb3owT3oyNGdlTDdta0w5cUN0aWQtbTluYWNxcW12WWtMTWpsZVA0Q3cweWhLcjYyT050ZlM2LWZlY0w1dWVxQktkb2VQa1VIc0g0RzM5TWJyT2NFd0xNODR3aGJHWDE2NmVJazUxbFNjd0VtOTFHTEhYU3J0SDFfVzV6akUyVUtNcTV3aklaS1IxWGxOX0gxRmlaVERhTnh1OUx3eHVHdFh4b2NzVUZMR00wMHpKVldPWTZyVTFxN2NOWEpYeS1zem8tRkM5VXNOY0ZSUDB3VnJiMDZBVUJTUnVFLVhhTkE?oc=5",
+        "age_h": 116.4
+      },
+      {
         "title": "Stocks To Buy or Sell Today, August 18, 2026: Hyundai, Swiggy and Urban Company Among Shares That May - LatestLY",
         "publisher": "LatestLY",
-        "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOellQVnFCNzBzTWxzSEo0aGtuZTR4TTRIak42cmxaa2NqakpkNWtBdmZyY3BBZXo5dzR6bWpjN2NScUIzc1hMY3RxaktEZndyUEZ1dWV5MmFwY1JGeldQYVdTYy1odGR5NTRwNFFPaHhlWHRUZ3FqYUNmRng1ZktuUldDZUxadktSa2wxWGl2MEtrUnNjcDhGenpWTW9yRmlhcHVWT21wUWUxUV9mNXpnMHhSbTRHdWl5cUM1NmFGVXBEX25yWnRXa1VRUmN6b2VPWjA5SFZvd191eFlJUy1TQUpWSlR3TmlmZzg2Yy1PcE0wLXlTb0xFYng1UGs5MjhJ0gGGAkFVX3lxTE15Ym5WT0h1SVNHbG9GemlaaTZNN2xfRXg0NWQxV2otdmVPb0tPZUx0RE5GYzU1TVRjczFOOExDbWtvSkViSnhfTmJyMjg5eklWTzhhV3lhamV3NFY4Z0NreFhlY0pfdlNIWTdsUUR3Y0hlOHJJUF93NmJqZ2dKUFJDZ0o4UDV6QUlxNmRrU2Z2ZWRDTklCdDNJdlJxRExGM2xyRDBMTENiS2pnNW9tbk5tZ3JPNWVTTVpOdXBfcUR3d3RoRTRQRWFucWtBS29OSFlEZ1hjTHY0bDJUUHJ1LXRYRjZqQUtHUVlQLUQzR0QycFVXUC1GV1RoUWY3cm0zU1ZsRm1tdnc?oc=5",
-        "age_h": 0.9
+        "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNeWJuVk9IdUlTR2xvRnppWmk2TTdsX0V4NDVkMVdqLXZlT29LT2VMdERORmM1NU1UY3MxTjhMQ21rb0pFYkp4X05icjI4OXpJVk84YVd5YWpldzRWOGdDa3hYZWNKX3ZTSFk3bFFEd2NIZThySVBfdzZiamdnSlBSQ2dKOFA1ekFJcTZka1NmdmVkQ05JQnQzSXZScURMRjNsckQwTExDYktqZzVvbW5ObWdyTzVlU01aTnVwX3FEd3d0aEU0UEVhbnFrQUtvTkhZRGdYY0x2NGwyVFBydS10WEY2akFLR1FZUC1EM0dEMnBVV1AtRldUaFFmN3JtM1NWbEZtbXZ30gGGAkFVX3lxTE15Ym5WT0h1SVNHbG9GemlaaTZNN2xfRXg0NWQxV2otdmVPb0tPZUx0RE5GYzU1TVRjczFOOExDbWtvSkViSnhfTmJyMjg5eklWTzhhV3lhamV3NFY4Z0NreFhlY0pfdlNIWTdsUUR3Y0hlOHJJUF93NmJqZ2dKUFJDZ0o4UDV6QUlxNmRrU2Z2ZWRDTklCdDNJdlJxRExGM2xyRDBMTENiS2pnNW9tbk5tZ3JPNWVTTVpOdXBfcUR3d3RoRTRQRWFucWtBS29OSFlEZ1hjTHY0bDJUUHJ1LXRYRjZqQUtHUVlQLUQzR0QycFVXUC1GV1RoUWY3cm0zU1ZsRm1tdnc?oc=5",
+        "age_h": 24.9
       }
     ]
   },
   "momentum_news": {
+    "POLYCAB.NS": [
+      {
+        "title": "Laser Power & Infra Ltd Share Price Today,, LASERPOWER Share Price NSE, BSE - businesstoday.in",
+        "publisher": "businesstoday.in",
+        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSlFTaGgxd29JS1hnbC02QWUyVkV1azhVUTRRZk52Y1h3Z0NRYU41WDhtYTg0M256bHF6QndKQU1VekVKbXN2ZTJlTnFFTVdfejBERXJueXFzQW11MG03OHNkVGY0S0J3MUNVV2xxZmUwc2g0SUltRzdlNXBSb1FhN2ZlWVhPQ3NKci03VFNXTzY?oc=5",
+        "age_h": 29.9
+      }
+    ],
     "RVNL.NS": [
       {
-        "title": "RVNL, IRCTC, IRFC: How railway PSU stocks are faring amid weak market; what lies ahead? - Upstox",
-        "publisher": "Upstox",
+        "title": "RVNL, IRCTC, IRFC: How railway PSU stocks are faring amid weak market; what lies ahead? - upstox.com",
+        "publisher": "upstox.com",
         "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOYTBST3VVYmZUbng4N2FfTkhWMGdjZHhqNHdmZkNyVTNERWdkNXpQYnZLaWhpcGYwTUlUZEZiaTBtQUpnZ21PcVZ5S3hwWHBCVllfazlYWF9xU2JKMFE5eFRydE5VSnNFNVdia2FFSFZaeVcta3YwdzV1N3prWXhxallRdGxzdnhJbjZtQWQwVWttUkJzQVhQdHdBWUFabW9HWkNUU2FHRU8yZ0lnUVpKRnBEUjJ6NG54bzE0RDQ5bm9YTUZqd0ZKaVBUWFEyRktLS3lWaXRDQm0?oc=5",
-        "age_h": 92.9
+        "age_h": 116.9
+      },
+      {
+        "title": "Railway sector stocks fall today, August 18: Texmaco Rail down 1.67%, RVNL drops 1.26%, RITES falls 1.23% - Business Upturn",
+        "publisher": "Business Upturn",
+        "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNcmlyM3dPTkE3YnlLVDhZclZKYWtWOGJKNHhrUFdRbXRDWExVR1pJV19wNVVVV1JNTzV1MGQ1ZEtCNE1HQ1JnZ1JiSnA0XzFmaEdaanBJRU1kMXQ1azg2aTlQZ08wZ05YaTRjVnd5akpqNnRoc2J2MnFMVGNIbWJPbHFRVFRjWkNQOE5taTljREYxQXE1My1xTVVOUk9Ob21KelM2b0dhWTRRRE1oV19hN0F6VmJRcTdzUDVDb2RuZ3ZGeU0waFpOMzZORjlUdld0Sm5iRHp5RQ?oc=5",
+        "age_h": 17.0
       }
     ],
     "TATAPOWER.NS": [
@@ -135,29 +181,21 @@
         "title": "33 Best Power Sector Stocks In India August 2026 | Best Energy Stocks To Invest - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5JLVJiY1FqOUtqSDRBanhEV2hCb0stQzFQXzYtWjB3UXZ5UEJDa2ZZZnkxamRKUHItS2Q1aDlPLTRHUW5JQ2Z6MEQyQURNUFRhUTUzd3RvVmdVQnMzdUhyMzRyeVlCQnM5RlptUg?oc=5",
-        "age_h": 20.6
+        "age_h": 44.6
       },
       {
         "title": "Top 31 EV Stocks To Buy In India August 2026 - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ZaGJiWHlOT3pzengtNWhXTGljRk9PUGE2bUU5Y2NwTWplR1dXVXN6ek9oZWhTR25VeWNPTEZDSUFRZGo4RURYcnZkV05zUHVRd1ZER3pzNzdUNjM2dUdDSUhUUFQ0RS1TbjNkT0hNaHo?oc=5",
-        "age_h": 44.6
+        "age_h": 68.6
       }
     ],
     "MAPMYINDIA.NS": [
       {
-        "title": "C.E. Info Systems Ltd (MAPMYINDIA) Share Price - Business Today",
-        "publisher": "Business Today",
+        "title": "C.E. Info Systems Ltd (MAPMYINDIA) Share Price - businesstoday.in",
+        "publisher": "businesstoday.in",
         "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcjhsVi1qU1JhOFMycUhuMnhEdmZwbDJodkctaU9TQnQ3eFlCYm9YMlJ4RUJycjB5Wkwxak15dk5rT1hQUGNtUGdGaGpuZTc1aTFtY25sTnoxd3NwVHoxR2VzaVlwak9MTTZRRDNuVTVFWkVSdW1XY0ZRaHo2U19JVUtVRENkQWVIbm8xb3d3?oc=5",
-        "age_h": 92.4
-      }
-    ],
-    "TANLA.NS": [
-      {
-        "title": "Tanla Platforms Share Price - Upstox",
-        "publisher": "Upstox",
-        "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1weFR3aVlyNFBkUG9YZmNHSllNM2lzdlJfLVh6LUotanA2ZG1meVlZQzcyUDlFYmVmcURDLVJnUHF0VVBhd1BGMjVfM2JZMm0zaWdHQjktT19WZVlPdDV3OFBRSTV3MEg0MElLVlFyUQ?oc=5",
-        "age_h": 92.4
+        "age_h": 116.4
       }
     ],
     "HAPPSTMNDS.NS": [
@@ -165,57 +203,57 @@
         "title": "Top 10 52-Week Low Shares To Buy In India August 2026 - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9RSERnMHJOMFZWbERwRE04WjRzYjNoYUxBQVJONTZSNGJsX01zRlhkUlN2ZlE2aEdCcDBRTm8xM09tajQ5Z1lvWlZxWUNEdWVxSFI4NWtURkg0UWNQaXBjVHBhSUtjYUtzWlZOZDFtc2czLXUyTnpoQw?oc=5",
-        "age_h": 68.6
+        "age_h": 92.6
       },
       {
         "title": "Happiest Minds Share Price Rise: Price, Valuation, Peers - Univest",
         "publisher": "Univest",
         "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNQ2R4ZjV5YVk2by1CLXBYdjdReWZhRFhxT0UzSmV6cGVTRFYycmRIOUllRlhqaTM3TGM0YVluYnZWRlJSMjJfOUNyV0ZEY0FRYTlVQzdGTmxnbGVGUXpWZVJydXQtNHZZa0RwcjNXUGNiV2NZanRWdkFJZVJvU2daOXM5a1RRN1E3ckJUM3lDMkhhUQ?oc=5",
-        "age_h": 92.5
+        "age_h": 116.5
       }
     ]
   },
   "market_headlines": [
     {
       "source": "Livemint",
-      "title": "Augmont Enterprises IPO: Price band set at  \u20b9750-788 per share; check key dates, issue details",
-      "link": "https://www.livemint.com/market/ipo/augmont-enterprises-ipo-price-band-set-at-rs-750-788-per-share-check-key-dates-issue-details-11787021673763.html",
-      "summary": "Augmont Enterprises IPO offers shares priced from  \u20b9750 to  \u20b9788, with subscription open from 21 to 25 August. 50% of shares are allocated for QIBs, and listings on BSE and NSE are expected on 31 Augu",
-      "age_h": 0.2
+      "title": "HY Tech Engineers IPO price band fixed at  \u20b950- \u20b953 per share. Here's date, size, &amp; other key details",
+      "link": "https://www.livemint.com/market/ipo/hy-tech-engineers-ipo-price-band-fixed-at-50-53-per-share-heres-date-size-other-key-details-11787108080579.html",
+      "summary": "HY Tech Engineers IPO is a book-building issue of consisting of fresh issue of  \u20b960 crores and an offer for sale (OFS) of up to 1.42 crore equity shares.",
+      "age_h": 0.1
     },
     {
       "source": "Livemint",
-      "title": "Shares to buy or sell: Chandan Taparia of Motilal Oswal recommends three stocks to buy today - 18 August 2026",
-      "link": "https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-of-motilal-oswal-recommends-three-stocks-to-buy-today-18-august-2026-11786983589216.html",
-      "summary": "Indian stock market expected to open lower on August 18 due to mixed global cues, with Nifty 50 and Sensex showing early weakness. Analysts suggest broader trading range of 23,800 to 24,800 while reco",
-      "age_h": 0.6
+      "title": "Buy or sell: Gift Nifty hints at a volatile session, Vaishali Parekh recommends three stocks to buy today \u2014 19 August",
+      "link": "https://www.livemint.com/market/stock-market-news/buy-or-sell-gift-nifty-hints-at-a-volatile-session-vaishali-parekh-recommends-three-stocks-to-buy-today-19-august-11787103794295.html",
+      "summary": "Buy or sell: Vaishali Parekh recommends three stocks to buy today \u2014 Data Patterns, L&amp;amp;T Finance, and Piramal Pharma",
+      "age_h": 0.5
     },
     {
       "source": "Livemint",
-      "title": "Stock market today: Gift Nifty hints a weak start; eight day trading stocks to buy on Tuesday, 18 August",
-      "link": "https://www.livemint.com/market/stock-market-news/stock-market-today-gift-nifty-hints-a-weak-start-eight-day-trading-stocks-to-buy-on-tuesday-18-august-11787019135761.html",
-      "summary": "Sensex and Nifty 50 are set to open lower due to mixed global cues. Brent crude prices have risen amid US-Iran conflict tensions, raising concerns over energy supplies. Analysts suggest cautious tradi",
-      "age_h": 0.6
+      "title": "Stock market today: Gift Nifty hints a flat start; eight day trading stocks to buy on Wednesday, 19 August",
+      "link": "https://www.livemint.com/market/stock-market-news/stock-market-today-gift-nifty-hints-a-flat-start-eight-day-trading-stocks-to-buy-on-wednesday-19-august-11787105497629.html",
+      "summary": "Indian stock markets are anticipated to open flat amidst weak global cues, following a steep decline in the previous session. Brent crude prices rose amid supply concerns, while global financial marke",
+      "age_h": 0.8
     },
     {
       "source": "Livemint",
-      "title": "Buy or sell indicator: Gift Nifty signals flat start, Vaishali Parekh recommends three stocks to buy today",
-      "link": "https://www.livemint.com/market/stock-market-news/buy-or-sell-indicator-18-august-2026-gift-nifty-signals-flat-start-vaishali-parekh-recommends-three-stocks-to-buy-today-11787017422235.html",
-      "summary": "Buy or sell indicator: Vaishali Parekh recommends three stocks to buy today \u2014 Chennai Petroleum Corporation, Godrej Properties, and TVS Motor Company",
+      "title": "Stocks to watch: BPCL, RailTel, ONGC among shares in focus today; check list here",
+      "link": "https://www.livemint.com/market/stock-market-news/stocks-to-watch-bpcl-railtel-ongc-among-shares-in-focus-today-check-list-here-11787105168182.html",
+      "summary": "Stock market today: The market is likely to remain under pressure as the Gift Nifty index signalled a negative opening. Gift Nifty was trading near the 24,187.50 mark, down over 42.60 points from the ",
       "age_h": 0.9
     },
     {
       "source": "Livemint",
-      "title": "Stocks to watch: Paytm, Bharti Airtel, Netweb Technologies among shares in focus today; check list here",
-      "link": "https://www.livemint.com/market/stock-market-news/stocks-to-watch-paytm-bharti-airtel-netweb-technologies-among-shares-in-focus-today-check-list-here-11787018700385.html",
-      "summary": "Stock market today: Gift Nifty was trading near the 24,320 mark, down over 72.70 points from the previous close of Nifty futures.",
-      "age_h": 1.0
+      "title": "Korean Stocks Bear Brunt of Chip Slide Spurred by Rise in Yields",
+      "link": "https://www.livemint.com/market/korean-stocks-bear-brunt-of-chip-slide-spurred-by-rise-in-yields-11787105708352.html",
+      "summary": "South Korea led a selloff in Asian chip stocks, as rising bond yields exacerbated worry over the large sums of cash being shelled out by Big Tech.",
+      "age_h": 1.2
     },
     {
       "source": "Livemint",
-      "title": "Nifty 50, Sensex prediction today: Check how Indian stock market is expected to trade on 18 August",
-      "link": "https://www.livemint.com/market/stock-market-news/nifty-50-sensex-prediction-today-check-how-indian-stock-market-is-expected-to-trade-on-18-august-11787017176809.html",
-      "summary": "Indian stock benchmarks, the Sensex and Nifty 50, are set to open lower on 18 August amid mixed global cues, with the Nifty 50 trading at a discount. Technical analysts suggest cautious trading, highl",
+      "title": "Nifty 50, Sensex prediction today: Check how Indian stock market is expected to trade on 19 August",
+      "link": "https://www.livemint.com/market/stock-market-news/nifty-50-sensex-prediction-today-check-how-indian-stock-market-is-expected-to-trade-on-19-august-11787103468821.html",
+      "summary": "Indian stock market indices Sensex and Nifty 50 are expected to open flat amid weak global cues. The previous session saw the Sensex decline 0.63% and Nifty 50 drop 0.55%, indicating a cautious tradin",
       "age_h": 1.3
     }
   ]
