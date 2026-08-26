@@ -1,6 +1,6 @@
 {
-  "date": "25 Aug 2026",
-  "timestamp": "2026-08-25T09:23:42.560790+05:30",
+  "date": "26 Aug 2026",
+  "timestamp": "2026-08-26T09:28:06.164223+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -307,12 +307,7 @@
           "amount": 13.0
         }
       ],
-      "splits": [
-        {
-          "date": "2025-08-26",
-          "ratio": "2.0"
-        }
-      ],
+      "splits": [],
       "calendar": {},
       "error": null
     },
