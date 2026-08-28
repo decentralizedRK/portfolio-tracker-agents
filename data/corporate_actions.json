@@ -1,6 +1,6 @@
 {
-  "date": "27 Aug 2026",
-  "timestamp": "2026-08-27T19:33:57.215703+05:30",
+  "date": "28 Aug 2026",
+  "timestamp": "2026-08-28T20:44:56.568918+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -144,7 +144,12 @@
       "error": null
     },
     "PARAS.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-08-28",
+          "amount": 1.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -446,6 +451,14 @@
   },
   "highlights": [
     {
+      "ticker": "PARAS.NS",
+      "display": "PARAS",
+      "type": "Dividend",
+      "date": "2026-08-28",
+      "detail": "\u20b91.00/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "RVNL.NS",
       "display": "RVNL",
       "type": "Dividend",
@@ -556,14 +569,6 @@
       "date": "2026-07-24",
       "detail": "\u20b910.00/share",
       "in_portfolio": true
-    },
-    {
-      "ticker": "TCS.NS",
-      "display": "TCS",
-      "type": "Dividend",
-      "date": "2026-07-15",
-      "detail": "\u20b912.00/share",
-      "in_portfolio": false
     }
   ]
 }
