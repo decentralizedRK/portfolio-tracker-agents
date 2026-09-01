@@ -1,6 +1,6 @@
 {
-  "date": "31 Aug 2026",
-  "timestamp": "2026-08-31T15:07:17.267769+05:30",
+  "date": "01 Sep 2026",
+  "timestamp": "2026-09-01T14:02:52.597248+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -252,12 +252,7 @@
       "error": null
     },
     "BANDHANBNK.NS": {
-      "dividends": [
-        {
-          "date": "2026-08-17",
-          "amount": 1.5
-        }
-      ],
+      "dividends": [],
       "splits": [],
       "calendar": {},
       "error": null
@@ -467,14 +462,6 @@
       "in_portfolio": false
     },
     {
-      "ticker": "BANDHANBNK.NS",
-      "display": "BANDHANBNK",
-      "type": "Dividend",
-      "date": "2026-08-17",
-      "detail": "\u20b91.50/share",
-      "in_portfolio": true
-    },
-    {
       "ticker": "RECLTD.NS",
       "display": "RECLTD",
       "type": "Dividend",
@@ -569,6 +556,14 @@
       "date": "2026-07-24",
       "detail": "\u20b910.00/share",
       "in_portfolio": true
+    },
+    {
+      "ticker": "TCS.NS",
+      "display": "TCS",
+      "type": "Dividend",
+      "date": "2026-07-15",
+      "detail": "\u20b912.00/share",
+      "in_portfolio": false
     }
   ]
 }
