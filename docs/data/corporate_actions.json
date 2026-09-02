@@ -1,6 +1,6 @@
 {
-  "date": "01 Sep 2026",
-  "timestamp": "2026-09-01T14:02:52.597248+05:30",
+  "date": "02 Sep 2026",
+  "timestamp": "2026-09-02T13:19:52.511513+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -15,10 +15,6 @@
     },
     "BEL.NS": {
       "dividends": [
-        {
-          "date": "2026-03-06",
-          "amount": 1.95
-        },
         {
           "date": "2026-08-13",
           "amount": 0.55
@@ -252,7 +248,12 @@
       "error": null
     },
     "BANDHANBNK.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-08-17",
+          "amount": 1.5
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -399,7 +400,12 @@
       "error": null
     },
     "NTPC.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-09-02",
+          "amount": 3.5
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -446,6 +452,14 @@
   },
   "highlights": [
     {
+      "ticker": "NTPC.NS",
+      "display": "NTPC",
+      "type": "Dividend",
+      "date": "2026-09-02",
+      "detail": "\u20b93.50/share",
+      "in_portfolio": false
+    },
+    {
       "ticker": "PARAS.NS",
       "display": "PARAS",
       "type": "Dividend",
@@ -460,6 +474,14 @@
       "date": "2026-08-18",
       "detail": "\u20b90.71/share",
       "in_portfolio": false
+    },
+    {
+      "ticker": "BANDHANBNK.NS",
+      "display": "BANDHANBNK",
+      "type": "Dividend",
+      "date": "2026-08-17",
+      "detail": "\u20b91.50/share",
+      "in_portfolio": true
     },
     {
       "ticker": "RECLTD.NS",
@@ -547,22 +569,6 @@
       "type": "Dividend",
       "date": "2026-07-27",
       "detail": "\u20b92.00/share",
-      "in_portfolio": false
-    },
-    {
-      "ticker": "DATAPATTNS.NS",
-      "display": "DATAPATTNS",
-      "type": "Dividend",
-      "date": "2026-07-24",
-      "detail": "\u20b910.00/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "TCS.NS",
-      "display": "TCS",
-      "type": "Dividend",
-      "date": "2026-07-15",
-      "detail": "\u20b912.00/share",
       "in_portfolio": false
     }
   ]
