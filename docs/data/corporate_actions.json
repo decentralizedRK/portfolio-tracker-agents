@@ -1,6 +1,6 @@
 {
-  "date": "08 Sep 2026",
-  "timestamp": "2026-09-08T13:29:22.448061+05:30",
+  "date": "09 Sep 2026",
+  "timestamp": "2026-09-09T13:33:19.850621+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -411,12 +411,7 @@
       "error": null
     },
     "IRFC.NS": {
-      "dividends": [
-        {
-          "date": "2026-03-13",
-          "amount": 1.05
-        }
-      ],
+      "dividends": [],
       "splits": [],
       "calendar": {},
       "error": null
