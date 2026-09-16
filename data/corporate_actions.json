@@ -1,6 +1,6 @@
 {
-  "date": "15 Sep 2026",
-  "timestamp": "2026-09-15T14:05:18.917923+05:30",
+  "date": "16 Sep 2026",
+  "timestamp": "2026-09-16T13:59:11.273343+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -52,10 +52,6 @@
     },
     "COFORGE.NS": {
       "dividends": [
-        {
-          "date": "2026-07-31",
-          "amount": 4.0
-        },
         {
           "date": "2026-08-03",
           "amount": 4.0
@@ -208,10 +204,6 @@
     },
     "RECLTD.NS": {
       "dividends": [
-        {
-          "date": "2026-03-20",
-          "amount": 3.2
-        },
         {
           "date": "2026-07-31",
           "amount": 4.25
@@ -527,14 +519,6 @@
       "in_portfolio": false
     },
     {
-      "ticker": "COFORGE.NS",
-      "display": "COFORGE",
-      "type": "Dividend",
-      "date": "2026-07-31",
-      "detail": "\u20b94.00/share",
-      "in_portfolio": true
-    },
-    {
       "ticker": "RECLTD.NS",
       "display": "RECLTD",
       "type": "Dividend",
@@ -565,6 +549,14 @@
       "date": "2026-07-27",
       "detail": "\u20b92.00/share",
       "in_portfolio": false
+    },
+    {
+      "ticker": "DATAPATTNS.NS",
+      "display": "DATAPATTNS",
+      "type": "Dividend",
+      "date": "2026-07-24",
+      "detail": "\u20b910.00/share",
+      "in_portfolio": true
     }
   ]
 }
