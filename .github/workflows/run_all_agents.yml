@@ -1,8 +1,10 @@
 name: Run All Agents
 
-# Triggers on every push to main (except data-only commits made by this workflow
-# itself — paths-ignore breaks the loop) and manually from the Actions tab.
+# Runs daily at 3:30 AM UTC (9:00 AM IST) — after individual agents finish.
+# Also triggers on push to main and manually from the Actions tab.
 on:
+  schedule:
+    - cron: '30 3 * * 1-5'
   push:
     branches: [main]
     paths-ignore:
