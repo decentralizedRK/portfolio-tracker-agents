@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-02T15:08:37.989828+05:30",
+  "timestamp": "2026-10-02T15:28:31.950099+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -1798,7 +1798,7 @@
           "macd": "Bearish (below signal)",
           "sma50": 7354.23,
           "sma200": 6517.92,
-          "support": 4618.03
+          "support": 4618.02
         },
         {
           "ticker": "POLYCAB.NS",
@@ -6505,5 +6505,5 @@
       ]
     }
   },
-  "generated_at": "02 Oct 2026 15:08 IST"
+  "generated_at": "02 Oct 2026 15:28 IST"
 }
