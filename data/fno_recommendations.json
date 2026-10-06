@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-06T15:36:21.122451+05:30",
+  "timestamp": "2026-10-06T16:06:34.857944+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -245,7 +245,7 @@
           "trend": "UPTREND",
           "macd": "Bullish (above signal)",
           "sma50": 36880.72,
-          "sma200": 36156.86,
+          "sma200": 36156.87,
           "support": 29916.57
         }
       ],
@@ -613,7 +613,7 @@
           "trend": "UPTREND",
           "macd": "Bullish (above signal)",
           "sma50": 36880.72,
-          "sma200": 36156.86,
+          "sma200": 36156.87,
           "support": 29916.57
         },
         {
@@ -2588,7 +2588,7 @@
           "macd": "Bearish (below signal)",
           "sma50": 7343.94,
           "sma200": 6537.46,
-          "support": 4618.03
+          "support": 4618.02
         },
         {
           "ticker": "BANKBARODA.NS",
@@ -6229,5 +6229,5 @@
       ]
     }
   },
-  "generated_at": "06 Oct 2026 15:36 IST"
+  "generated_at": "06 Oct 2026 16:06 IST"
 }
