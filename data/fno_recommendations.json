@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-08T15:55:02.402779+05:30",
+  "timestamp": "2026-10-08T16:18:35.116907+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -3205,7 +3205,7 @@
           "macd": "Bearish crossover",
           "sma50": 7325.61,
           "sma200": 6564.25,
-          "support": 4618.03
+          "support": 4618.02
         },
         {
           "ticker": "BANKBARODA.NS",
@@ -6435,5 +6435,5 @@
       ]
     }
   },
-  "generated_at": "08 Oct 2026 15:55 IST"
+  "generated_at": "08 Oct 2026 16:18 IST"
 }
