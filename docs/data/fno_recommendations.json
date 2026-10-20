@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-20T13:55:05.209560+05:30",
+  "timestamp": "2026-10-20T14:15:36.453810+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -30,6 +30,78 @@
           "support": 352.79
         },
         {
+          "ticker": "HAL.NS",
+          "symbol": "HAL",
+          "tradingview": "NSE:HAL",
+          "tier": "largecap",
+          "market_cap_crore": 291853.41,
+          "mcap_rank": 28,
+          "current_price": 4959.0,
+          "day_change_pct": -0.6,
+          "week_change_pct": 4.18,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 58.6,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 4851.22,
+          "sma200": 4422.13,
+          "support": 3480.15
+        },
+        {
+          "ticker": "TRENT.NS",
+          "symbol": "TRENT",
+          "tradingview": "NSE:TRENT",
+          "tier": "largecap",
+          "market_cap_crore": 171402.19,
+          "mcap_rank": 46,
+          "current_price": 2891.6,
+          "day_change_pct": -2.27,
+          "week_change_pct": -0.73,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 54.3,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 2853.93,
+          "sma200": 2801.61,
+          "support": 2193.96
+        },
+        {
+          "ticker": "DLF.NS",
+          "symbol": "DLF",
+          "tradingview": "NSE:DLF",
+          "tier": "largecap",
+          "market_cap_crore": 153964.39,
+          "mcap_rank": 50,
+          "current_price": 672.85,
+          "day_change_pct": -0.32,
+          "week_change_pct": 3.52,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 54.3,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 664.53,
+          "sma200": 621.56,
+          "support": 497.85
+        },
+        {
           "ticker": "CIPLA.NS",
           "symbol": "CIPLA",
           "tradingview": "NSE:CIPLA",
@@ -53,6 +125,30 @@
           "sma50": 1387.23,
           "sma200": 1364.61,
           "support": 1181.32
+        },
+        {
+          "ticker": "INDHOTEL.NS",
+          "symbol": "INDHOTEL",
+          "tradingview": "NSE:INDHOTEL",
+          "tier": "largecap",
+          "market_cap_crore": 102771.81,
+          "mcap_rank": 82,
+          "current_price": 760.0,
+          "day_change_pct": -1.57,
+          "week_change_pct": 6.82,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 60.9,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 726.12,
+          "sma200": 687.27,
+          "support": 568.42
         },
         {
           "ticker": "PERSISTENT.NS",
@@ -127,128 +223,28 @@
           "support": 1335.75
         },
         {
-          "ticker": "BAJFINANCE.NS",
-          "symbol": "BAJFINANCE",
-          "tradingview": "NSE:BAJFINANCE",
+          "ticker": "MPHASIS.NS",
+          "symbol": "MPHASIS",
+          "tradingview": "NSE:MPHASIS",
           "tier": "largecap",
-          "market_cap_crore": 610222.38,
-          "mcap_rank": 7,
-          "current_price": 957.35,
-          "day_change_pct": -2.52,
-          "week_change_pct": 0.01,
-          "momentum_score": 2,
+          "market_cap_crore": 43218.15,
+          "mcap_rank": 128,
+          "current_price": 2500.0,
+          "day_change_pct": 0.0,
+          "week_change_pct": 6.22,
+          "momentum_score": 3,
           "action": "BUY ON DIP",
           "action_emoji": "\ud83d\udd35",
           "signals": [
-            "RSI 41.6 \u2014 recovering, watch for reversal",
             "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
           ],
-          "rsi": 41.6,
-          "trend": "SIDEWAYS",
+          "rsi": 67.0,
+          "trend": "UPTREND",
           "macd": "Bullish (above signal)",
-          "sma50": 1030.47,
-          "sma200": 971.32,
-          "support": 796.65
-        },
-        {
-          "ticker": "JSWSTEEL.NS",
-          "symbol": "JSWSTEEL",
-          "tradingview": "NSE:JSWSTEEL",
-          "tier": "largecap",
-          "market_cap_crore": 300539.03,
-          "mcap_rank": 24,
-          "current_price": 1241.3,
-          "day_change_pct": 2.06,
-          "week_change_pct": 5.82,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "MACD bullish crossover \u2014 strong buy signal",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 51.3,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish crossover",
-          "sma50": 1269.77,
-          "sma200": 1237.24,
-          "support": 1073.14
-        },
-        {
-          "ticker": "BAJAJFINSV.NS",
-          "symbol": "BAJAJFINSV",
-          "tradingview": "NSE:BAJAJFINSV",
-          "tier": "largecap",
-          "market_cap_crore": 282440.43,
-          "mcap_rank": 29,
-          "current_price": 1700.0,
-          "day_change_pct": -1.68,
-          "week_change_pct": -1.16,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 37.2 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 37.2,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1630.41
-        },
-        {
-          "ticker": "BAJAJ-AUTO.NS",
-          "symbol": "BAJAJ-AUTO",
-          "tradingview": "NSE:BAJAJ-AUTO",
-          "tier": "largecap",
-          "market_cap_crore": 275082.66,
-          "mcap_rank": 30,
-          "current_price": 10287.0,
-          "day_change_pct": -1.13,
-          "week_change_pct": 2.52,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 42.8 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 42.8,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 8599.48
-        },
-        {
-          "ticker": "SHRIRAMFIN.NS",
-          "symbol": "SHRIRAMFIN",
-          "tradingview": "NSE:SHRIRAMFIN",
-          "tier": "largecap",
-          "market_cap_crore": 242538.49,
-          "mcap_rank": 36,
-          "current_price": 926.5,
-          "day_change_pct": -1.43,
-          "week_change_pct": -0.31,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 39.0 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 39.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": 1032.93,
-          "sma200": 1005.14,
-          "support": 685.87
+          "sma50": 2381.69,
+          "sma200": 2342.84,
+          "support": 1993.94
         }
       ],
       "bearish": [
@@ -303,6 +299,78 @@
           "support": 352.79
         },
         {
+          "ticker": "HAL.NS",
+          "symbol": "HAL",
+          "tradingview": "NSE:HAL",
+          "tier": "largecap",
+          "market_cap_crore": 291853.41,
+          "mcap_rank": 28,
+          "current_price": 4959.0,
+          "day_change_pct": -0.6,
+          "week_change_pct": 4.18,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 58.6,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 4851.22,
+          "sma200": 4422.13,
+          "support": 3480.15
+        },
+        {
+          "ticker": "TRENT.NS",
+          "symbol": "TRENT",
+          "tradingview": "NSE:TRENT",
+          "tier": "largecap",
+          "market_cap_crore": 171402.19,
+          "mcap_rank": 46,
+          "current_price": 2891.6,
+          "day_change_pct": -2.27,
+          "week_change_pct": -0.73,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 54.3,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 2853.93,
+          "sma200": 2801.61,
+          "support": 2193.96
+        },
+        {
+          "ticker": "DLF.NS",
+          "symbol": "DLF",
+          "tradingview": "NSE:DLF",
+          "tier": "largecap",
+          "market_cap_crore": 153964.39,
+          "mcap_rank": 50,
+          "current_price": 672.85,
+          "day_change_pct": -0.32,
+          "week_change_pct": 3.52,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 54.3,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 664.53,
+          "sma200": 621.56,
+          "support": 497.85
+        },
+        {
           "ticker": "CIPLA.NS",
           "symbol": "CIPLA",
           "tradingview": "NSE:CIPLA",
@@ -326,6 +394,30 @@
           "sma50": 1387.23,
           "sma200": 1364.61,
           "support": 1181.32
+        },
+        {
+          "ticker": "INDHOTEL.NS",
+          "symbol": "INDHOTEL",
+          "tradingview": "NSE:INDHOTEL",
+          "tier": "largecap",
+          "market_cap_crore": 102771.81,
+          "mcap_rank": 82,
+          "current_price": 760.0,
+          "day_change_pct": -1.57,
+          "week_change_pct": 6.82,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 60.9,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 726.12,
+          "sma200": 687.27,
+          "support": 568.42
         },
         {
           "ticker": "PERSISTENT.NS",
@@ -400,6 +492,54 @@
           "support": 1335.75
         },
         {
+          "ticker": "MPHASIS.NS",
+          "symbol": "MPHASIS",
+          "tradingview": "NSE:MPHASIS",
+          "tier": "largecap",
+          "market_cap_crore": 43218.15,
+          "mcap_rank": 128,
+          "current_price": 2500.0,
+          "day_change_pct": 0.0,
+          "week_change_pct": 6.22,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 67.0,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 2381.69,
+          "sma200": 2342.84,
+          "support": 1993.94
+        },
+        {
+          "ticker": "PETRONET.NS",
+          "symbol": "PETRONET",
+          "tradingview": "NSE:PETRONET",
+          "tier": "largecap",
+          "market_cap_crore": 42300.0,
+          "mcap_rank": 133,
+          "current_price": 293.65,
+          "day_change_pct": 0.22,
+          "week_change_pct": 1.08,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 55.0,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 288.23,
+          "sma200": 280.59,
+          "support": 235.34
+        },
+        {
           "ticker": "BAJFINANCE.NS",
           "symbol": "BAJFINANCE",
           "tradingview": "NSE:BAJFINANCE",
@@ -462,15 +602,15 @@
           "action": "BUY ON DIP",
           "action_emoji": "\ud83d\udd35",
           "signals": [
-            "RSI 37.2 \u2014 recovering, watch for reversal",
+            "RSI 33.3 \u2014 recovering, watch for reversal",
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 37.2,
+          "rsi": 33.3,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 1885.75,
+          "sma200": 1869.44,
           "support": 1630.41
         },
         {
@@ -487,15 +627,15 @@
           "action": "BUY ON DIP",
           "action_emoji": "\ud83d\udd35",
           "signals": [
-            "RSI 42.8 \u2014 recovering, watch for reversal",
+            "RSI 40.4 \u2014 recovering, watch for reversal",
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 42.8,
+          "rsi": 40.4,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 11267.96,
+          "sma200": 10192.09,
           "support": 8599.48
         },
         {
@@ -524,6 +664,31 @@
           "support": 685.87
         },
         {
+          "ticker": "PIDILITIND.NS",
+          "symbol": "PIDILITIND",
+          "tradingview": "NSE:PIDILITIND",
+          "tier": "largecap",
+          "market_cap_crore": 162416.59,
+          "mcap_rank": 48,
+          "current_price": 1482.6,
+          "day_change_pct": -1.34,
+          "week_change_pct": 0.33,
+          "momentum_score": 2,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "RSI 41.1 \u2014 recovering, watch for reversal",
+            "MACD bullish \u2014 momentum building",
+            "SIDEWAYS \u2014 possible accumulation zone"
+          ],
+          "rsi": 41.1,
+          "trend": "SIDEWAYS",
+          "macd": "Bullish (above signal)",
+          "sma50": 1580.81,
+          "sma200": 1493.7,
+          "support": 1264.49
+        },
+        {
           "ticker": "CHOLAFIN.NS",
           "symbol": "CHOLAFIN",
           "tradingview": "NSE:CHOLAFIN",
@@ -547,31 +712,6 @@
           "sma50": 1763.03,
           "sma200": 1676.3,
           "support": 1354.17
-        },
-        {
-          "ticker": "ABB.NS",
-          "symbol": "ABB",
-          "tradingview": "NSE:ABB",
-          "tier": "largecap",
-          "market_cap_crore": 147848.47,
-          "mcap_rank": 54,
-          "current_price": 6974.0,
-          "day_change_pct": 2.54,
-          "week_change_pct": 1.73,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 41.2 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 41.2,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 4618.03
         },
         {
           "ticker": "POLYCAB.NS",
@@ -624,31 +764,6 @@
           "support": 96.68
         },
         {
-          "ticker": "CANBK.NS",
-          "symbol": "CANBK",
-          "tradingview": "NSE:CANBK",
-          "tier": "largecap",
-          "market_cap_crore": 117256.31,
-          "mcap_rank": 68,
-          "current_price": 122.0,
-          "day_change_pct": 3.14,
-          "week_change_pct": 3.06,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 43.3 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 43.3,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 117.12
-        },
-        {
           "ticker": "ABCAPITAL.NS",
           "symbol": "ABCAPITAL",
           "tradingview": "NSE:ABCAPITAL",
@@ -687,15 +802,15 @@
           "action": "BUY ON DIP",
           "action_emoji": "\ud83d\udd35",
           "signals": [
-            "RSI 41.4 \u2014 recovering, watch for reversal",
+            "RSI 38.4 \u2014 recovering, watch for reversal",
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 41.4,
+          "rsi": 38.4,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 818.93,
+          "sma200": 797.89,
           "support": 707.42
         },
         {
@@ -762,15 +877,15 @@
           "action": "BUY ON DIP",
           "action_emoji": "\ud83d\udd35",
           "signals": [
-            "RSI 42.8 \u2014 recovering, watch for reversal",
+            "RSI 40.6 \u2014 recovering, watch for reversal",
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 42.8,
+          "rsi": 40.6,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 614.68,
+          "sma200": 613.09,
           "support": 467.74
         },
         {
@@ -812,41 +927,16 @@
           "action": "BUY ON DIP",
           "action_emoji": "\ud83d\udd35",
           "signals": [
-            "RSI 39.4 \u2014 recovering, watch for reversal",
+            "RSI 37.8 \u2014 recovering, watch for reversal",
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 39.4,
+          "rsi": 37.8,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 1818.61,
+          "sma200": 1806.65,
           "support": 1464.22
-        },
-        {
-          "ticker": "MRF.NS",
-          "symbol": "MRF",
-          "tradingview": "NSE:MRF",
-          "tier": "largecap",
-          "market_cap_crore": 55086.09,
-          "mcap_rank": 119,
-          "current_price": 121905.0,
-          "day_change_pct": -0.97,
-          "week_change_pct": -0.41,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 38.1 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 38.1,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 122090.0
         },
         {
           "ticker": "KEI.NS",
@@ -862,66 +952,16 @@
           "action": "BUY ON DIP",
           "action_emoji": "\ud83d\udd35",
           "signals": [
-            "RSI 39.0 \u2014 recovering, watch for reversal",
+            "RSI 37.4 \u2014 recovering, watch for reversal",
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 39.0,
+          "rsi": 37.4,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 4999.54,
+          "sma200": 4843.09,
           "support": 3800.7
-        },
-        {
-          "ticker": "BALKRISIND.NS",
-          "symbol": "BALKRISIND",
-          "tradingview": "NSE:BALKRISIND",
-          "tier": "largecap",
-          "market_cap_crore": 43216.06,
-          "mcap_rank": 129,
-          "current_price": 2071.2,
-          "day_change_pct": 0.9,
-          "week_change_pct": 3.73,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 40.3 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 40.3,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1967.16
-        },
-        {
-          "ticker": "PIIND.NS",
-          "symbol": "PIIND",
-          "tradingview": "NSE:PIIND",
-          "tier": "largecap",
-          "market_cap_crore": 40654.95,
-          "mcap_rank": 136,
-          "current_price": 2163.5,
-          "day_change_pct": -1.21,
-          "week_change_pct": 1.5,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 40.8 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 40.8,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 2100.0
         },
         {
           "ticker": "BHARTIARTL.NS",
@@ -1044,30 +1084,6 @@
           "support": 1298.13
         },
         {
-          "ticker": "HAL.NS",
-          "symbol": "HAL",
-          "tradingview": "NSE:HAL",
-          "tier": "largecap",
-          "market_cap_crore": 291853.41,
-          "mcap_rank": 28,
-          "current_price": 4959.0,
-          "day_change_pct": -0.6,
-          "week_change_pct": 4.18,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 60.5,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 3480.15
-        },
-        {
           "ticker": "NESTLEIND.NS",
           "symbol": "NESTLEIND",
           "tradingview": "NSE:NESTLEIND",
@@ -1142,30 +1158,6 @@
           "support": 6517.75
         },
         {
-          "ticker": "TRENT.NS",
-          "symbol": "TRENT",
-          "tradingview": "NSE:TRENT",
-          "tier": "largecap",
-          "market_cap_crore": 171402.19,
-          "mcap_rank": 46,
-          "current_price": 2891.6,
-          "day_change_pct": -2.27,
-          "week_change_pct": -0.73,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 61.7,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 2193.96
-        },
-        {
           "ticker": "TVSMOTOR.NS",
           "symbol": "TVSMOTOR",
           "tradingview": "NSE:TVSMOTOR",
@@ -1182,23 +1174,23 @@
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 53.2,
+          "rsi": 51.5,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 4180.38,
+          "sma200": 3775.85,
           "support": 3283.4
         },
         {
-          "ticker": "PIDILITIND.NS",
-          "symbol": "PIDILITIND",
-          "tradingview": "NSE:PIDILITIND",
+          "ticker": "ABB.NS",
+          "symbol": "ABB",
+          "tradingview": "NSE:ABB",
           "tier": "largecap",
-          "market_cap_crore": 162416.59,
-          "mcap_rank": 48,
-          "current_price": 1482.6,
-          "day_change_pct": -1.34,
-          "week_change_pct": 0.33,
+          "market_cap_crore": 147848.47,
+          "mcap_rank": 54,
+          "current_price": 6974.0,
+          "day_change_pct": 2.54,
+          "week_change_pct": 1.73,
           "momentum_score": 1,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
@@ -1206,36 +1198,12 @@
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 45.0,
+          "rsi": 48.3,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1264.49
-        },
-        {
-          "ticker": "DLF.NS",
-          "symbol": "DLF",
-          "tradingview": "NSE:DLF",
-          "tier": "largecap",
-          "market_cap_crore": 153964.39,
-          "mcap_rank": 50,
-          "current_price": 672.85,
-          "day_change_pct": -0.32,
-          "week_change_pct": 3.52,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 55.3,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 497.85
+          "sma50": 7254.82,
+          "sma200": 6577.26,
+          "support": 4618.03
         },
         {
           "ticker": "BANKBARODA.NS",
@@ -1260,6 +1228,31 @@
           "sma50": 238.05,
           "sma200": 262.4,
           "support": 227.5
+        },
+        {
+          "ticker": "BPCL.NS",
+          "symbol": "BPCL",
+          "tradingview": "NSE:BPCL",
+          "tier": "largecap",
+          "market_cap_crore": 132407.41,
+          "mcap_rank": 58,
+          "current_price": 294.3,
+          "day_change_pct": 0.27,
+          "week_change_pct": 3.44,
+          "momentum_score": 1,
+          "action": "NEUTRAL",
+          "action_emoji": "\u26aa",
+          "signals": [
+            "RSI 44.1 \u2014 recovering, watch for reversal",
+            "MACD bullish crossover \u2014 strong buy signal",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 44.1,
+          "trend": "DOWNTREND",
+          "macd": "Bullish crossover",
+          "sma50": 307.39,
+          "sma200": 319.39,
+          "support": 271.3
         },
         {
           "ticker": "TECHM.NS",
@@ -1360,30 +1353,6 @@
           "support": 341.55
         },
         {
-          "ticker": "INDHOTEL.NS",
-          "symbol": "INDHOTEL",
-          "tradingview": "NSE:INDHOTEL",
-          "tier": "largecap",
-          "market_cap_crore": 102771.81,
-          "mcap_rank": 82,
-          "current_price": 760.0,
-          "day_change_pct": -1.57,
-          "week_change_pct": 6.82,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 66.5,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 568.42
-        },
-        {
           "ticker": "HEROMOTOCO.NS",
           "symbol": "HEROMOTOCO",
           "tradingview": "NSE:HEROMOTOCO",
@@ -1400,11 +1369,11 @@
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 52.3,
+          "rsi": 52.5,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 5387.04,
+          "sma200": 5233.61,
           "support": 4706.27
         },
         {
@@ -1432,28 +1401,30 @@
           "support": 1427.7
         },
         {
-          "ticker": "HINDPETRO.NS",
-          "symbol": "HINDPETRO",
-          "tradingview": "NSE:HINDPETRO",
+          "ticker": "AUROPHARMA.NS",
+          "symbol": "AUROPHARMA",
+          "tradingview": "NSE:AUROPHARMA",
           "tier": "largecap",
-          "market_cap_crore": 87027.94,
-          "mcap_rank": 88,
-          "current_price": 348.5,
-          "day_change_pct": 0.72,
-          "week_change_pct": 4.89,
+          "market_cap_crore": 89448.25,
+          "mcap_rank": 87,
+          "current_price": 1621.4,
+          "day_change_pct": -2.73,
+          "week_change_pct": -5.01,
           "momentum_score": 1,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "RSI 40.5 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "SIDEWAYS \u2014 possible accumulation zone",
+            "Near lower Bollinger Band \u2014 oversold extension"
           ],
-          "rsi": 49.9,
+          "rsi": 40.5,
           "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 303.51
+          "macd": "Bearish (below signal)",
+          "sma50": 1667.08,
+          "sma200": 1440.94,
+          "support": 1085.0
         },
         {
           "ticker": "NAUKRI.NS",
@@ -1496,36 +1467,12 @@
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 52.5,
+          "rsi": 49.7,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 486.5,
+          "sma200": 483.52,
           "support": 401.47
-        },
-        {
-          "ticker": "LINDEINDIA.NS",
-          "symbol": "LINDEINDIA",
-          "tradingview": "NSE:LINDEINDIA",
-          "tier": "largecap",
-          "market_cap_crore": 59878.05,
-          "mcap_rank": 111,
-          "current_price": 6003.5,
-          "day_change_pct": -2.93,
-          "week_change_pct": 0.27,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 49.8,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 5685.86
         },
         {
           "ticker": "RADICO.NS",
@@ -1544,60 +1491,12 @@
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 50.3,
+          "rsi": 48.2,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 4511.94,
+          "sma200": 3593.43,
           "support": 2535.57
-        },
-        {
-          "ticker": "MPHASIS.NS",
-          "symbol": "MPHASIS",
-          "tradingview": "NSE:MPHASIS",
-          "tier": "largecap",
-          "market_cap_crore": 43218.15,
-          "mcap_rank": 128,
-          "current_price": 2500.0,
-          "day_change_pct": 0.0,
-          "week_change_pct": 6.22,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 67.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1993.94
-        },
-        {
-          "ticker": "JKCEMENT.NS",
-          "symbol": "JKCEMENT",
-          "tradingview": "NSE:JKCEMENT",
-          "tier": "largecap",
-          "market_cap_crore": 42922.51,
-          "mcap_rank": 131,
-          "current_price": 4878.5,
-          "day_change_pct": -0.9,
-          "week_change_pct": 1.38,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 46.4,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 4683.57
         },
         {
           "ticker": "FLUOROCHEM.NS",
@@ -1624,52 +1523,30 @@
           "support": 2978.43
         },
         {
-          "ticker": "PETRONET.NS",
-          "symbol": "PETRONET",
-          "tradingview": "NSE:PETRONET",
+          "ticker": "IPCALAB.NS",
+          "symbol": "IPCALAB",
+          "tradingview": "NSE:IPCALAB",
           "tier": "largecap",
-          "market_cap_crore": 42300.0,
-          "mcap_rank": 133,
-          "current_price": 293.65,
-          "day_change_pct": 0.22,
-          "week_change_pct": 1.08,
+          "market_cap_crore": 41097.55,
+          "mcap_rank": 135,
+          "current_price": 1814.5,
+          "day_change_pct": -1.65,
+          "week_change_pct": -4.49,
           "momentum_score": 1,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "RSI 30.6 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "SIDEWAYS \u2014 possible accumulation zone",
+            "Near lower Bollinger Band \u2014 oversold extension"
           ],
-          "rsi": 54.3,
+          "rsi": 30.6,
           "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 235.34
-        },
-        {
-          "ticker": "ASTRAL.NS",
-          "symbol": "ASTRAL",
-          "tradingview": "NSE:ASTRAL",
-          "tier": "largecap",
-          "market_cap_crore": 40028.87,
-          "mcap_rank": 137,
-          "current_price": 1428.0,
-          "day_change_pct": 0.04,
-          "week_change_pct": -0.17,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 51.2,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1315.03
+          "macd": "Bearish (below signal)",
+          "sma50": 1916.63,
+          "sma200": 1651.32,
+          "support": 1264.31
         },
         {
           "ticker": "HINDUNILVR.NS",
@@ -1710,15 +1587,15 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 37.0 \u2014 recovering, watch for reversal",
+            "RSI 34.5 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 37.0,
+          "rsi": 34.5,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 1861.93,
+          "sma200": 1803.67,
           "support": 1574.92
         },
         {
@@ -1909,15 +1786,15 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 40.3 \u2014 recovering, watch for reversal",
+            "RSI 38.6 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 40.3,
+          "rsi": 38.6,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 987.86,
+          "sma200": 978.12,
           "support": 770.63
         },
         {
@@ -1934,15 +1811,15 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 37.7 \u2014 recovering, watch for reversal",
+            "RSI 34.7 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 37.7,
+          "rsi": 34.7,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 3171.52,
+          "sma200": 2973.25,
           "support": 2523.24
         },
         {
@@ -1996,31 +1873,6 @@
           "support": 156.79
         },
         {
-          "ticker": "SBILIFE.NS",
-          "symbol": "SBILIFE",
-          "tradingview": "NSE:SBILIFE",
-          "tier": "largecap",
-          "market_cap_crore": 174764.5,
-          "mcap_rank": 44,
-          "current_price": 1647.8,
-          "day_change_pct": -0.54,
-          "week_change_pct": -1.96,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "RSI 39.0 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 39.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1650.0
-        },
-        {
           "ticker": "CUMMINSIND.NS",
           "symbol": "CUMMINSIND",
           "tradingview": "NSE:CUMMINSIND",
@@ -2034,15 +1886,15 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 32.0 \u2014 recovering, watch for reversal",
+            "RSI 32.3 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 32.0,
+          "rsi": 32.3,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 5044.59,
+          "sma200": 4984.27,
           "support": 3878.35
         },
         {
@@ -2066,8 +1918,8 @@
           "rsi": 32.8,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 4861.57,
+          "sma200": 4474.11,
           "support": 3522.2
         },
         {
@@ -2121,31 +1973,6 @@
           "support": 318.0
         },
         {
-          "ticker": "BPCL.NS",
-          "symbol": "BPCL",
-          "tradingview": "NSE:BPCL",
-          "tier": "largecap",
-          "market_cap_crore": 132407.41,
-          "mcap_rank": 58,
-          "current_price": 294.3,
-          "day_change_pct": 0.27,
-          "week_change_pct": 3.44,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "RSI 43.1 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 43.1,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 271.3
-        },
-        {
           "ticker": "SIEMENS.NS",
           "symbol": "SIEMENS",
           "tradingview": "NSE:SIEMENS",
@@ -2166,8 +1993,8 @@
           "rsi": 40.9,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 3877.78,
+          "sma200": 3523.6,
           "support": 2834.67
         },
         {
@@ -2471,31 +2298,6 @@
           "support": 391.35
         },
         {
-          "ticker": "ALKEM.NS",
-          "symbol": "ALKEM",
-          "tradingview": "NSE:ALKEM",
-          "tier": "largecap",
-          "market_cap_crore": 64864.01,
-          "mcap_rank": 105,
-          "current_price": 5004.0,
-          "day_change_pct": -0.91,
-          "week_change_pct": -3.86,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "RSI 38.3 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 38.3,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 5050.0
-        },
-        {
           "ticker": "OBEROIRLTY.NS",
           "symbol": "OBEROIRLTY",
           "tradingview": "NSE:OBEROIRLTY",
@@ -2509,41 +2311,16 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 39.8 \u2014 recovering, watch for reversal",
+            "RSI 36.2 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 39.8,
+          "rsi": 36.2,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 1802.28,
+          "sma200": 1685.24,
           "support": 1408.23
-        },
-        {
-          "ticker": "NATIONALUM.NS",
-          "symbol": "NATIONALUM",
-          "tradingview": "NSE:NATIONALUM",
-          "tier": "largecap",
-          "market_cap_crore": 61159.84,
-          "mcap_rank": 109,
-          "current_price": 318.0,
-          "day_change_pct": -1.93,
-          "week_change_pct": 2.32,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "RSI 39.7 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 39.7,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 218.27
         },
         {
           "ticker": "GLENMARK.NS",
@@ -2559,16 +2336,41 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 39.1 \u2014 recovering, watch for reversal",
+            "RSI 37.7 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 39.1,
+          "rsi": 37.7,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 2361.3,
+          "sma200": 2213.79,
           "support": 1808.6
+        },
+        {
+          "ticker": "LINDEINDIA.NS",
+          "symbol": "LINDEINDIA",
+          "tradingview": "NSE:LINDEINDIA",
+          "tier": "largecap",
+          "market_cap_crore": 59878.05,
+          "mcap_rank": 111,
+          "current_price": 6003.5,
+          "day_change_pct": -2.93,
+          "week_change_pct": 0.27,
+          "momentum_score": 0,
+          "action": "NEUTRAL",
+          "action_emoji": "\u26aa",
+          "signals": [
+            "RSI 40.8 \u2014 recovering, watch for reversal",
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 40.8,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 6361.5,
+          "sma200": 6717.66,
+          "support": 5685.86
         },
         {
           "ticker": "SBICARD.NS",
@@ -2621,29 +2423,29 @@
           "support": 287.85
         },
         {
-          "ticker": "MFSL.NS",
-          "symbol": "MFSL",
-          "tradingview": "NSE:MFSL",
+          "ticker": "MRF.NS",
+          "symbol": "MRF",
+          "tradingview": "NSE:MRF",
           "tier": "largecap",
-          "market_cap_crore": 55604.01,
-          "mcap_rank": 118,
-          "current_price": 1281.0,
-          "day_change_pct": -1.07,
-          "week_change_pct": -1.95,
+          "market_cap_crore": 55086.09,
+          "mcap_rank": 119,
+          "current_price": 121905.0,
+          "day_change_pct": -0.97,
+          "week_change_pct": -0.41,
           "momentum_score": 0,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
             "RSI 34.3 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
           ],
           "rsi": 34.3,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1277.0
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 127912.0,
+          "sma200": 133061.78,
+          "support": 121905.0
         },
         {
           "ticker": "COLPAL.NS",
@@ -2721,6 +2523,31 @@
           "support": 29916.57
         },
         {
+          "ticker": "BALKRISIND.NS",
+          "symbol": "BALKRISIND",
+          "tradingview": "NSE:BALKRISIND",
+          "tier": "largecap",
+          "market_cap_crore": 43216.06,
+          "mcap_rank": 129,
+          "current_price": 2071.2,
+          "day_change_pct": 0.9,
+          "week_change_pct": 3.73,
+          "momentum_score": 0,
+          "action": "NEUTRAL",
+          "action_emoji": "\u26aa",
+          "signals": [
+            "RSI 43.6 \u2014 recovering, watch for reversal",
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 43.6,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 2230.96,
+          "sma200": 2257.51,
+          "support": 1967.16
+        },
+        {
           "ticker": "VOLTAS.NS",
           "symbol": "VOLTAS",
           "tradingview": "NSE:VOLTAS",
@@ -2744,6 +2571,31 @@
           "sma50": 1152.98,
           "sma200": 1311.74,
           "support": 1019.6
+        },
+        {
+          "ticker": "JKCEMENT.NS",
+          "symbol": "JKCEMENT",
+          "tradingview": "NSE:JKCEMENT",
+          "tier": "largecap",
+          "market_cap_crore": 42922.51,
+          "mcap_rank": 131,
+          "current_price": 4878.5,
+          "day_change_pct": -0.9,
+          "week_change_pct": 1.38,
+          "momentum_score": 0,
+          "action": "NEUTRAL",
+          "action_emoji": "\u26aa",
+          "signals": [
+            "RSI 44.1 \u2014 recovering, watch for reversal",
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 44.1,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 5077.23,
+          "sma200": 5357.8,
+          "support": 4683.57
         },
         {
           "ticker": "IRCTC.NS",
@@ -2771,29 +2623,29 @@
           "support": 449.85
         },
         {
-          "ticker": "IPCALAB.NS",
-          "symbol": "IPCALAB",
-          "tradingview": "NSE:IPCALAB",
+          "ticker": "PIIND.NS",
+          "symbol": "PIIND",
+          "tradingview": "NSE:PIIND",
           "tier": "largecap",
-          "market_cap_crore": 41097.55,
-          "mcap_rank": 135,
-          "current_price": 1814.5,
-          "day_change_pct": -1.65,
-          "week_change_pct": -4.49,
+          "market_cap_crore": 40654.95,
+          "mcap_rank": 136,
+          "current_price": 2163.5,
+          "day_change_pct": -1.21,
+          "week_change_pct": 1.5,
           "momentum_score": 0,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 32.7 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "RSI 38.6 \u2014 recovering, watch for reversal",
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
           ],
-          "rsi": 32.7,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1264.31
+          "rsi": 38.6,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 2373.54,
+          "sma200": 2796.35,
+          "support": 2100.0
         },
         {
           "ticker": "RELIANCE.NS",
@@ -3114,6 +2966,30 @@
           "support": 28557.08
         },
         {
+          "ticker": "CANBK.NS",
+          "symbol": "CANBK",
+          "tradingview": "NSE:CANBK",
+          "tier": "largecap",
+          "market_cap_crore": 117256.31,
+          "mcap_rank": 68,
+          "current_price": 122.0,
+          "day_change_pct": 3.14,
+          "week_change_pct": 3.06,
+          "momentum_score": -1,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 50.9,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 124.74,
+          "sma200": 132.34,
+          "support": 117.12
+        },
+        {
           "ticker": "RECLTD.NS",
           "symbol": "RECLTD",
           "tradingview": "NSE:RECLTD",
@@ -3138,28 +3014,28 @@
           "support": 287.75
         },
         {
-          "ticker": "AUROPHARMA.NS",
-          "symbol": "AUROPHARMA",
-          "tradingview": "NSE:AUROPHARMA",
+          "ticker": "HINDPETRO.NS",
+          "symbol": "HINDPETRO",
+          "tradingview": "NSE:HINDPETRO",
           "tier": "largecap",
-          "market_cap_crore": 89448.25,
-          "mcap_rank": 87,
-          "current_price": 1621.4,
-          "day_change_pct": -2.73,
-          "week_change_pct": -5.01,
+          "market_cap_crore": 87027.94,
+          "mcap_rank": 88,
+          "current_price": 348.5,
+          "day_change_pct": 0.72,
+          "week_change_pct": 4.89,
           "momentum_score": -1,
           "action": "WATCH / AVOID",
           "action_emoji": "\ud83d\udfe1",
           "signals": [
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
           ],
-          "rsi": 48.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1085.0
+          "rsi": 51.6,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 355.64,
+          "sma200": 375.63,
+          "support": 303.51
         },
         {
           "ticker": "AUBANK.NS",
@@ -3260,6 +3136,32 @@
           "support": 339.64
         },
         {
+          "ticker": "ALKEM.NS",
+          "symbol": "ALKEM",
+          "tradingview": "NSE:ALKEM",
+          "tier": "largecap",
+          "market_cap_crore": 64864.01,
+          "mcap_rank": 105,
+          "current_price": 5004.0,
+          "day_change_pct": -0.91,
+          "week_change_pct": -3.86,
+          "momentum_score": -1,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "RSI 36.3 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "Price below 50MA & 200MA \u2014 DOWNTREND",
+            "Near lower Bollinger Band \u2014 oversold extension"
+          ],
+          "rsi": 36.3,
+          "trend": "DOWNTREND",
+          "macd": "Bearish (below signal)",
+          "sma50": 5292.97,
+          "sma200": 5448.38,
+          "support": 5004.0
+        },
+        {
           "ticker": "TIINDIA.NS",
           "symbol": "TIINDIA",
           "tradingview": "NSE:TIINDIA",
@@ -3301,11 +3203,11 @@
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 52.1,
+          "rsi": 51.5,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 731.13,
+          "sma200": 741.51,
           "support": 659.14
         },
         {
@@ -3325,11 +3227,11 @@
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 50.8,
+          "rsi": 49.8,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 2145.08,
+          "sma200": 1996.56,
           "support": 1691.88
         },
         {
@@ -3355,6 +3257,30 @@
           "sma50": 554.33,
           "sma200": 626.07,
           "support": 481.05
+        },
+        {
+          "ticker": "ASTRAL.NS",
+          "symbol": "ASTRAL",
+          "tradingview": "NSE:ASTRAL",
+          "tier": "largecap",
+          "market_cap_crore": 40028.87,
+          "mcap_rank": 137,
+          "current_price": 1428.0,
+          "day_change_pct": 0.04,
+          "week_change_pct": -0.17,
+          "momentum_score": -1,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 51.3,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 1454.42,
+          "sma200": 1501.02,
+          "support": 1315.03
         },
         {
           "ticker": "LT.NS",
@@ -3455,6 +3381,31 @@
           "sma50": 183.36,
           "sma200": 192.0,
           "support": 157.42
+        },
+        {
+          "ticker": "SBILIFE.NS",
+          "symbol": "SBILIFE",
+          "tradingview": "NSE:SBILIFE",
+          "tier": "largecap",
+          "market_cap_crore": 174764.5,
+          "mcap_rank": 44,
+          "current_price": 1647.8,
+          "day_change_pct": -0.54,
+          "week_change_pct": -1.96,
+          "momentum_score": -2,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "RSI 37.6 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 37.6,
+          "trend": "DOWNTREND",
+          "macd": "Bearish (below signal)",
+          "sma50": 1739.06,
+          "sma200": 1864.6,
+          "support": 1647.8
         },
         {
           "ticker": "MUTHOOTFIN.NS",
@@ -3607,6 +3558,56 @@
           "support": 438.0
         },
         {
+          "ticker": "NATIONALUM.NS",
+          "symbol": "NATIONALUM",
+          "tradingview": "NSE:NATIONALUM",
+          "tier": "largecap",
+          "market_cap_crore": 61159.84,
+          "mcap_rank": 109,
+          "current_price": 318.0,
+          "day_change_pct": -1.93,
+          "week_change_pct": 2.32,
+          "momentum_score": -2,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "RSI 36.8 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 36.8,
+          "trend": "DOWNTREND",
+          "macd": "Bearish (below signal)",
+          "sma50": 361.95,
+          "sma200": 370.93,
+          "support": 218.27
+        },
+        {
+          "ticker": "MFSL.NS",
+          "symbol": "MFSL",
+          "tradingview": "NSE:MFSL",
+          "tier": "largecap",
+          "market_cap_crore": 55604.01,
+          "mcap_rank": 118,
+          "current_price": 1281.0,
+          "day_change_pct": -1.07,
+          "week_change_pct": -1.95,
+          "momentum_score": -2,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "RSI 32.9 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 32.9,
+          "trend": "DOWNTREND",
+          "macd": "Bearish (below signal)",
+          "sma50": 1472.28,
+          "sma200": 1599.75,
+          "support": 1277.0
+        },
+        {
           "ticker": "SUNDARMFIN.NS",
           "symbol": "SUNDARMFIN",
           "tradingview": "NSE:SUNDARMFIN",
@@ -3735,6 +3736,78 @@
           "support": 880.0
         },
         {
+          "ticker": "BALRAMCHIN.NS",
+          "symbol": "BALRAMCHIN",
+          "tradingview": "NSE:BALRAMCHIN",
+          "tier": "midcap",
+          "market_cap_crore": 11239.42,
+          "mcap_rank": 192,
+          "current_price": 701.85,
+          "day_change_pct": -1.98,
+          "week_change_pct": 0.15,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 53.3,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 679.04,
+          "sma200": 550.6,
+          "support": 397.8
+        },
+        {
+          "ticker": "NUVOCO.NS",
+          "symbol": "NUVOCO",
+          "tradingview": "NSE:NUVOCO",
+          "tier": "midcap",
+          "market_cap_crore": 10925.41,
+          "mcap_rank": 194,
+          "current_price": 341.45,
+          "day_change_pct": 0.09,
+          "week_change_pct": 7.27,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 59.4,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 329.31,
+          "sma200": 326.23,
+          "support": 281.1
+        },
+        {
+          "ticker": "CYIENT.NS",
+          "symbol": "CYIENT",
+          "tradingview": "NSE:CYIENT",
+          "tier": "midcap",
+          "market_cap_crore": 9779.51,
+          "mcap_rank": 199,
+          "current_price": 1172.4,
+          "day_change_pct": -1.85,
+          "week_change_pct": 1.61,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 61.4,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 1048.41,
+          "sma200": 964.77,
+          "support": 752.85
+        },
+        {
           "ticker": "PVRINOX.NS",
           "symbol": "PVRINOX",
           "tradingview": "NSE:PVRINOX",
@@ -3757,56 +3830,6 @@
           "sma50": 1252.6,
           "sma200": 1067.4,
           "support": 918.6
-        },
-        {
-          "ticker": "CONCOR.NS",
-          "symbol": "CONCOR",
-          "tradingview": "NSE:CONCOR",
-          "tier": "midcap",
-          "market_cap_crore": 35742.73,
-          "mcap_rank": 141,
-          "current_price": 441.65,
-          "day_change_pct": -1.41,
-          "week_change_pct": 0.2,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 40.4 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 40.4,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 421.62
-        },
-        {
-          "ticker": "UBL.NS",
-          "symbol": "UBL",
-          "tradingview": "NSE:UBL",
-          "tier": "midcap",
-          "market_cap_crore": 35165.88,
-          "mcap_rank": 143,
-          "current_price": 1204.8,
-          "day_change_pct": 0.4,
-          "week_change_pct": 3.43,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 44.9 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 44.9,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1158.1
         },
         {
           "ticker": "STARHEALTH.NS",
@@ -3883,31 +3906,6 @@
           "sma50": 1335.81,
           "sma200": 1305.17,
           "support": 1109.28
-        },
-        {
-          "ticker": "EIDPARRY.NS",
-          "symbol": "EIDPARRY",
-          "tradingview": "NSE:EIDPARRY",
-          "tier": "midcap",
-          "market_cap_crore": 12617.06,
-          "mcap_rank": 186,
-          "current_price": 674.05,
-          "day_change_pct": -2.9,
-          "week_change_pct": -3.62,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 43.8 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 43.8,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 674.55
         }
       ],
       "bearish": [],
@@ -3986,6 +3984,78 @@
           "support": 880.0
         },
         {
+          "ticker": "BALRAMCHIN.NS",
+          "symbol": "BALRAMCHIN",
+          "tradingview": "NSE:BALRAMCHIN",
+          "tier": "midcap",
+          "market_cap_crore": 11239.42,
+          "mcap_rank": 192,
+          "current_price": 701.85,
+          "day_change_pct": -1.98,
+          "week_change_pct": 0.15,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 53.3,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 679.04,
+          "sma200": 550.6,
+          "support": 397.8
+        },
+        {
+          "ticker": "NUVOCO.NS",
+          "symbol": "NUVOCO",
+          "tradingview": "NSE:NUVOCO",
+          "tier": "midcap",
+          "market_cap_crore": 10925.41,
+          "mcap_rank": 194,
+          "current_price": 341.45,
+          "day_change_pct": 0.09,
+          "week_change_pct": 7.27,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 59.4,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 329.31,
+          "sma200": 326.23,
+          "support": 281.1
+        },
+        {
+          "ticker": "CYIENT.NS",
+          "symbol": "CYIENT",
+          "tradingview": "NSE:CYIENT",
+          "tier": "midcap",
+          "market_cap_crore": 9779.51,
+          "mcap_rank": 199,
+          "current_price": 1172.4,
+          "day_change_pct": -1.85,
+          "week_change_pct": 1.61,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 61.4,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 1048.41,
+          "sma200": 964.77,
+          "support": 752.85
+        },
+        {
           "ticker": "PVRINOX.NS",
           "symbol": "PVRINOX",
           "tradingview": "NSE:PVRINOX",
@@ -4008,56 +4078,6 @@
           "sma50": 1252.6,
           "sma200": 1067.4,
           "support": 918.6
-        },
-        {
-          "ticker": "CONCOR.NS",
-          "symbol": "CONCOR",
-          "tradingview": "NSE:CONCOR",
-          "tier": "midcap",
-          "market_cap_crore": 35742.73,
-          "mcap_rank": 141,
-          "current_price": 441.65,
-          "day_change_pct": -1.41,
-          "week_change_pct": 0.2,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 40.4 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 40.4,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 421.62
-        },
-        {
-          "ticker": "UBL.NS",
-          "symbol": "UBL",
-          "tradingview": "NSE:UBL",
-          "tier": "midcap",
-          "market_cap_crore": 35165.88,
-          "mcap_rank": 143,
-          "current_price": 1204.8,
-          "day_change_pct": 0.4,
-          "week_change_pct": 3.43,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 44.9 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 44.9,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1158.1
         },
         {
           "ticker": "STARHEALTH.NS",
@@ -4136,31 +4156,6 @@
           "support": 1109.28
         },
         {
-          "ticker": "EIDPARRY.NS",
-          "symbol": "EIDPARRY",
-          "tradingview": "NSE:EIDPARRY",
-          "tier": "midcap",
-          "market_cap_crore": 12617.06,
-          "mcap_rank": 186,
-          "current_price": 674.05,
-          "day_change_pct": -2.9,
-          "week_change_pct": -3.62,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 43.8 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 43.8,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 674.55
-        },
-        {
           "ticker": "JUBLINGREA.NS",
           "symbol": "JUBLINGREA",
           "tradingview": "NSE:JUBLINGREA",
@@ -4174,15 +4169,15 @@
           "action": "BUY ON DIP",
           "action_emoji": "\ud83d\udd35",
           "signals": [
-            "RSI 43.7 \u2014 recovering, watch for reversal",
+            "RSI 41.2 \u2014 recovering, watch for reversal",
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 43.7,
+          "rsi": 41.2,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 670.32,
+          "sma200": 663.34,
           "support": 539.48
         },
         {
@@ -4211,28 +4206,28 @@
           "support": 2192.17
         },
         {
-          "ticker": "DALBHARAT.NS",
-          "symbol": "DALBHARAT",
-          "tradingview": "NSE:DALBHARAT",
+          "ticker": "STLTECH.NS",
+          "symbol": "STLTECH",
+          "tradingview": "NSE:STLTECH",
           "tier": "midcap",
-          "market_cap_crore": 32238.67,
-          "mcap_rank": 151,
-          "current_price": 1622.6,
-          "day_change_pct": -3.67,
-          "week_change_pct": -0.25,
+          "market_cap_crore": 29941.76,
+          "mcap_rank": 155,
+          "current_price": 887.25,
+          "day_change_pct": 3.17,
+          "week_change_pct": -12.51,
           "momentum_score": 1,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "MACD bearish \u2014 weak momentum",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
           ],
-          "rsi": 50.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1592.9
+          "rsi": 50.2,
+          "trend": "UPTREND",
+          "macd": "Bearish (below signal)",
+          "sma50": 797.7,
+          "sma200": 446.28,
+          "support": 86.24
         },
         {
           "ticker": "MANAPPURAM.NS",
@@ -4251,12 +4246,38 @@
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 51.4,
+          "rsi": 47.8,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 332.68,
+          "sma200": 310.34,
           "support": 249.98
+        },
+        {
+          "ticker": "LALPATHLAB.NS",
+          "symbol": "LALPATHLAB",
+          "tradingview": "NSE:LALPATHLAB",
+          "tier": "midcap",
+          "market_cap_crore": 28235.94,
+          "mcap_rank": 158,
+          "current_price": 1843.7,
+          "day_change_pct": -0.66,
+          "week_change_pct": -6.4,
+          "momentum_score": 1,
+          "action": "NEUTRAL",
+          "action_emoji": "\u26aa",
+          "signals": [
+            "RSI 39.1 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "SIDEWAYS \u2014 possible accumulation zone",
+            "Near lower Bollinger Band \u2014 oversold extension"
+          ],
+          "rsi": 39.1,
+          "trend": "SIDEWAYS",
+          "macd": "Bearish (below signal)",
+          "sma50": 1922.79,
+          "sma200": 1615.81,
+          "support": 1300.98
         },
         {
           "ticker": "PNBHOUSING.NS",
@@ -4275,36 +4296,12 @@
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 53.9,
+          "rsi": 49.9,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 1149.65,
+          "sma200": 998.4,
           "support": 744.94
-        },
-        {
-          "ticker": "IGL.NS",
-          "symbol": "IGL",
-          "tradingview": "NSE:IGL",
-          "tier": "midcap",
-          "market_cap_crore": 23825.23,
-          "mcap_rank": 163,
-          "current_price": 142.54,
-          "day_change_pct": -0.34,
-          "week_change_pct": -0.79,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 45.5,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 140.56
         },
         {
           "ticker": "CARBORUNIV.NS",
@@ -4357,54 +4354,6 @@
           "support": 449.3
         },
         {
-          "ticker": "ATUL.NS",
-          "symbol": "ATUL",
-          "tradingview": "NSE:ATUL",
-          "tier": "midcap",
-          "market_cap_crore": 19752.47,
-          "mcap_rank": 170,
-          "current_price": 6082.0,
-          "day_change_pct": -1.9,
-          "week_change_pct": 1.73,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 55.5,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 5636.71
-        },
-        {
-          "ticker": "BAYERCROP.NS",
-          "symbol": "BAYERCROP",
-          "tradingview": "NSE:BAYERCROP",
-          "tier": "midcap",
-          "market_cap_crore": 18829.39,
-          "mcap_rank": 172,
-          "current_price": 3548.2,
-          "day_change_pct": -2.49,
-          "week_change_pct": 0.26,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 45.8,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 3381.6
-        },
-        {
           "ticker": "CASTROLIND.NS",
           "symbol": "CASTROLIND",
           "tradingview": "NSE:CASTROLIND",
@@ -4453,30 +4402,6 @@
           "support": 346.0
         },
         {
-          "ticker": "KANSAINER.NS",
-          "symbol": "KANSAINER",
-          "tradingview": "NSE:KANSAINER",
-          "tier": "midcap",
-          "market_cap_crore": 17261.2,
-          "mcap_rank": 179,
-          "current_price": 181.46,
-          "day_change_pct": -2.44,
-          "week_change_pct": 1.91,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 51.4,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 157.2
-        },
-        {
           "ticker": "FINCABLES.NS",
           "symbol": "FINCABLES",
           "tradingview": "NSE:FINCABLES",
@@ -4503,76 +4428,56 @@
           "support": 705.77
         },
         {
-          "ticker": "DCMSHRIRAM.NS",
-          "symbol": "DCMSHRIRAM",
-          "tradingview": "NSE:DCMSHRIRAM",
+          "ticker": "EIDPARRY.NS",
+          "symbol": "EIDPARRY",
+          "tradingview": "NSE:EIDPARRY",
           "tier": "midcap",
-          "market_cap_crore": 16066.88,
-          "mcap_rank": 183,
-          "current_price": 1002.05,
-          "day_change_pct": -1.2,
-          "week_change_pct": 5.03,
+          "market_cap_crore": 12617.06,
+          "mcap_rank": 186,
+          "current_price": 674.05,
+          "day_change_pct": -2.9,
+          "week_change_pct": -3.62,
           "momentum_score": 1,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
+            "RSI 38.0 \u2014 recovering, watch for reversal",
             "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "Price below 50MA & 200MA \u2014 DOWNTREND",
+            "Near lower Bollinger Band \u2014 oversold extension"
           ],
-          "rsi": 55.4,
-          "trend": "SIDEWAYS",
+          "rsi": 38.0,
+          "trend": "DOWNTREND",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 906.85
+          "sma50": 742.19,
+          "sma200": 806.96,
+          "support": 674.05
         },
         {
-          "ticker": "BALRAMCHIN.NS",
-          "symbol": "BALRAMCHIN",
-          "tradingview": "NSE:BALRAMCHIN",
+          "ticker": "GRAPHITE.NS",
+          "symbol": "GRAPHITE",
+          "tradingview": "NSE:GRAPHITE",
           "tier": "midcap",
-          "market_cap_crore": 11239.42,
-          "mcap_rank": 192,
-          "current_price": 701.85,
-          "day_change_pct": -1.98,
-          "week_change_pct": 0.15,
+          "market_cap_crore": 11817.29,
+          "mcap_rank": 189,
+          "current_price": 745.5,
+          "day_change_pct": -3.19,
+          "week_change_pct": -7.67,
           "momentum_score": 1,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "RSI 41.0 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "SIDEWAYS \u2014 possible accumulation zone",
+            "Near lower Bollinger Band \u2014 oversold extension"
           ],
-          "rsi": 59.0,
+          "rsi": 41.0,
           "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 397.8
-        },
-        {
-          "ticker": "NUVOCO.NS",
-          "symbol": "NUVOCO",
-          "tradingview": "NSE:NUVOCO",
-          "tier": "midcap",
-          "market_cap_crore": 10925.41,
-          "mcap_rank": 194,
-          "current_price": 341.45,
-          "day_change_pct": 0.09,
-          "week_change_pct": 7.27,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 59.2,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 281.1
+          "macd": "Bearish (below signal)",
+          "sma50": 765.94,
+          "sma200": 684.07,
+          "support": 520.44
         },
         {
           "ticker": "UJJIVANSFB.NS",
@@ -4599,54 +4504,6 @@
           "support": 50.24
         },
         {
-          "ticker": "CYIENT.NS",
-          "symbol": "CYIENT",
-          "tradingview": "NSE:CYIENT",
-          "tier": "midcap",
-          "market_cap_crore": 9779.51,
-          "mcap_rank": 199,
-          "current_price": 1172.4,
-          "day_change_pct": -1.85,
-          "week_change_pct": 1.61,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 66.6,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 752.85
-        },
-        {
-          "ticker": "BATAINDIA.NS",
-          "symbol": "BATAINDIA",
-          "tradingview": "NSE:BATAINDIA",
-          "tier": "midcap",
-          "market_cap_crore": 9170.44,
-          "mcap_rank": 201,
-          "current_price": 635.55,
-          "day_change_pct": -0.49,
-          "week_change_pct": 4.23,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 54.2,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 579.78
-        },
-        {
           "ticker": "EQUITASBNK.NS",
           "symbol": "EQUITASBNK",
           "tradingview": "NSE:EQUITASBNK",
@@ -4663,11 +4520,11 @@
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 51.9,
+          "rsi": 50.8,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 72.02,
+          "sma200": 69.42,
           "support": 51.73
         },
         {
@@ -4687,11 +4544,11 @@
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 68.2,
+          "rsi": 63.9,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 291.52,
+          "sma200": 337.71,
           "support": 268.24
         },
         {
@@ -4760,16 +4617,41 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 42.9 \u2014 recovering, watch for reversal",
+            "RSI 42.5 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 42.9,
+          "rsi": 42.5,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 8398.94,
+          "sma200": 7134.31,
           "support": 4965.51
+        },
+        {
+          "ticker": "CONCOR.NS",
+          "symbol": "CONCOR",
+          "tradingview": "NSE:CONCOR",
+          "tier": "midcap",
+          "market_cap_crore": 35742.73,
+          "mcap_rank": 141,
+          "current_price": 441.65,
+          "day_change_pct": -1.41,
+          "week_change_pct": 0.2,
+          "momentum_score": 0,
+          "action": "NEUTRAL",
+          "action_emoji": "\u26aa",
+          "signals": [
+            "RSI 37.1 \u2014 recovering, watch for reversal",
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 37.1,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 485.12,
+          "sma200": 486.87,
+          "support": 421.62
         },
         {
           "ticker": "JBCHEPHARM.NS",
@@ -4818,31 +4700,6 @@
           "support": 1771.0
         },
         {
-          "ticker": "TATAINVEST.NS",
-          "symbol": "TATAINVEST",
-          "tradingview": "NSE:TATAINVEST",
-          "tier": "midcap",
-          "market_cap_crore": 34197.36,
-          "mcap_rank": 145,
-          "current_price": 604.5,
-          "day_change_pct": -1.48,
-          "week_change_pct": -2.44,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "RSI 42.0 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 42.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 538.37
-        },
-        {
           "ticker": "ESCORTS.NS",
           "symbol": "ESCORTS",
           "tradingview": "NSE:ESCORTS",
@@ -4866,6 +4723,31 @@
           "sma50": 2907.69,
           "sma200": 3100.18,
           "support": 2667.3
+        },
+        {
+          "ticker": "DALBHARAT.NS",
+          "symbol": "DALBHARAT",
+          "tradingview": "NSE:DALBHARAT",
+          "tier": "midcap",
+          "market_cap_crore": 32238.67,
+          "mcap_rank": 151,
+          "current_price": 1622.6,
+          "day_change_pct": -3.67,
+          "week_change_pct": -0.25,
+          "momentum_score": 0,
+          "action": "NEUTRAL",
+          "action_emoji": "\u26aa",
+          "signals": [
+            "RSI 42.5 \u2014 recovering, watch for reversal",
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 42.5,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 1748.4,
+          "sma200": 1863.45,
+          "support": 1592.9
         },
         {
           "ticker": "WOCKPHARMA.NS",
@@ -4943,31 +4825,6 @@
           "support": 73.7
         },
         {
-          "ticker": "LALPATHLAB.NS",
-          "symbol": "LALPATHLAB",
-          "tradingview": "NSE:LALPATHLAB",
-          "tier": "midcap",
-          "market_cap_crore": 28235.94,
-          "mcap_rank": 158,
-          "current_price": 1843.7,
-          "day_change_pct": -0.66,
-          "week_change_pct": -6.4,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "RSI 40.9 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 40.9,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1300.98
-        },
-        {
           "ticker": "JUBLFOOD.NS",
           "symbol": "JUBLFOOD",
           "tradingview": "NSE:JUBLFOOD",
@@ -5018,6 +4875,31 @@
           "support": 1124.9
         },
         {
+          "ticker": "IGL.NS",
+          "symbol": "IGL",
+          "tradingview": "NSE:IGL",
+          "tier": "midcap",
+          "market_cap_crore": 23825.23,
+          "mcap_rank": 163,
+          "current_price": 142.54,
+          "day_change_pct": -0.34,
+          "week_change_pct": -0.79,
+          "momentum_score": 0,
+          "action": "NEUTRAL",
+          "action_emoji": "\u26aa",
+          "signals": [
+            "RSI 44.5 \u2014 recovering, watch for reversal",
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 44.5,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 147.09,
+          "sma200": 158.31,
+          "support": 140.56
+        },
+        {
           "ticker": "CESC.NS",
           "symbol": "CESC",
           "tradingview": "NSE:CESC",
@@ -5043,31 +4925,6 @@
           "support": 128.73
         },
         {
-          "ticker": "RAMCOCEM.NS",
-          "symbol": "RAMCOCEM",
-          "tradingview": "NSE:RAMCOCEM",
-          "tier": "midcap",
-          "market_cap_crore": 21668.01,
-          "mcap_rank": 166,
-          "current_price": 787.35,
-          "day_change_pct": -2.24,
-          "week_change_pct": -2.17,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "RSI 36.0 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 36.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 786.9
-        },
-        {
           "ticker": "TRITURBINE.NS",
           "symbol": "TRITURBINE",
           "tradingview": "NSE:TRITURBINE",
@@ -5081,15 +4938,16 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 30.1 \u2014 recovering, watch for reversal",
+            "RSI 27.2 \u2014 deeply oversold, high reward zone",
             "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "Price below 50MA & 200MA \u2014 DOWNTREND",
+            "Near lower Bollinger Band \u2014 oversold extension"
           ],
-          "rsi": 30.1,
-          "trend": "SIDEWAYS",
+          "rsi": 27.2,
+          "trend": "DOWNTREND",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 558.8,
+          "sma200": 558.94,
           "support": 433.75
         },
         {
@@ -5144,6 +5002,31 @@
           "support": 531.74
         },
         {
+          "ticker": "BAYERCROP.NS",
+          "symbol": "BAYERCROP",
+          "tradingview": "NSE:BAYERCROP",
+          "tier": "midcap",
+          "market_cap_crore": 18829.39,
+          "mcap_rank": 172,
+          "current_price": 3548.2,
+          "day_change_pct": -2.49,
+          "week_change_pct": 0.26,
+          "momentum_score": 0,
+          "action": "NEUTRAL",
+          "action_emoji": "\u26aa",
+          "signals": [
+            "RSI 39.3 \u2014 recovering, watch for reversal",
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 39.3,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 3857.02,
+          "sma200": 4269.9,
+          "support": 3381.6
+        },
+        {
           "ticker": "RATNAMANI.NS",
           "symbol": "RATNAMANI",
           "tradingview": "NSE:RATNAMANI",
@@ -5157,15 +5040,15 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 42.4 \u2014 recovering, watch for reversal",
+            "RSI 41.1 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 42.4,
+          "rsi": 41.1,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 2592.02,
+          "sma200": 2456.19,
           "support": 1937.82
         },
         {
@@ -5240,31 +5123,6 @@
           "support": null
         },
         {
-          "ticker": "VINATIORGA.NS",
-          "symbol": "VINATIORGA",
-          "tradingview": "NSE:VINATIORGA",
-          "tier": "midcap",
-          "market_cap_crore": 14160.6,
-          "mcap_rank": 185,
-          "current_price": 1118.6,
-          "day_change_pct": -1.44,
-          "week_change_pct": -0.92,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "RSI 36.5 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 36.5,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1120.8
-        },
-        {
           "ticker": "INDIAMART.NS",
           "symbol": "INDIAMART",
           "tradingview": "NSE:INDIAMART",
@@ -5303,15 +5161,15 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 38.6 \u2014 recovering, watch for reversal",
+            "RSI 34.7 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 38.6,
+          "rsi": 34.7,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 564.25,
+          "sma200": 518.62,
           "support": 420.92
         },
         {
@@ -5413,28 +5271,52 @@
           "support": 441.73
         },
         {
-          "ticker": "STLTECH.NS",
-          "symbol": "STLTECH",
-          "tradingview": "NSE:STLTECH",
+          "ticker": "UBL.NS",
+          "symbol": "UBL",
+          "tradingview": "NSE:UBL",
           "tier": "midcap",
-          "market_cap_crore": 29941.76,
-          "mcap_rank": 155,
-          "current_price": 887.25,
-          "day_change_pct": 3.17,
-          "week_change_pct": -12.51,
+          "market_cap_crore": 35165.88,
+          "mcap_rank": 143,
+          "current_price": 1204.8,
+          "day_change_pct": 0.4,
+          "week_change_pct": 3.43,
           "momentum_score": -1,
           "action": "WATCH / AVOID",
           "action_emoji": "\ud83d\udfe1",
           "signals": [
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
           ],
-          "rsi": 46.9,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 86.24
+          "rsi": 45.8,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 1271.96,
+          "sma200": 1410.94,
+          "support": 1158.1
+        },
+        {
+          "ticker": "ATUL.NS",
+          "symbol": "ATUL",
+          "tradingview": "NSE:ATUL",
+          "tier": "midcap",
+          "market_cap_crore": 19752.47,
+          "mcap_rank": 170,
+          "current_price": 6082.0,
+          "day_change_pct": -1.9,
+          "week_change_pct": 1.73,
+          "momentum_score": -1,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 48.8,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 6299.13,
+          "sma200": 6405.56,
+          "support": 5636.71
         },
         {
           "ticker": "EMAMILTD.NS",
@@ -5459,6 +5341,54 @@
           "sma50": 383.26,
           "sma200": 426.53,
           "support": 363.65
+        },
+        {
+          "ticker": "KANSAINER.NS",
+          "symbol": "KANSAINER",
+          "tradingview": "NSE:KANSAINER",
+          "tier": "midcap",
+          "market_cap_crore": 17261.2,
+          "mcap_rank": 179,
+          "current_price": 181.46,
+          "day_change_pct": -2.44,
+          "week_change_pct": 1.91,
+          "momentum_score": -1,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 46.9,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 191.15,
+          "sma200": 201.48,
+          "support": 157.2
+        },
+        {
+          "ticker": "DCMSHRIRAM.NS",
+          "symbol": "DCMSHRIRAM",
+          "tradingview": "NSE:DCMSHRIRAM",
+          "tier": "midcap",
+          "market_cap_crore": 16066.88,
+          "mcap_rank": 183,
+          "current_price": 1002.05,
+          "day_change_pct": -1.2,
+          "week_change_pct": 5.03,
+          "momentum_score": -1,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 52.9,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 1002.25,
+          "sma200": 1074.3,
+          "support": 906.85
         },
         {
           "ticker": "BLUEDART.NS",
@@ -5486,28 +5416,28 @@
           "support": 4380.0
         },
         {
-          "ticker": "GRAPHITE.NS",
-          "symbol": "GRAPHITE",
-          "tradingview": "NSE:GRAPHITE",
+          "ticker": "BATAINDIA.NS",
+          "symbol": "BATAINDIA",
+          "tradingview": "NSE:BATAINDIA",
           "tier": "midcap",
-          "market_cap_crore": 11817.29,
-          "mcap_rank": 189,
-          "current_price": 745.5,
-          "day_change_pct": -3.19,
-          "week_change_pct": -7.67,
+          "market_cap_crore": 9170.44,
+          "mcap_rank": 201,
+          "current_price": 635.55,
+          "day_change_pct": -0.49,
+          "week_change_pct": 4.23,
           "momentum_score": -1,
           "action": "WATCH / AVOID",
           "action_emoji": "\ud83d\udfe1",
           "signals": [
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
           ],
-          "rsi": 45.6,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 520.44
+          "rsi": 52.4,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 657.18,
+          "sma200": 701.99,
+          "support": 579.78
         },
         {
           "ticker": "KRBL.NS",
@@ -5535,6 +5465,31 @@
           "support": 275.78
         },
         {
+          "ticker": "TATAINVEST.NS",
+          "symbol": "TATAINVEST",
+          "tradingview": "NSE:TATAINVEST",
+          "tier": "midcap",
+          "market_cap_crore": 34197.36,
+          "mcap_rank": 145,
+          "current_price": 604.5,
+          "day_change_pct": -1.48,
+          "week_change_pct": -2.44,
+          "momentum_score": -2,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "RSI 39.1 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 39.1,
+          "trend": "DOWNTREND",
+          "macd": "Bearish (below signal)",
+          "sma50": 646.61,
+          "sma200": 655.8,
+          "support": 538.37
+        },
+        {
           "ticker": "BANDHANBNK.NS",
           "symbol": "BANDHANBNK",
           "tradingview": "NSE:BANDHANBNK",
@@ -5560,6 +5515,31 @@
           "support": 134.31
         },
         {
+          "ticker": "RAMCOCEM.NS",
+          "symbol": "RAMCOCEM",
+          "tradingview": "NSE:RAMCOCEM",
+          "tier": "midcap",
+          "market_cap_crore": 21668.01,
+          "mcap_rank": 166,
+          "current_price": 787.35,
+          "day_change_pct": -2.24,
+          "week_change_pct": -2.17,
+          "momentum_score": -2,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "RSI 31.6 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 31.6,
+          "trend": "DOWNTREND",
+          "macd": "Bearish (below signal)",
+          "sma50": 870.51,
+          "sma200": 955.11,
+          "support": 786.9
+        },
+        {
           "ticker": "CHAMBLFERT.NS",
           "symbol": "CHAMBLFERT",
           "tradingview": "NSE:CHAMBLFERT",
@@ -5583,6 +5563,31 @@
           "sma50": 415.37,
           "sma200": 437.83,
           "support": 374.3
+        },
+        {
+          "ticker": "VINATIORGA.NS",
+          "symbol": "VINATIORGA",
+          "tradingview": "NSE:VINATIORGA",
+          "tier": "midcap",
+          "market_cap_crore": 14160.6,
+          "mcap_rank": 185,
+          "current_price": 1118.6,
+          "day_change_pct": -1.44,
+          "week_change_pct": -0.92,
+          "momentum_score": -2,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "RSI 33.8 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 33.8,
+          "trend": "DOWNTREND",
+          "macd": "Bearish (below signal)",
+          "sma50": 1250.42,
+          "sma200": 1350.07,
+          "support": 1118.6
         }
       ]
     },
@@ -5590,233 +5595,6 @@
       "tier": "smallcap",
       "count": 24,
       "top_buys": [
-        {
-          "ticker": "JKLAKSHMI.NS",
-          "symbol": "JKLAKSHMI",
-          "tradingview": "NSE:JKLAKSHMI",
-          "tier": "smallcap",
-          "market_cap_crore": 7411.42,
-          "mcap_rank": 209,
-          "current_price": 491.05,
-          "day_change_pct": 2.68,
-          "week_change_pct": 4.66,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 41.0 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 41.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 466.8
-        },
-        {
-          "ticker": "ORIENTELEC.NS",
-          "symbol": "ORIENTELEC",
-          "tradingview": "NSE:ORIENTELEC",
-          "tier": "smallcap",
-          "market_cap_crore": 3772.74,
-          "mcap_rank": 223,
-          "current_price": 194.38,
-          "day_change_pct": -2.81,
-          "week_change_pct": 12.83,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 70.1 \u2014 overbought, wait for pullback",
-            "MACD bullish \u2014 momentum building",
-            "Price above 50MA & 200MA \u2014 UPTREND intact"
-          ],
-          "rsi": 70.1,
-          "trend": "UPTREND",
-          "macd": "Bullish (above signal)",
-          "sma50": 175.82,
-          "sma200": 175.45,
-          "support": 153.97
-        },
-        {
-          "ticker": "RAJESHEXPO.NS",
-          "symbol": "RAJESHEXPO",
-          "tradingview": "NSE:RAJESHEXPO",
-          "tier": "smallcap",
-          "market_cap_crore": 2864.61,
-          "mcap_rank": 226,
-          "current_price": 57.53,
-          "day_change_pct": -2.11,
-          "week_change_pct": 4.09,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 33.3 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 33.3,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 53.33
-        },
-        {
-          "ticker": "LAOPALA.NS",
-          "symbol": "LAOPALA",
-          "tradingview": "NSE:LAOPALA",
-          "tier": "smallcap",
-          "market_cap_crore": 2007.99,
-          "mcap_rank": 228,
-          "current_price": 157.66,
-          "day_change_pct": 0.76,
-          "week_change_pct": 3.79,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 44.0 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 44.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 151.9
-        }
-      ],
-      "bearish": [],
-      "stocks": [
-        {
-          "ticker": "JKLAKSHMI.NS",
-          "symbol": "JKLAKSHMI",
-          "tradingview": "NSE:JKLAKSHMI",
-          "tier": "smallcap",
-          "market_cap_crore": 7411.42,
-          "mcap_rank": 209,
-          "current_price": 491.05,
-          "day_change_pct": 2.68,
-          "week_change_pct": 4.66,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 41.0 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 41.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 466.8
-        },
-        {
-          "ticker": "ORIENTELEC.NS",
-          "symbol": "ORIENTELEC",
-          "tradingview": "NSE:ORIENTELEC",
-          "tier": "smallcap",
-          "market_cap_crore": 3772.74,
-          "mcap_rank": 223,
-          "current_price": 194.38,
-          "day_change_pct": -2.81,
-          "week_change_pct": 12.83,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 70.1 \u2014 overbought, wait for pullback",
-            "MACD bullish \u2014 momentum building",
-            "Price above 50MA & 200MA \u2014 UPTREND intact"
-          ],
-          "rsi": 70.1,
-          "trend": "UPTREND",
-          "macd": "Bullish (above signal)",
-          "sma50": 175.82,
-          "sma200": 175.45,
-          "support": 153.97
-        },
-        {
-          "ticker": "RAJESHEXPO.NS",
-          "symbol": "RAJESHEXPO",
-          "tradingview": "NSE:RAJESHEXPO",
-          "tier": "smallcap",
-          "market_cap_crore": 2864.61,
-          "mcap_rank": 226,
-          "current_price": 57.53,
-          "day_change_pct": -2.11,
-          "week_change_pct": 4.09,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 33.3 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 33.3,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 53.33
-        },
-        {
-          "ticker": "LAOPALA.NS",
-          "symbol": "LAOPALA",
-          "tradingview": "NSE:LAOPALA",
-          "tier": "smallcap",
-          "market_cap_crore": 2007.99,
-          "mcap_rank": 228,
-          "current_price": 157.66,
-          "day_change_pct": 0.76,
-          "week_change_pct": 3.79,
-          "momentum_score": 2,
-          "action": "BUY ON DIP",
-          "action_emoji": "\ud83d\udd35",
-          "signals": [
-            "RSI 44.0 \u2014 recovering, watch for reversal",
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 44.0,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 151.9
-        },
-        {
-          "ticker": "NESCO.NS",
-          "symbol": "NESCO",
-          "tradingview": "NSE:NESCO",
-          "tier": "smallcap",
-          "market_cap_crore": 7680.14,
-          "mcap_rank": 208,
-          "current_price": 1035.8,
-          "day_change_pct": -1.41,
-          "week_change_pct": -0.07,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 49.2,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1007.51
-        },
         {
           "ticker": "GALAXYSURF.NS",
           "symbol": "GALAXYSURF",
@@ -5827,19 +5605,170 @@
           "current_price": 2437.5,
           "day_change_pct": -2.58,
           "week_change_pct": -3.75,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
           "signals": [
             "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
           ],
-          "rsi": 60.6,
-          "trend": "SIDEWAYS",
+          "rsi": 54.9,
+          "trend": "UPTREND",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 2295.77,
+          "sma200": 1961.03,
           "support": 1497.51
+        },
+        {
+          "ticker": "PRINCEPIPE.NS",
+          "symbol": "PRINCEPIPE",
+          "tradingview": "NSE:PRINCEPIPE",
+          "tier": "smallcap",
+          "market_cap_crore": 3104.04,
+          "mcap_rank": 225,
+          "current_price": 277.25,
+          "day_change_pct": -1.51,
+          "week_change_pct": 3.78,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 57.9,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 272.48,
+          "sma200": 260.47,
+          "support": 205.33
+        },
+        {
+          "ticker": "ORIENTELEC.NS",
+          "symbol": "ORIENTELEC",
+          "tradingview": "NSE:ORIENTELEC",
+          "tier": "smallcap",
+          "market_cap_crore": 3772.74,
+          "mcap_rank": 223,
+          "current_price": 194.38,
+          "day_change_pct": -2.81,
+          "week_change_pct": 12.83,
+          "momentum_score": 2,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "RSI 70.1 \u2014 overbought, wait for pullback",
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 70.1,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 175.82,
+          "sma200": 175.45,
+          "support": 153.97
+        }
+      ],
+      "bearish": [
+        {
+          "ticker": "NESCO.NS",
+          "symbol": "NESCO",
+          "tradingview": "NSE:NESCO",
+          "tier": "smallcap",
+          "market_cap_crore": 7680.14,
+          "mcap_rank": 208,
+          "current_price": 1035.8,
+          "day_change_pct": -1.41,
+          "week_change_pct": -0.07,
+          "momentum_score": -3,
+          "action": "BEARISH \u2014 AVOID",
+          "action_emoji": "\ud83d\udd34",
+          "signals": [
+            "RSI 44.0 \u2014 recovering, watch for reversal",
+            "MACD bearish crossover \u2014 caution",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 44.0,
+          "trend": "DOWNTREND",
+          "macd": "Bearish crossover",
+          "sma50": 1053.2,
+          "sma200": 1113.65,
+          "support": 1007.51
+        }
+      ],
+      "stocks": [
+        {
+          "ticker": "GALAXYSURF.NS",
+          "symbol": "GALAXYSURF",
+          "tradingview": "NSE:GALAXYSURF",
+          "tier": "smallcap",
+          "market_cap_crore": 7351.17,
+          "mcap_rank": 210,
+          "current_price": 2437.5,
+          "day_change_pct": -2.58,
+          "week_change_pct": -3.75,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 54.9,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 2295.77,
+          "sma200": 1961.03,
+          "support": 1497.51
+        },
+        {
+          "ticker": "PRINCEPIPE.NS",
+          "symbol": "PRINCEPIPE",
+          "tradingview": "NSE:PRINCEPIPE",
+          "tier": "smallcap",
+          "market_cap_crore": 3104.04,
+          "mcap_rank": 225,
+          "current_price": 277.25,
+          "day_change_pct": -1.51,
+          "week_change_pct": 3.78,
+          "momentum_score": 3,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 57.9,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 272.48,
+          "sma200": 260.47,
+          "support": 205.33
+        },
+        {
+          "ticker": "ORIENTELEC.NS",
+          "symbol": "ORIENTELEC",
+          "tradingview": "NSE:ORIENTELEC",
+          "tier": "smallcap",
+          "market_cap_crore": 3772.74,
+          "mcap_rank": 223,
+          "current_price": 194.38,
+          "day_change_pct": -2.81,
+          "week_change_pct": 12.83,
+          "momentum_score": 2,
+          "action": "BUY ON DIP",
+          "action_emoji": "\ud83d\udd35",
+          "signals": [
+            "RSI 70.1 \u2014 overbought, wait for pullback",
+            "MACD bullish \u2014 momentum building",
+            "Price above 50MA & 200MA \u2014 UPTREND intact"
+          ],
+          "rsi": 70.1,
+          "trend": "UPTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 175.82,
+          "sma200": 175.45,
+          "support": 153.97
         },
         {
           "ticker": "MASTEK.NS",
@@ -5858,11 +5787,11 @@
             "MACD bullish \u2014 momentum building",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 69.0,
+          "rsi": 65.6,
           "trend": "SIDEWAYS",
           "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 1682.97,
+          "sma200": 1706.59,
           "support": 1330.91
         },
         {
@@ -5917,76 +5846,56 @@
           "support": 361.64
         },
         {
-          "ticker": "VAIBHAVGBL.NS",
-          "symbol": "VAIBHAVGBL",
-          "tradingview": "NSE:VAIBHAVGBL",
+          "ticker": "NRBBEARING.NS",
+          "symbol": "NRBBEARING",
+          "tradingview": "NSE:NRBBEARING",
           "tier": "smallcap",
-          "market_cap_crore": 3902.76,
-          "mcap_rank": 221,
-          "current_price": 205.9,
-          "day_change_pct": -2.36,
-          "week_change_pct": 3.12,
+          "market_cap_crore": 4186.09,
+          "mcap_rank": 219,
+          "current_price": 470.1,
+          "day_change_pct": -4.1,
+          "week_change_pct": -10.32,
           "momentum_score": 1,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "RSI 36.1 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "SIDEWAYS \u2014 possible accumulation zone",
+            "Near lower Bollinger Band \u2014 oversold extension"
           ],
-          "rsi": 54.4,
+          "rsi": 36.1,
           "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 173.17
+          "macd": "Bearish (below signal)",
+          "sma50": 495.18,
+          "sma200": 364.83,
+          "support": 214.73
         },
         {
-          "ticker": "LUXIND.NS",
-          "symbol": "LUXIND",
-          "tradingview": "NSE:LUXIND",
+          "ticker": "NILKAMAL.NS",
+          "symbol": "NILKAMAL",
+          "tradingview": "NSE:NILKAMAL",
           "tier": "smallcap",
-          "market_cap_crore": 3663.63,
-          "mcap_rank": 224,
-          "current_price": 1149.5,
-          "day_change_pct": -2.41,
-          "week_change_pct": 1.1,
+          "market_cap_crore": 1901.48,
+          "mcap_rank": 229,
+          "current_price": 1722.4,
+          "day_change_pct": -2.02,
+          "week_change_pct": -3.65,
           "momentum_score": 1,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "RSI 31.8 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "SIDEWAYS \u2014 possible accumulation zone",
+            "Near lower Bollinger Band \u2014 oversold extension"
           ],
-          "rsi": 54.4,
+          "rsi": 31.8,
           "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 824.32
-        },
-        {
-          "ticker": "PRINCEPIPE.NS",
-          "symbol": "PRINCEPIPE",
-          "tradingview": "NSE:PRINCEPIPE",
-          "tier": "smallcap",
-          "market_cap_crore": 3104.04,
-          "mcap_rank": 225,
-          "current_price": 277.25,
-          "day_change_pct": -1.51,
-          "week_change_pct": 3.78,
-          "momentum_score": 1,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "MACD bullish \u2014 momentum building",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 62.2,
-          "trend": "SIDEWAYS",
-          "macd": "Bullish (above signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 205.33
+          "macd": "Bearish (below signal)",
+          "sma50": 1924.49,
+          "sma200": 1486.46,
+          "support": 1050.42
         },
         {
           "ticker": "DELTACORP.NS",
@@ -6051,15 +5960,15 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 37.3 \u2014 recovering, watch for reversal",
+            "RSI 34.4 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 37.3,
+          "rsi": 34.4,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 1195.2,
+          "sma200": 977.26,
           "support": 744.28
         },
         {
@@ -6101,56 +6010,6 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 33.8 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 33.8,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 150.42
-        },
-        {
-          "ticker": "NRBBEARING.NS",
-          "symbol": "NRBBEARING",
-          "tradingview": "NSE:NRBBEARING",
-          "tier": "smallcap",
-          "market_cap_crore": 4186.09,
-          "mcap_rank": 219,
-          "current_price": 470.1,
-          "day_change_pct": -4.1,
-          "week_change_pct": -10.32,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
-            "RSI 41.9 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
-          ],
-          "rsi": 41.9,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 214.73
-        },
-        {
-          "ticker": "GHCL.NS",
-          "symbol": "GHCL",
-          "tradingview": "NSE:GHCL",
-          "tier": "smallcap",
-          "market_cap_crore": 3927.82,
-          "mcap_rank": 220,
-          "current_price": 391.4,
-          "day_change_pct": 0.1,
-          "week_change_pct": 1.43,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
-          "signals": [
             "RSI 33.2 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
@@ -6158,34 +6017,34 @@
           "rsi": 33.2,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 383.65
+          "sma50": 224.47,
+          "sma200": 198.41,
+          "support": 150.42
         },
         {
-          "ticker": "KNRCON.NS",
-          "symbol": "KNRCON",
-          "tradingview": "NSE:KNRCON",
+          "ticker": "RAJESHEXPO.NS",
+          "symbol": "RAJESHEXPO",
+          "tradingview": "NSE:RAJESHEXPO",
           "tier": "smallcap",
-          "market_cap_crore": 3782.32,
-          "mcap_rank": 222,
-          "current_price": 111.51,
-          "day_change_pct": 0.03,
-          "week_change_pct": -0.55,
+          "market_cap_crore": 2864.61,
+          "mcap_rank": 226,
+          "current_price": 57.53,
+          "day_change_pct": -2.11,
+          "week_change_pct": 4.09,
           "momentum_score": 0,
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 38.3 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "RSI 31.3 \u2014 recovering, watch for reversal",
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
           ],
-          "rsi": 38.3,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 109.4
+          "rsi": 31.3,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 72.34,
+          "sma200": 109.76,
+          "support": 53.33
         },
         {
           "ticker": "MMFL.NS",
@@ -6201,41 +6060,112 @@
           "action": "NEUTRAL",
           "action_emoji": "\u26aa",
           "signals": [
-            "RSI 34.1 \u2014 recovering, watch for reversal",
+            "RSI 30.4 \u2014 recovering, watch for reversal",
             "MACD bearish \u2014 weak momentum",
             "SIDEWAYS \u2014 possible accumulation zone"
           ],
-          "rsi": 34.1,
+          "rsi": 30.4,
           "trend": "SIDEWAYS",
           "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
+          "sma50": 609.49,
+          "sma200": 494.37,
           "support": 295.42
         },
         {
-          "ticker": "NILKAMAL.NS",
-          "symbol": "NILKAMAL",
-          "tradingview": "NSE:NILKAMAL",
+          "ticker": "JKLAKSHMI.NS",
+          "symbol": "JKLAKSHMI",
+          "tradingview": "NSE:JKLAKSHMI",
           "tier": "smallcap",
-          "market_cap_crore": 1901.48,
-          "mcap_rank": 229,
-          "current_price": 1722.4,
-          "day_change_pct": -2.02,
-          "week_change_pct": -3.65,
-          "momentum_score": 0,
-          "action": "NEUTRAL",
-          "action_emoji": "\u26aa",
+          "market_cap_crore": 7411.42,
+          "mcap_rank": 209,
+          "current_price": 491.05,
+          "day_change_pct": 2.68,
+          "week_change_pct": 4.66,
+          "momentum_score": -1,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
           "signals": [
-            "RSI 35.2 \u2014 recovering, watch for reversal",
-            "MACD bearish \u2014 weak momentum",
-            "SIDEWAYS \u2014 possible accumulation zone"
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
           ],
-          "rsi": 35.2,
-          "trend": "SIDEWAYS",
-          "macd": "Bearish (below signal)",
-          "sma50": NaN,
-          "sma200": NaN,
-          "support": 1050.42
+          "rsi": 49.4,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 514.64,
+          "sma200": 612.6,
+          "support": 466.8
+        },
+        {
+          "ticker": "VAIBHAVGBL.NS",
+          "symbol": "VAIBHAVGBL",
+          "tradingview": "NSE:VAIBHAVGBL",
+          "tier": "smallcap",
+          "market_cap_crore": 3902.76,
+          "mcap_rank": 221,
+          "current_price": 205.9,
+          "day_change_pct": -2.36,
+          "week_change_pct": 3.12,
+          "momentum_score": -1,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 47.6,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 214.46,
+          "sma200": 223.44,
+          "support": 173.17
+        },
+        {
+          "ticker": "LUXIND.NS",
+          "symbol": "LUXIND",
+          "tradingview": "NSE:LUXIND",
+          "tier": "smallcap",
+          "market_cap_crore": 3663.63,
+          "mcap_rank": 224,
+          "current_price": 1149.5,
+          "day_change_pct": -2.41,
+          "week_change_pct": 1.1,
+          "momentum_score": -1,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 49.9,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 1164.19,
+          "sma200": 1166.42,
+          "support": 824.32
+        },
+        {
+          "ticker": "LAOPALA.NS",
+          "symbol": "LAOPALA",
+          "tradingview": "NSE:LAOPALA",
+          "tier": "smallcap",
+          "market_cap_crore": 2007.99,
+          "mcap_rank": 228,
+          "current_price": 157.66,
+          "day_change_pct": 0.76,
+          "week_change_pct": 3.79,
+          "momentum_score": -1,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "MACD bullish \u2014 momentum building",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 46.4,
+          "trend": "DOWNTREND",
+          "macd": "Bullish (above signal)",
+          "sma50": 167.06,
+          "sma200": 177.87,
+          "support": 151.9
         },
         {
           "ticker": "SAFARI.NS",
@@ -6286,9 +6216,84 @@
           "sma50": 152.91,
           "sma200": 159.62,
           "support": 134.88
+        },
+        {
+          "ticker": "GHCL.NS",
+          "symbol": "GHCL",
+          "tradingview": "NSE:GHCL",
+          "tier": "smallcap",
+          "market_cap_crore": 3927.82,
+          "mcap_rank": 220,
+          "current_price": 391.4,
+          "day_change_pct": 0.1,
+          "week_change_pct": 1.43,
+          "momentum_score": -2,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "RSI 34.2 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 34.2,
+          "trend": "DOWNTREND",
+          "macd": "Bearish (below signal)",
+          "sma50": 420.69,
+          "sma200": 455.87,
+          "support": 383.65
+        },
+        {
+          "ticker": "KNRCON.NS",
+          "symbol": "KNRCON",
+          "tradingview": "NSE:KNRCON",
+          "tier": "smallcap",
+          "market_cap_crore": 3782.32,
+          "mcap_rank": 222,
+          "current_price": 111.51,
+          "day_change_pct": 0.03,
+          "week_change_pct": -0.55,
+          "momentum_score": -2,
+          "action": "WATCH / AVOID",
+          "action_emoji": "\ud83d\udfe1",
+          "signals": [
+            "RSI 38.4 \u2014 recovering, watch for reversal",
+            "MACD bearish \u2014 weak momentum",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 38.4,
+          "trend": "DOWNTREND",
+          "macd": "Bearish (below signal)",
+          "sma50": 121.97,
+          "sma200": 129.18,
+          "support": 109.4
+        },
+        {
+          "ticker": "NESCO.NS",
+          "symbol": "NESCO",
+          "tradingview": "NSE:NESCO",
+          "tier": "smallcap",
+          "market_cap_crore": 7680.14,
+          "mcap_rank": 208,
+          "current_price": 1035.8,
+          "day_change_pct": -1.41,
+          "week_change_pct": -0.07,
+          "momentum_score": -3,
+          "action": "BEARISH \u2014 AVOID",
+          "action_emoji": "\ud83d\udd34",
+          "signals": [
+            "RSI 44.0 \u2014 recovering, watch for reversal",
+            "MACD bearish crossover \u2014 caution",
+            "Price below 50MA & 200MA \u2014 DOWNTREND"
+          ],
+          "rsi": 44.0,
+          "trend": "DOWNTREND",
+          "macd": "Bearish crossover",
+          "sma50": 1053.2,
+          "sma200": 1113.65,
+          "support": 1007.51
         }
       ]
     }
   },
-  "generated_at": "20 Oct 2026 13:55 IST"
+  "generated_at": "20 Oct 2026 14:15 IST"
 }
