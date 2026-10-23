@@ -1,47 +1,87 @@
 {
-  "date": "22 Oct 2026",
-  "timestamp": "2026-10-22T14:19:22.032868+05:30",
+  "date": "23 Oct 2026",
+  "timestamp": "2026-10-23T13:21:28.926281+05:30",
   "holding_news": {
+    "ADANIENT.NS": [
+      {
+        "title": "Adani Enterprises signs Jabil AI venture ahead of stock results on October 28 - AD HOC NEWS",
+        "publisher": "AD HOC NEWS",
+        "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbTZtS2FsVGtua05hQ0pCS0ZVYXVFdUw4UE5jbHhTRHAyVzRLdTQyX3ZHcHpaTDZPSU9PRlZEaU53dWJ3QXZKQzVtdlJrOGtlUUZGOG5MTjk2Ql9Ed182Z1R4Wk1UQlRFaEF2eTNBRmVYN0wyckRHaVFQb1lidmJBZUZPYjZ1MExqeWVVRXR6VGdfSTFLZ1E5WWVoaFBza2FrTmNWOEtFY1k3LVZCVUszOUYyVmFYdTRPeHhkeHdnRTZPV3hWS2EyLUtSUEx3c0VXWFNZaWJpQQ?oc=5",
+        "age_h": 21.6
+      },
+      {
+        "title": "NSE India to Moneyview: $24 billion IPO lock-in expiry in 101 stocks by next January - The Financial Express",
+        "publisher": "The Financial Express",
+        "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPNnhPb2pJdXpaamZaX2o2TklMcU15VGE0LXIzVjdBRXh4Qk9BbzkxbHQ4WVdnaEtnd2VHRXB6a3ozTGlmd1YwMkxIYWpmcDJmdElrMW9qaFdaZHVzRjlfQndHMkJTdTBYQVhNekxReDRFbE9GVFdIY2h2d3hhQzRmX05fRGVpSldNSHF5VWZKZE9uaEhQM21iS2lfSkNpbWhNMHdtU1FKbzRLNVNjeTlIS2p5V1Z5ZkpwRFl1SjhLWVNzWTRDWEd6RTVPZ9IB0gFBVV95cUxQdm00d09kelNMSU15UWxqZ0VlRUJnS010ZnE3aHowc1lNcURxYXRic1U4ajhRUVdwR01tYUlqOHJTVFIwd21taTVfWllESS1WQnVMU0FDYTdndVR2REhKd091US1JcWhwZk5ZalZGc3BNS0ppN291NV9BMlNXamkyR1N2cUZiX0ZMeXRBMHRjTHZCQUh3d00zQThIVGNiVzgtY2dDeGVYMld4WXIyZ3V3dUFrb085cHNWTDJDSG1oUDR1X3VoNzZ5VnZKMXByNWRlY3c?oc=5",
+        "age_h": 23.9
+      }
+    ],
     "BEL.NS": [
       {
         "title": "BEL Slides Despite \u20b9770\u2011Crore Radar Order From Defence - HDFC Sky",
         "publisher": "HDFC Sky",
         "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQVF9xLURUOWYzTWZfX3ljeVFLMDJXRlVzYTRtOHZzdGwxWVJMckRRbDlkbE5LdnFyRGN0ZDB3MjRMajV6dWRsS0hIU0lzeGJIU0V1REVXZGRUZVBkaGJ5MTlmUGdPMGFIVmdpc21Wa2dFbzJub0I3ZWpwaXhfaWlnWUlmVkZiM3lCNlFFRA?oc=5",
-        "age_h": 2.5
+        "age_h": 25.6
       },
       {
         "title": "Stocks to watch, Oct 22: Sagility India, Tata Communications, Bharat Electronics, Omnitech, PDS, SEAMEC - BusinessLine",
         "publisher": "BusinessLine",
         "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQREQ3Mks0TGczLTNLcUxBN3RBbnhnUGdJemJnNnJXbGNSTEVvZU00TFowWllKdENvck5SVGR4LVhpUU40eGlyQ3Y5dThqeU9MZm1vRVE5QzZaZGplVTdtalBfSEdsVjdETGUyclctU2pmUkY3V3F1TG0wVllyVkJKTF93amZYOUcwTGtjellBWFR0dmdRR0lyV1ZxUWNVSkI5cnhNU09jcHhtWWI2OUN0QkpyQ19aTy1OVXo3VDlLVWw5bWtJbml4N3RSTG1qclBESU01MGMxaE9fRkp5aVl3X3hRMENsakF1ckpzeFdRU1dWb1nSAfoBQVVfeXFMT2tXbk1UTkhZUGtLNU5Db0VjTGNkcEFObG9ZRFVrWkNqZDhJWnlXdFlIQ2tiN1VZOGxLbHlEeTJudl9VZGxsNDRvQkx2R0Z6SVAySEJqUmpQLW9RWnpWZHB0eGFPX2c0S0V1QW1VZWxzbVlsZ0Y5WGJUeS0xSFhieDFJc1FtUTUzZExyZnB1VnJ4dUJzNlRvTVhDSGVORWUxVzFSaXUzR0F6ZDc2bnl6dVFsT3pCeWtPN18tcXNHdEZTS0RFYThUeDlPMHJaYVZXNmhGU3VlY194U3NHY3NxR3JDZ2liYWM4WGVMRjRUTVdiYmswNVljeEFudw?oc=5",
-        "age_h": 6.8
+        "age_h": 29.8
       },
       {
         "title": "Stocks to Watch Today: Indian Hotels, PC Jeweller, Seamec, Bharat Electronics, Tata Communications,... - Moneycontrol.com",
         "publisher": "Moneycontrol.com",
         "link": "https://news.google.com/rss/articles/CBMizwJBVV95cUxQZUVDUGV1QmRXMGxGTFltVEFqQ3JERnItNGJQUVhUMkhwcWdPMDJfZ1N6ZmQxb0RMZG1mUFM1R3I2UktNMXBOb0M0dGdGRWt4MXhCYVo1d1ZPOWZocmo2aUVYSk0wQzhJbzhmNmNucVNGMFFneDhHendlR1VsanFOTExUNUk1VHRUTGMyWFNtaEJlV0NXSzl6Q1NVRkU2eTNJZkNwb2FrdG1qTEVBWGdqSG9oWVBPcldzWTR3ZlNSOTlVOXpjWjNoSUpWSkl0UkpkM1E2OElPV3dvOGoyRVZlVzFYNjFxZ0tuVHNNWGJGWmdPbXdwTlAxc2RPNkNTYjdJS0tWNWNqTFE1aHBBcURDTVlNZlM0ZlE3UFZYVU1nZ2JFaHBSMGRZZzc1dkdhdllFaWF3VG40LXhsd2pnUjAzZ0ctQUI5WlFGekRHamxSMNIB1AJBVV95cUxPSVU1cVh6MXo4Z0NVR2ZJOVd4cXVQNnFWLWtNbkJaNDVFWm9STDlFWU8zbi02dXlLTW9TZzk2RTdMV3JveTU0OF9jTWczUHg1NE4ydXFnYm1BNDNQNzdoclFOTG83QjJxbFcySm1hR0IyQzltRTZHZW9RZUdKMXRYQkoxaXlIRm9MVksyLVQzSEY0T19BZTBZTjVDZVZJOWU1VlFvWVlUbFJrYWhTOWpxOGMzYzZhcm9rdW5KYjNMY2dzMXJwTzJDelRiTk9oaWlHT1FBU21KbVJoMU1ZRGlSVXRSdjFBeE4wbEJqd1ZSS3otVEozRG04Q2FXVzVLeTZEUWJxRlp5bjNPSzRnZF9fX2ktNHFhMGxrZnBJQXhXRndTZ25LakNNb2Nzc1VHUkhycFVSMERpZllUUFlZMTB4ckFTVWIyQUNDVTJJbDMxLTF4VTFY?oc=5",
-        "age_h": 13.5
+        "age_h": 36.6
       }
     ],
     "CAMS.NS": [
       {
-        "title": "National Stock Exchange Of India Ltd Share Price - Business Today",
-        "publisher": "Business Today",
-        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdExIaHU2NElmaTQxdkNYOEgxNWlfWlR3TV9IOVcyci1DUHFlaTkwWlZiRjhLZkJEYnZ5QXlEZEljYWRvbzJxLTcwUmpjSk9FTUhZTGZUTUYzdjJUcjd4MGN2V0NGVS04aktuLS1SanNEb0R5VENrMy1ZbjliLTlSRS16eWZval91QWE1QUVxYWY4Z3FFLVE?oc=5",
-        "age_h": 73.8
+        "title": "Computer Age Management Services (NSE:CAMS): What Investor Meetings Are Scheduled for November 2026? - Kalkine India",
+        "publisher": "Kalkine India",
+        "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNdURMbGdtMmNURDZVM3hKTlRkX090VXF1R3J3ODR5dkVuMHhBU3lWZkpTSzl0SVJrOWIxZ1FKa1Q0SEdSRzhkX3NINGNFV2pZejlfV1pLSDRTS3BNc1JHeklIMGtaUERVUmZUX0Z1UmNsTVU5U3hUV3pkNFhzeGlFZTB6c255dEZKbnZWSnVRQ1NTMVVRazFOemdrelNRVVgxT3g3Y0tYc2Z5dWVTLVVMOVRRMV96NnN0R2Jhc2FwaUtqMEJtczRJZUU2ZHFxbUVmT3hxNzFaRE5oNm8?oc=5",
+        "age_h": 21.3
       },
       {
         "title": "KFin Technologies Ltd Share Price Today,, KFINTECH Share Price NSE, BSE - Business Today",
         "publisher": "Business Today",
         "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZ0ZacGV4NXNST3lhdmJyUlo3dUdSaW5QOEVObTE0S0Z1TmM5TVJJX0R0c0lQQXUySnVuZGt2YktqcWxRdV8tNUVaWE1KVGd1T19DRVBWS09kSGZyRHNSQWF3akY4a3BpdU5JRVpGRWd1dVNXb2EwaFZXbDJMbUd3OWRFNl92S2phdWYtMkJR?oc=5",
-        "age_h": 73.8
+        "age_h": 96.9
+      },
+      {
+        "title": "Sagility (NSEI:SAGILITY) - Stock Analysis - Simply Wall Street",
+        "publisher": "Simply Wall Street",
+        "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQT0JGdlJUZVJUVk9fZ1R6c3pvY1BORWNybDBFZTdHN1duMmgtOS1qODZkdHZvUG13TmwwWDVtNkFXeHQ0ZmxuTldBV2FqY1hiNGhXNGdZWTBBdFVCVm83VnJvc1l0SWdJWGlTaXNERFZabG1HUXpfZkQzbkdVRDd5X2xUNWFLMlE?oc=5",
+        "age_h": 96.9
+      }
+    ],
+    "CYIENT.NS": [
+      {
+        "title": "Cyient (NSEI:CYIENT) Stock Forecast & Analyst Predictions - Simply Wall Street",
+        "publisher": "Simply Wall Street",
+        "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1yR3ZjSHRWdDFUSWREMnE5VmsxTGhMVmhUalZoRmw1ODZnRjRuYnlyRW9uVXFGQldGTTd4X2pqeF9Oc0otY2dmYjBSZ0VoT3hjUmdYXy1tWFA1X0NFaThGZGxXcVFjbXR5dThtZFlsTEtabkdSb1VrMUxsal8?oc=5",
+        "age_h": 72.9
+      },
+      {
+        "title": "Cyient NSE:CYIENT Rs 12 Interim Dividend FY27 Record Date - Kalkine India",
+        "publisher": "Kalkine India",
+        "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNWDZCaDdMU1VmYW5saXRldm53ZVdUbnItTEZFSEU3bGsyVmpvbU44R0pubDJsQmtaT0RSMDZCNWl0NTRoMWxCWTVsSFVUNEtTTUZLWUNoV0hTa21qQkF5ZjdKSVpvbG5iMXREa254d1R2T202dDZ0Yk9zdEZDU0p3UVRGakhqQlc1aFdUVTNIdVoxVjUtMFdtdmltQVhvdmdTTi03UElVOTJvMUJpQVZmZndkRGZnSmNfT0ppVUJKWQ?oc=5",
+        "age_h": 20.6
+      },
+      {
+        "title": "Swiggy Food Delivery records INR 341 Cr Adjusted EBITDA with highest-ever margins - EquityBulls",
+        "publisher": "EquityBulls",
+        "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPREdGSEFhNWZ2R3Zja1FEWFA3RlY1V0EtVE4tWXVZTUoxTU04NnY3Q1RNUmV2ZFhELTNoSVZQUDY1ZUhsUExDaFI0RnRPVzNQRmd0eV9hdW1ILW1oUldqZXVsZVhWWktpUzJxZEo3RmxvVjc3bTEySWttcEd5UDk3M19PWW9Ld2ljZ1JjRXVkOGR6Y1ZqNFlqSi1EUnhHQlByX2pqdjZfZ1F5QlUtUkRzNG1aUFk3Y1hUTGtrMA?oc=5",
+        "age_h": 20.4
       }
     ],
     "DELHIVERY.NS": [
       {
-        "title": "Swiggy shares fall 5% as Citi sees Eternal food delivery push to cloud outlook - Business Today",
-        "publisher": "Business Today",
-        "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZEZ4eG9YT2VjMEhiZVhDUmRRX1RscHNoTVlUdlJSRk5OdjV5T0t5N3NrWTVKOWpwb3V1elBMTjNxQVJ6OUQyYTk2ZEdZdGtWejdXazAzQ3NTT2hOZGVyM1RZWVhwblBhcnI4aW1KOU9qM3FqS3RRc192SkpFYy1ZVjRZb2txaUFSdFdwQWVCSjJPZFBndzF3ZHJWaW5VS3A5ZU5qY2JPWjQyeU1lZ1FHUC1odWhBZXdGdDUzYVVDLVlEQldhVGdhRUZpYmo0eG5Kd05rY3dRVW1JT1ltY2fSAeMBQVVfeXFMTTNwclhTUks5dmN5YkVWM3pEcGppMzBwajl2QWE5WkNnYzkxb2oxV1RnQjhRZEd0MWV3M3RFanFneDRfVldGVkJ5bklvMDBjYzlIVlBJV1RnSDZ3blM0bXkwUDFpQlJNeU5yVWlpWTl6M0VuUll6RWRuN01rdlNOcHVzckNmdlhka3FMX2puYVV2LXNjVFNoaGZVUHdFTWxRelFqTkpIMjhlNmIybzl5VllCQ3cwMElMWFRQVzRUS2xSWlVhdklnNG5YbGpCd1FCSnpMS19WcGpBX2I3T0NJTm5JREE?oc=5",
-        "age_h": 3.2
+        "title": "Top 10 52-Week Low Shares To Buy In India October 2026 - Samco",
+        "publisher": "Samco",
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9RSERnMHJOMFZWbERwRE04WjRzYjNoYUxBQVJONTZSNGJsX01zRlhkUlN2ZlE2aEdCcDBRTm8xM09tajQ5Z1lvWlZxWUNEdWVxSFI4NWtURkg0UWNQaXBjVHBhSUtjYUtzWlZOZDFtc2czLXUyTnpoQw?oc=5",
+        "age_h": 97.0
       }
     ],
     "EIDPARRY.NS": [
@@ -49,55 +89,89 @@
         "title": "9 Best Ethanol Stocks In India For October 2026 - Top Picks For Investors - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBDME15RTBjdkxxQTE0VUdQQXRpMkU4cDFyQk9XcDFQVGFpZzJpY3diT0kxYVhpOHQySVFHUkZueUxHVGxlM2pMUV9hdlFFbGtuSXJTMGpKd3VpX1RodXlFZFBhZGhvb0tsc1NZR0oxOA?oc=5",
-        "age_h": 74.0
+        "age_h": 97.0
       }
     ],
     "IEX.NS": [
       {
-        "title": "BSE (NSEI:BSE) - Stock Analysis - Simply Wall Street",
-        "publisher": "Simply Wall Street",
-        "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE15YUU4elRnb3NVMjc0Yi1qLWx1eTBtZEo3UnU5ZHpsVjRFX1FvODVCN2Vpc1VrUTFxY0d5VFA5dGxiY3dfeG9MaWRiWXJORUx6eFVDaV9UWFdZaGFpUWJkV1dtamd0WW5ySHFyR2wxcjROdU9BWjBXdzV3cFdKdw?oc=5",
-        "age_h": 73.8
-      }
-    ],
-    "PVRINOX.NS": [
-      {
-        "title": "Market News: Share Market Today, NIFTY, BSE/NSE LIVE, Sensex Today, Latest Share Market News Live Updates - Livemint",
-        "publisher": "Livemint",
-        "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFA2eURra0RNN0hZR0ZxYmMxV00ycGZkVS14M1JaTGFnc2lGeVdLS3NUaDQ0Q0pKSkpLbDcwMUhQN1lwcHJNbmc?oc=5",
-        "age_h": 73.8
+        "title": "India's Swiggy slips to record low on wider quick-commerce losses - Reuters",
+        "publisher": "Reuters",
+        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbk9pX1l2cmZDU29vWmJMNEUxMm1DakxYdi1BS3FwMWQxVlN1T3R6RDl6Q1JMeUVxbDBxU0lfZmZFdWdzSkpxVGZDRU9BVkVBUzlabEtralRkUWZ1Vk5lVUl2S3dqZHVFdXIyUk9VSWhlQy10WjV4MnVaZFJEU05FN00zbFZhS3VGaHFiZ0p4ZE55bmhLemFWdDlJc0JveXA5Zi1NN2lhdmliX2tuUDNJd0NUOWxfSk5nS2dZQ0owX1k?oc=5",
+        "age_h": 4.0
       },
       {
-        "title": "PVR INOX Q2FY27 Earnings Call: Date, Time and Details - Kalkine India",
-        "publisher": "Kalkine India",
-        "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPcDh5OVFiWXA3dFU5Nk43SzdLN1EwOFJIeFBpcm0taFhNQ0J5UTlRSWJPSU9XdV9uTUxGVF9lNUZYbWtuVXczbVJQZnl6TW5DYUNQR1FRSzgxbVg0MGtMTDFpTU5KS3gzNVBQMVR3ZEdtV095Q210OHk4cVEybHNtbnBXa0ZvWXJDUF8yUWFwTkc5WGZpcHFxN1lRYXBCUkZLNXE1TXg0VzR5OWJxVzlTSnBVNXViSEdLcU9hTDRZNmtiSTVRLWhoREhn?oc=5",
-        "age_h": 20.7
-      },
-      {
-        "title": "8 Best Performing Media Stocks In India October 2026 - Samco",
-        "publisher": "Samco",
-        "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPeWF1S0tRX3I4ZWU5UnRrN2NUclhwaG5sejh0TmxQQXM2WlFvZzEtUjdsVEVZRW50cmI3cXFZV19MNk1iSU00UG12UGVYak9PM3NkdkduZHUzVGRCNmVBdFNuWlQxZ2dmZjlIY0RRekdiNC1yYURrbkhONE1sVEZxSWdYdlctTmNK?oc=5",
-        "age_h": 50.0
-      }
-    ],
-    "RELIANCE.NS": [
-      {
-        "title": "Reliance Industries (RELIANCE) Share Price Today & Chart - TechGraph",
-        "publisher": "TechGraph",
-        "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9CTEhuRnR3NnJmNS1MSFFMY1JRU1lCUG4wcVh3Z2RmajlmTkkwYWNVUEFQMVgyaXdVUWo4Vk50Rjg3TmFfU0VCUHFjZlo4YjhiRHV4VnR2MzJlV2hMc0pscWZn?oc=5",
-        "age_h": 5.2
-      },
-      {
-        "title": "Reliance Industries Limited (RELIANCE.NS) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-        "publisher": "Yahoo! Finance Canada",
-        "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE05cTlPZzV1eU5MeDQ3eW1UaXJrYkVIUlZ4MkJ6NHluLXR0WHhKTEo2Z0h3cmp6WEZSQTJaQVRfWEN3MGVQbzk2VzU0dHFOZVJPTXpzNUM4MDhYa28?oc=5",
-        "age_h": 27.4
+        "title": "Indian Green Energy Stocks Face Selling Pressure as Sensex Falls 0.62% Amid Mixed Sector Performance (22 October 2026) - SolarQuarter",
+        "publisher": "SolarQuarter",
+        "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQNDlfa0JOcHYyZ2dsQUI5SlB1LVU3VG95MDZud2RyUkhRMDk4eVY0bEdPQ0VBckg0V21LdFpDb1ROSzdYSkZvOXI5SWlUaXBpa3BRd2pBT1JpX3ZROGU0TnRPWFRDMWc4Z0lCbGRqSFhWU2lIT0w5WFVHRUZjUTFLMEVBVUpBeVluR3VuMEZQSTFQbjlOVjZrSXRhUkI2Q18yTXUwNHF3dWRYWUdoNkZXZzhQeU5BMjllSktMTU9FZEJEcURZNFE1RDI5QTlHVlplRWtQd0NQT2NMa2NVY2EyOVpsTWVIMU0?oc=5",
+        "age_h": 20.4
       },
       {
         "title": "JIO IPO - Reliance Industries Shares Gain more than 1% after India's Largest IPO opens for subscription - India Infoline",
         "publisher": "India Infoline",
         "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQT28yY2pkdk1aZEhVdjlIRVdFQkNZVVRpbVFVTEhuQ1NrbGRPamtjbXhiYWxjaHJSMnNRcTNycWZ3TW03STNYNWdaRVdBUFE2b2hob2JybjZpbDI5R3ZLeWJlWjhuUE1ZZU8wdnc3SWJhUzk1aFZmSUtVcGg0bUlwU2NsTFI1ZjBCOEltYzVvYUZrb0huNUstSE42bjlGLUhMZGRISEtNUUFIanpNSzRMVEtoQm5kZXBjV21nQTRBbG1VTi0tWUZhQ0pwLVc4bGtoOFJ0MDR2dldLbDNh?oc=5",
-        "age_h": 26.4
+        "age_h": 49.4
+      }
+    ],
+    "OLAELEC.NS": [
+      {
+        "title": "Broader markets crash! Small, midcap indices tumble up to 4%. Why analysts are sounding the alarm - The Economic Times",
+        "publisher": "The Economic Times",
+        "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOU1otQnlCemVTdlRDODl6YUZJTzJXcURpdlhvOF9YdWwybVFEWVlmSTJ4TGlGUTNmNnRiazNwclQ4MkFrd05fbkZZYVZYZjREU0dvWldjdWpGTjFyQXg3R1JFNkxqUkN5NHQ2Y29XRGQ1M21KYjRDekpzM3ZkYUc0eXRVWnBzV0hwakUtTi1WeE5KM2s5bW1HanJRMG9hbWhZMXBHb0k5S08weUJzdGYyd25vOVY4cl80ekE2Rnpsekl5U2NEWEVHOGwzLWk5eFNOVW9MQ2VyT3RfdmxwWWxHb0lsRWtFRnVsZUpXTGREbXY2ZVNGMWVPcmRGTGlZSHpI0gGAAkFVX3lxTE5TWi1CeUJ6ZVN2VEM4OXphRklPMldxRGl2WG84X1h1bDJtUURZWWZJMnhMaUZRM2Y2dGJrM3ByVDgyQWt3Tl9uRllhVlhmNERTR29aV2N1akZOMXJBeDdHUkU2TGpSQ3k0dDZjb1dEZDUzbUpiNEN6SnMzdmRhRzR5dFVacHNXSHBqRS1OLVZ4TkozazltbUdqclEwb2FtaFkxcEdvSTlLTzB5QnN0ZjJ3bm85VjhyXzR6QTZGemx6SXlTY0RYRUc4bDMtaTl4U05Vb0xDZXJPdF92bHBZbEdvSWxFa0VGdWxlSldMZERtdjZlU0YxZU9yZEZMaVlIekg?oc=5",
+        "age_h": 0.5
+      },
+      {
+        "title": "Auto sector stocks today, October 23: Ola Electric falls 5.48%, Olectra Greentech down 5.09%, Tata Motors PV declines 2.72% - Business Upturn",
+        "publisher": "Business Upturn",
+        "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNdlFzUTNIVVY2d1otOW1USi1Hc3NJNzJHX25HWTRjcGhTU2dBNmZQTUJ3VE9QWVVNZE8wSXd0bjktc2k5TmJ0WVJrNEhUZ2tZeGZSN3IwS29DOXVVRzdjcVdKSVdIU3JjQkFKQjdXY3FvWDQ3Ny1xWVpyeE5MNmhOanpVM211Y3ZyakdvdXVSUVc0X1FUV0t2U1NZaWRURGVqRVZaZWR3NjlPS2RFLVZBcnlDYWN5SUpHOXhMUlMtbUdWU1E2UTVycGVGM0g3RDVXN0tZR2x3ZWNTQ2NmMERCRVNfVlU3R0FZS21hSXZqb21YR1pQVkY0cQ?oc=5",
+        "age_h": 2.5
+      },
+      {
+        "title": "Mahindra & Mahindra transfers equity shares to stock option grantees as part of employee scheme - Business Upturn",
+        "publisher": "Business Upturn",
+        "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNc1o1MnVxN2d3ZWtNOEtmelQ4YzhuNnBRNkdUdVAwY2xINkowN0U0bzNUQ01QYU5pWFFhRnFPQ0VDcHBKTk5oOFlsMW5sMjlTeVV0TnBnTEFlMXk2R1RQb1lSVjVlQmh3aVByaURRNUdCbGdkVDNDLVNTTDRmR0tUVzc1WmNLUndDcUYtOTdJZzZoVjFVendEM0I4NnJlRjRsNUx3QnNPRmd6NzZhTC1FX1lzZ3ppSjUzQ1otOTRvX0VGd2R5Z3JaNzRR?oc=5",
+        "age_h": 38.2
+      }
+    ],
+    "PVRINOX.NS": [
+      {
+        "title": "PVR INOX Q2FY27 Earnings Call: Date, Time and Details - Kalkine India",
+        "publisher": "Kalkine India",
+        "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPcDh5OVFiWXA3dFU5Nk43SzdLN1EwOFJIeFBpcm0taFhNQ0J5UTlRSWJPSU9XdV9uTUxGVF9lNUZYbWtuVXczbVJQZnl6TW5DYUNQR1FRSzgxbVg0MGtMTDFpTU5KS3gzNVBQMVR3ZEdtV095Q210OHk4cVEybHNtbnBXa0ZvWXJDUF8yUWFwTkc5WGZpcHFxN1lRYXBCUkZLNXE1TXg0VzR5OWJxVzlTSnBVNXViSEdLcU9hTDRZNmtiSTVRLWhoREhn?oc=5",
+        "age_h": 43.8
+      },
+      {
+        "title": "8 Best Performing Media Stocks In India October 2026 - Samco",
+        "publisher": "Samco",
+        "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPeWF1S0tRX3I4ZWU5UnRrN2NUclhwaG5sejh0TmxQQXM2WlFvZzEtUjdsVEVZRW50cmI3cXFZV19MNk1iSU00UG12UGVYak9PM3NkdkduZHUzVGRCNmVBdFNuWlQxZ2dmZjlIY0RRekdiNC1yYURrbkhONE1sVEZxSWdYdlctTmNK?oc=5",
+        "age_h": 73.0
+      },
+      {
+        "title": "Kalyan Jewellers Share Price - Live NSE: KALYANKJIL Stock Price & Chart - Upstox",
+        "publisher": "Upstox",
+        "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQa2xZSTJZNVZFNDk5SXA0SkFHZE5YSEYtRmpseFJLZHpxQnBydHdLVTNZanZLU3drTUI1QXpyV0pGelhRVlJFdHdMLUhwdDAtZmt1bk83UXcxWEF4ZkttbHUtZGRlLXNucDdPQ3Fka2g?oc=5",
+        "age_h": 30.7
+      }
+    ],
+    "RAYMONDLSL.NS": [
+      {
+        "title": "Raymond Lifestyle Q2FY27 Conference Call on 29 October 2026 - Kalkine India",
+        "publisher": "Kalkine India",
+        "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMDhoOGtHMFc3TnRtTWpiX3pnN1p4WEhBVEV4YklncGFYOWVGSzZvcjJ5MHhETExKNHcwYnlBeF9DNHkzNjdJQzFkdEdzRlFMejdzVVlTVVVWYkVOVjg5SzhQV3B5bVZVcmZINjd1enVCWVROaXpUcWNzVlJCV19zdndVSm9sYXFaakZZTG5MVHplUWFlLXFhTy03MmZSRTd4RnZEWHk2WkJyblFfVmhxS3V0WFNQN2l1TUw4UQ?oc=5",
+        "age_h": 20.3
+      }
+    ],
+    "RELIANCE.NS": [
+      {
+        "title": "Reliance Industries Limited (RELIANCE.NS) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+        "publisher": "Yahoo! Finance Canada",
+        "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE05cTlPZzV1eU5MeDQ3eW1UaXJrYkVIUlZ4MkJ6NHluLXR0WHhKTEo2Z0h3cmp6WEZSQTJaQVRfWEN3MGVQbzk2VzU0dHFOZVJPTXpzNUM4MDhYa28?oc=5",
+        "age_h": 16.2
+      },
+      {
+        "title": "JIO IPO - Reliance Industries Shares Gain more than 1% after India's Largest IPO opens for subscription - India Infoline",
+        "publisher": "India Infoline",
+        "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQT28yY2pkdk1aZEhVdjlIRVdFQkNZVVRpbVFVTEhuQ1NrbGRPamtjbXhiYWxjaHJSMnNRcTNycWZ3TW03STNYNWdaRVdBUFE2b2hob2JybjZpbDI5R3ZLeWJlWjhuUE1ZZU8wdnc3SWJhUzk1aFZmSUtVcGg0bUlwU2NsTFI1ZjBCOEltYzVvYUZrb0huNUstSE42bjlGLUhMZGRISEtNUUFIanpNSzRMVEtoQm5kZXBjV21nQTRBbG1VTi0tWUZhQ0pwLVc4bGtoOFJ0MDR2dldLbDNh?oc=5",
+        "age_h": 49.4
       }
     ],
     "TMCV.NS": [
@@ -105,15 +179,19 @@
         "title": "Top 10 Stocks For Intraday Trading In India October 2026 - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNWEN1RjR5ZW5CVkszN1FLRkpMZW1PXzRUQU5SN1puUnoxX29uS0ExT1J6QjFMMlZCZ0M4ak02WWpuNUJUZEhFZWlxTjE4ZlhuLVgxakhGdkNKR3EzUndrRVRHZmpvSnM0MU5SelhsLXVNWkJsaXdTV2dqcTd2TERsY3VXWFZYSmRMMnU4TDM5WlN6Qnd2bU84ZQ?oc=5",
-        "age_h": 74.0
-      }
-    ],
-    "TMPV.NS": [
+        "age_h": 25.0
+      },
       {
-        "title": "Market News: Share Market Today, NIFTY, BSE/NSE LIVE, Sensex Today, Latest Share Market News Live Updates - Livemint",
-        "publisher": "Livemint",
-        "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFA2eURra0RNN0hZR0ZxYmMxV00ycGZkVS14M1JaTGFnc2lGeVdLS3NUaDQ0Q0pKSkpLbDcwMUhQN1lwcHJNbmc?oc=5",
-        "age_h": 73.8
+        "title": "Force Motors Share Price Today, Force Motors Stock Price Live NSE/BSE Updates - The Economic Times",
+        "publisher": "The Economic Times",
+        "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORDlhd3oyR0pOSWhua0J2UWVrQ0RJLWdRT1lNTGtBMG93UlBJRzR0WEFBOWg2MG1fT1lkamF0bFh0V3d4akhiN21WVHpnQ21iYW5ZbEh3VjQxZndzaVQ3WmpwMzlCeVQybEtjem5LcVhYck9JOXZsM3h6Z0VQWjJUZVl4R2ZrUUE?oc=5",
+        "age_h": 28.3
+      },
+      {
+        "title": "Tata Motors Passenger Vehicles (NSEI:TMPV) Stock Forecast & Analyst Predictions - Simply Wall Street",
+        "publisher": "Simply Wall Street",
+        "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPN2hFMHJrbXBBRFhLOHNQb05DVXRScUZ4T1ZMYkdhQU9PWi1DNFVYYUlLR3NJNlFxMEEyV0xRc0M4cmU4V3Z0T3BTd0RqODJ5dE5weDRKZDVMYWpnczh3dXBYYVcwU2lZNnZUUmJrZG83MkFrbFR1aXVZYzV0a0VKa0dTb0ZERjdON2JwUFpaUEVFRDh6SVVscmQ5VkJUZw?oc=5",
+        "age_h": 96.9
       }
     ],
     "RECLTD.NS": [
@@ -121,19 +199,33 @@
         "title": "REC-PFC merger gets NOCs from BSE and NSE - Power Peak Digest",
         "publisher": "Power Peak Digest",
         "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1mN1ppSXZNdjFiRFB2RHZLUVVraXdlMlZqU2c5RDZpbDFvQlZFTVlZb1lwcDN6TUFOWnR3SF9UczlPdWNTSFhmWXNMa1lBb0Z0cVpveHBRVEVPQkpXaVJTdnc3Nlh0QQ?oc=5",
-        "age_h": 38.2
+        "age_h": 61.2
       },
       {
         "title": "REC gets NSE, BSE no objection for merger with PFC - scanx.trade",
         "publisher": "scanx.trade",
         "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbjJJYXd4TG5jaXdmdkxraWRqSDR5dl9sUXZHMF9YdkZFdDdXVk03TWE4RElmWDlVSnJzZVo5NklCc0NmWm0yMjNMX19DcXV6VTJ0enY3RE1Kcll4bmY0S1J3WE9jR0VJbVlBQzBqY2xOdGd3S0JNeDJMOEVWZ3BGVUg5d3pCa2k0SW15a01HeG5KV2JrdVV2UTBVU3AxcmQzUGw0MWZUaU80THZPZXc?oc=5",
-        "age_h": 73.8
+        "age_h": 96.9
       },
       {
         "title": "Power Finance Corporation Receives NSE and BSE Clearance for REC Merger - Whalesbook",
         "publisher": "Whalesbook",
         "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQM241eU0xeUd6N2xlaWxDc2ZFNXR2SEFxRHhWU1BaWWF0c0EwQlhNMWhwT3N2Z1Y5VDdGMU9OLTlWRzdhN0NRM3l5SWRqZGpWYXdDVmE4UUxzTEo4OHhNUGRhdjNDUnZqWU1hY3ZqWlJBUWRJRmVNeGF5c3JFemdyQkxLUDZtMHFiUWFNaTFKMWV3THJacHFKVUNVNlg5Yl9ZRU8xNjFSWENYM3E5dDJGNDZSRUZ1aWN4U3RPanpuTVplcWxOV0gzT1lEYy00dUtybl9ISHVrT19RSEx4b2hhSlhtc0o5eDdVNnUtLUp0U0tibUU?oc=5",
-        "age_h": 63.5
+        "age_h": 86.5
+      }
+    ],
+    "SHAKTIPUMP.NS": [
+      {
+        "title": "Shakti Pumps (NSE:SHAKTIPUMP) Adds \u20b912 Crore to EV Mobility Arm - Kalkine India",
+        "publisher": "Kalkine India",
+        "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdjVYTGctZndOM3F4dHQ5XzU5S3k5WEZsaUI3eG1kaG1FYVNCaUtuRnZ4ZzhPMG4zeWlNMDU4VHEzbWZxMGpYR3IzRFFOX0hwVzZlZ1IwYTd5aldOQzJvemlXSGg4bk0tb0xjWjZqWkoteDA3WGhJaHZpRnVLUUJKTnBaYXhHci1xbUFIX0o3eFdGOUdaektzWEdYcFdnX1lLdm5FTXFXb0dwZUxBSHBqOWZnUWJmdFR4RkhmMHpVOExwT3QxWmxHWA?oc=5",
+        "age_h": 17.9
+      },
+      {
+        "title": "Shakti Pumps invests Rs. 12.00 Crores in subsidiary Shakti EV Mobility - Business Upturn",
+        "publisher": "Business Upturn",
+        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZy00Z19OWlFENmJYSWJGODFvcDB5WW9zTWJFX1FTbjNRTEREZ3V5cHN5ODVOLThwSmdMSl8waWdDNU55U1M3VERyMUZqN3d3WWRmd0t2NEd5QlJ5SDI1TUtXa0NPaEwwMHFCQlNMczZQOVNZbjcyZWlnWjQxUGJnUUpfTFBMTExTUmxDT3NKVTB4QVlSTlBkVDc4YUt0ZF9adE52bmpuNGdQWW5mQVFB?oc=5",
+        "age_h": 22.5
       }
     ],
     "CONTROLPR.NS": [
@@ -141,7 +233,13 @@
         "title": "Control Print Ltd Share Price Today,, CONTROLPR Share Price NSE, BSE - Business Today",
         "publisher": "Business Today",
         "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNX2dpU2U1MUpFNDE5RmFiRHZiVXZQVkNrVzh2NnpNcWk0ODc0UEYyNVdwUFMzdVliUkE2dkJoVDZQQmFsaWFQMXpsdHM3T2V6ZUZ6UVk0V01rTXZpdzNGbGNjclViX1V3SnpwNklVM3lEVXBMYXVISU5Pd2JqZXRpMWZKaF9FY3dYQmc?oc=5",
-        "age_h": 70.4
+        "age_h": 93.4
+      },
+      {
+        "title": "Control Print CONTROLPR Q2FY27 Earnings Conference Call - Kalkine India",
+        "publisher": "Kalkine India",
+        "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQLXpHWURTSTFfNUh6NGpjRWdGT3dWY0ZuM2FUUWtmSVZmR2g2TERTNlB2LVN6UFJ1UWZIcUdOV0pzV2NVNExVWEt5VmxiUWJiNTRKMExGZTB2c1RtYU1DTlJJa2RybFJzTE9KLVNFUGo1VFhSTWhMcjhfWWowc09EbnFzc2RhQzVoX2dDV2VpX3FpWnEySXdhS0FYUjRLbjNoZWZ6NkFGUkZYVmt0cnBHOE9MSkRzTThIX1NhQ0Z3RU5QdHNIQXF0c0Y5VWU?oc=5",
+        "age_h": 2.0
       }
     ],
     "MOSCHIP.NS": [
@@ -149,29 +247,49 @@
         "title": "Top 6 Semiconductor Stocks In India To Invest In October 2026 - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1xOFhuZnFYcWNxdFVkbTdpbDdGSWtwcDVBSTZBbWpFYWdZVHBDVFRXOWtFb25GMnJwUjc3aFN3djc3TWNad190YzctNFpwR2FqMkFaU2F1c1hiZ1piR2h3cUNFNGZMM20xVGtOM3ZqVGVudElTRzM0?oc=5",
-        "age_h": 26.0
+        "age_h": 49.0
+      },
+      {
+        "title": "Netweb Technologies India Ltd (NETWEB) Share Price - Business Today",
+        "publisher": "Business Today",
+        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVGQ4azE0YnZLVUpSd3NYeHVHb0xMX1d6Zk1mTndvOXlKVnhCWTVrSmNsLUxIbEswZ2k5RXdxUl82Vml1a0RXWmFuRXV2X0FIYnJVcUNJRnFreVBrSHRYZGxYMXk4eFMxZUdFZmNMelVXaWdFc2xhcEt2RXVLWVdkTVNHcC1Hb1doRHJDRzg1Z1pHZjh3elE?oc=5",
+        "age_h": 96.9
       },
       {
         "title": "Control Print Ltd Share Price Today,, CONTROLPR Share Price NSE, BSE - Business Today",
         "publisher": "Business Today",
         "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNX2dpU2U1MUpFNDE5RmFiRHZiVXZQVkNrVzh2NnpNcWk0ODc0UEYyNVdwUFMzdVliUkE2dkJoVDZQQmFsaWFQMXpsdHM3T2V6ZUZ6UVk0V01rTXZpdzNGbGNjclViX1V3SnpwNklVM3lEVXBMYXVISU5Pd2JqZXRpMWZKaF9FY3dYQmc?oc=5",
-        "age_h": 70.4
+        "age_h": 93.4
+      }
+    ],
+    "SWIGGY.NS": [
+      {
+        "title": "From Traditional fasting meals to sweets, Swiggy decodes how India celebrated Navratri and Durga Puja this year - EquityBulls",
+        "publisher": "EquityBulls",
+        "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOWWo2ZHRpaTdlYk9kS0hQek5EbUNaLW9fdklDUFVra3FIMFhkcFhrdF9CMHRuQmhFcXJDeFNob0hReFJvV1E4RUpLTXZpRXFpTW5tMHpzTTVfUUhHclZLRGxLSTF6S25VcVlXSmM1ZlJCX0hVUXVZQzQzdHhlT2tWVEdhbk4xcnljSE1CenhqQ3Z0VzdyZlFfbk4tOVNJdFJfNWNDeGdvYTd5X28ta044QVpoWXNPUE1jQXVnSw?oc=5",
+        "age_h": 13.8
       },
       {
-        "title": "SRIT INDIA LTD. Stock/Share price , NSE/BSE Forecast News and Live Quotes - Equitymaster",
-        "publisher": "Equitymaster",
-        "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbVdaV1JTZDM3QWpYRVQ5akFnTjJTbGRWYkRsQzY4Y1JLZnVfbDVvU0tYRXVNeTdveEg4WmxlVEZpVDdKMlB1YVVhRFRQZzhkc0ZlTHBSN1RYMXhuc0JqOU1GUHFpMEVKaVBKbUs2VERuek1WRy0tMUJxODlaejFzSUxpSjdZdzFRZlRDbw?oc=5",
-        "age_h": 2.0
+        "title": "Swiggy Food Delivery records INR 341 Cr Adjusted EBITDA with highest-ever margins - EquityBulls",
+        "publisher": "EquityBulls",
+        "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPREdGSEFhNWZ2R3Zja1FEWFA3RlY1V0EtVE4tWXVZTUoxTU04NnY3Q1RNUmV2ZFhELTNoSVZQUDY1ZUhsUExDaFI0RnRPVzNQRmd0eV9hdW1ILW1oUldqZXVsZVhWWktpUzJxZEo3RmxvVjc3bTEySWttcEd5UDk3M19PWW9Ld2ljZ1JjRXVkOGR6Y1ZqNFlqSi1EUnhHQlByX2pqdjZfZ1F5QlUtUkRzNG1aUFk3Y1hUTGtrMA?oc=5",
+        "age_h": 20.4
       }
     ]
   },
   "momentum_news": {
     "ZOMATO.NS": [
       {
-        "title": "Zomato Share Price - Live NSE: ETERNAL Stock Price & Chart - Upstox",
-        "publisher": "Upstox",
-        "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9WQzNEWlBxdEUyRW9HUDYwalMxLXRKX0dLSG1TU1pXbFlfUmxWTW9pVXlBZXhQTHFLWDNOemxxMUdtWWxMekNaNUZqWUhVTlVKR0dEeEh5S3p0dmNhcmFjd0dPMUM?oc=5",
-        "age_h": 35.2
+        "title": "India's Swiggy slips to record low on wider quick-commerce losses - Reuters",
+        "publisher": "Reuters",
+        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbk9pX1l2cmZDU29vWmJMNEUxMm1DakxYdi1BS3FwMWQxVlN1T3R6RDl6Q1JMeUVxbDBxU0lfZmZFdWdzSkpxVGZDRU9BVkVBUzlabEtralRkUWZ1Vk5lVUl2S3dqZHVFdXIyUk9VSWhlQy10WjV4MnVaZFJEU05FN00zbFZhS3VGaHFiZ0p4ZE55bmhLemFWdDlJc0JveXA5Zi1NN2lhdmliX2tuUDNJd0NUOWxfSk5nS2dZQ0owX1k?oc=5",
+        "age_h": 4.0
+      },
+      {
+        "title": "Jio Platforms IPO Day 1: Subscription Status, Timeline & Key Issue Details - Groww",
+        "publisher": "Groww",
+        "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAzZFNsWW8xb0ZIRVJtZGJzX0RKeVh2aFZNT3BRR20wMzJvWnhzNzd3WVd3cEtuMVQ1NEhxb0hRY3JYTkdxZk1VVnpIRUVhS285b0RSaEZoc0VJN0VQelVwbmFrd0tFRDF2MGFNQ3pTQ09jMjQ?oc=5",
+        "age_h": 51.0
       }
     ],
     "POLYCAB.NS": [
@@ -179,21 +297,13 @@
         "title": "POLYCAB Share Price Today - Polycab on NSE/BSE - scanx.trade",
         "publisher": "scanx.trade",
         "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBoRHBtTlRQNmJSMThmNWZGM2NINm9Lbmh6NWRfcDB1Q1ZrSk4wTHhaTG9zMzl1V2RDbnp0cDJocmR0VDdHS2lJU3VXaVVRQ0hIUzI1UWVIT1Y?oc=5",
-        "age_h": 35.9
+        "age_h": 58.9
       },
       {
         "title": "Polycab India (NSEI:POLYCAB) Stock Forecast & Analyst Predictions - Simply Wall Street",
         "publisher": "Simply Wall Street",
         "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOSVV3dUVPODNBX0tVN0tKcmkyaklGSEt1azVLUlRwNkpjejFOM2pWbkt6ZVRjemxFcG9LdUpFV0NIWEtUU0c5c3gxTlhmRV93bjhyUVNBay1BamNnVVNMd0JRUzhMb2dia0RvV2F0OGtKYUxrOWtEX1dVTGwtZWNHcV9pOEl0NjVvSDRydDZn?oc=5",
-        "age_h": 97.8
-      }
-    ],
-    "RAILTEL.NS": [
-      {
-        "title": "RailTel Corporation of India (NSEI:RAILTEL) - Stock Analysis - Simply Wall Street",
-        "publisher": "Simply Wall Street",
-        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNV1hKUHpmUkt4U2RGMlg3WHYtMUFEcWtldmV1VF9EVHd6aUc4RWFFbTUyTlNwaGFWS2JFdzRGMTgtMjNYZkl3aElnMGRObkMxZVdMOU4wa2hna1l6LXp1OEJXV3JSX29zbVczczROX19ISlNRNXN1bklWc1NJZmZJUktaTzJRcHZjX2oxajkzdFk?oc=5",
-        "age_h": 73.8
+        "age_h": 96.9
       }
     ],
     "ADANIGREEN.NS": [
@@ -201,13 +311,13 @@
         "title": "Adani Green Energy (NSEI:ADANIGREEN) Stock Forecast & Analyst Predictions - Simply Wall Street",
         "publisher": "Simply Wall Street",
         "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTHQtd21UcGQxQzBsa2ZpLV9tWmprcDVCR2EtYnpSNWo3UTVZU2lmM3gtNFg5Z3lfdzJFZzdtUnVyVl9JTmttbjFSMXVmd3RvWEtrLWxzSk1SZnk2SkRtVXJweWdReDc2ZlhXYWdZNmdYSW5QNzl0RnAwM2xNUllzSWtFZkt6SzZPdHpRZW9udVVXWFk?oc=5",
-        "age_h": 73.8
+        "age_h": 96.9
       },
       {
         "title": "Adani Green expanded capacity 24 percent. The October 21 results concern Adani Green stock - AD HOC NEWS",
         "publisher": "AD HOC NEWS",
         "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOcGpDNUZzb1k3c0VwLVBZVW5NaE4xcFpJZl9JM3BJbklUUFFaVGlfMm5hOGo3OFN6dTl3VlU5OHd6VkNnVGE4NldDOFZrdUFaOERrVFZweGpISVl2LXl1dTJyTlhGaG9UWmJxUnpNcndMbl9Nb2V1WldQcEtUcDlmQ09PbW40bmxUT2VldktyNFZ3aWhyNkQycmU1SGU1Q0NNTXpuYkV5ZmZjVy1pcVo5S1NhZEZNV3R0VHZId0Z2Nlc4ZUlBTWh6dmMzMEZGTm80SDd4TTdONW85d3N3T2daLWlR?oc=5",
-        "age_h": 56.3
+        "age_h": 79.3
       }
     ],
     "TATAPOWER.NS": [
@@ -215,13 +325,13 @@
         "title": "33 Best Power Sector Stocks In India October 2026 | Best Energy Stocks To Invest - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5JLVJiY1FqOUtqSDRBanhEV2hCb0stQzFQXzYtWjB3UXZ5UEJDa2ZZZnkxamRKUHItS2Q1aDlPLTRHUW5JQ2Z6MEQyQURNUFRhUTUzd3RvVmdVQnMzdUhyMzRyeVlCQnM5RlptUg?oc=5",
-        "age_h": 74.0
+        "age_h": 97.0
       },
       {
-        "title": "TATA POWER CO LTD Option Chain - Live TATA POWER CO LTD Option Chain Data, OI & Price - Upstox",
-        "publisher": "Upstox",
-        "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBvU2JHcHZXM1U3RWpjRHlkVVdhTG5odHFGWWE0VGJOQmgwdjVNQnRfTFRuVTZBbnAzZ1dnTUdwemNrZ3FiczY4Tjk2d1llQ25TNlp0bXc4Zl9zMTlkcnFF?oc=5",
-        "age_h": 73.8
+        "title": "Top 8 F&O Stocks For Trading In India For October 2026 - Samco",
+        "publisher": "Samco",
+        "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9QTTRGMldKSU43d2Q5dVFQaWxJa09BeXBza1prYkNlMktZeExYQVc4QlQzNWZ3UWNCZGFxTnZXeWF5ajFmSmNFbHd0UG5NTENJeFdwY2xCRzN0a2lDazVuQS1CVFRSSFVQTEE?oc=5",
+        "age_h": 25.0
       }
     ],
     "SUPREMEIND.NS": [
@@ -229,7 +339,7 @@
         "title": "Trade Spotlight: How should you trade Supreme Industries, Indian Hotels, Lemon Tree Hotels, Nykaa, Info... - Moneycontrol.com",
         "publisher": "Moneycontrol.com",
         "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxQMGYzWHd3dDB5czZONi01S2hkQnRteDctR0Jyb1R6eXlEcW42ejNkSUU2YWI4RFFfZ01ZeHZYTDVvZ3NjVWpiODdvQ0lCV1duRHpuLXBhZFc4ZnhFMFEzaXNZRTBnclNGZlFXSG9ON2s5TDRGc01TWE9RbG1hbVdKMThBSldXYkRlemYxei1KUV9hb3kxbTkzWS1TOUlKOWt0b3FpQ1ZCVm9YSWtsR3MySXczV09VU2MzeHRTZmZWcXJTbFpFdmEwTmVfMHoyQ2lJcVU4QmpFaEJDb3B4ejFBekFLS09xRmdhbTVLN2hMTVdDNGN4MVgxMnBaNTBXbmNhZ1cyZVVvZFMyc0xSeGJ4MWd5OEgwV20xamRXQmp30gGjAkFVX3lxTE1pWnZKSWZYejBudTZoSmp0LXlUdzFGOGRzSlJ5Mk1JOTZybUw2Mm05cDgteEV4NjNyRmltdEkzNGtRclFJQ25NMFpoXzVIbXpmZ3VMSHUxNFpqMk9rYVFSeTRwTG1JSWYwT0w2THRtTjBxdm9hWWR5ekpKa252ZnYycnlTdkduaGwySUdGMGF4NzNPV3VZSC1sUDlrRVBHNXhMdWNmZVJ6aVVtRWZZWWt2VjFwX01OTHg5c3hpTC02dUx6aEk5WWxHdXJ4TW1CUzR3VG9hd0h5MWZBS3A2MTk2Z2dSQzRzS1JyZnFOZ25PLTRiWWM1a1dpY3JBSFphQUVSUjVEb050NnVIY00xV2tETFQyREJPMTJVWjh2WTZIYlpZOA?oc=5",
-        "age_h": 78.2
+        "age_h": 101.2
       }
     ],
     "MAPMYINDIA.NS": [
@@ -237,15 +347,7 @@
         "title": "SRIT INDIA LTD. Stock/Share price , NSE/BSE Forecast News and Live Quotes - Equitymaster",
         "publisher": "Equitymaster",
         "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbVdaV1JTZDM3QWpYRVQ5akFnTjJTbGRWYkRsQzY4Y1JLZnVfbDVvU0tYRXVNeTdveEg4WmxlVEZpVDdKMlB1YVVhRFRQZzhkc0ZlTHBSN1RYMXhuc0JqOU1GUHFpMEVKaVBKbUs2VERuek1WRy0tMUJxODlaejFzSUxpSjdZdzFRZlRDbw?oc=5",
-        "age_h": 2.0
-      }
-    ],
-    "TANLA.NS": [
-      {
-        "title": "Metal sector stocks today, October 22: Welspun Corp drops 3.10%, Coal India down 2.15%, Hindustan Zinc slips 1.96% - Business Upturn",
-        "publisher": "Business Upturn",
-        "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNYUtkRl9JNXFMdU5RdV92NS1JQm5TeVpReUFWOFFQZGNueXk5dUxiM3d5ekpjLUZRVlFiNjlQeWwtQS1tcXpIMlYyek52VzA0ZTA0bVFjdnNYUkdwS1RhMVZEVWRwWmVkQ1ZtRHpibDlDMWthZ0RxRk9WVXk3RUlqWDFSWkJpU2VQLUpMXzEyUmV0bG51aXRsR09xQS1fc28zSm8tTWxpSFpGcG50eGo2c3luWGM4ejAzX1RjeV9pUGRKdXVndG51d2lNeDJUaWVsRjhhaWVaREJ1aml4VGVlbXJKTV9scFVWUFp6ZHYxVDRvdw?oc=5",
-        "age_h": 3.8
+        "age_h": 25.0
       }
     ],
     "HAPPSTMNDS.NS": [
@@ -253,58 +355,58 @@
         "title": "Top 10 52-Week Low Shares To Buy In India October 2026 - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9RSERnMHJOMFZWbERwRE04WjRzYjNoYUxBQVJONTZSNGJsX01zRlhkUlN2ZlE2aEdCcDBRTm8xM09tajQ5Z1lvWlZxWUNEdWVxSFI4NWtURkg0UWNQaXBjVHBhSUtjYUtzWlZOZDFtc2czLXUyTnpoQw?oc=5",
-        "age_h": 74.0
+        "age_h": 97.0
       },
       {
         "title": "Top 5 AI Stocks To Buy In India October 2026 - Samco",
         "publisher": "Samco",
         "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNd25Nc2NpMTZTeHN1djNmQXF0d0RQN0NXazJDZ3Uxb0J0aGJYMEtMalJqOFBWbzgxdjZQWlRlVDhlbWdtRFg5QzdHbVFCM0REZW5kRzFmdUszNTBndzBhMC1Rd1JhcmxYWVhlRGV2UloyTGgtbG5VUVVkenZkMjdhSUg4di0?oc=5",
-        "age_h": 74.0
+        "age_h": 97.0
       }
     ]
   },
   "market_headlines": [
     {
       "source": "Livemint",
-      "title": "Stocks, gold, or cryptocurrency: Here's how they have performed in 5 years - Which one should you buy?",
-      "link": "https://www.livemint.com/market/stock-market-news/stocks-gold-or-cryptocurrency-heres-how-they-have-performed-in-5-years-which-one-should-you-buy-11792655530044.html",
-      "summary": "Bitcoin delivered the strongest five-year return among the assets discussed, but its sharp swings and regulatory uncertainty make it risky. Gold gained 131%, supported by safe-haven demand, while the ",
+      "title": "Reliance Jio IPO: What today's GMP signals; last few hours to apply; latest grey market premium and subscription status",
+      "link": "https://www.livemint.com/market/ipo/reliance-jio-ipo-what-todays-gmp-signals-last-few-hours-to-apply-latest-grey-market-premium-and-subscription-status-11792740992082.html",
+      "summary": "Reliance Jio Platforms\u2019  \u20b930,213 crore IPO was subscribed 7.64 times by Friday afternoon, led by strong demand from institutional investors.&amp;nbsp;",
       "age_h": 0.2
     },
     {
       "source": "Livemint",
-      "title": "Cement stocks: Nuvama stays neutral as rising costs cloud outlook; JK Cement top pick \u2014 key things to know",
-      "link": "https://www.livemint.com/market/stock-market-news/cement-stocks-nuvama-stays-neutral-as-rising-costs-cloud-outlook-jk-cement-top-pick-key-things-to-know-11792656357070.html",
-      "summary": "Cement demand and prices improved in October, supported by post-monsoon activity and stronger government spending. However, rising petcoke costs could pressure margins in H2FY27. Nuvama remains neutra",
-      "age_h": 0.2
+      "title": "IPO listings, share price today: Tonbo Imaging vs Zetwerk vs Bonfiglioli vs Sahajanand - Who won debut race on NSE, BSE?",
+      "link": "https://www.livemint.com/market/stock-market-news/ipo-listings-share-price-today-tonbo-imaging-vs-zetwerk-vs-bonfiglioli-vs-sahajanand-who-won-debut-race-on-nse-bse-11792733810920.html",
+      "summary": "IPO listings, share price today: Tonbo Imaging India emerged as the clear winner, with its shares listing at a premium of 66% over the IPO issue price.",
+      "age_h": 0.3
     },
     {
       "source": "Livemint",
-      "title": "Vishal Mega Mart needs a strong Q3 recovery after a worn-out Q2",
-      "link": "https://www.livemint.com/market/mark-to-market/vishal-mega-mart-q2-results-share-price-falls-11792654924086.html",
-      "summary": "Muted same-store growth and narrowing margins hit second-quarter earnings, leaving the value retailer relying on a festive rebound and store additions to justify its steep valuation.",
-      "age_h": 0.2
+      "title": "Havells India stock drops to a new 52-week low after Q2 results. What\u2019s worrying investors?",
+      "link": "https://www.livemint.com/market/mark-to-market/havells-india-share-price-q2fy27-results-lloyd-consumer-cables-and-wires-ebitda-margin-11792739039916.html",
+      "summary": "Havells India shares fell about 6% on Friday to a new 52-week low as investors weighed margin pressures from rising competition in cables and wires, continued losses at Lloyd and higher input costs, d",
+      "age_h": 0.3
     },
     {
       "source": "Livemint",
-      "title": "Crude oil above $100, US election uncertainty: Will global factors keep Sensex, Nifty 50 under pressure? Experts decode",
-      "link": "https://www.livemint.com/market/stock-market-news/crude-oil-above-100-us-election-uncertainty-will-global-factors-keep-sensex-nifty-50-under-pressure-experts-decode-11792654365472.html",
-      "summary": "After experiencing sharpest monthly decline of the year in September, both benchmark indices Sensex and Nifty 50 have seen a volatile, net-positive recovery in October so far.",
-      "age_h": 0.2
-    },
-    {
-      "source": "Livemint",
-      "title": "Eternal's growth engines are firing, as it doubles down on Blinkit expansion",
-      "link": "https://www.livemint.com/market/mark-to-market/eternal-q2-results-blinkit-growth-dark-ai-launch-11792653186363.html",
-      "summary": "Eternal's revenue and quick-commerce growth remain strong, but profit missed estimates. As Blinkit expands and competition intensifies, investors will watch returns on fresh investments.",
-      "age_h": 0.4
-    },
-    {
-      "source": "Livemint",
-      "title": "From 27% to 2%: Marcellus learns to rebalance, diversify and buy dips",
-      "link": "https://www.livemint.com/market/stock-market-news/saurabh-mukherjea-marcellus-investment-strategy-stock-market-returns-11792642763552.html",
-      "summary": "Saurabh Mukherjea expects the Nifty to deliver high-single-digit annual returns if valuations normalise, while quality stocks could generate 15-20% returns over the coming years.",
+      "title": "International Gemological Institute shares rally 16% in 2 days: Stock just 3.5% below 52-week high \u2014 What lies ahead?",
+      "link": "https://www.livemint.com/market/stock-market-news/international-gemological-institute-shares-rally-16-in-2-days-stock-just-3-5-below-52-week-high-what-lies-ahead-11792738614673.html",
+      "summary": "IGI shares rose 6% on Friday after gaining 10% in the previous session, lifting their two-day advance to 16.5%. The rally followed strong September-quarter results: profit increased 43% year-on-year t",
       "age_h": 0.6
+    },
+    {
+      "source": "Livemint",
+      "title": "Jio Platforms IPO lures investors as bids surge on final day",
+      "link": "https://www.livemint.com/market/ipo/jio-platforms-ipo-lures-investors-as-bids-surge-on-final-day-11792737737745.html",
+      "summary": "Investors subscribed more than 7.75 times the shares available in the Jio Platform IPO, which pegs the total demand in excess of $18 billion.",
+      "age_h": 0.9
+    },
+    {
+      "source": "Livemint",
+      "title": "LTM dividend 2026 record date today | Check dividend payout details, history, yield and share performance",
+      "link": "https://www.livemint.com/market/stock-market-news/ltm-dividend-2026-record-date-today-check-dividend-payout-details-history-yield-and-share-performance-11792734155795.html",
+      "summary": "LTM interim dividend 2026 record date today: LTM share price fell over 2% to  \u20b94,190.10 per share on NSE amid dividend record date today, 23 October.",
+      "age_h": 1.3
     }
   ]
 }
