@@ -1,6 +1,6 @@
 {
-  "date": "22 Oct 2026",
-  "timestamp": "2026-10-22T14:19:57.361981+05:30",
+  "date": "23 Oct 2026",
+  "timestamp": "2026-10-23T13:56:12.787281+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -407,7 +407,12 @@
       "error": null
     },
     "IRFC.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-10-23",
+          "amount": 1.15
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -442,6 +447,14 @@
     }
   },
   "highlights": [
+    {
+      "ticker": "IRFC.NS",
+      "display": "IRFC",
+      "type": "Dividend",
+      "date": "2026-10-23",
+      "detail": "\u20b91.15/share",
+      "in_portfolio": false
+    },
     {
       "ticker": "TCS.NS",
       "display": "TCS",
@@ -553,14 +566,6 @@
       "date": "2026-07-27",
       "detail": "\u20b90.57/share",
       "in_portfolio": true
-    },
-    {
-      "ticker": "WIPRO.NS",
-      "display": "WIPRO",
-      "type": "Dividend",
-      "date": "2026-07-27",
-      "detail": "\u20b92.00/share",
-      "in_portfolio": false
     }
   ]
 }
