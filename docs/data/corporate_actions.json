@@ -1,6 +1,6 @@
 {
-  "date": "27 Oct 2026",
-  "timestamp": "2026-10-27T14:45:53.514733+05:30",
+  "date": "28 Oct 2026",
+  "timestamp": "2026-10-28T15:01:36.719484+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -62,7 +62,12 @@
       "error": null
     },
     "CYIENT.NS": {
-      "dividends": [],
+      "dividends": [
+        {
+          "date": "2026-10-28",
+          "amount": 12.0
+        }
+      ],
       "splits": [],
       "calendar": {},
       "error": null
@@ -448,6 +453,14 @@
   },
   "highlights": [
     {
+      "ticker": "CYIENT.NS",
+      "display": "CYIENT",
+      "type": "Dividend",
+      "date": "2026-10-28",
+      "detail": "\u20b912.00/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "IRFC.NS",
       "display": "IRFC",
       "type": "Dividend",
@@ -557,14 +570,6 @@
       "type": "Dividend",
       "date": "2026-07-29",
       "detail": "\u20b91.00/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "TATACAP.NS",
-      "display": "TATACAP",
-      "type": "Dividend",
-      "date": "2026-07-27",
-      "detail": "\u20b90.57/share",
       "in_portfolio": true
     }
   ]
