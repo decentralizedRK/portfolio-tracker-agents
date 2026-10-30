@@ -1,6 +1,6 @@
 {
-  "date": "29 Oct 2026",
-  "timestamp": "2026-10-29T15:48:42.856575+05:30",
+  "date": "30 Oct 2026",
+  "timestamp": "2026-10-30T15:21:32.039606+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -216,6 +216,10 @@
         {
           "date": "2026-08-14",
           "amount": 1.55
+        },
+        {
+          "date": "2026-10-30",
+          "amount": 3.5
         }
       ],
       "splits": [],
@@ -453,6 +457,14 @@
   },
   "highlights": [
     {
+      "ticker": "RECLTD.NS",
+      "display": "RECLTD",
+      "type": "Dividend",
+      "date": "2026-10-30",
+      "detail": "\u20b93.50/share",
+      "in_portfolio": true
+    },
+    {
       "ticker": "CYIENT.NS",
       "display": "CYIENT",
       "type": "Dividend",
@@ -562,14 +574,6 @@
       "type": "Dividend",
       "date": "2026-07-31",
       "detail": "\u20b94.25/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "SHAKTIPUMP.NS",
-      "display": "SHAKTIPUMP",
-      "type": "Dividend",
-      "date": "2026-07-29",
-      "detail": "\u20b91.00/share",
       "in_portfolio": true
     }
   ]
