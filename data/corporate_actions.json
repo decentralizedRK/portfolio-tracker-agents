@@ -1,6 +1,6 @@
 {
-  "date": "02 Nov 2026",
-  "timestamp": "2026-11-02T16:22:32.012514+05:30",
+  "date": "03 Nov 2026",
+  "timestamp": "2026-11-03T16:12:50.932462+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -362,6 +362,10 @@
         {
           "date": "2026-06-10",
           "amount": 25.0
+        },
+        {
+          "date": "2026-11-03",
+          "amount": 26.0
         }
       ],
       "splits": [],
@@ -456,6 +460,14 @@
     }
   },
   "highlights": [
+    {
+      "ticker": "INFY.NS",
+      "display": "INFY",
+      "type": "Dividend",
+      "date": "2026-11-03",
+      "detail": "\u20b926.00/share",
+      "in_portfolio": false
+    },
     {
       "ticker": "RECLTD.NS",
       "display": "RECLTD",
@@ -567,14 +579,6 @@
       "date": "2026-08-03",
       "detail": "\u20b912.00/share",
       "in_portfolio": false
-    },
-    {
-      "ticker": "RECLTD.NS",
-      "display": "RECLTD",
-      "type": "Dividend",
-      "date": "2026-07-31",
-      "detail": "\u20b94.25/share",
-      "in_portfolio": true
     }
   ]
 }
