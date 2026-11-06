@@ -1,6 +1,6 @@
 {
-  "date": "05 Nov 2026",
-  "timestamp": "2026-11-05T16:50:46.318262+05:30",
+  "date": "06 Nov 2026",
+  "timestamp": "2026-11-06T16:11:29.936276+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -413,6 +413,10 @@
         {
           "date": "2026-09-02",
           "amount": 3.5
+        },
+        {
+          "date": "2026-11-06",
+          "amount": 3.0
         }
       ],
       "splits": [],
@@ -460,6 +464,14 @@
     }
   },
   "highlights": [
+    {
+      "ticker": "NTPC.NS",
+      "display": "NTPC",
+      "type": "Dividend",
+      "date": "2026-11-06",
+      "detail": "\u20b93.00/share",
+      "in_portfolio": false
+    },
     {
       "ticker": "INFY.NS",
       "display": "INFY",
@@ -571,14 +583,6 @@
       "date": "2026-08-03",
       "detail": "\u20b94.00/share",
       "in_portfolio": true
-    },
-    {
-      "ticker": "ICICIBANK.NS",
-      "display": "ICICIBANK",
-      "type": "Dividend",
-      "date": "2026-08-03",
-      "detail": "\u20b912.00/share",
-      "in_portfolio": false
     }
   ]
 }
