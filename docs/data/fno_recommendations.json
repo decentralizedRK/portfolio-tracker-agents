@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-09T17:25:18.559646+05:30",
+  "timestamp": "2026-11-10T16:30:02.438840+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -1686,7 +1686,7 @@
           "macd": "Bullish (above signal)",
           "sma50": 6966.17,
           "sma200": 6684.01,
-          "support": 4618.03
+          "support": 4618.02
         },
         {
           "ticker": "PFC.NS",
@@ -3343,9 +3343,9 @@
           "tier": "largecap",
           "market_cap_crore": 71197.34,
           "mcap_rank": 99,
-          "current_price": 438.9,
+          "current_price": 438.4,
           "day_change_pct": 0.0,
-          "week_change_pct": 7.05,
+          "week_change_pct": 7.71,
           "momentum_score": -1,
           "action": "WATCH / AVOID",
           "action_emoji": "\ud83d\udfe1",
@@ -3353,10 +3353,10 @@
             "MACD bullish \u2014 momentum building",
             "Price below 50MA & 200MA \u2014 DOWNTREND"
           ],
-          "rsi": 52.1,
+          "rsi": 51.8,
           "trend": "DOWNTREND",
           "macd": "Bullish (above signal)",
-          "sma50": 457.98,
+          "sma50": 456.45,
           "sma200": null,
           "support": 407.0
         },
@@ -6203,5 +6203,5 @@
       ]
     }
   },
-  "generated_at": "09 Nov 2026 17:25 IST"
+  "generated_at": "10 Nov 2026 16:30 IST"
 }
