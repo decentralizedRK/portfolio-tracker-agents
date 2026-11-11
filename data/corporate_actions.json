@@ -1,6 +1,6 @@
 {
-  "date": "10 Nov 2026",
-  "timestamp": "2026-11-10T17:00:44.143081+05:30",
+  "date": "11 Nov 2026",
+  "timestamp": "2026-11-11T16:10:39.366874+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -118,12 +118,7 @@
       "error": null
     },
     "IEX.NS": {
-      "dividends": [
-        {
-          "date": "2026-05-15",
-          "amount": 2.0
-        }
-      ],
+      "dividends": [],
       "splits": [],
       "calendar": {},
       "error": null
