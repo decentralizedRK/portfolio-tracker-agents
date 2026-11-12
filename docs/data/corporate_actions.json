@@ -1,6 +1,6 @@
 {
-  "date": "11 Nov 2026",
-  "timestamp": "2026-11-11T16:50:23.394454+05:30",
+  "date": "12 Nov 2026",
+  "timestamp": "2026-11-12T16:22:32.329695+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -324,6 +324,10 @@
         {
           "date": "2026-06-23",
           "amount": 22.0
+        },
+        {
+          "date": "2026-11-12",
+          "amount": 19.0
         }
       ],
       "splits": [],
@@ -460,6 +464,14 @@
   },
   "highlights": [
     {
+      "ticker": "HINDUNILVR.NS",
+      "display": "HINDUNILVR",
+      "type": "Dividend",
+      "date": "2026-11-12",
+      "detail": "\u20b919.00/share",
+      "in_portfolio": false
+    },
+    {
       "ticker": "NTPC.NS",
       "display": "NTPC",
       "type": "Dividend",
@@ -569,14 +581,6 @@
       "type": "Dividend",
       "date": "2026-08-07",
       "detail": "\u20b90.25/share",
-      "in_portfolio": true
-    },
-    {
-      "ticker": "COFORGE.NS",
-      "display": "COFORGE",
-      "type": "Dividend",
-      "date": "2026-08-03",
-      "detail": "\u20b94.00/share",
       "in_portfolio": true
     }
   ]
