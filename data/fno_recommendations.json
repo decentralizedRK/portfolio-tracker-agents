@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-13T16:20:12.707733+05:30",
+  "timestamp": "2026-11-13T16:50:53.759225+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -558,7 +558,7 @@
           "macd": "Bullish (above signal)",
           "sma50": 6932.23,
           "sma200": 6717.7,
-          "support": 4618.02
+          "support": 4618.03
         },
         {
           "ticker": "APOLLOHOSP.NS",
@@ -6206,5 +6206,5 @@
       ]
     }
   },
-  "generated_at": "13 Nov 2026 16:20 IST"
+  "generated_at": "13 Nov 2026 16:50 IST"
 }
