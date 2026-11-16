@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-16T16:28:35.644108+05:30",
+  "timestamp": "2026-11-16T17:21:17.729714+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -1791,7 +1791,7 @@
           "macd": "Bullish (above signal)",
           "sma50": 6922.21,
           "sma200": 6729.0,
-          "support": 4618.02
+          "support": 4618.03
         },
         {
           "ticker": "BPCL.NS",
@@ -6264,5 +6264,5 @@
       ]
     }
   },
-  "generated_at": "16 Nov 2026 16:28 IST"
+  "generated_at": "16 Nov 2026 17:21 IST"
 }
