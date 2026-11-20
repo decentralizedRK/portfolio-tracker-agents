@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-11-20T17:30:24.979358+05:30",
+  "timestamp": "2026-11-21T03:39:46.029176+05:30",
   "total_invested": 1250167.7,
-  "total_current": 1427317.42,
-  "total_pnl": 177149.72,
-  "total_pnl_pct": 14.17,
+  "total_current": 1427670.47,
+  "total_pnl": 177502.77,
+  "total_pnl_pct": 14.2,
   "sip_recorded_today": 0,
   "funds": [
     {
@@ -39,11 +39,11 @@
       "name": "Axis ELSS Tax Saver Fund - Direct Plan - Growth",
       "units": 315.16,
       "avg_nav": 79.42,
-      "current_nav": 116.9073,
+      "current_nav": 118.0275,
       "invested": 25030.01,
-      "current_value": 36844.5,
-      "pnl": 11814.49,
-      "pnl_pct": 47.2,
+      "current_value": 37197.55,
+      "pnl": 12167.54,
+      "pnl_pct": 48.61,
       "sip_amount": 0,
       "sip_date": 1,
       "last_sip_recorded": ""
