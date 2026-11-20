@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-20T16:52:27.258451+05:30",
+  "timestamp": "2026-11-20T17:28:46.990009+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -632,7 +632,7 @@
           "macd": "Bullish (above signal)",
           "sma50": 6880.93,
           "sma200": 6772.8,
-          "support": 4618.03
+          "support": 4618.02
         },
         {
           "ticker": "CIPLA.NS",
@@ -6425,5 +6425,5 @@
       ]
     }
   },
-  "generated_at": "20 Nov 2026 16:52 IST"
+  "generated_at": "20 Nov 2026 17:28 IST"
 }
