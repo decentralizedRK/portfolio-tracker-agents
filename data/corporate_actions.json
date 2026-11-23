@@ -1,6 +1,6 @@
 {
-  "date": "20 Nov 2026",
-  "timestamp": "2026-11-20T17:30:16.526958+05:30",
+  "date": "23 Nov 2026",
+  "timestamp": "2026-11-23T17:40:54.642129+05:30",
   "portfolio_actions": {
     "ADANIENT.NS": {
       "dividends": [
@@ -377,10 +377,6 @@
     },
     "TCS.NS": {
       "dividends": [
-        {
-          "date": "2026-05-25",
-          "amount": 31.0
-        },
         {
           "date": "2026-07-15",
           "amount": 12.0
