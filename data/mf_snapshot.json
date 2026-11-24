@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-11-24T07:32:56.315865+05:30",
+  "timestamp": "2026-11-24T19:36:23.565753+05:30",
   "total_invested": 1250167.7,
-  "total_current": 1419407.52,
-  "total_pnl": 169239.82,
-  "total_pnl_pct": 13.54,
+  "total_current": 1419121.65,
+  "total_pnl": 168953.95,
+  "total_pnl_pct": 13.51,
   "sip_recorded_today": 0,
   "funds": [
     {
@@ -53,11 +53,11 @@
       "name": "Parag Parikh Flexi Cap Fund - Direct Plan - Growth",
       "units": 536.342,
       "avg_nav": 85.7617,
-      "current_nav": 95.4585,
+      "current_nav": 94.9255,
       "invested": 45997.6,
-      "current_value": 51198.4,
-      "pnl": 5200.8,
-      "pnl_pct": 11.31,
+      "current_value": 50912.53,
+      "pnl": 4914.93,
+      "pnl_pct": 10.69,
       "sip_amount": 0,
       "sip_date": 1,
       "last_sip_recorded": ""
