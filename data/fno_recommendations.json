@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-23T18:54:14.774678+05:30",
+  "timestamp": "2026-11-24T19:01:29.550594+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -883,9 +883,9 @@
           "tier": "largecap",
           "market_cap_crore": 71197.34,
           "mcap_rank": 99,
-          "current_price": 431.0,
+          "current_price": 465.0,
           "day_change_pct": 0.0,
-          "week_change_pct": -5.39,
+          "week_change_pct": 0.85,
           "momentum_score": 3,
           "action": "BUY ON DIP",
           "action_emoji": "\ud83d\udd35",
@@ -893,10 +893,10 @@
             "MACD bullish \u2014 momentum building",
             "Price above 50MA & 200MA \u2014 UPTREND intact"
           ],
-          "rsi": 59.1,
+          "rsi": 60.3,
           "trend": "UPTREND",
           "macd": "Bullish (above signal)",
-          "sma50": 449.67,
+          "sma50": 449.58,
           "sma200": null,
           "support": 407.0
         },
@@ -1817,7 +1817,7 @@
           "macd": "Bullish (above signal)",
           "sma50": 6870.56,
           "sma200": 6780.2,
-          "support": 4618.03
+          "support": 4618.02
         },
         {
           "ticker": "BANKBARODA.NS",
@@ -6323,5 +6323,5 @@
       ]
     }
   },
-  "generated_at": "23 Nov 2026 18:54 IST"
+  "generated_at": "24 Nov 2026 19:01 IST"
 }
