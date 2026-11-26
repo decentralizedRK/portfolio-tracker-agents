@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-26T17:44:18.064551+05:30",
+  "timestamp": "2026-11-26T18:28:06.750300+05:30",
   "tiers": {
     "largecap": {
       "tier": "largecap",
@@ -679,7 +679,7 @@
           "macd": "Bullish (above signal)",
           "sma50": 6855.73,
           "sma200": 6795.78,
-          "support": 4618.03
+          "support": 4618.02
         },
         {
           "ticker": "PNB.NS",
@@ -6355,5 +6355,5 @@
       ]
     }
   },
-  "generated_at": "26 Nov 2026 17:44 IST"
+  "generated_at": "26 Nov 2026 18:28 IST"
 }
