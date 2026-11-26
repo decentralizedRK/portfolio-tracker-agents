@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-11-26T18:29:41.315127+05:30",
+  "timestamp": "2026-11-27T05:03:57.641143+05:30",
   "total_invested": 1250167.7,
-  "total_current": 1432771.4,
-  "total_pnl": 182603.7,
-  "total_pnl_pct": 14.61,
+  "total_current": 1430597.47,
+  "total_pnl": 180429.77,
+  "total_pnl_pct": 14.43,
   "sip_recorded_today": 0,
   "funds": [
     {
@@ -11,11 +11,11 @@
       "name": "Quant Healthcare Fund - Direct Plan - Growth",
       "units": 45102.263,
       "avg_nav": 15.7902,
-      "current_nav": 19.5394,
+      "current_nav": 19.4912,
       "invested": 712173.75,
-      "current_value": 881271.16,
-      "pnl": 169097.41,
-      "pnl_pct": 23.74,
+      "current_value": 879097.23,
+      "pnl": 166923.48,
+      "pnl_pct": 23.44,
       "sip_amount": 27500,
       "sip_date": 1,
       "last_sip_recorded": "2026-11-03"
